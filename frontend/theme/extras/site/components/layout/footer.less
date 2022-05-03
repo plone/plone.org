@@ -1,0 +1,213 @@
+#footer {
+  padding: 3rem 0 0 0;
+  font-family: @headerFontName;
+  box-shadow: 0px 5px 7px 5px rgba(119, 119, 119, 0.1);
+
+  #footer-main {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+
+    .footer-column {
+      flex: 1 1 14.2857%;
+      padding: 1rem 0.8rem;
+
+      &:last-of-type {
+        flex-basis: 20%;
+        border-left: 1px solid @footerBordersColor;
+        padding: 1rem 2rem;
+        color: @footerLastColumnTextColor;
+
+        a,
+        button {
+          &:not(:hover, :active, :focus, .ui.button) {
+            color: @footerLastColumnTextColor;
+          }
+        }
+
+        .fa-arrow-right {
+          margin-left: @fontSize;
+          font-size: @fontSize;
+          vertical-align: text-bottom;
+        }
+
+        .social-header {
+          display: flex;
+          flex-wrap: wrap;
+
+          margin: 1rem 0 1rem 0;
+          font-size: 1.3rem;
+
+          a {
+            margin-right: 0.5rem;
+            &:not(:hover, :active, :focus, .ui.button) {
+              color: @linkColor;
+            }
+          }
+        }
+
+        ul {
+          margin: 0;
+          font-size: unit((14 / @fontSize), rem);
+
+          li {
+            color: @footerLastColumnTextColor;
+            margin-bottom: 0.3em;
+
+            button {
+              background: none;
+              border: none;
+              padding: 0;
+              margin: 0;
+              cursor: pointer;
+              &:hover,
+              &:active,
+              &:focus {
+                color: @linkColor;
+                text-decoration: underline;
+              }
+            }
+
+            a,
+            button {
+              font-family: @headerFontName;
+              font-size: unit((10 / @fontSize), rem);
+            }
+          }
+        }
+
+        .tools {
+          .ui.secondary.pointing.menu {
+            margin: 0;
+            float: none;
+            min-height: unset;
+            font-family: @headerFontName;
+            font-size: unit((10 / @fontSize), rem);
+            .item {
+              padding: 0;
+              margin: 0 0 0.3em 0;
+            }
+          }
+        }
+      }
+
+      h4 {
+        display: flex;
+        //min-height: 2.8em;
+        //align-items: flex-end;
+        font-weight: normal;
+        font-size: unit((13 / @fontSize), rem);
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        padding: 0;
+        font-size: unit((10 / @fontSize), rem);
+        list-style-type: none;
+
+        li {
+          color: @footerColumnsTextColor;
+          margin-bottom: 0.7em;
+          line-height: 1.5;
+
+          a {
+            color: @footerColumnsTextColor;
+
+            &:hover,
+            &:active,
+            &:focus {
+              text-decoration: underline;
+              color: @primaryColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #footer-small-wrapper {
+    background-color: @ultraLightGrey;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+
+    #footer-small {
+      display: flex;
+      align-items: center;
+      font-size: 0.7rem;
+
+      .logo {
+        flex: 0 0 auto;
+      }
+
+      .address {
+        padding: 0 0.5rem;
+      }
+
+      .logo {
+        padding-right: 1.5rem;
+      }
+
+      .address {
+        color: @footerSmallTextColor;
+        line-height: 1.3;
+      }
+    }
+  }
+}
+
+@media (max-width: @largestTabletScreen) {
+  #footer {
+    #footer-main {
+      flex-direction: column;
+      .footer-column {
+        &:last-of-type {
+          border-left: none;
+          border-top: 1px solid @footerBordersColor;
+          text-align: center;
+          padding-top: 2rem;
+
+          .social-header {
+            justify-content: center;
+
+            a {
+              margin: 0 0.7rem;
+            }
+          }
+
+          .tools {
+            .ui.pointing.secondary.menu {
+              justify-content: center;
+            }
+          }
+        }
+
+        h4 {
+          display: block;
+          min-height: unset;
+          align-items: unset;
+        }
+      }
+    }
+
+    #footer-small-wrapper {
+      padding-left: 0;
+      padding-right: 0;
+
+      #footer-small {
+        flex-direction: column;
+
+        padding-left: 0rem;
+        padding-right: 0rem;
+
+        .logo {
+          margin-bottom: 1rem;
+        }
+
+        .address,
+        .logo {
+          padding: 0.25rem 0;
+        }
+      }
+    }
+  }
+}

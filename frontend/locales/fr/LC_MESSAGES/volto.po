@@ -25,3 +25,929 @@ msgstr ""
 "Language-Name: French\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+
+#: components/Blocks/HTML/Edit
+# defaultMessage: <p>Add some HTML here</p>
+msgid "<p>Add some HTML here</p>"
+msgstr ""
+
+#: components/Widgets/AlignWidget/AlignWidget
+# defaultMessage: bottom
+msgid "Align bottom"
+msgstr ""
+
+#: components/Widgets/AlignWidget/AlignWidget
+# defaultMessage: center
+msgid "Align center"
+msgstr ""
+
+#: components/Widgets/AlignWidget/AlignWidget
+# defaultMessage: on left
+msgid "Align left"
+msgstr ""
+
+#: components/Widgets/AlignWidget/AlignWidget
+# defaultMessage: at the center vertically
+msgid "Align middle"
+msgstr ""
+
+#: components/Widgets/AlignWidget/AlignWidget
+# defaultMessage: on right
+msgid "Align right"
+msgstr ""
+
+#: components/Widgets/AlignWidget/AlignWidget
+# defaultMessage: top
+msgid "Align top"
+msgstr ""
+
+#: components/Blocks/Author/Body
+#: components/Blocks/Author/Sidebar
+# defaultMessage: Author
+msgid "Author"
+msgstr ""
+
+#: components/Blocks/Numbers/Sidebar
+# defaultMessage: Background color
+msgid "Background color"
+msgstr ""
+
+#: components/Blocks/Numbers/Sidebar
+# defaultMessage: Background image
+msgid "BackgroundImage"
+msgstr ""
+
+#: components/Blocks/Breadcrumbs/Body
+#: components/Blocks/Breadcrumbs/Sidebar
+# defaultMessage: Breadcrumbs
+msgid "Breadcrumbs"
+msgstr ""
+
+#: components/Widgets/ImageWidget/ImageWidget
+# defaultMessage: Browse the site, drop an image, or type an URL
+msgid "Browse the site, drop an image, or type an URL"
+msgstr ""
+
+#: helpers/presets
+# defaultMessage: Button color
+msgid "ButtonColor"
+msgstr ""
+
+#: components/Blocks/HTML/Edit
+# defaultMessage: Clear
+msgid "Clear"
+msgstr ""
+
+#: components/Blocks/HTML/Edit
+# defaultMessage: Code
+msgid "Code"
+msgstr ""
+
+#: components/Widgets/SignWidget/SignWidget
+# defaultMessage: Collapse item
+msgid "Collapse item"
+msgstr ""
+
+#: components/Widgets/ColorListWidget/ColorListWidget
+# defaultMessage: Color
+msgid "Color"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Contacts
+msgid "Contacts"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Cookie settings
+msgid "Cookie settings"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Copyright
+msgid "Copyright"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+#: components/Blocks/Text5/Edit
+#: components/Blocks/Text7/Edit
+#: config/Blocks/schemas/listing-variations/default-schema
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: components/Blocks/common/TextBlocksStyleSidebar
+# defaultMessage: Center align buttons in text
+msgid "Draftjs buttons align center"
+msgstr ""
+
+#: components/Blocks/SignedSeparator/Sidebar
+# defaultMessage: Fix sign to top
+msgid "Fix sign to top"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution-ShareAlike 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see https://plone.org/foundation/logo. All other trademarks are owned by their respective owners.
+msgid "Footer infos"
+msgstr ""
+
+#: components/Blocks/Tabs/Schema
+# defaultMessage: Friendly name
+msgid "Friendly name"
+msgstr ""
+
+#: components/Blocks/SignedSeparator/Sidebar
+# defaultMessage: Graphic sign alignment
+msgid "Graphic sign alignment"
+msgstr ""
+
+#: components/Blocks/HTML/schema
+# defaultMessage: Title
+msgid "HTMLBlockTitle"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Header alignment
+msgid "Header alignment"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/default-schema
+# defaultMessage: Header alignment
+msgid "Header alignmnet"
+msgstr ""
+
+#: components/Blocks/Breadcrumbs/Body
+# defaultMessage: Home
+msgid "Home"
+msgstr ""
+
+#: components/Blocks/IconsAndNumbers/Sidebar
+# defaultMessage: Icons and numbers block
+msgid "IconsAndNumbersBlock"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Icons and text block
+msgid "IconsAndTextBlock"
+msgstr ""
+
+#: components/Blocks/Author/Edit
+#: components/Blocks/Slider/Sidebar
+#: components/Blocks/Text5/Edit
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text7/Edit
+# defaultMessage: Image
+msgid "Image"
+msgstr ""
+
+#: components/Blocks/ImageColumns/Sidebar
+# defaultMessage: Side by side images
+msgid "Image columns"
+msgstr ""
+
+#: components/Blocks/Text5/Edit
+#: components/Blocks/Text5/GalleryBody
+# defaultMessage: Uploaded images will be placed here
+msgid "ImagePlaceholder"
+msgstr ""
+
+#: helpers/presets
+# defaultMessage: Item background color
+msgid "ItemBgColor"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Legal
+msgid "Legal"
+msgstr ""
+
+#: components/Blocks/SignedSeparator/Sidebar
+# defaultMessage: Line at the base of the sign
+msgid "Line at the base of the sign"
+msgstr ""
+
+#: components/Blocks/LinkedItems/Sidebar
+# defaultMessage: Linked items
+msgid "Linked items"
+msgstr ""
+
+#: components/Blocks/LinkedItems/Sidebar
+# defaultMessage: Linked items
+msgid "LinkedItems"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Login
+msgid "Login"
+msgstr ""
+
+#: components/Widgets/SignWidget/SignWidget
+# defaultMessage: Nessun segno selezionato
+msgid "No sign selected"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/mosaic-card-variation-schema
+#: config/Blocks/schemas/listing-variations/news-card-variation-schema
+#: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+# defaultMessage: Number of columns
+msgid "Number of columns"
+msgstr ""
+
+#: components/Blocks/IconsAndNumbers/Block/EditBlock
+#: components/Blocks/IconsAndText/Block/EditBlock
+#: components/Blocks/Numbers/Block/EditBlock
+# defaultMessage: 0.00
+msgid "Number placeholder"
+msgstr ""
+
+#: components/Blocks/Numbers/Sidebar
+# defaultMessage: Numbers block
+msgid "NumbersBlock"
+msgstr ""
+
+#: components/Blocks/Break/Edit
+# defaultMessage: Page break
+msgid "Page break"
+msgstr ""
+
+#: components/Blocks/PageTag/Sidebar
+# defaultMessage: Page's Tags
+msgid "Page's Tags"
+msgstr ""
+
+#: components/SliderWrapper/SliderWrapper
+# defaultMessage: Pause slider
+msgid "Pause slider"
+msgstr ""
+
+#: components/SliderWrapper/SliderWrapper
+# defaultMessage: Play
+msgid "Play slider"
+msgstr ""
+
+#: components/Blocks/HTML/Edit
+# defaultMessage: Prettify your code
+msgid "Prettify your code"
+msgstr ""
+
+#: components/Blocks/HTML/Edit
+# defaultMessage: Preview
+msgid "Preview"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Privacy e Cookie
+msgid "Privacy and Cookies"
+msgstr ""
+
+#: components/Blocks/Listing/variations/SimpleCardListing
+#: components/cards/MosaicCard
+# defaultMessage: Read more
+msgid "Read more"
+msgstr ""
+
+#: components/Blocks/RelatedItems/Sidebar
+# defaultMessage: Related items
+msgid "Related items"
+msgstr ""
+
+#: components/layout/Header/HeaderSearch
+# defaultMessage: Type a keyword...
+msgid "Search Site"
+msgstr ""
+
+#: components/Blocks/SignedSeparator/Sidebar
+# defaultMessage: Select a graphic sign
+msgid "Select a graphic sign"
+msgstr ""
+
+#: components/Widgets/SignWidget/SignWidget
+# defaultMessage: Seleziona un segno grafico dall'elenco sottostante:
+msgid "Select sign from below list:"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+# defaultMessage: Show descriptions
+msgid "Show descriptions"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+# defaultMessage: how images
+msgid "Show images"
+msgstr ""
+
+#: components/Widgets/SignWidget/SignWidget
+# defaultMessage: Show item
+msgid "Show item"
+msgstr ""
+
+#: components/Blocks/SignedSeparator/Sidebar
+# defaultMessage: Separator with graphic sign
+msgid "SignedSeparator"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Size
+msgid "Size"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Blocco Slider
+msgid "SliderBlock"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Button alignment
+msgid "SliderBlock: Button alignment"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage:  Display a separator after title
+msgid "SliderBlock: Display a separator after title"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Display current content's data
+msgid "SliderBlock: Display current content's data"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Graphic sign
+msgid "SliderBlock: Graphic sign"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Graphic sign alignment
+msgid "SliderBlock: Graphic sign alignment"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Hide title on slide
+msgid "SliderBlock: Hide title on slide"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Opacify the image
+msgid "SliderBlock: Opacify the image"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Separator color
+msgid "SliderBlock: Separator color"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Text alignment
+msgid "SliderBlock: Text alignment"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Text on button
+msgid "SliderBlock: Text on button"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: If present, a button will be shown which, when clicked, will take you to the destination chosen in the 'Destination' field. If not filled in, the link will be placed on the title of the slide
+msgid "SliderBlock: Text on button description"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Title alignment
+msgid "SliderBlock: Title alignment"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Display arrow on CTA button
+msgid "SliderBlock: show cta arow"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: Display full-width text
+msgid "SliderBlock: text width 100%"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+# defaultMessage: By default, dispaly current contents'data.  The text placed in below fields, will override content's data
+msgid "SliderBlock:Display current content's data description"
+msgstr ""
+
+#: components/Blocks/HTML/Edit
+# defaultMessage: Source
+msgid "Source"
+msgstr ""
+
+#: components/Blocks/Tabs/Schema
+# defaultMessage: Style
+msgid "Style"
+msgstr ""
+
+#: components/Blocks/Slider/Sidebar
+#: components/Blocks/Text5/Edit
+# defaultMessage: Subtitle
+msgid "Subtitle"
+msgstr ""
+
+#: components/Blocks/Tabs/Schema
+# defaultMessage: Tabs
+msgid "Tabs"
+msgstr ""
+
+#: components/Blocks/Text/Sidebar
+# defaultMessage: Text
+msgid "Text"
+msgstr ""
+
+#: components/Blocks/Text4/Sidebar
+# defaultMessage: Text 4
+msgid "Text 4"
+msgstr ""
+
+#: components/Blocks/Text5/Sidebar
+# defaultMessage: Text 5
+msgid "Text 5"
+msgstr ""
+
+#: components/Blocks/IconsAndNumbers/Block/EditBlock
+#: components/Blocks/IconsAndNumbers/Edit
+#: components/Blocks/IconsAndText/Block/EditBlock
+#: components/Blocks/IconsAndText/Edit
+#: components/Blocks/Numbers/Block/EditBlock
+#: components/Blocks/Text1/Edit
+#: components/Blocks/Text4/Edit
+#: components/Blocks/Text6/Edit
+# defaultMessage: Type text...
+msgid "Text placeholder"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+# defaultMessage: Text 1
+msgid "Text1"
+msgstr ""
+
+#: components/Blocks/Text6/Sidebar
+# defaultMessage: Text 6
+msgid "Text6"
+msgstr ""
+
+#: helpers/presets
+# defaultMessage: Text color
+msgid "TextColor"
+msgstr ""
+
+#: components/Blocks/RelatedItems/Sidebar
+#: components/Blocks/Slider/Sidebar
+#: components/Blocks/Tabs/Schema
+#: components/Blocks/Text5/Edit
+#: components/Blocks/Text7/Edit
+#: config/Blocks/schemas/listing-variations/default-schema
+#: config/Blocks/schemas/listing-variations/news-card-variation-schema
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/Blocks/IconsAndNumbers/Block/EditBlock
+#: components/Blocks/IconsAndNumbers/Edit
+#: components/Blocks/IconsAndText/Block/EditBlock
+#: components/Blocks/IconsAndText/Edit
+#: components/Blocks/LinkedItems/Edit
+#: components/Blocks/Numbers/Block/EditBlock
+#: components/Blocks/Text1/Edit
+#: components/Blocks/Text4/Edit
+#: components/Blocks/Text6/Edit
+# defaultMessage: Title...
+msgid "Title placeholder"
+msgstr ""
+
+#: helpers/presets
+# defaultMessage: Title color
+msgid "TitleColor"
+msgstr ""
+
+#: components/layout/Footer/SiteFooter
+# defaultMessage: Try
+msgid "Try"
+msgstr ""
+
+#: components/Widgets/TextEditorWidget
+# defaultMessage: Type text…
+msgid "Type text…"
+msgstr ""
+
+#: components/Blocks/Tabs/EditBlockWrapper
+# defaultMessage: Unknown Block {block}
+msgid "Unknown Block"
+msgstr ""
+
+#: components/Blocks/Text7/Edit
+# defaultMessage: Upload a new image
+msgid "Upload a new image"
+msgstr ""
+
+#: components/Blocks/Author/Edit
+# defaultMessage: Upload or search a new image
+msgid "Upload or search a new image"
+msgstr ""
+
+#: components/SliderWrapper/SliderWrapper
+# defaultMessage: View image
+msgid "View image"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Add column
+msgid "addColumn"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Attendees
+msgid "attendees"
+msgstr ""
+
+#: components/Blocks/Author/Sidebar
+# defaultMessage: Autore
+msgid "autore"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Background color
+msgid "backgroundColor"
+msgstr ""
+
+#: components/Blocks/common/TextBlocksStyleSidebar
+#: helpers/presets
+# defaultMessage: Background color
+msgid "bgColor"
+msgstr ""
+
+#: components/Blocks/common/TextBlocksStyleSidebar
+#: components/Blocks/HTML/schema
+#: components/Blocks/SignedSeparator/Sidebar
+#: helpers/presets
+# defaultMessage: Set full-width background
+msgid "bgFullWidth"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Blue
+msgid "blue"
+msgstr ""
+
+#: components/layout/Header/HeaderSearch
+# defaultMessage: Close search
+msgid "close-search"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Column
+msgid "column"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Number of columns
+msgid "columnsNumber"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Contacts
+msgid "contact"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+# defaultMessage: Graphic sign color
+msgid "cornerColor"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+# defaultMessage: CTA colorr
+msgid "cta_color"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text6/Sidebar
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: CTA text
+msgid "cta_title"
+msgstr ""
+
+#: components/Blocks/Text1/Edit
+#: components/Blocks/Text1/Sidebar
+#: components/Blocks/Text1/View
+#: components/Blocks/Text5/Edit
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text6/Edit
+#: components/Blocks/Text6/Sidebar
+#: components/Blocks/Text6/View
+#: components/Blocks/Text7/Edit
+#: components/Blocks/Text7/Sidebar
+#: components/Blocks/Text7/View
+# defaultMessage: Go to content
+msgid "cta_title_default"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text6/Sidebar
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Text to show for CTA
+msgid "cta_title_description"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Event date
+msgid "date"
+msgstr ""
+
+#: components/Blocks/RelatedItems/Body
+# defaultMessage: Related items
+msgid "default_title_related_items"
+msgstr ""
+
+#: components/Blocks/Tabs/EditBlockWrapper
+# defaultMessage: delete
+msgid "delete"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: From
+msgid "eventFrom"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: from
+msgid "eventFromG"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: from
+msgid "eventFromTime"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: From
+msgid "eventFromV"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: to
+msgid "eventTo"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: to
+msgid "eventToG"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: to
+msgid "eventToTime"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: to
+msgid "eventToV"
+msgstr ""
+
+#: components/Blocks/LinkedItems/Sidebar
+# defaultMessage: Full width
+msgid "full-width"
+msgstr ""
+
+#: components/Blocks/Author/Sidebar
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Set full-width background
+msgid "fullWidth"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Grey
+msgid "grey"
+msgstr ""
+
+#: components/Blocks/Author/Sidebar
+#: components/Blocks/LinkedItems/Sidebar
+#: components/Blocks/PageMetadata/Sidebar
+#: components/Blocks/PageTag/Sidebar
+#: components/Blocks/SignedSeparator/Sidebar
+# defaultMessage: Set grey background
+msgid "greyBg"
+msgstr ""
+
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Show CTA
+msgid "has_cta"
+msgstr ""
+
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Choose whether or not to show the CTA in the block, absent by default.
+msgid "has_cta_description"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+#: components/Blocks/Text6/Sidebar
+# defaultMessage: Show CTA
+msgid "have_cta"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/news-card-variation-schema
+# defaultMessage: Show image
+msgid "have_image"
+msgstr ""
+
+#: components/Blocks/HTML/schema
+# defaultMessage: Set grey background
+msgid "htmlGreyBg"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Icon
+msgid "icon"
+msgstr ""
+
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Image width
+msgid "img_column_width"
+msgstr ""
+
+#: components/Blocks/InfoBox/Sidebar
+# defaultMessage: Info Box
+msgid "infobox"
+msgstr ""
+
+#: components/Blocks/Text5/Sidebar
+# defaultMessage: Image link
+msgid "link_image"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text6/Sidebar
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: CTA link
+msgid "link_to"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+#: components/Blocks/Text5/Sidebar
+#: components/Blocks/Text6/Sidebar
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Enter a link for the block's CTA. You can type an external URL or select content.
+msgid "link_to_description"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Do not fit the columns to the available space
+msgid "noAdaptColumns"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Tel.
+msgid "phone"
+msgstr ""
+
+#: components/Blocks/PageMetadata/Edit
+#: components/Blocks/PageMetadata/View
+# defaultMessage: Publication date
+msgid "pubblication_date"
+msgstr ""
+
+#: components/Blocks/PageMetadata/Sidebar
+# defaultMessage: Publication date
+msgid "publication_date"
+msgstr ""
+
+#: components/cards/NewsCard
+# defaultMessage: Read more
+msgid "readMore"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Recurrences
+msgid "recurrence"
+msgstr ""
+
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Image on right
+msgid "right"
+msgstr ""
+
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Align image on right, by default it'is left aligned.
+msgid "right_description"
+msgstr ""
+
+#: components/layout/Header/HeaderSearch
+# defaultMessage: Search site
+msgid "search_site_title"
+msgstr ""
+
+#: components/Blocks/common/TextBlocksStyleSidebar
+# defaultMessage: Show social sharing buttons
+msgid "shareSocial"
+msgstr ""
+
+#: components/ShareButtons/ShareButtons
+# defaultMessage: Share on
+msgid "share_on"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+# defaultMessage: Show graphic sign on top left corner
+msgid "showCorner"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+#: components/Blocks/Text6/Sidebar
+# defaultMessage: Show title separator line
+msgid "showTitleDecoration"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/download-list-variation-schema
+# defaultMessage: Show bulleted list
+msgid "show_bullet_list"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/download-list-variation-schema
+# defaultMessage: Show date
+msgid "show_date"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/download-list-variation-schema
+# defaultMessage: Show icon
+msgid "show_icon"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/mosaic-card-variation-schema
+#: config/Blocks/schemas/listing-variations/news-card-variation-schema
+#: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+# defaultMessage: Show button for card's detail
+msgid "show_item_more_button"
+msgstr ""
+
+#: components/Blocks/Slider/Body
+# defaultMessage: Year
+msgid "slider_year"
+msgstr ""
+
+#: components/Blocks/PageTag/Body
+# defaultMessage: Tag
+msgid "tag"
+msgstr ""
+
+#: components/Blocks/Text1/Sidebar
+# defaultMessage: Text 1
+msgid "text1"
+msgstr ""
+
+#: components/Blocks/Text4/Sidebar
+# defaultMessage: Align title on left
+msgid "text4AlignLeft"
+msgstr ""
+
+#: components/Blocks/Text6/Sidebar
+# defaultMessage: Center content
+msgid "text6alignCenter"
+msgstr ""
+
+#: components/Blocks/Text7/Sidebar
+# defaultMessage: Text 7
+msgid "text7"
+msgstr ""
+
+#: components/When/When
+# defaultMessage: time
+msgid "time"
+msgstr ""
+
+#: components/Blocks/common/TextBlocksStyleSidebar
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Title color
+msgid "titleColor"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/download-list-variation-schema
+# defaultMessage: Title color
+msgid "title_color"
+msgstr ""
+
+#: config/Blocks/schemas/listing-variations/news-card-variation-schema
+# defaultMessage: Show title separator line
+msgid "title_decoration"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Transparent
+msgid "transparent"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Web site
+msgid "website"
+msgstr ""
+
+#: components/Blocks/InfoBox/Body
+# defaultMessage: Location
+msgid "where"
+msgstr ""

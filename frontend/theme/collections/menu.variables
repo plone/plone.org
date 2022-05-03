@@ -1,0 +1,3 @@
+@secondaryPointingBorderWidth: 4px;
+@secondaryPointingItemTextTransform: none;
+@secondaryPointingActiveBorderColor: @blue;

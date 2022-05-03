@@ -1,0 +1,43 @@
+.block.table .ui.table,
+.ui.fixed.table {
+  display: flex;
+  width: auto;
+
+  tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+
+.ui.table {
+  border: 1px solid @footerBordersColor;
+
+  th {
+    background-color: @ultraLightGrey;
+    color: @textColor !important;
+  }
+
+  thead th {
+    color: @textColor !important;
+  }
+}
+
+.ui.striped.table {
+  th {
+    background-color: @ultraLightGrey;
+  }
+
+  &.very.basic > tr:nth-child(2n),
+  &.very.basic tbody tr:nth-child(2n),
+  & > tr:nth-child(2n),
+  tbody tr:nth-child(2n) {
+    background-color: @ultraLightGrey !important;
+  }
+
+  &.very.basic {
+    th {
+      background-color: transparent;
+    }
+  }
+}

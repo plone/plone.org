@@ -1,0 +1,29 @@
+.site--share-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+
+  @media (max-width: @largestMobileScreen) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .button {
+    display: flex;
+    margin-right: 1rem;
+    color: @textColor;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: @linkColor;
+    }
+
+    &-label {
+      margin-left: 0.5rem;
+    }
+  }
+}

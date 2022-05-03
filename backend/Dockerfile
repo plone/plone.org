@@ -1,4 +1,4 @@
-FROM plone/plone-backend:6.0.0a2
+FROM plone/plone-backend:6.0.0a4
 
 LABEL maintainer="Plone Foundation <marketing@plone.org>" \
       org.label-schema.name="ploneorg-backend" \
@@ -7,8 +7,6 @@ LABEL maintainer="Plone Foundation <marketing@plone.org>" \
       org.label-schema.docker.cmd="docker run -d -p 8080:8080 plone/ploneorg-backend:latest"
 
 # Add local code
-COPY . ./
-RUN apt-get update \
-    && apt-get -y upgrade -y \
-    && apt-get -y install make \
-    && make VENV=off VENV_FOLDER=. install
+COPY src /app/src
+RUN  bin/pip install "pas.plugins.authomatic==1.0b2" \
+     && bin/pip install -e "src/ploneorg.core"

@@ -31,6 +31,12 @@ Start the Frontend (http://localhost:3000/)
 make start-frontend
 ```
 
+## Build docker images and run it locally
+
+```shell
+make run-docker-local
+```
+
 ## Structure
 
 This monorepo is composed by two distinct codebases: backend and frontend.

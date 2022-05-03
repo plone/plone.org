@@ -1,0 +1,210 @@
+/*******************************
+         Site Settings
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName: 'Assistant';
+@googleFontSizes: '300,600,700,300italic,600italic,700italic';
+
+@headerFontName: 'Poppins';
+@headerFontSizes: '400,600,700,400italic,600italic,700italic';
+@headerFont: @headerFontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@googleFontRequest: escape(
+  '@{googleFontName}:@{googleFontSizes}|@{headerFontName}:@{headerFontSizes}&subset=@{googleSubset}&display=swap'
+);
+
+/* This is the single variable that controls them all */
+@emSize: 16px;
+
+/* The size of page text  */
+@fontSize: 16px;
+
+@fontLight: 300;
+@semibold: 600;
+@bold: 700;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor: @blue;
+@secondaryColor: @black;
+
+@lightPrimaryColor: @blue;
+@lightSecondaryColor: @black;
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight: @semibold;
+@headerLineHeight: unit((16 / 14), em);
+@headerColor: @black;
+
+@defaultBorderRadius: 0.3125em; /* 5px @ 13em */
+
+@h1: unit((40 / 16), em);
+@h2: unit((32 / 16), em);
+@h3: unit((24 / 16), em);
+@h4: unit((20 / 16), em);
+@h5: unit((18 / 16), em);
+@h6: unit((17 / 16), em);
+
+
+
+@h1LineHeight: 2.5;
+@h2LineHeight: 1.7;
+@h3LineHeight: 1.65;
+@h4LineHeight: 1.6;
+@h5LineHeight: 1.6;
+@h6LineHeight: 1.6;
+
+/*-------------------
+        Sizes
+--------------------*/
+
+/*
+  Sizes are all expressed in terms of 16px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+
+@miniSize: (11 / 16);
+@tinySize: (12 / 16);
+@smallSize: (13 / 16);
+@mediumSize: (14 / 16);
+@largeSize: (16 / 16);
+@bigSize: (17 / 16);
+@hugeSize: (20 / 16);
+@massiveSize: (24 / 16);
+
+/*-------------------
+        Page
+--------------------*/
+
+@lineHeight: 1.4em;
+@textColor: #777777;
+
+/*-------------------
+     Breakpoints
+--------------------*/
+@largeMonitorBreakpoint: 1330px;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@blue: #007DB9;
+@yellow: #efbd0b;
+@green: #5eb618;
+@orange: #f38c2d;
+@white: #ffffff;
+@silver: #c7d5d8;
+@grey: #979797;
+@black: #222;
+
+@darkBlue: #123156;
+@lightGrey: #CDCDCD;
+
+@ultraLightGrey: #f9f9f9;
+@ultraLightBlue: #F0F8FC;
+
+
+@linkColor: #0085c3;
+
+
+/*--- -------------------------------------------------------------------------------- ---*/
+/*--- --------------------------------Plone.org Variables-------------------------------- ---*/
+/*--- -------------------------------------------------------------------------------- ---*/
+
+@footerBordersColor: @lightGrey;
+@footerColumnsTextColor: #222;
+@footerLastColumnTextColor: #737373;
+@footerSmallTextColor: #000;
+@selectionBgColor: rgba(17, 14, 235, 0.53);
+@borderLightColor: @lightGrey;
+@borderColor: @lightGrey;
+
+
+/* TEXT CROP */
+.text-crop(@line-height: 1.3, @top-adjustment: 0px, @bottom-adjustment: 0px) {
+  /* Configured in Step 1 */
+  @top-crop: 9;
+  @bottom-crop: 0;
+  @crop-font-size: 36;
+  @crop-line-height: 1.2;
+
+  /* Apply values to calculate em-based margins that work with any font size */
+  @dynamic-top-crop: max(
+      (@top-crop + (@line-height - @crop-line-height) * (@crop-font-size / 2)),
+      0
+    ) / @crop-font-size;
+  @dynamic-bottom-crop: max(
+      (
+        @bottom-crop + (@line-height - @crop-line-height) *
+          (@crop-font-size / 2)
+      ),
+      0
+    ) / @crop-font-size;
+
+  /* Mixin output */
+  line-height: @line-height;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+  }
+
+  &::before {
+    margin-bottom: calc(unit(-@dynamic-top-crop, em) ~'+' @top-adjustment);
+  }
+
+  &::after {
+    margin-top: calc(unit(-@dynamic-bottom-crop, em) ~'+' @bottom-adjustment);
+  }
+}
+
+
+
+/* 
+ Mixin generated at: http://text-crop.eightshapes.com/?typeface-selection=google-font&typeface=Lato&custom-typeface-name=Helvetica&custom-typeface-url=&custom-typeface-weight=400&custom-typeface-style=normal&weight-and-style=100&size=36&line-height=1.2&top-crop=9&bottom-crop=6 
+
+Usage Examples
+  .my-level-1-heading-class {
+      .text-crop; // Will use default line height of 1.3
+      font-size: 48px;
+      margin: 0 0 0 16px;
+  }
+
+  .my-level-2-heading-class {
+      .text-crop; // Will use default line height of 1.3
+      font-size: 32px; // Don't need to change any settings, will work with any font size automatically
+      margin: 0 0 0 16px;
+  }
+
+  .my-body-copy-class {
+      .text-crop(@line-height: 2); // Larger line height desired, set the line height via the mixin
+      font-size: 16px;
+  }
+
+  // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output. 
+  // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings 
+  
+  .slight-adjustment-needed {
+      .text-crop(@top-adjustment: -0.5px, @bottom-adjustment: 2px);
+      font-size: 17px;
+  }
+
+  .dont-do-this {
+      .text-crop;
+      font-size: 16px;
+      line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
+  }
+*/

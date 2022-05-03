@@ -1,0 +1,127 @@
+/* Mixins for creating button colors other than the default blue */
+.site--button-colors(@color, @textColor) {
+  border-color: @color;
+  background-color: @color;
+  color: @textColor;
+
+  &:before {
+    background-color: @textColor;
+  }
+
+  &:hover,
+  &:focus {
+    color: @color;
+  }
+}
+
+.site--button-outline-colors(@color, @textColor) {
+  border-color: @color;
+  color: @color;
+  background-color: transparent;
+
+  &:before {
+    background-color: @color;
+  }
+
+  &:hover,
+  &:focus {
+    color: @textColor;
+  }
+}
+
+.ui.button.site--button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid @blue;
+  background-color: @blue;
+  color: @white;
+  text-decoration: none;
+
+  &:before {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: @white;
+    content: '';
+    transition: all 0.28s;
+  }
+
+  &:hover,
+  &:focus {
+    color: @blue;
+
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &.site--button-arrow {
+    display: inline-flex;
+    align-items: center;
+
+    .icon.arrow-icon {
+      margin: 0;
+      margin-right: -6px;
+      margin-left: 1.5em;
+    }
+  }
+
+  &.site--button-outline {
+    border-color: @blue;
+    background-color: #fff;
+    color: @blue;
+
+    &:before {
+      background-color: @blue;
+    }
+
+    &:hover,
+    &:focus {
+      color: @white;
+    }
+  }
+
+  &.site--button-white {
+    .site--button-colors(@white, @blue);
+  }
+
+  &.site--button-outline-white {
+    .site--button-outline-colors(@white, @blue);
+  }
+
+  &.site--button-yellow {
+    .site--button-colors(@yellow, @black);
+  }
+
+  &.site--button-outline-yellow {
+    .site--button-outline-colors(@yellow, @black);
+  }
+
+  &.site--button-orange {
+    .site--button-colors(@orange, @black);
+  }
+
+  &.site--button-outline-orange {
+    .site--button-outline-colors(@orange, @black);
+  }
+
+  &.site--button-green {
+    .site--button-colors(@green, @black);
+  }
+
+  &.site--button-outline-green {
+    .site--button-outline-colors(@green, @black);
+  }
+
+  &.site--button-grey {
+    .site--button-colors(@black, @white);
+  }
+
+  &.site--button-outline-grey {
+    .site--button-outline-colors(@black, @white);
+  }
+}

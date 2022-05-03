@@ -1,0 +1,16 @@
+.listing.news-card-template {
+  &.site--preset-header-align-left,
+  &.site--preset-header-align-center {
+    .site--listing-header {
+      h2.site--listing-header-title {
+        &::after {
+          content: '' !important;
+        }
+
+        &.hide-decoration::after {
+          content: none !important;
+        }
+      }
+    }
+  }
+}

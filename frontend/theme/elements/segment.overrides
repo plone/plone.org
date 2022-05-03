@@ -1,0 +1,34 @@
+.ui.basic.segment.content-area {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+// general font size
+.ui.segments .segment,
+.ui.segment {
+  font-size: 1rem;
+
+  // Tablet
+  @media (max-width: @largestTabletScreen) {
+    font-size:1rem;
+  }
+}
+
+// fields in sidebar form
+.ui.segments .ui.form input {
+  font-size: 0.77777778rem;
+}
+
+.ui.form .react-select-container {
+  font-size: 0.77777778rem;
+}
+
+.ui.segments .ui.segment .inline.field.textarea textarea {
+  border-color: @silver;
+  border-radius: 0.22222222rem;
+  font-weight: 300;
+}
+
+.ui.segment .ui.checkbox input[type='checkbox']:focus ~ label {
+  color: @textColor;
+}

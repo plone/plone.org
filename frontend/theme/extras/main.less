@@ -1,0 +1,99 @@
+.documentFirstHeading {
+  position: relative;
+  border-bottom: none;
+
+  &::before {
+    content: none;
+  }
+}
+@media (max-width: @largestTabletScreen) {
+  h1.documentFirstHeading {
+    &,
+    &:first-child {
+      margin-top: 1rem;
+    }
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+.content-area {
+  font-weight: @fontLight; //di base il font nella pagina è light
+  .ui.input input {
+    font-weight: @fontLight;
+  }
+}
+
+.ui.basic.segment.content-area {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+::-moz-selection {
+  background-color: @selectionBgColor;
+  border-image: none;
+  color: white;
+}
+
+::selection {
+  background-color: @selectionBgColor;
+  border-image: none;
+  color: white;
+}
+
+//align
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.block.text {
+  line-height: 1.555;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+#main #view {
+  ul:not(.draftJsToolbarDropdown-optionswrapper) {
+    li:not(.DayPicker_weekHeader_li) {
+      position: relative;
+      list-style-type: none;
+
+      &:before {
+        position: absolute;
+        top: -1px;
+        left: -1.2rem;
+        color: @primaryColor;
+        content: '\25a0';
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.grey-bg {
+  background-color: @ultraLightGrey;
+}
+
+fieldset {
+  min-inline-size: auto;
+}

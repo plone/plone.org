@@ -1,4 +1,4 @@
-FROM node:14-slim as base
+FROM node:16-slim as base
 FROM base as builder
 
 # Create app directory
@@ -9,16 +9,10 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends $buildDeps\
     && rm -rf /var/lib/apt/lists/*
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package.json yarn.lock  ./
-RUN yarn install --prod
-
 # Bundle app source
 COPY . .
 
-RUN yarn build
+RUN yarn install && yarn build
 
 FROM base
 

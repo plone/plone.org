@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-text1">
+      <rect width="36" height="36"/>
+    </clipPath>
+  </defs>
+  <g id="text1" clip-path="url(#clip-text1)">
+    <g id="text1-2" data-name="text1">
+      <g id="Raggruppa_2" data-name="Raggruppa 2" transform="translate(-54 -38.191)">
+        <path id="text" d="M15.022,5H9V7.409h1.2V6.2h3.613v9.52h-1.2v1.2h3.613v-1.2h-1.2V6.2h3.613v1.2h1.2V5Z" transform="translate(45 38.191)" fill-rule="evenodd"/>
+      </g>
+      <g id="align-justify" transform="translate(12)">
+        <path id="Tracciato_5" data-name="Tracciato 5" d="M3,7H24V5H3Z" fill-rule="evenodd"/>
+        <path id="Tracciato_6" data-name="Tracciato 6" d="M3,15H24V13H3Z" fill-rule="evenodd"/>
+        <path id="Tracciato_7" data-name="Tracciato 7" d="M3,23H24V21H3Z" fill-rule="evenodd"/>
+        <path id="Tracciato_8" data-name="Tracciato 8" d="M3,31H24V29H3Z" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -97,9 +97,15 @@ format:  ## Format codebase
 	$(MAKE) -C "./backend/" format
 	$(MAKE) -C "./frontend/" format
 
+# Docker
 
 .PHONY: build-images
 build-images:  ## Build docker images
 	@echo "Build"
 	$(MAKE) -C "./backend/" build-image
 	$(MAKE) -C "./frontend/" build-image
+
+.PHONY: run-docker-local
+run-docker-local:  build-images ## Run local docker images
+	@echo "$(GREEN)==> Start containers$(RESET)"
+	@docker-compose -f dockerfiles/local.yml up -d

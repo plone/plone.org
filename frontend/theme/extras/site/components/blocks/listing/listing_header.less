@@ -1,0 +1,26 @@
+.block.listing {
+  .site--listing-header {
+    margin: 1.5rem 0;
+    text-align: center;
+
+    h2.site--listing-header-title {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 2rem;
+      color: @headerColor!important;
+    }
+
+    .site--listing-header-description {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .site--preset-wrapper.site--preset-header-align-left {
+    .site--listing-header h2.site--listing-header-title {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}

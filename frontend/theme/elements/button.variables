@@ -1,0 +1,8 @@
+@fontWeight: @normal;
+@fontSize: 0.82rem;
+@fontFamily:@headerFontName;
+@textTransform: unset;
+@verticalPadding: 0.3em;
+
+@borderRadius: 5px;
+@invertedBorderSize: 1px;
