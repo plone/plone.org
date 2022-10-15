@@ -134,3 +134,27 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - release
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy to beta.plone.org
+        uses: kitconcept/docker-stack-deploy@v1.0.0
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_private_key: ${{ secrets.DEPLOY_SSH }}
+          stack_file: "devops/stacks/beta.plone.org.yml"
+          stack_name: "plone"
+          deploy_timeout: 480
