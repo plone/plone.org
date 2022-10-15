@@ -24,7 +24,7 @@ const SimpleCardListing = (props) => {
     have_image = true,
     have_cta = true,
     card_link_title,
-    title_align = 'center',
+    // title_align = 'center',
     cols = 3,
   } = props;
   const intl = useIntl();

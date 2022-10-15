@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import { isEqual } from 'lodash';
-import { Input, Grid, TextArea } from 'semantic-ui-react';
+import { Grid, TextArea } from 'semantic-ui-react';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink, SidebarPortal } from '@plone/volto/components';

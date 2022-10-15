@@ -37,6 +37,7 @@ const Edit = (props) => {
         ],
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [block]);
 
   const focusField = (field) => {

@@ -18,6 +18,7 @@ const Edit = (props) => {
         numbers: [{}, {}, {}],
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [block]);
 
   if (__SERVER__) {

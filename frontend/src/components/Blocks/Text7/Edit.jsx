@@ -3,18 +3,12 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { defineMessages } from 'react-intl';
 import { isEqual } from 'lodash';
-import {
-  Input,
-  Button as SButton,
-  Message,
-  Grid,
-  Image,
-} from 'semantic-ui-react';
+import { Input, Button, Message, Grid, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { SidebarPortal, Icon, UniversalLink } from '@plone/volto/components';
 import clearSVG from '@plone/volto/icons/clear.svg';
 
-import { PresetWrapper, ShareButtons, Button } from '@package/components';
+import { PresetWrapper, ShareButtons } from '@package/components';
 import { ImageWidget, TextEditorWidget } from '@package/components/Widgets';
 import Sidebar from './Sidebar';
 
@@ -90,8 +84,8 @@ const Edit = (props) => {
           >
             {props.selected && props.editable && !!props.data.url && (
               <div className="toolbar">
-                <SButton.Group>
-                  <SButton
+                <Button.Group>
+                  <Button
                     icon
                     basic
                     onClick={() =>
@@ -102,8 +96,8 @@ const Edit = (props) => {
                     }
                   >
                     <Icon name={clearSVG} size="24px" color="#e40166" />
-                  </SButton>
-                </SButton.Group>
+                  </Button>
+                </Button.Group>
               </div>
             )}
             <Grid.Column
@@ -182,7 +176,7 @@ const Edit = (props) => {
                 </div>
                 {data.has_cta && (
                   <div className="buttonBottom">
-                    <SButton
+                    <Button
                       as={UniversalLink}
                       size="large"
                       href={
@@ -196,7 +190,7 @@ const Edit = (props) => {
                     >
                       {data.cta_title ||
                         intl.formatMessage(messages.cta_title_default)}
-                    </SButton>
+                    </Button>
                   </div>
                 )}
               </div>

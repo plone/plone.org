@@ -26,6 +26,7 @@ const Sidebar = (props) => {
     if (!data || !data.numbers) {
       onChangeBlock(block, { ...data, numbers: [] });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

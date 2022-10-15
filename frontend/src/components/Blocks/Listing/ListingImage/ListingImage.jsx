@@ -25,7 +25,7 @@ const ListingImage = (props) => {
   return image ? (
     <img
       src={image}
-      alt={item?.['title']}
+      alt={item?.['title'] ?? ''}
       loading="lazy"
       {...attrs}
       key={image}
@@ -33,7 +33,7 @@ const ListingImage = (props) => {
   ) : show_default ? (
     <img
       src={DefaultImageSVG}
-      alt={item?.['title']}
+      alt={item?.['title'] ?? ''}
       loading="lazy"
       {...attrs}
     />

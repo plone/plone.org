@@ -3,10 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, Container, Segment } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { getBreadcrumbs } from '@plone/volto/actions';
-import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
+import { useSelector } from 'react-redux';
 
 const messages = defineMessages({
   home: {
@@ -28,8 +25,8 @@ const Body = (props) => {
 
   const [items, setItems] = useState([]);
 
-  /*The request to get breadcrumns is in src/customizations/volto/components/theme/Breadcrumbs.jsx 
-  because that request is also needed for the folderContents. 
+  /*The request to get breadcrumns is in src/customizations/volto/components/theme/Breadcrumbs.jsx
+  because that request is also needed for the folderContents.
   This component only takes care of showing them.*/
 
   useEffect(() => {
@@ -50,6 +47,7 @@ const Body = (props) => {
       newItems[newItems.length - 1].title = properties.title;
       setItems([...newItems]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [properties.title, brdcitems]);
 
   return (

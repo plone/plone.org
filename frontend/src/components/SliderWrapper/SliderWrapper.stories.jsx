@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
-import { ComponentStory } from '@storybook/react';
 import SliderWrapper from './SliderWrapper';
 
 const slides = [

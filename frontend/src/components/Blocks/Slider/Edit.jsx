@@ -42,13 +42,14 @@ const Edit = (props) => {
         ],
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const focusField = (field) => {
     setFocusOn(field);
 
     if (!props.selected) {
-      props.onSelectBlock(block);
+      props.onSelectBlock(props.block);
     }
   };
 

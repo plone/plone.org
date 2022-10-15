@@ -42,7 +42,7 @@ const GalleryBody = ({ images }) => {
         <div className="slick-dot-image">
           <img
             src={`${flattenToAppURL(pictures[i]?.image)}/@@images/image/mini`}
-            alt={pictures[i]?.image[0]?.title}
+            alt={pictures[i]?.image[0]?.title ?? ''}
           />
         </div>
       );

@@ -33,6 +33,7 @@ const Edit = (props) => {
         columns: [{ '@id': uuid() }, { '@id': uuid() }, { '@id': uuid() }],
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [block]);
 
   const focusField = (field) => {

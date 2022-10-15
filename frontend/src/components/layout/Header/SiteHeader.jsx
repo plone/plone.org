@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 //import { useSelector } from 'react-redux';
 import { Container, Segment } from 'semantic-ui-react';
@@ -16,15 +16,11 @@ import HeaderSearch from './HeaderSearch';
 const SiteHeader = ({ pathname }) => {
   //const token = useSelector((state) => state.userSession.token);
   const [sticky, setSticky] = useState(false);
-  const [width, setWidth] = useState(0);
-  const headerRef = createRef();
   const handleSticky = () => {
-    console.log(window.scrollY);
     setSticky(window.scrollY > 64);
   };
 
   useEffect(() => {
-    setWidth(headerRef.current.clientWidth);
     window.addEventListener('scroll', handleSticky, false);
     return () => {
       window.removeEventListener('scroll', handleSticky, false);
@@ -37,7 +33,6 @@ const SiteHeader = ({ pathname }) => {
       className={cx('header-wrapper', {
         'padding-bottom': sticky,
       })}
-      ref={headerRef}
     >
       <div className={sticky ? 'ui fixed top sticky' : null}>
         <Segment basic className="header-wrapper" role="banner">
