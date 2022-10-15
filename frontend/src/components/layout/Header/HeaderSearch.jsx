@@ -60,7 +60,7 @@ const HeaderSearch = () => {
         onClick={() => setViewSearch(!viewSearch)}
         className="search-form-open"
       >
-        <FontAwesomeIcon icon={['far', 'search']} />
+        <FontAwesomeIcon icon={['fas', 'search']} />
       </button>
       <div
         className={cx('search-form-wrapper', {
