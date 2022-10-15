@@ -1,0 +1,6 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+  <utility
+      name="ploneorg.vocabulary.countries"
+      component=".countries.countries_vocabulary"
+      />
+</configure>

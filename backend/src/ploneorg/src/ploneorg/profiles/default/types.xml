@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object meta_type="Plone Types Tool"
+        name="portal_types"
+>
+<object meta_type="Dexterity FTI"
+name="FoundationMember"
+/>
+<object meta_type="Dexterity FTI"
+name="plonerelease"
+/>
+<object meta_type="Dexterity FTI"
+name="FoundationSponsor"
+/>
+</object>

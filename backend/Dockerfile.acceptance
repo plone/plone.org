@@ -1,0 +1,22 @@
+ARG PLONE_VERSION=6.0.0b3
+FROM plone/plone-backend:${PLONE_VERSION}
+
+LABEL maintainer="Plone Foundation <marketing@plone.org>" \
+      org.label-schema.name="plone.org-acceptance" \
+      org.label-schema.description="Plone.org Site backend acceptance image." \
+      org.label-schema.vendor="Plone Foundation"
+
+ENV ZSERVER_HOST=0.0.0.0
+ENV ZSERVER_PORT=55001
+ENV CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,ploneorg"
+ENV APPLY_PROFILES="ploneorg:default"
+RUN ./bin/pip install "plone.app.robotframework==2.0.0a6" "plone.app.testing[robot]==7.0.0a3"
+
+# Add local code
+COPY . .
+
+# Install local requirements and fix permissions
+RUN ./bin/pip install -r requirements.txt \
+    && chown -R plone: /app
+
+CMD ["./bin/robot-server",  "plone.app.robotframework.testing.VOLTO_ROBOT_TESTING"]

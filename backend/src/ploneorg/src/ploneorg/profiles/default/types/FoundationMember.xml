@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="FoundationMember"
+        i18n:domain="ploneorg"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Foundation Member</property>
+  <property name="description"
+            i18n:translate=""
+  >A member of the Plone Foundation.</property>
+
+  <property name="allow_discussion">False</property>
+  <property name="default_view">view</property>
+  <property name="view_methods">
+    <element value="view" />
+  </property>
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">FoundationMember</property>
+  <property name="icon_expr" />
+  <property name="link_target" />
+
+  <!-- Hierarchy control -->
+  <property name="global_allow">True</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types" />
+  <!-- Schema, class and security -->
+  <property name="add_permission">ploneorg.AddFoundationMember</property>
+  <property name="klass">ploneorg.content.member.FoundationMember</property>
+  <property name="schema">ploneorg.content.member.IFoundationMember</property>
+  <property name="model_source" />
+  <property name="model_file" />
+  <property name="schema_policy">dexterity</property>
+</object>

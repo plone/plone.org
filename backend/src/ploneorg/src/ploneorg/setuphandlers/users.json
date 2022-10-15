@@ -1,0 +1,19 @@
+{
+  "portal": [
+    {
+      "email": "marketing@plone.org",
+      "properties": {
+        "fullname": "Plone.org Site",
+        "location": "World"
+      },
+      "groups": [
+      ],
+      "roles": [
+        "Member"
+      ],
+      "username": "plone.org"
+    }
+  ],
+    "team": [
+  ]
+}

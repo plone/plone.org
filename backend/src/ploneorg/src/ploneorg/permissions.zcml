@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="ploneorg"
+    >
+
+    <configure zcml:condition="installed AccessControl.security">
+      <permission
+          id="ploneorg.AddFoundationMember"
+          title="ploneorg: Add Foundation Member"
+          />
+      <permission
+          id="ploneorg.ViewFoundationMemberDetails"
+          title="ploneorg: View Foundation Member Details"
+          />
+      <permission
+          id="ploneorg.foundationsponsor.add"
+          title="ploneorg: Add Foundation Sponsor"
+          />
+      <permission
+          id="ploneorg.plonerelease.add"
+          title="Add Plone Release"
+          />
+    </configure>
+
+</configure>

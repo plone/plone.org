@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <version>20221014001</version>
+  <dependencies>
+    <dependency>profile-plone.volto:default</dependency>
+    <dependency>profile-plone.app.vulnerabilities:default</dependency>
+    <dependency>profile-pas.plugins.authomatic:default</dependency>
+  </dependencies>
+</metadata>
