@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2022-10-15 08:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,159 @@ msgstr ""
 "Language-Name: Portugu&es do Brasil\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: ploneorg/profiles/default/types/FoundationMember.xml
+msgid "A member of the Plone Foundation."
+msgstr ""
+
+#: ploneorg/content/member.py:16
+msgid "About you"
+msgstr ""
+
+#: ploneorg/content/member.py:51
+msgid "Address"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:53
+msgid "Changelog"
+msgstr ""
+
+#: ploneorg/content/member.py:52
+msgid "City"
+msgstr ""
+
+#: ploneorg/content/member.py:26
+msgid "Contact Information"
+msgstr ""
+
+#: ploneorg/content/member.py:67
+msgid "Contributions"
+msgstr ""
+
+#: ploneorg/content/member.py:59
+msgid "Country"
+msgstr ""
+
+#: ploneorg/content/member.py:68
+msgid "Describe your contributions to the Plone community."
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:21
+msgid "Description"
+msgstr ""
+
+#: ploneorg/content/member.py:46
+msgid "Email address"
+msgstr ""
+
+#: ploneorg/content/foundationsponsor.py:132
+msgid "Enter a http:// or https:// web address"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:26
+msgid "File size"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:67
+msgid "Files"
+msgstr ""
+
+#: ploneorg/profiles/default/types/FoundationMember.xml
+msgid "Foundation Member"
+msgstr ""
+
+#: ploneorg/content/member.py:73
+msgid "Github username"
+msgstr ""
+
+#: ploneorg/profiles.zcml:22
+msgid "Initial content for our website."
+msgstr ""
+
+#: ploneorg/content/member.py:79
+msgid "Linkedin profile"
+msgstr ""
+
+#: ploneorg/content/foundationsponsor.py:108
+msgid "Logo"
+msgstr ""
+
+#: ploneorg/content/member.py:43
+msgid "Name"
+msgstr ""
+
+#: ploneorg/content/foundationsponsor.py:121
+msgid "Number of people in your organization. It's fine to estimate."
+msgstr ""
+
+#: ploneorg/content/foundationsponsor.py:120
+msgid "Organization size"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:23
+msgid "Platform"
+msgstr ""
+
+#: ploneorg/profiles.zcml:22
+msgid "Plone.org Site: Initial content"
+msgstr ""
+
+#: ploneorg/profiles.zcml:13
+msgid "Plone.org Site: Install"
+msgstr ""
+
+#: ploneorg/profiles.zcml:30
+msgid "Plone.org Site: Uninstall"
+msgstr ""
+
+#: ploneorg/profiles.zcml:13
+msgid "Policy package to install our site"
+msgstr ""
+
+#: ploneorg/content/member.py:56
+msgid "Postal code"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:38
+msgid "Release date"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:41
+msgid "Release notes"
+msgstr ""
+
+#: ploneorg/content/member.py:38
+msgid "Social Networds"
+msgstr ""
+
+#: ploneorg/content/member.py:53
+msgid "State"
+msgstr ""
+
+#: ploneorg/content/member.py:76
+msgid "Twitter username"
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:25
+msgid "URL"
+msgstr ""
+
+#: ploneorg/profiles.zcml:30
+msgid "Uninstall Plone.org Site setup."
+msgstr ""
+
+#: ploneorg/content/plonerelease.py:32
+msgid "Version"
+msgstr ""
+
+#: ploneorg/content/foundationsponsor.py:218
+msgid "What is your connection to Plone? How is Plone used by your organization?"
+msgstr ""
+
+#: ploneorg/content/member.py:81
+msgid "i.e.: https://www.linkedin.com/in/plone/"
+msgstr ""
+
+#: ploneorg/content/member.py:74
+msgid "i.e.: plone"
+msgstr ""
