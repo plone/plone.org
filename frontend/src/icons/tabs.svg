@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-tabs);
+      }
+    </style>
+    <clipPath id="clip-tabs">
+      <rect width="36" height="36"/>
+    </clipPath>
+  </defs>
+  <g id="tabs" class="cls-1">
+    <path id="tabs-2" data-name="tabs" d="M31.5,8.31V2H0V29H36V8.31Zm-9-4.06h6.75V8.31H22.5Zm-9,0h6.75V8.31H13.5Zm20.25,22.5H2.25V4.25h9v6.31h22.5Z" transform="translate(0 3)"/>
+  </g>
+</svg>

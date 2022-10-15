@@ -1379,6 +1379,11 @@
     "@babel/runtime" "^7.10.4"
     react-is "^16.6.3"
 
+"@fontsource/assistant@4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/assistant/-/assistant-4.5.11.tgz#26c6d832c9d79c930de00d0fde594230b5390393"
+  integrity sha512-PU6R0835c+ywtNERnJtm6ipHZzb4rEIv9EiQKe1H+GPmadYKv+/ZxhRjN7VKzlgwc7DrxD8rSMr6FN6nOky0qg==
+
 "@formatjs/intl-listformat@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-listformat/-/intl-listformat-1.3.0.tgz#822b7393f753fb1eab023a75351f63da3cb232b7"
@@ -1422,6 +1427,39 @@
   resolved "https://registry.yarnpkg.com/@formatjs/macro/-/macro-0.2.6.tgz#eb173658d803416a43210778b2f5c04c5a240bb6"
   integrity sha512-DfdnLJf8+PwLHzJECZ1Xfa8+sI9akQnUuLN2UdkaExTQmlY0Vs36rMzEP0JoVDBMk+KdQbJNt72rPeZkBNcKWg==
 
+"@fortawesome/fontawesome-common-types@^0.2.36":
+  version "0.2.36"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
+  integrity sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==
+
+"@fortawesome/fontawesome-svg-core@1.2.36":
+  version "1.2.36"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.36.tgz#4f2ea6f778298e0c47c6524ce2e7fd58eb6930e3"
+  integrity sha512-YUcsLQKYb6DmaJjIHdDWpBIGCcyE/W+p/LMGvjQem55Mm2XWVAP5kWTMKWLv9lwpCVjpLxPyOMOyUocP1GxrtA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
+"@fortawesome/free-regular-svg-icons@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.15.4.tgz#b97edab436954333bbeac09cfc40c6a951081a02"
+  integrity sha512-9VNNnU3CXHy9XednJ3wzQp6SwNwT3XaM26oS4Rp391GsxVYA+0oDR2J194YCIWf7jNRCYKjUCOduxdceLrx+xw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
+"@fortawesome/free-solid-svg-icons@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.4.tgz#2a68f3fc3ddda12e52645654142b9e4e8fbb6cc5"
+  integrity sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
+"@fortawesome/react-fontawesome@0.1.15":
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.15.tgz#1450b838f905981d721bf07e14e3b52c0e9a91ed"
+  integrity sha512-/HFHdcoLESxxMkqZAcZ6RXDJ69pVApwdwRos/B2kiMWxDSAX2dFK8Er2/+rG+RsrzWB/dsAyjefLmemgmfE18g==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
@@ -1433,6 +1471,11 @@
   integrity sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==
   dependencies:
     "@hapi/hoek" "^9.0.0"
+
+"@hcaptcha/react-hcaptcha@^0.3.6":
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@hcaptcha/react-hcaptcha/-/react-hcaptcha-0.3.10.tgz#42d0562dcc579c4034724b6b6da8677a0bb36148"
+  integrity sha512-lpxQGKFFPf5fzieY6Z1Hik5zGvXu6GGUnZdmjeGWB+OjzY2ucTPxfN3biPCfy18Od6YKdkkSUZUyteVLdUbigA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -1817,7 +1860,7 @@
   resolved "https://registry.yarnpkg.com/@plone-collective/volto-authomatic/-/volto-authomatic-1.2.0.tgz#032730d3f96dbcd2a23f9bcd8b7f8f0b9a8dadf0"
   integrity sha512-Q8O3t3ABmQ3OLSq542CGEwWbhQTPKgV/XGtN9r5pzgXkLDp9KbyTY//TD+JX1+q/csXvKG4JUWtcdU7cS21f+w==
 
-"@plone/scripts@*", "@plone/scripts@2.1.1":
+"@plone/scripts@*", "@plone/scripts@2.1.1", "@plone/scripts@^1.0.3", "@plone/scripts@^2.0.0":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-2.1.1.tgz#ba27c42e7d7eda5e6ba5e19050142d2321715a2e"
   integrity sha512-Y55H4qS9otguIBM7Iy58hPKzdQBkXuPtIv7snFMdd3zkACxddVQNORnpzoDVxr11bMH7Wjb76rqcFTD8oZnMGA==
@@ -7573,6 +7616,11 @@ file-loader@^6.2.0:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
+file-saver@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.5.tgz#d61cfe2ce059f414d899e9dd6d4107ee25670c38"
+  integrity sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==
+
 file-selector@^0.1.12:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/file-selector/-/file-selector-0.1.13.tgz#5efd977ca2bca1700992df1b10e254f4e73d2df4"
@@ -13268,7 +13316,7 @@ react-dev-utils@^11.0.3, react-dev-utils@^11.0.4:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dnd-html5-backend@5.0.1:
+react-dnd-html5-backend@5.0.1, react-dnd-html5-backend@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-dnd-html5-backend/-/react-dnd-html5-backend-5.0.1.tgz#0b578d79c5c01317c70414c8d717f632b919d4f1"
   integrity sha1-C1eNecXAExfHBBTI1xf2MrkZ1PE=
@@ -13278,7 +13326,7 @@ react-dnd-html5-backend@5.0.1:
     lodash "^4.17.10"
     shallowequal "^1.0.2"
 
-react-dnd@5.0.0:
+react-dnd@5.0.0, react-dnd@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-dnd/-/react-dnd-5.0.0.tgz#c4a17c70109e456dad8906be838e6ee8f32b06b5"
   integrity sha1-xKF8cBCeRW2tiQa+g45u6PMrBrU=
@@ -13357,6 +13405,13 @@ react-fast-compare@^3.0.1, react-fast-compare@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
+react-google-recaptcha-v3@^1.8.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/react-google-recaptcha-v3/-/react-google-recaptcha-v3-1.10.0.tgz#1ec46825fe9b857d7f4ef08ee89fea05e629a9f9"
+  integrity sha512-JBoqU107X8klQmS8tQSbQh1IMsT1fH3kVoArIqnia0rtn0rPNG9Ld+9rD/dHJMculIczSZpGvIJTXXwtsolMcg==
+  dependencies:
+    hoist-non-react-statics "^3.3.2"
 
 react-helmet-async@^1.0.7:
   version "1.0.9"
@@ -13453,7 +13508,7 @@ react-moment-proptypes@^1.6.0:
   dependencies:
     moment ">=1.6.0"
 
-react-outside-click-handler@^1.2.4:
+react-outside-click-handler@1.3.0, react-outside-click-handler@^1.2.4:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-outside-click-handler/-/react-outside-click-handler-1.3.0.tgz#3831d541ac059deecd38ec5423f81e80ad60e115"
   integrity sha512-Te/7zFU0oHpAnctl//pP3hEAeobfeHMyygHB8MnjP6sX5OR8KHT1G3jmLsV3U9RnIYo+Yn+peJYWu+D5tUS8qQ==
@@ -13606,6 +13661,17 @@ react-sizeme@^3.0.1:
     invariant "^2.2.4"
     shallowequal "^1.1.0"
     throttle-debounce "^3.0.1"
+
+react-slick@0.28.1:
+  version "0.28.1"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.28.1.tgz#12c18d991b59432df9c3757ba540a227b3fb85b9"
+  integrity sha512-JwRQXoWGJRbUTE7eZI1rGIHaXX/4YuwX6gn7ulfvUZ4vFDVQAA25HcsHSYaUiRCduTr6rskyIuyPMpuG6bbluw==
+  dependencies:
+    classnames "^2.2.5"
+    enquire.js "^2.1.6"
+    json2mq "^0.2.0"
+    lodash.debounce "^4.0.8"
+    resize-observer-polyfill "^1.5.0"
 
 react-slick@0.29.0:
   version "0.29.0"
@@ -16496,6 +16562,51 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+volto-dropdownmenu@2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/volto-dropdownmenu/-/volto-dropdownmenu-2.4.1.tgz#b68e2609ea17084449ad3c779c8d82480ef5c1d0"
+  integrity sha512-qxR6Gx3Siv/tkePcprsClJpoFPXWjWW+l0PKncLslu6yix2TRDpIX3zwN7lveLcVdzUBJdekwp6Bf0cBYBTaEg==
+  dependencies:
+    "@plone/scripts" "*"
+    react-outside-click-handler "1.3.0"
+
+volto-form-block@2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/volto-form-block/-/volto-form-block-2.2.3.tgz#1a5351416cd27ed5749e48891e91605458ef5b79"
+  integrity sha512-j49f/GITnfIYYeIk06takIqBpdn4haqSJ4EQrOx6qn+6OXXhRrKzbS4CFsalHHsaRD9jnEVLtGhbl+qpY7XEoQ==
+  dependencies:
+    "@hcaptcha/react-hcaptcha" "^0.3.6"
+    "@plone/scripts" "^1.0.3"
+    file-saver "^2.0.5"
+    react-google-recaptcha-v3 "^1.8.0"
+    volto-subblocks collective/volto-subblocks#v1.0.1
+
+volto-gdpr-privacy@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/volto-gdpr-privacy/-/volto-gdpr-privacy-1.3.1.tgz#a5d85cfa5c8c3903212aad9972ea9922b38197f2"
+  integrity sha512-OSucaPVn0OvpOU7iov/sM9nTvqiMtqCEWdMeSDpRDZ5ADi2EOER6voZ0ylbJkLj4maitJZg03FkpSX7aFyEliw==
+
+volto-secondarymenu@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/volto-secondarymenu/-/volto-secondarymenu-2.2.0.tgz#3e50dce95970233f4ffdb228cc0c22a16290cafd"
+  integrity sha512-vPLU4+KnQs+uzNGhW3kdZKJTOLjrWGUDCQrCUAtFeoxuRs6dzI9AXLz6ATKyesyqO1gWK04i89dxlgVfRK0y8w==
+  dependencies:
+    "@plone/scripts" "*"
+
+volto-social-settings@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/volto-social-settings/-/volto-social-settings-2.2.0.tgz#5d89f2f57b24a44c40b5c815d680e164f4a2dd81"
+  integrity sha512-MzvqCjOF891iLE5+ALApj9NnXaz9gt9Hmh6f1AQdq38PljQ6LVnRjhWI5y+1p5Ir6ZBtfCSEaihjZ+BPJhQ+FA==
+  dependencies:
+    "@plone/scripts" "^1.0.3"
+
+volto-subblocks@collective/volto-subblocks#v1.0.1:
+  version "1.0.1"
+  resolved "https://codeload.github.com/collective/volto-subblocks/tar.gz/d565956e04521e46a186cbf8967d2c8883672e21"
+  dependencies:
+    react-dnd "^5.0.0"
+    react-dnd-html5-backend "^5.0.1"
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"

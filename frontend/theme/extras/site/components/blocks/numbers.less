@@ -1,0 +1,328 @@
+body,
+body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
+  .block-numbers {
+    .block-numbers-wrapper {
+      background-color: @primaryColor;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: @white;
+      text-align: center;
+
+      .numbers-wrapper {
+        display: flex;
+        align-items: baseline;
+        padding: 4em 1em;
+
+        .number-block {
+          flex: 1 1 33.33%;
+          padding: 1em;
+
+          .public-DraftEditorPlaceholder-root {
+            width: 100%;
+          }
+
+          .ui.input {
+            font-size: 1em;
+          }
+
+          .ui.input input,
+          .DraftEditor-root,
+          .DraftEditor-editorContainer,
+          .public-DraftStyleDefault-block {
+            text-align: center;
+
+            &::selection,
+            ::selection {
+              background-color: @selectionBgColor;
+              color: @white;
+            }
+          }
+
+          .number-title,
+          .number-content .number {
+            &,
+            input {
+              color: @white;
+              font-family: @headerFontName;
+              font-weight: @headerFontWeight;
+            }
+          }
+
+          .number-title {
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 1.335rem;
+
+            &:after {
+              position: absolute;
+              bottom: -0.75rem;
+              left: calc(50%);
+              display: block;
+              width: 4rem;
+              height: 0.23rem;
+              background-color: @white;
+              content: '';
+              transform: translateX(-50%);
+            }
+          }
+
+          .number-content {
+            .number {
+              font-size: 6rem;
+              line-height: 1.2em;
+
+              .icon {
+                margin-left: 0.5rem;
+                font-size: 3rem;
+                vertical-align: middle;
+
+                img {
+                  max-width: 47px;
+                  max-height: 3rem;
+                }
+              }
+            }
+          }
+
+          .number-text {
+            font-size: 1.15rem;
+            font-weight: @fontLight;
+            line-height: 1.2em;
+          }
+        }
+      }
+
+      ///-------with backgorund image-----
+      &.has-background {
+        position: relative;
+        background-color: #ccc;
+
+        .background {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+        }
+
+        .ui.container {
+          padding-top: 3.5rem;
+          padding-bottom: 3.5rem;
+        }
+
+        .numbers-wrapper {
+          position: relative;
+          width: 65%;
+          flex-direction: column;
+          margin-left: 35%;
+          background-color: fade(@primaryColor, 90%);
+          text-align: left;
+
+          &:before {
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            width: 3rem;
+            height: 3rem;
+            border-top: 0.5rem solid @white;
+            border-left: 0.5rem solid @white;
+            content: '';
+          }
+
+          .ui.input input,
+          .DraftEditor-root,
+          .DraftEditor-editorContainer,
+          .public-DraftStyleDefault-block {
+            text-align: left;
+          }
+
+          .number-block {
+            width: 100%;
+            padding-right: 2rem;
+            padding-left: 2rem;
+
+            .number-title {
+              margin-bottom: 1rem;
+              margin-left: 0.5rem;
+
+              &:after {
+                left: 0;
+                transform: translateX(0);
+              }
+            }
+
+            .number-content {
+              display: flex;
+              align-items: center;
+
+              .number {
+                flex: 1 1 60%;
+              }
+
+              .number-text {
+                flex: 1 1 40%;
+              }
+            }
+
+            & + .number-block {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+
+      ///----- VARIAZIONI------
+      &.variation-white,
+      &.variation-light-grey {
+        background-color: #fff;
+
+        .numbers-wrapper {
+          background-color: fade(#fff, 90%);
+          color: @textColor;
+
+          &:before {
+            border-color: @primaryColor;
+          }
+
+          .number-title {
+            &,
+            input {
+              color: @primaryColor;
+            }
+
+            &:after {
+              background-color: @primaryColor;
+            }
+          }
+
+          .number-content .number {
+            &,
+            input {
+              color: @textColor;
+            }
+          }
+        }
+      }
+
+      &.variation-light-grey {
+        .grey-bg;
+
+        .numbers-wrapper {
+          background-color: fade(@ultraLightGrey, 90%);
+        }
+      }
+
+      &.variation-blue {
+        ul li::before,
+        .public-DraftStyleDefault-ul li::marker {
+          color: #fff !important;
+        }
+      }
+    }
+
+    @media (max-width: @largestTabletScreen) {
+      .numbers-wrapper {
+        flex-wrap: wrap;
+
+        .number-block + .number-block {
+          padding-top: 3rem;
+        }
+      }
+
+      .block-numbers-wrapper.has-background {
+        .background {
+          position: unset;
+          height: 300px;
+        }
+
+        .ui.container {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+
+        .numbers-wrapper {
+          width: 100%;
+          margin-left: 0;
+
+          &:before {
+            width: 4rem;
+            height: 4rem;
+          }
+
+          .number-block {
+            .number-content {
+              flex-direction: column;
+              align-items: unset;
+
+              .number {
+                font-size: 4.5rem;
+
+                .icon {
+                  font-size: 2rem;
+
+                  img {
+                    max-height: 2rem;
+                  }
+                }
+              }
+            }
+
+            & + .number-block {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: @largestMobileScreen) {
+      .block-numbers-wrapper.has-background {
+        .background {
+          height: 200px;
+        }
+
+        .ui.container {
+          margin: 0 !important;
+
+          .numbers-wrapper {
+            padding: 2em 0;
+          }
+        }
+      }
+
+      .numbers-wrapper {
+        .number-block + .number-block {
+          padding-top: 2rem;
+        }
+
+        .number-block {
+          .number-title {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+          }
+
+          .number-content {
+            .number {
+              font-size: 4.15rem;
+            }
+          }
+
+          .number-text {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.block.numbers {
+  .delete-button {
+    .button-block-action();
+  }
+}
+
+.block-editor-numbers {
+  .drag.handle.wrapper {
+    .button-block-action();
+  }
+}

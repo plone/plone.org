@@ -1,0 +1,162 @@
+@media print {
+  /* Header */
+  .header-wrapper {
+    .ui.fixed.top.sticky {
+      position: relative;
+    }
+
+    &.padding-bottom {
+      padding-bottom: 0;
+    }
+  }
+
+  .header-search {
+    display: none;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 2rem 0.5rem;
+  }
+
+  #footer-small {
+    padding: 0 1rem !important;
+  }
+
+  /* Preset */
+  .site--preset-wrapper {
+    max-width: 100vw;
+  }
+
+  .site--listing-header {
+    position: relative;
+    clear: both;
+  }
+
+  /* Social buttons */
+  .content-social,
+  .site--share-buttons,
+  .site--button {
+    display: none !important;
+  }
+
+  /* Gallery */
+  .slick-slider {
+    &.slider-gallery {
+      .slick-dots {
+        display: none !important;
+      }
+
+      .slick-slide.slick-cloned {
+        display: none;
+
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+  }
+
+  /* Listing */
+  .listing.news-card-template {
+    .ui.grid > .row > [class*='sixteen wide'].column {
+      width: 50% !important;
+      padding: 0 0.5rem !important;
+    }
+  }
+
+  .block.listing {
+    .ui.grid > .row > .column,
+    .ui.grid.stackable > .row > .column,
+    .site--preset-wrapper.site--preset-bg-light-grey
+      .ui.grid.stackable
+      > .row
+      > .column,
+    .site--preset-wrapper.site--preset-bg-grey
+      .ui.grid.stackable
+      > .row
+      > .column,
+    .site--preset-wrapper.site--preset-bg-blue
+      .ui.grid.stackable
+      > .row
+      > .column {
+      width: calc(50% - 2rem) !important;
+      padding: 0.5rem !important;
+    }
+  }
+
+  .block.listing.simpleCardListing {
+    clear: both;
+  }
+
+  /* Block Search faccette */
+  .block.search {
+    padding: 0 1rem;
+  }
+
+  /* Testo 7 */
+  .block-text7 .block-text7-body {
+    overflow: hidden;
+    clear: both;
+  }
+
+  /* Slider */
+  .size-s,
+  .size-m,
+  .size-l {
+    .slider-wrapper .slick-slider .slick-slide .single-slide-wrapper {
+      min-height: auto !important;
+
+      .text-overlay {
+        min-height: auto !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  .block.slider {
+    .slider-wrapper
+      .slick-slider
+      .slick-slide
+      .single-slide-wrapper
+      .text-overlay {
+      .text-overlay-content {
+        min-height: 10rem;
+      }
+    }
+  }
+
+  .slick-dots,
+  .slick-arrow {
+    display: none !important;
+  }
+
+  /* Cookie icon */
+  .gdpr-privacy-show-banner {
+    display: none !important;
+  }
+
+  /* Number blocks */
+  .block-numbers
+    .block-numbers-wrapper
+    .numbers-wrapper
+    .number-block
+    .number-content
+    .number,
+  .block-numbers
+    .block-numbers-wrapper.has-background
+    .numbers-wrapper
+    .number-block
+    .number-content
+    .number {
+    font-size: 3.8rem !important;
+  }
+
+  .block.icons_and_numbers
+    .block-icons-numbers-wrapper
+    .content-wrapper
+    .columns-wrapper
+    .column-block {
+    flex: 1 1 50%;
+  }
+}

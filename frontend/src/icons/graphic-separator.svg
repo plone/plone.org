@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="36" viewBox="0 0 40 36">
+  <defs>
+    <clipPath id="clip-graphic-separator">
+      <rect width="40" height="36"/>
+    </clipPath>
+  </defs>
+  <g id="graphic-separator" clip-path="url(#clip-graphic-separator)">
+    <g id="graphic-separator-2" data-name="graphic-separator" transform="translate(0 1)">
+      <g id="freedom" transform="translate(-0.149 -10.606)">
+        <path id="Rettangolo_3" data-name="Rettangolo 3" d="M2.041,2.041v10.2h10.2V2.041H2.041M0,0H14.284V14.284H0Z" transform="translate(4.149 20.015)"/>
+        <path id="Rettangolo_4" data-name="Rettangolo 4" d="M2.041,2.041V9.183H9.183V2.041H2.041M0,0H11.223V11.223H0Z" transform="translate(16.393 14.913)"/>
+      </g>
+      <path id="Tracciato_14" data-name="Tracciato 14" d="M3,7H43V5H3Z" transform="translate(-3 22.693)" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

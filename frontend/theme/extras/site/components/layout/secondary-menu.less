@@ -1,0 +1,27 @@
+.secondary-menu {
+  .ui.pointing.secondary.menu {
+    min-height: unset;
+    border-bottom: none;
+
+    .item,
+    a.item {
+      padding: 0 1.0625rem;
+      border: none;
+      color: @linkColor;
+      line-height: 1.8rem;
+    }
+  }
+
+  @media (max-width: @largestSmallMonitor) {
+    margin-left: 0;
+
+    .ui.pointing.secondary.menu.stackable {
+      flex-direction: row !important;
+
+      .item {
+        width: auto !important;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}

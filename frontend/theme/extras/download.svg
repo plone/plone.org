@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="17" viewBox="0 0 20 17">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-download);
+      }
+
+      .cls-2 {
+        fill: #000094;
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: transparent;
+      }
+    </style>
+    <clipPath id="clip-download">
+      <rect width="20" height="17"/>
+    </clipPath>
+  </defs>
+  <g id="download" class="cls-1">
+    <rect class="cls-3" width="20" height="17"/>
+    <g id="download-2" data-name="download" transform="translate(-3 -6.638)">
+      <path id="Tracciato_1" data-name="Tracciato 1" class="cls-2" d="M20.314,12.776c.013-.149.019-.3.019-.443A5.332,5.332,0,0,0,10.248,9.914,3.256,3.256,0,0,0,9,9.667a3.337,3.337,0,0,0-3.326,3.117,4.664,4.664,0,0,0,1.993,8.883H9V20.333H7.666a3.332,3.332,0,0,1-1.091-6.48l.49-.17L7,13a2,2,0,0,1,2-2,1.981,1.981,0,0,1,1.18.4l.737.543.29-.869a4,4,0,0,1,7.721,2.009l-.109.575.555.183a3.332,3.332,0,0,1-1.033,6.5c-.271-.021-.688-.013-1.355,0l.026,1.333c.287-.006.607-.011.853-.012l.467.012a4.666,4.666,0,0,0,1.981-8.891" transform="translate(0)"/>
+      <path id="Tracciato_2" data-name="Tracciato 2" class="cls-2" d="M16.764,24.057V17H15.431v7.057l-2.2-2.2-.943.943,3.8,3.8,3.8-3.8-.943-.943Z" transform="translate(-3.098 -3.333)"/>
+    </g>
+  </g>
+</svg>

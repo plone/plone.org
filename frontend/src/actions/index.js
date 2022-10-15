@@ -10,3 +10,6 @@
  *   searchContent,
  * };
  */
+
+import { getCustomCSS } from './getCustomCSS';
+export { getCustomCSS };

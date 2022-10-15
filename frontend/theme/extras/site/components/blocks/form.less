@@ -1,0 +1,128 @@
+.block.form {
+  .ui.segment {
+    display: flex;
+    flex-direction: column;
+    border-color: @footerBordersColor;
+    box-shadow: none;
+
+    .button.add-element {
+      border: 2px solid @primaryColor;
+      margin: 1rem 0 0;
+      background-color: transparent;
+      color: @primaryColor;
+      font-size: 0.8rem !important;
+      text-transform: none;
+
+      &:after {
+        margin-left: 0.3rem;
+        content: '+';
+        font-size: 1.2rem;
+        vertical-align: top;
+      }
+
+      &:hover {
+        background-color: @primaryColor;
+        color: white;
+      }
+    }
+
+    .subblock-draggable.subblock-edit {
+      .button.delete-button,
+      .dragsubblock {
+        z-index: 999;
+      }
+    }
+  }
+
+  h2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.3rem;
+    color: @textColor;
+    font-size: 2.3rem;
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .help {
+    color: @black !important;
+  }
+
+  .ui.primary.button {
+    padding: 0.9rem 1.5rem;
+    border: 2px solid @primaryColor;
+    font-size: 0.9rem;
+
+    &:hover {
+      background-color: transparent;
+      color: @primaryColor;
+    }
+  }
+
+  .ui.checkbox {
+    input:checked ~ label:before {
+      border-color: @primaryColor;
+    }
+
+    input:checked ~ label:after {
+      color: @primaryColor;
+    }
+  }
+
+  .radio-widget {
+    .radio-button {
+      display: flex;
+      align-items: center;
+      margin-right: 0.7rem;
+
+      input[type='radio'] {
+        width: 0.85rem;
+        height: 0.85rem;
+        border: 1px solid currentColor;
+        margin: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        border-radius: 50%;
+        color: currentColor;
+        font: inherit;
+
+        &:checked {
+          background-color: @primaryColor;
+          color: @primaryColor;
+        }
+      }
+    }
+  }
+
+  .is-invalid .ui.checkbox label:before {
+    border-color: @pink;
+    box-shadow: 1px 1px 2px 0 fade(@pink, 50%);
+  }
+
+  .file-widget-dropzone {
+    .dropzone-placeholder {
+      cursor: pointer;
+
+      p.dropzone-text {
+        margin: 0.5rem 0 0.5rem;
+      }
+    }
+
+    .label-file-widget-input {
+      border: 2px solid @primaryColor;
+      border-radius: 0;
+      color: @primaryColor;
+
+      &:hover {
+        background-color: @primaryColor;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+// Toolbar
+.draftJsToolbarDropdown {
+  position: relative;
+
+  .draftJsToolbarDropdown-toggle {
+    display: flex;
+    width: 42px;
+    align-items: center;
+    justify-content: space-between;
+
+    .caret {
+      display: inline-block;
+      width: 0;
+      height: 0;
+
+      border: 5px solid transparent;
+
+      &.down {
+        border-top-color: #888;
+        margin-top: 5px;
+      }
+
+      &.up {
+        border-bottom-color: #888;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  ul.draftJsToolbarDropdown-optionswrapper {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+    list-style-type: none;
+    transform: translateX(-50%);
+
+    &.hide {
+      display: none;
+    }
+
+    .draftJsToolbarDropdown-option {
+      padding: 0.5rem;
+      color: #565759;
+
+      svg {
+        fill: #565759 !important;
+      }
+
+      > * {
+        display: block;
+      }
+
+      button {
+        width: 100%;
+        height: auto;
+
+        > * {
+          margin: 0;
+          color: #565759;
+        }
+      }
+    }
+  }
+}
+
+// Text
+.draftjs-text-larger {
+  font-size: 1.335rem;
+  line-height: 1.5;
+}
+
+.draftjs-text-medium {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.draftjs-text-light {
+  font-weight: @fontLight;
+}
+
+// List
+.public-DraftStyleDefault-ul {
+  margin-top: 0;
+  list-style: square;
+
+  li::marker {
+    color: @primaryColor;
+    font-size: 1.04rem;
+  }
+}
+
+ul {
+  margin: 0;
+}
+
+// Blockquote
+blockquote {
+  position: relative;
+  margin: 3rem 4rem;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+
+  &:before {
+    position: absolute;
+    top: -0.5rem;
+    left: -3.75rem;
+    content: url('icon-cit.svg');
+  }
+}
+
+.text-block-wrapper {
+  // Link
+  a {
+    display: inline-block;
+    color: @blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+p a:hover,
+p li a:hover {
+  text-decoration: underline;
+}
+
+// Buttons
+.draftjs-buttons {
+  //margin: 0;
+
+  a {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    min-height: 1em;
+    padding-top: calc(1em - 2px);
+    padding-right: calc(1.5em - 4px);
+    padding-bottom: 1em;
+    padding-left: calc(1.5em - 2px);
+    border: 2px solid @primaryColor;
+    margin: 0em 0.25em 0em 0em;
+    background-color: @primaryColor;
+    color: @white;
+    font-weight: 400;
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::after {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-left: 1.5em;
+      background-image: url('arrow-right-white.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: '';
+      vertical-align: text-top;
+    }
+
+    &:before {
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: @white;
+      content: '';
+      transition: all 0.28s;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: @blue;
+
+      &::after {
+        background-image: url('arrow-right.svg');
+        content: '';
+      }
+
+      &:before {
+        z-index: -1;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Link with arrow. Valid for draft js and in other components
+.arrow-link a,
+a.arrow-link {
+  position: relative;
+  margin-right: 0.4rem;
+  color: @linkColor;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &::after {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 1em;
+    background-image: url('arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+  }
+}
+
+// Link with download icon
+.download-button a {
+  position: relative;
+  color: @textColor;
+
+  &:hover {
+    color: @blue;
+    text-decoration: none;
+  }
+
+  &::before {
+    display: inline-block;
+    width: 20px;
+    height: 23px;
+    margin-right: 0.7rem;
+    content: url('download.svg');
+    vertical-align: text-bottom;
+  }
+}
