@@ -22,10 +22,6 @@ class PLONEORGLayer(PloneSandboxLayer):
         import collective.volto.secondarymenu
         import collective.volto.socialsettings
         import plone.restapi
-        import collective.volto.dropdownmenu
-        import collective.volto.formsupport
-        import collective.volto.secondarymenu
-        import collective.volto.socialsettings
 
         self.loadZCML(package=collective.volto.dropdownmenu)
         self.loadZCML(package=collective.volto.formsupport)
