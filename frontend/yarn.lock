@@ -1812,6 +1812,11 @@
   dependencies:
     mkdirp "^1.0.4"
 
+"@plone-collective/volto-authomatic@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@plone-collective/volto-authomatic/-/volto-authomatic-1.2.0.tgz#032730d3f96dbcd2a23f9bcd8b7f8f0b9a8dadf0"
+  integrity sha512-Q8O3t3ABmQ3OLSq542CGEwWbhQTPKgV/XGtN9r5pzgXkLDp9KbyTY//TD+JX1+q/csXvKG4JUWtcdU7cS21f+w==
+
 "@plone/scripts@*", "@plone/scripts@2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-2.1.1.tgz#ba27c42e7d7eda5e6ba5e19050142d2321715a2e"
