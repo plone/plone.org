@@ -99,7 +99,7 @@ run-playbook: bin/ansible ## Run playbook
 .PHONY: deploy
 deploy: ## Deploy stacks: Plone
 	@echo "$(GREEN)==> Deploy Stack in $(DEPLOY_ENV) $(RESET)"
-	${DOCKER_CONTEXT} stack deploy -c stacks/plone.yml plone
+	${DOCKER_CONTEXT} stack deploy -c stacks/beta.plone.org.yml plone
 
 .PHONY: status
 status: ## Check status of stack
