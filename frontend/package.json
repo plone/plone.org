@@ -38,7 +38,13 @@
   },
   "private": false,
   "workspaces": [],
-  "addons": ["@eeacms/volto-accordion-block","@kitconcept/volto-blocks-grid","@kitconcept/volto-slider-block","@eeacms/volto-matomo"],
+  "addons": [
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-blocks-grid",
+    "@kitconcept/volto-slider-block",
+    "@eeacms/volto-matomo",
+    "@plone-collective/volto-authomatic"
+  ],
   "jest": {
     "modulePathIgnorePatterns": [
       "api"
@@ -144,6 +150,7 @@
     "@eeacms/volto-accordion-block": "*",
     "@kitconcept/volto-blocks-grid": "*",
     "@kitconcept/volto-slider-block": "*",
+    "@plone-collective/volto-authomatic": "1.2.0",
     "@eeacms/volto-matomo": "*"
 },
   "devDependencies": {
