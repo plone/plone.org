@@ -18,8 +18,16 @@ class PLONEORGLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.restapi
+        import collective.volto.dropdownmenu
+        import collective.volto.formsupport
+        import collective.volto.secondarymenu
+        import collective.volto.socialsettings
 
         self.loadZCML(package=plone.restapi)
+        self.loadZCML(package=collective.volto.dropdownmenu)
+        self.loadZCML(package=collective.volto.formsupport)
+        self.loadZCML(package=collective.volto.secondarymenu)
+        self.loadZCML(package=collective.volto.socialsettings)
         self.loadZCML(package=ploneorg)
 
     def setUpPloneSite(self, portal):
