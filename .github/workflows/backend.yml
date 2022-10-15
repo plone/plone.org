@@ -149,6 +149,7 @@ jobs:
       - name: Deploy to beta.plone.org
         uses: kitconcept/docker-stack-deploy@v1.0.0
         with:
+          registry: "ghcr.io"
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           remote_host: ${{ secrets.DEPLOY_HOST }}
