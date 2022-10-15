@@ -27,11 +27,11 @@ class PLONEORGLayer(PloneSandboxLayer):
         import collective.volto.secondarymenu
         import collective.volto.socialsettings
 
-        self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.volto.dropdownmenu)
         self.loadZCML(package=collective.volto.formsupport)
         self.loadZCML(package=collective.volto.secondarymenu)
         self.loadZCML(package=collective.volto.socialsettings)
+        self.loadZCML(package=plone.restapi)
         self.loadZCML(package=ploneorg)
 
     def setUpPloneSite(self, portal):
