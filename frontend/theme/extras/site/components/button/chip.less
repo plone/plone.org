@@ -1,0 +1,26 @@
+.site--chips {
+  margin: 1rem 0 0;
+
+  .site--chip {
+    padding: 0.5rem 1rem 0.4rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 15px;
+    font-size: 0.75rem !important;
+    text-transform: inherit;
+    font-family: @headerFontName;
+    font-weight: 600;
+
+    &.site--chip-outline {
+      border: 1px solid @borderLightColor;
+      background-color: @white;
+      color: @primaryColor;
+
+      &:hover {
+        border-color: @primaryColor;
+        background-color: @primaryColor;
+        color: #fff;
+      }
+    }
+  }
+}

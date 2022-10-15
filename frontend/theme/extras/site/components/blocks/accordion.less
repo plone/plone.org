@@ -1,0 +1,113 @@
+.accordion-block {
+  display: flex;
+  flex-direction: column;
+
+  .accordion.ui.fluid.styled:not(.form) {
+    position: relative;
+    padding: 1.5rem 2rem;
+    border: solid 0.4px @footerBordersColor;
+    margin-bottom: 1rem;
+    background-color: white;
+    box-shadow: 0 1.5px 11.4px 0 rgba(0, 0, 0, 0.1);
+
+    &:after {
+      position: absolute;
+      bottom: -1px;
+      width: calc(100% - 4rem);
+      height: 4px;
+      margin: 0 auto;
+      background-color: @primaryColor;
+      content: '';
+    }
+
+    .accordion-title,
+    .accordion-title.active,
+    .input-accordion-title input {
+      padding: 0;
+      margin: 0.5rem 0 !important;
+      background-color: transparent;
+      color: @headerColor;
+      font-weight: @bold;
+
+      &:hover {
+        background-color: transparent;
+        color: @headerColor;
+      }
+
+      .icon {
+        height: 30px !important;
+        color: @primaryColor;
+        font-weight: @bold;
+      }
+
+      &.align-arrow-left {
+        svg {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .accordion-title {
+      span {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .content,
+    .content.active {
+      position: relative;
+      padding: 1.5rem 0 !important;
+    }
+
+    .content.active::before {
+      position: absolute;
+      top: 0px;
+      width: 68px;
+      height: 4px;
+      background-color: @primaryColor;
+      content: '';
+    }
+
+    .content {
+      /* ignore full-with of blocks */
+      .full-width {
+        position: relative;
+        right: 0;
+        left: 0;
+        width: inherit !important;
+        max-width: initial !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+
+      .block-content {
+        padding: 0;
+        margin: 0 !important;
+      }
+    }
+
+    h2 {
+      font-size: @h2;
+    }
+  }
+
+  .accordion.ui.fluid.styled.form {
+    .content.active::before {
+      content: none;
+    }
+  }
+}
+
+fieldset.accordion-block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: @largestMobileScreen) {
+  .accordion-block {
+    .accordion.ui.fluid.styled:not(.form) {
+      padding: 1.5rem 1rem;
+    }
+  }
+}

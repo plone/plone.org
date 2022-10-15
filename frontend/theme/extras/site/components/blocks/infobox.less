@@ -1,0 +1,31 @@
+.block.info-box {
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  padding: 0.5rem 0 1.5rem 2rem;
+  border-left: 1px solid @footerBordersColor;
+  margin: 0 0 1rem 2rem;
+  background-color: white;
+  float: right;
+
+  @media (max-width: @largestMobileScreen) {
+    width: auto;
+    margin: 0;
+    float: none;
+  }
+
+  .ui.list {
+    .item {
+      font-size: 1rem;
+      line-height: 1.5em;
+    }
+  }
+
+  .info-box-contacts {
+    margin-top: 1.8rem;
+
+    p {
+      margin-bottom: 0.3rem;
+    }
+  }
+}

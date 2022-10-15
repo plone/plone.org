@@ -1,0 +1,202 @@
+.block.icons_and_numbers {
+  .delete-button {
+    padding: 0.05rem !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 5px;
+    color: #b8c6c8 !important;
+  }
+
+  .block-icons-numbers-wrapper {
+    background-color: @primaryColor;
+    color: @white;
+    text-align: center;
+
+    .content-wrapper {
+      padding: 2rem;
+
+      .ui.input input,
+      .DraftEditor-root,
+      .DraftEditor-editorContainer,
+      .public-DraftStyleDefault-block {
+        color: @white;
+        text-align: center;
+
+        &::selection,
+        ::selection {
+          background-color: @selectionBgColor;
+          color: @white;
+        }
+      }
+
+      .public-DraftEditorPlaceholder-root {
+        width: 100%;
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        margin-bottom: 1.889rem;
+
+        .ui.input {
+          width: 100%;
+        }
+
+        &,
+        .ui.input input {
+          font-family: @headerFontName;
+          font-size: 2.778rem;
+          font-weight: @headerFontWeight;
+          line-height: 1.5;
+          color: @headerColor;
+        }
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 1rem;
+        text-align: center;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .columns-wrapper {
+        display: flex;
+        align-items: baseline;
+
+        .column-block {
+          flex: 1 1 33.33%;
+          padding: 1em;
+
+          .number {
+            margin-bottom: 0.5rem;
+
+            &,
+            .ui.input input {
+              font-size: 4rem;
+              font-weight: @bold;
+              line-height: 1.5em;
+            }
+          }
+
+          > .icon {
+            margin-bottom: 1.35rem;
+            font-size: 5rem;
+
+            img {
+              max-height: 5rem;
+            }
+          }
+
+          .column-title {
+            &,
+            .ui.input input {
+              font-size: 1rem;
+              font-weight: @bold;
+            }
+          }
+
+          .column-text {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .site--listing-link-more {
+        margin-top: 2rem;
+      }
+    }
+
+    &.bg-white,
+    &.bg-light-grey {
+      color: @textColor;
+
+      .content-wrapper {
+        .ui.input input,
+        .DraftEditor-root,
+        .DraftEditor-editorContainer,
+        .public-DraftStyleDefault-block {
+          color: @textColor;
+
+          &::selection,
+          ::selection {
+            color: @textColor;
+          }
+        }
+
+        .title {
+          color: @headerColor;
+          .ui.input input,
+          .DraftEditor-root,
+          .DraftEditor-editorContainer,
+          .public-DraftStyleDefault-block {
+            color: @headerColor;
+
+            &::selection,
+            ::selection {
+              color: @headerColor;
+            }
+          }
+
+          &:after {
+            background-color: @blue;
+          }
+        }
+      }
+    }
+
+    &.bg-white {
+      background-color: transparent;
+    }
+
+    &.bg-light-grey {
+      .grey-bg();
+    }
+
+    &.bg-blue {
+      ul li::before,
+      .public-DraftStyleDefault-ul li::marker,
+      .content-wrapper .title .ui.input input {
+        color: #fff !important;
+      }
+    }
+  }
+
+  @media (max-width: @largestSmallMonitor) {
+    .block-icons-numbers-wrapper {
+      .content-wrapper {
+        .title {
+          line-height: 1.2;
+
+          &:after {
+            margin-top: 2rem;
+          }
+        }
+
+        .columns-wrapper {
+          flex-wrap: wrap;
+
+          .column-block + .column-block {
+            padding-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @largestMobileScreen) {
+    .block-icons-numbers-wrapper {
+      .content-wrapper {
+        .columns-wrapper {
+          .column-block {
+            flex: 1 1 100%;
+          }
+        }
+      }
+    }
+  }
+}

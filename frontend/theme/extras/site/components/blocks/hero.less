@@ -1,0 +1,50 @@
+.block.hero {
+  .block-inner-wrapper {
+    flex-wrap: wrap;
+
+    .image-wrapper {
+      position: relative;
+      flex: 0 1 50%;
+      overflow: hidden;
+      img {
+        position: absolute;
+        min-width: 100%;
+        height: 100%;
+        transform: translateX(-50%);
+        left: 50%;
+        max-width: unset;
+        max-height: unset;
+      }
+    }
+
+    .hero-body {
+      min-height: 400px;
+      max-height: unset;
+      p {
+        max-height: unset;
+      }
+    }
+
+    .hero-text {
+      > .DraftEditor-root {
+        .public-DraftEditorPlaceholder-root
+          .public-DraftEditorPlaceholder-inner {
+          font-size: @h2;
+          font-weight: bold;
+          line-height: 1;
+        }
+      }
+    }
+
+    @media (max-width: @largestTabletScreen) {
+      flex-direction: column;
+
+      .image-wrapper {
+        img {
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

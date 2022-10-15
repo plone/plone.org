@@ -1,0 +1,323 @@
+.site--preset-wrapper {
+  /*----MAIN HEADER ALIGN---*/
+  &.site--preset-header-align-left {
+    .site--preset-header,
+    h1,
+    h2 {
+      &,
+      &.ui.input input,
+      .ui.input input {
+        text-align: left !important;
+      }
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 1rem !important;
+      &:after {
+        content: none !important;
+
+        // left: 0 !important;
+        // transform: none !important;
+      }
+    }
+  }
+
+  &.site--preset-header-align-center {
+    .site--preset-header,
+    h1,
+    h2 {
+      &,
+      &.ui.input input,
+      .ui.input input {
+        text-align: center !important;
+        align-items: center;
+      }
+    }
+  }
+
+  /*----BACKGROUND and ITEM BACKGROUND---*/
+  &.site--preset-item-blue .item,
+  &.site--preset-bg-blue {
+    background-color: @blue;
+
+    ul li::before,
+    .public-DraftStyleDefault-ul li::marker {
+      color: #fff !important;
+    }
+
+    .draftjs-buttons {
+      a {
+        .site--button-colors(@white, @blue);
+        color: @blue!important;
+
+        &::after {
+          background-image: url('../../arrow-right.svg');
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: @white!important;
+          &::after {
+            background-image: url('../../arrow-right-white.svg');
+          }
+        }
+      }
+    }
+
+    // Link with download icon
+    .download-button a {
+      &::before {
+        content: url('./../../download-white.svg');
+        display: inline-block;
+        vertical-align: text-bottom;
+        height: 23px;
+        width: 20px;
+        margin-right: 0.7rem;
+      }
+    }
+  }
+
+  &.site--preset-item-dark-blue .item,
+  &.site--preset-bg-dark-blue {
+    background-color: @darkBlue;
+
+    ul li::before,
+    .public-DraftStyleDefault-ul li::marker {
+      color: #fff !important;
+    }
+
+    .draftjs-buttons {
+      a {
+        .site--button-colors(@white, @blue);
+        color: @blue!important;
+
+        &::after {
+          background-image: url('../../arrow-right.svg');
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: @white!important;
+          &::after {
+            background-image: url('../../arrow-right-white.svg');
+          }
+        }
+      }
+    }
+
+    // Link with download icon
+    .download-button a {
+      &::before {
+        content: url('./../../download-white.svg');
+        display: inline-block;
+        vertical-align: text-bottom;
+        height: 23px;
+        width: 20px;
+        margin-right: 0.7rem;
+      }
+    }
+  }
+
+  &.site--preset-item-grey .item,
+  &.site--preset-bg-grey {
+    background-color: @grey;
+  }
+
+  &.site--preset-item-light-grey .item,
+  &.site--preset-bg-light-grey {
+    background-color: @ultraLightGrey;
+  }
+
+  &.site--preset-item-light-blue .item,
+  &.site--preset-bg-light-blue {
+    background-color: @ultraLightBlue;
+  }
+
+  &.site--preset-item-white .item,
+  &.site--preset-bg-white {
+    background-color: white;
+  }
+
+  &.site--preset-item-transparent .item,
+  &.site--preset-bg-transparent {
+    background-color: transparent;
+  }
+
+  /*----ITEM TITLE---*/
+  &.site--preset-title-blue {
+    .item-header,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .title {
+      &,
+      &.item-header {
+        &,
+        a,
+        &.ui.input input,
+        .ui.input input,
+        textarea {
+          color: @blue !important;
+        }
+      }
+    }
+  }
+
+  &.site--preset-title-grey {
+    .item-header,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .title {
+      &,
+      &.item-header {
+        &,
+        a,
+        .ui.input input {
+          color: @black;
+        }
+      }
+    }
+  }
+
+  &.site--preset-title-white {
+    .item-header,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .title {
+      &,
+      &.item-header {
+        &,
+        a,
+        .ui.input input {
+          color: @white;
+        }
+      }
+    }
+  }
+
+  /*----ITEM TEXT & ITEM-SUBHEADER---*/
+  &.site--preset-text-blue {
+    .item-text,
+    .item-subheader {
+      &,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .title {
+        &,
+        a,
+        .ui.input input {
+          color: @blue;
+        }
+      }
+    }
+  }
+
+  &.site--preset-text-grey {
+    .item-text,
+    .item-subheader {
+      &,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .title {
+        &,
+        a,
+        .ui.input input {
+          color: @textColor;
+        }
+      }
+    }
+  }
+
+  &.site--preset-text-white {
+    .item-text,
+    .item-subheader {
+      &,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .title {
+        &,
+        a,
+        .ui.input input {
+          color: @white;
+        }
+      }
+    }
+  }
+
+  /*----ITEM BUTTON---*/
+  &.site--preset-button-blue {
+    .item-button {
+      .ui.button.site--button {
+        //default
+      }
+    }
+  }
+
+  &.site--preset-button-white {
+    .item-button {
+      .ui.button.site--button {
+        .ui.button.site--button.site--button-white();
+      }
+    }
+  }
+
+  &.site--preset-button-outline-blue {
+    .item-button {
+      .ui.button.site--button {
+        .ui.button.site--button.site--button-outline();
+      }
+    }
+  }
+
+  &.site--preset-button-outline-white {
+    .item-button {
+      .ui.button.site--button {
+        .ui.button.site--button.site--button-outline();
+        .ui.button.site--button.site--button-outline-white();
+      }
+    }
+  }
+}
+
+/* -------- TEXT ------*/
+.site--preset-draftjs-buttons-align-center {
+  .draftjs-buttons {
+    text-align: center;
+  }
+}
+
+.item-header {
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.ui.breadcrumb{ 
+    .divider{
+        margin: 0 0.3rem;
+        font-size: 0.8rem;
+        color: @textColor;
+    }
+
+    a.section{
+        color: @textColor;
+        &:hover,&:active, &:focus{  
+            color: @linkColor;          
+            text-decoration: underline;
+        }       
+    }
+
+    .section.active{
+        color: @black;        
+    }
+}

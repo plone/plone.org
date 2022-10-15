@@ -1,0 +1,144 @@
+.block-text7 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+
+  .block-text7-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .block-text7-body {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding-top: 0;
+    padding-left: 2rem;
+
+    h3.title {
+      margin-top: 0;
+      position: relative;
+      margin-bottom: 1rem;
+      color: @headerColor;
+    }
+  }
+
+  .buttonBottom {
+    display: flex;
+    margin-top: 2.77rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .block-right {
+    flex-direction: row-reverse !important;
+    .block-text7-body {
+      padding-left: 0;
+      padding-right: 2rem;
+    }
+  }
+
+  .title {
+    color: @headerColor;
+  }
+
+  .content-social {
+    margin-bottom: 0.5rem;
+
+    @media (max-width: @largestMobileScreen) {
+      margin-bottom: 0;
+    }
+  }
+
+  &.site--preset-bg-light-grey,
+  &.site--preset-bg-light-blue {
+    padding: 1.5em 3em;
+
+    @media (max-width: @largestTabletScreen) {
+      padding-right: 1.5em;
+      padding-left: 1.5em;
+    }
+  }
+
+  // Tablet
+  @media (max-width: @largestTabletScreen) {
+    div.column:first-of-type {
+      margin-bottom: 1.5rem;
+    }
+
+    .ui.small.button.site--button {
+      float: right;
+    }
+
+    .content-social {
+      margin-bottom: 1rem;
+    }
+    .block-text7-body {
+      .title {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .buttonBottom {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+
+.block-editor-text7 .block-text7 {
+  .block-text7-body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  .title.input-title {
+    margin-top: 0;
+
+    input {
+      color: @headerColor;
+      font-size: @h3;
+      font-weight: @headerFontWeight;
+    }
+  }
+
+  .public-DraftStyleDefault-block {
+    margin-bottom: 1rem;
+  }
+}
+
+.ui.input > input {
+  &#field-cta_title {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #c7d5d8;
+    border-left: none;
+    border-radius: 0;
+    font-size: 0.77777778rem;
+  }
+}
+
+.ui.checkbox > label {
+  font-size: 0.77777778rem;
+}
+
+div.inline.field.field-wrapper-right .wrapper {
+  border-bottom: none;
+}
+
+div.inline.field.help {
+  p.help {
+    color: lighten(#464646, 20%);
+  }
+}
+
+div.inline.field.help.text.field-wrapper-link_to,
+div.inline.field.help.text.field-wrapper-cta_title {
+  padding: 1rem 0rem;
+  border-bottom: 1px solid #edf1f2;
+}

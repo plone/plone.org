@@ -1,0 +1,261 @@
+nav.navigation.navigation-dropdownmenu {
+  position: unset;
+
+  .ui.secondary.pointing.menu {
+    margin: 0 1rem !important;
+
+    > .item,
+    > a.item,
+    > .ui.button.item.dropdownmenu-item {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+      color: @black;
+      margin-right: 1.7rem;
+
+      &.home {
+        margin-right: 1.7rem;
+
+        span {
+          height: 22px;
+
+          &:before {
+            display: inline-block;
+            content: ' ';
+            background-image: url('data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhciIgZGF0YS1pY29uPSJob21lLWxnLWFsdCIgY2xhc3M9InN2Zy1pbmxpbmUtLWZhIGZhLWhvbWUtbGctYWx0IGZhLXctMTgiIHJvbGU9ImltZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTc2IDUxMiI+PHBhdGggZmlsbD0iIzAwMDA5NCIgZD0iTTU3MC4yNCAyMTUuNDJMMzIzLjg3IDEzYTU2IDU2IDAgMCAwLTcxLjc1IDBMNS43NiAyMTUuNDJhMTYgMTYgMCAwIDAtMiAyMi41NEwxNCAyNTAuMjZhMTYgMTYgMCAwIDAgMjIuNTMgMkw2NCAyMjkuNzFWMjg4aC0uMzF2MjA4YTE2LjEzIDE2LjEzIDAgMCAwIDE2LjEgMTZINDk2YTE2IDE2IDAgMCAwIDE2LTE2VjIyOS43MWwyNy41IDIyLjU5YTE2IDE2IDAgMCAwIDIyLjUzLTJsMTAuMjYtMTIuM2ExNiAxNiAwIDAgMC0yLjA1LTIyLjU4ek00NjQgMjI0aC0uMjF2MjQwSDM1MlYzMjBhMzIgMzIgMCAwIDAtMzItMzJoLTY0YTMyIDMyIDAgMCAwLTMyIDMydjE0NEgxMTEuNjlWMTk0LjQ4bC4zMS0uMjV2LTRMMjg4IDQ1LjY1bDE3NiAxNDQuNjJ6Ij48L3BhdGg+PC9zdmc+');
+            background-size: 24px 22px;
+            height: 22px;
+            width: 24px;
+          }
+          width: 24px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: @primaryColor;
+      }
+
+      &.active,
+      &.open {
+        border-color: @primaryColor;
+
+        &.home {
+          border-color: transparent;
+        }
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    button.dropdownmenu-item {
+      .dropdown.icon {
+        display: none;
+      }
+    }
+
+    @media (max-width: @largestSmallMonitor) {
+      &.computer.large.screen.widescreen.only {
+        display: none;
+      }
+
+      &.stackable {
+        flex-direction: column;
+        position: absolute;
+        min-height: 100vh;
+
+        background-color: #fff;
+        margin: 0 !important;
+        right: 0;
+        width: 100%;
+        border-left: 78px solid @blue;
+        padding: 1rem 2rem;
+        z-index: 1000;
+        box-shadow: inset 4px 4px 15px 0px @lightGrey,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+        > .item,
+        a.item,
+        .ui.button.item.dropdownmenu-item {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+body.contenttype-lrf {
+  nav.navigation.navigation-dropdownmenu {
+    .ui.secondary.pointing.menu {
+      > .item,
+      > a.item,
+      > .ui.button.item.dropdownmenu-item {
+        &.home {
+          &.active,
+          &.open {
+            border-color: @primaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-menu-wrapper {
+  top: 62px;
+  left: 0 !important;
+
+  box-shadow: 0px 5px 7px -1px rgba(119, 119, 119, 0.1);
+
+  @media (min-width: @largestSmallMonitor +1) {
+    position: absolute !important;
+  }
+
+  .dropdown-menu-inner {
+    > .ui.segment {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 2rem;
+      padding-left: 0;
+      border: none;
+
+      @media (max-width: @largestMobileScreen) {
+        padding-bottom: 6rem;
+      }
+
+      .dropdownmenu-footer {
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-top: 2rem;
+        border-top: 1px solid @borderLightColor;
+        padding-top: 1rem;
+        text-align: left;
+
+        a {
+          font-size: 0.8rem;
+          position: relative;
+          font-weight: @bold;
+
+          .arrow.right {
+            margin-left: 1rem;
+            font-size: 0.8rem;
+            line-height: 1;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      > .ui.container.grid {
+        max-height: 80vh;
+        overflow-y: auto;
+        & > .row > [class*='three wide'].column,
+        & > .column.row > [class*='three wide'].column,
+        & > [class*='three wide'].column,
+        &.column > [class*='three wide'].column {
+          width: 16.66% !important;
+          order: inherit;
+          padding-bottom: 0;
+
+          @media (max-width: @largestSmallMonitor) {
+            width: 100% !important;
+          }
+        }
+
+        .dropdownmenu-blocks-column {
+          max-width: 16.66%;
+          order: 0;
+          padding-bottom: 0;
+          font-size: 0.9rem;
+          line-height: 1.2;
+
+          @media (max-width: @largestSmallMonitor) {
+            max-width: 100% !important;
+          }
+        }
+
+        h2 {
+          font-family: @fontName;
+          font-size: 0.9rem;
+          margin-bottom: 1em;
+          text-align: left;
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            padding: 0.15rem 0 0.8rem;
+            font-size: 0.85rem;
+
+            a {
+              color: @textColor;
+
+              &:hover,
+              &:active,
+              &:focus {
+                color: @primaryColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @largestSmallMonitor) {
+    position: static !important;
+    box-shadow: none;
+
+    .dropdown-menu-inner {
+      overflow: auto;
+      width: 100%;
+      max-height: 100vh;
+
+      > .ui.segment {
+        padding-right: 0;
+        padding-left: 0;
+
+        .dropdownmenu-close-button-wrapper {
+          display: none;
+        }
+
+        .ui.container.dropdownmenu-footer {
+          order: 1;
+          margin-bottom: 1.5rem;
+          text-align: right;
+          margin-right: 0 !important;
+        }
+
+        .ui.container.grid {
+          order: 2;
+        }
+      }
+
+      > .ui.container.grid {
+        max-height: unset;
+      }
+    }
+  }
+}
+
+.ui.fixed.top.sticky {
+  .dropdown-menu-wrapper {
+    top: 62px;
+
+    @media (max-width: @largestSmallMonitor) {
+      top: 62px;
+    }
+  }
+}
+
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  .dropdown-menu-wrapper {
+    width: 100%;
+  }
+}

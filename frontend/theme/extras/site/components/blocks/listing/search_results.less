@@ -1,0 +1,56 @@
+.block.listing .search-results-listing,
+.search-results-listing {
+  .site--listing-header-title {
+    padding-top: 1.5rem;
+  }
+
+  .site--listing-link-more {
+    padding-bottom: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .results {
+    padding-bottom: 0.5rem;
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid @footerBordersColor;
+      margin-bottom: 0.5rem;
+
+      .preview-item {
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        margin-right: 1rem;
+        flex: 0 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+
+        .icon {
+          height: 40px;
+          width: auto;
+          margin-left: auto;
+          margin-right: auto;
+          color: #ccc;
+        }
+      }
+
+      .item-title {
+        font-weight: @semibold;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

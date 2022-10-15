@@ -1,0 +1,59 @@
+
+h1 {
+  color: @headerColor;
+  font-size: @h1;
+  line-height: @h1LineHeight; 
+}
+
+h2 {
+  color: @headerColor;
+  line-height: @h2LineHeight;
+  text-align: center;
+}
+
+h3 {
+  color: @headerColor;
+  line-height: @h3LineHeight;
+}
+
+h4 {
+  color: @headerColor;
+  line-height: @h4LineHeight;
+}
+
+h5 {
+  color: @headerColor;
+  line-height: @h5LineHeight;
+}
+
+h6 {
+  color: @headerColor;
+  font-size: @h6;
+  line-height: @h6LineHeight;
+}
+
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+    margin: @headerMargin;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child {
+  margin: @headerMargin;
+}
+
+@media(max-width:@largestMobileScreen){
+  h1{font-size:  unit((38 / 18), em);}
+  h2{font-size:  unit((38 / 18), em);}
+  h3{font-size: unit((26 / 18), em);}
+  h4{font-size: unit((14 / 18), em);}
+  h5{font-size: unit((10 / 18), em);}
+  h6{font-size: unit((7 / 18), em);}
+}

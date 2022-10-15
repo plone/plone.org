@@ -1,0 +1,23 @@
+.simple-card-listing {
+  @media (min-width: @largestTabletScreen) {
+    .ui.grid.one.column {
+      .ui.card.simple-card {
+        &.with-image {
+          .item-image {
+            max-height: 250px;
+          }
+        }
+      }
+    }
+
+    .ui.grid.two.column {
+      .ui.card.simple-card {
+        &.with-image {
+          .item-image {
+            max-height: 160px;
+          }
+        }
+      }
+    }
+  }
+}

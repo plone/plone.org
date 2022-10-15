@@ -1,0 +1,125 @@
+.block.search {
+  .ui.grid:not(.searchBlock-facets) > .row > .column {
+    margin-bottom: 1.5rem;
+  }
+
+  .row {
+    padding: 0;
+  }
+
+  .download-listing {
+    .ui.container.block-content {
+      padding: 0;
+
+      li {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .search-input .ui.input input {
+    padding-left: 0;
+    border: 0;
+    border-bottom: 1px solid @silver;
+    border-radius: 0;
+  }
+
+  .search-sort-on,
+  .react-select-container {
+    font-size: 0.8rem;
+
+    .react-select__control {
+      border-radius: 0;
+
+      .react-select__indicator svg.icon {
+        fill: @blue !important;
+      }
+    }
+  }
+
+  .search-results-count-sort {
+    margin-bottom: 1rem;
+
+    .search-details {
+      font-size: 0.8rem;
+    }
+  }
+
+  .search-sort-wrapper .ui.basic.active.button {
+    border-color: @blue;
+    color: @textColor !important;
+  }
+
+  .facets {
+    h3 {
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+
+    .ui.bottom.aligned.grid > .column {
+      align-self: flex-start !important;
+    }
+  }
+
+  @media (max-width: @largestSmallMonitor) {
+    .simple-card-listing,
+    .listing.news-card-template {
+      > .ui.grid {
+        > .row > .column.three.wide.computer {
+          width: 50% !important;
+        }
+      }
+    }
+  }
+
+  @media (max-width: @largestTabletScreen) {
+    .ui.grid.searchBlock-facets {
+      > .row {
+        flex-direction: column-reverse;
+
+        > .column {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  @media (max-width: @largestMobileScreen) {
+    .ui.grid.searchBlock-facets {
+      &.right-column-facets {
+        > .row {
+          flex-direction: column-reverse;
+        }
+      }
+
+      > .row {
+        flex-direction: column-reverse;
+
+        > .column {
+          width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    }
+
+    .search-wrapper {
+      .search-input + .button {
+        margin-right: 0;
+      }
+    }
+
+    .search-results-count-sort {
+      flex-direction: column-reverse;
+      margin-bottom: 0;
+    }
+
+    .listing.news-card-template {
+      > .ui.grid {
+        > .row > .column.three.wide.computer {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
