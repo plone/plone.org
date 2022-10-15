@@ -17,6 +17,10 @@ class PLONEORGLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
+        import collective.volto.dropdownmenu
+        import collective.volto.formsupport
+        import collective.volto.secondarymenu
+        import collective.volto.socialsettings
         import plone.restapi
         import collective.volto.dropdownmenu
         import collective.volto.formsupport
