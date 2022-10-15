@@ -1,7 +1,7 @@
 #footer {
   padding: 3rem 0 0 0;
-  font-family: @headerFontName;
   box-shadow: 0px 5px 7px 5px rgba(119, 119, 119, 0.1);
+  font-family: @headerFontName;
 
   #footer-main {
     display: flex;
@@ -14,8 +14,8 @@
 
       &:last-of-type {
         flex-basis: 20%;
-        border-left: 1px solid @footerBordersColor;
         padding: 1rem 2rem;
+        border-left: 1px solid @footerBordersColor;
         color: @footerLastColumnTextColor;
 
         a,
@@ -40,6 +40,7 @@
 
           a {
             margin-right: 0.5rem;
+
             &:not(:hover, :active, :focus, .ui.button) {
               color: @linkColor;
             }
@@ -51,15 +52,16 @@
           font-size: unit((14 / @fontSize), rem);
 
           li {
-            color: @footerLastColumnTextColor;
             margin-bottom: 0.3em;
+            color: @footerLastColumnTextColor;
 
             button {
-              background: none;
-              border: none;
               padding: 0;
+              border: none;
               margin: 0;
+              background: none;
               cursor: pointer;
+
               &:hover,
               &:active,
               &:focus {
@@ -78,11 +80,12 @@
 
         .tools {
           .ui.secondary.pointing.menu {
+            min-height: unset;
             margin: 0;
             float: none;
-            min-height: unset;
             font-family: @headerFontName;
             font-size: unit((10 / @fontSize), rem);
+
             .item {
               padding: 0;
               margin: 0 0 0.3em 0;
@@ -93,11 +96,11 @@
 
       h4 {
         display: flex;
+        margin-bottom: 0.5rem;
+        font-size: unit((13 / @fontSize), rem);
         //min-height: 2.8em;
         //align-items: flex-end;
         font-weight: normal;
-        font-size: unit((13 / @fontSize), rem);
-        margin-bottom: 0.5rem;
       }
 
       ul {
@@ -106,8 +109,8 @@
         list-style-type: none;
 
         li {
-          color: @footerColumnsTextColor;
           margin-bottom: 0.7em;
+          color: @footerColumnsTextColor;
           line-height: 1.5;
 
           a {
@@ -116,8 +119,8 @@
             &:hover,
             &:active,
             &:focus {
-              text-decoration: underline;
               color: @primaryColor;
+              text-decoration: underline;
             }
           }
         }
@@ -126,9 +129,9 @@
   }
 
   #footer-small-wrapper {
-    background-color: @ultraLightGrey;
     padding: 1.5rem;
     margin-top: 1.5rem;
+    background-color: @ultraLightGrey;
 
     #footer-small {
       display: flex;
@@ -159,12 +162,13 @@
   #footer {
     #footer-main {
       flex-direction: column;
+
       .footer-column {
         &:last-of-type {
-          border-left: none;
-          border-top: 1px solid @footerBordersColor;
-          text-align: center;
           padding-top: 2rem;
+          border-top: 1px solid @footerBordersColor;
+          border-left: none;
+          text-align: center;
 
           .social-header {
             justify-content: center;
@@ -190,14 +194,14 @@
     }
 
     #footer-small-wrapper {
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
 
       #footer-small {
         flex-direction: column;
+        padding-right: 0rem;
 
         padding-left: 0rem;
-        padding-right: 0rem;
 
         .logo {
           margin-bottom: 1rem;

@@ -1,19 +1,22 @@
-.ui.breadcrumb{ 
-    .divider{
-        margin: 0 0.3rem;
-        font-size: 0.8rem;
-        color: @textColor;
-    }
+.ui.breadcrumb {
+  .divider {
+    margin: 0 0.3rem;
+    color: @textColor;
+    font-size: 0.8rem;
+  }
 
-    a.section{
-        color: @textColor;
-        &:hover,&:active, &:focus{  
-            color: @linkColor;          
-            text-decoration: underline;
-        }       
-    }
+  a.section {
+    color: @textColor;
 
-    .section.active{
-        color: @black;        
+    &:hover,
+    &:active,
+    &:focus {
+      color: @linkColor;
+      text-decoration: underline;
     }
+  }
+
+  .section.active {
+    color: @black;
+  }
 }

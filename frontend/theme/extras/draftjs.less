@@ -104,9 +104,9 @@ blockquote {
   position: relative;
   margin: 3rem 4rem;
   font-size: 32px;
-  line-height: 1.5;
-  font-weight: 300;
   font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
 
   &:before {
     position: absolute;
@@ -119,8 +119,8 @@ blockquote {
 .text-block-wrapper {
   // Link
   a {
-    color: @blue;
     display: inline-block;
+    color: @blue;
 
     &:hover {
       text-decoration: underline;
@@ -150,25 +150,25 @@ p li a:hover {
     margin: 0em 0.25em 0em 0em;
     background-color: @primaryColor;
     color: @white;
-    text-align: center;
-    line-height: 1em;
-    text-decoration: none;
     font-weight: 400;
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
 
     &:hover {
       text-decoration: none;
     }
 
     &::after {
-      content: '';
       display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-left: 1.5em;
       background-image: url('arrow-right-white.svg');
       background-repeat: no-repeat;
       background-size: cover;
-      height: 22px;
-      width: 22px;
+      content: '';
       vertical-align: text-top;
-      margin-left: 1.5em;
     }
 
     &:before {
@@ -189,8 +189,8 @@ p li a:hover {
       color: @blue;
 
       &::after {
-        content: '';
         background-image: url('arrow-right.svg');
+        content: '';
       }
 
       &:before {
@@ -204,30 +204,30 @@ p li a:hover {
 // Link with arrow. Valid for draft js and in other components
 .arrow-link a,
 a.arrow-link {
-  color: @linkColor;
   position: relative;
   margin-right: 0.4rem;
+  color: @linkColor;
 
   &:hover {
     text-decoration: underline;
   }
 
   &::after {
-    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 1em;
     background-image: url('arrow-right.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    display: inline-block;
-    height: 14px;
-    width: 14px;
-    margin-left: 1em;
+    content: '';
   }
 }
 
 // Link with download icon
 .download-button a {
-  color: @textColor;
   position: relative;
+  color: @textColor;
 
   &:hover {
     color: @blue;
@@ -235,11 +235,11 @@ a.arrow-link {
   }
 
   &::before {
-    content: url('download.svg');
     display: inline-block;
-    vertical-align: text-bottom;
-    height: 23px;
     width: 20px;
+    height: 23px;
     margin-right: 0.7rem;
+    content: url('download.svg');
+    vertical-align: text-bottom;
   }
 }

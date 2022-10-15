@@ -10,7 +10,7 @@
 
   // Tablet
   @media (max-width: @largestTabletScreen) {
-    font-size:1rem;
+    font-size: 1rem;
   }
 }
 

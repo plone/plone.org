@@ -1,13 +1,13 @@
 .block-text5 {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   padding: 1em 0;
 
   .text5-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 1.833rem;
 
     & + .ui.grid {
@@ -22,16 +22,16 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      margin-top: 0;
       margin-bottom: 0;
       line-height: 1.5;
-      margin-top: 0;
 
       &,
       input {
         color: @headerColor;
+        font-family: @headerFontName;
         font-size: @h3;
         font-weight: @headerFontWeight;
-        font-family: @headerFontName;
       }
     }
 
@@ -94,6 +94,7 @@
     font-size: @h3;
     font-weight: @headerFontWeight;
   }
+
   .public-DraftStyleDefault-block {
     margin-bottom: 1rem;
   }
