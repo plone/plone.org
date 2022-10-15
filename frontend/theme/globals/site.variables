@@ -7,6 +7,7 @@
 --------------------*/
 
 @fontName: 'Assistant';
+@importGoogleFonts: true;
 @googleFontSizes: '300,600,700,300italic,600italic,700italic';
 
 @headerFontName: 'Poppins';
@@ -54,8 +55,6 @@
 @h5: unit((18 / 16), em);
 @h6: unit((17 / 16), em);
 
-
-
 @h1LineHeight: 2.5;
 @h2LineHeight: 1.7;
 @h3LineHeight: 1.65;
@@ -98,7 +97,7 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@blue: #007DB9;
+@blue: #007db9;
 @yellow: #efbd0b;
 @green: #5eb618;
 @orange: #f38c2d;
@@ -108,14 +107,12 @@
 @black: #222;
 
 @darkBlue: #123156;
-@lightGrey: #CDCDCD;
+@lightGrey: #cdcdcd;
 
 @ultraLightGrey: #f9f9f9;
-@ultraLightBlue: #F0F8FC;
-
+@ultraLightBlue: #f0f8fc;
 
 @linkColor: #0085c3;
-
 
 /*--- -------------------------------------------------------------------------------- ---*/
 /*--- --------------------------------Plone.org Variables-------------------------------- ---*/
@@ -128,7 +125,6 @@
 @selectionBgColor: rgba(17, 14, 235, 0.53);
 @borderLightColor: @lightGrey;
 @borderColor: @lightGrey;
-
 
 /* TEXT CROP */
 .text-crop(@line-height: 1.3, @top-adjustment: 0px, @bottom-adjustment: 0px) {
@@ -171,10 +167,8 @@
   }
 }
 
-
-
-/* 
- Mixin generated at: http://text-crop.eightshapes.com/?typeface-selection=google-font&typeface=Lato&custom-typeface-name=Helvetica&custom-typeface-url=&custom-typeface-weight=400&custom-typeface-style=normal&weight-and-style=100&size=36&line-height=1.2&top-crop=9&bottom-crop=6 
+/*
+ Mixin generated at: http://text-crop.eightshapes.com/?typeface-selection=google-font&typeface=Lato&custom-typeface-name=Helvetica&custom-typeface-url=&custom-typeface-weight=400&custom-typeface-style=normal&weight-and-style=100&size=36&line-height=1.2&top-crop=9&bottom-crop=6
 
 Usage Examples
   .my-level-1-heading-class {
@@ -194,9 +188,9 @@ Usage Examples
       font-size: 16px;
   }
 
-  // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output. 
-  // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings 
-  
+  // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output.
+  // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings
+
   .slight-adjustment-needed {
       .text-crop(@top-adjustment: -0.5px, @bottom-adjustment: 2px);
       font-size: 17px;

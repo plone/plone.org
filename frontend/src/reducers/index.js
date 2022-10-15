@@ -4,7 +4,7 @@
  */
 
 import defaultReducers from '@plone/volto/reducers';
-
+import { customCSSReducer } from './customCSSReducer';
 /**
  * Root reducer.
  * @function
@@ -15,6 +15,7 @@ import defaultReducers from '@plone/volto/reducers';
 const reducers = {
   ...defaultReducers,
   // Add your reducers here
+  customCSS: customCSSReducer,
 };
 
 export default reducers;

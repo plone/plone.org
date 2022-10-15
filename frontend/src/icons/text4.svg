@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="36" viewBox="0 0 40 36">
+  <defs>
+    <clipPath id="clip-text4">
+      <rect width="40" height="36"/>
+    </clipPath>
+  </defs>
+  <g id="text4" clip-path="url(#clip-text4)">
+    <g id="align-justify" transform="translate(-3)">
+      <path id="Tracciato_5" data-name="Tracciato 5" d="M3,7H20.605V5H3Z" fill-rule="evenodd"/>
+      <path id="Tracciato_6" data-name="Tracciato 6" d="M3,15H20.605V13H3Z" fill-rule="evenodd"/>
+      <path id="Tracciato_7" data-name="Tracciato 7" d="M3,23H20.605V21H3Z" fill-rule="evenodd"/>
+      <path id="Tracciato_8" data-name="Tracciato 8" d="M3,31H20.605V29H3Z" fill-rule="evenodd"/>
+    </g>
+    <g id="align-justify-2" data-name="align-justify" transform="translate(19)">
+      <path id="Tracciato_5-2" data-name="Tracciato 5" d="M3,7H21V5H3Z" fill-rule="evenodd"/>
+      <path id="Tracciato_6-2" data-name="Tracciato 6" d="M3,15H21V13H3Z" fill-rule="evenodd"/>
+      <path id="Tracciato_7-2" data-name="Tracciato 7" d="M3,23H21V21H3Z" fill-rule="evenodd"/>
+      <path id="Tracciato_8-2" data-name="Tracciato 8" d="M3,31H21V29H3Z" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
