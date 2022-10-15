@@ -52,6 +52,10 @@ setup(
         "collective.exportimport",
         "pas.plugins.authomatic",
         "pycountry",
+        "collective.volto.formsupport",
+        "collective.volto.dropdownmenu",
+        "collective.volto.secondarymenu",
+        "collective.volto.socialsettings",
     ],
     extras_require={
         "test": [

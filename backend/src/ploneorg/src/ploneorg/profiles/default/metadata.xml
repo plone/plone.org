@@ -5,5 +5,9 @@
     <dependency>profile-plone.volto:default</dependency>
     <dependency>profile-plone.app.vulnerabilities:default</dependency>
     <dependency>profile-pas.plugins.authomatic:default</dependency>
+    <dependency>profile-collective.volto.dropdownmenu:default</dependency>
+    <dependency>profile-collective.volto.formsupport:default</dependency>
+    <dependency>profile-collective.volto.secondarymenu:default</dependency>
+    <dependency>profile-collective.volto.socialsettings:default</dependency>
   </dependencies>
 </metadata>
