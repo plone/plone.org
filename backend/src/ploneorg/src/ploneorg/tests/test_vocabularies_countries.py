@@ -21,9 +21,7 @@ class TestCountriesVocabulary(unittest.TestCase):
         self.portal = self.layer["portal"]
 
     def test_vocab(self):
-        vocab_util = getUtility(
-            IVocabularyFactory, "ploneorg.vocabulary.countries"
-        )
+        vocab_util = getUtility(IVocabularyFactory, "ploneorg.vocabulary.countries")
         topics = vocab_util(self.portal)
         self.assertTrue("BR" in [x for x in topics.by_token])
 
