@@ -59,11 +59,13 @@ setup(
     ],
     extras_require={
         "test": [
+            "gocept.pytestlayer",
             "parameterized",
             "zest.releaser[recommended]",
             "plone.app.testing[robot]>=7.0.0a3",
             "plone.restapi[test]",
             "collective.MockMailHost",
+            "pytest",
         ],
     },
     entry_points="""

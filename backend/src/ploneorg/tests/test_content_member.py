@@ -11,7 +11,7 @@ from plone.restapi.testing import RelativeSession
 from ploneorg.content.member import FoundationMember
 from ploneorg.testing import PLONEORG_FUNCTIONAL_TESTING
 from ploneorg.testing import PLONEORG_INTEGRATION_TESTING
-from ploneorg.tests import create_test_users
+from . import create_test_users
 from typing import List
 from typing import Optional
 

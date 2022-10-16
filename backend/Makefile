@@ -143,11 +143,11 @@ lint-zpretty: ## validate ZCML/XML using zpretty
 
 .PHONY: test
 test: ## run tests
-	./bin/zope-testrunner --auto-color --auto-progress --test-path src/ploneorg/src/
+	bin/pytest
 
 .PHONY: test_quiet
 test_quiet: ## run tests removing deprecation warnings
-	PYTHONWARNINGS=ignore ./bin/zope-testrunner --auto-color --auto-progress --test-path src/ploneorg/src/
+	bin/pytest --disable-warnings
 
 .PHONY: create-site
 create-site: instance/etc/zope.ini ## Create a new site from scratch
