@@ -6,9 +6,11 @@ from collective.exportimport.import_content import ImportContent
 from logging import getLogger
 from pathlib import Path
 from plone import api
+from ploneorg.interfaces import IPLONEORGLayer
 from Products.Five import BrowserView
 from Products.CMFPlone.utils import get_installer
 from ZPublisher.HTTPRequest import FileUpload
+from zope.interface import alsoProvides
 
 import json
 import pycountry
@@ -17,10 +19,14 @@ import transaction
 
 logger = getLogger(__name__)
 
-DEFAULT_ADDONS = []
+DEFAULT_ADDONS = [
+    "plone.app.vulnerabilities",
+    "ploneorg",
+]
 
 PORTAL_TYPE_MAPPING = {
-    # "FormFolder": "EasyForm",
+    "Collection": "Document",
+    "Folder": "Document",
 }
 
 ALLOWED_TYPES = [
@@ -55,6 +61,13 @@ class ImportAll(BrowserView):
             if not installer.is_product_installed(addon):
                 installer.install_product(addon)
 
+        alsoProvides(self.request, IPLONEORGLayer)
+
+        # allow folders and collections
+        portal_types = api.portal.get_tool("portal_types")
+        portal_types["Collection"].global_allow = True
+        portal_types["Folder"].global_allow = True
+
         transaction.commit()
         cfg = getConfiguration()
         directory = Path(cfg.clienthome) / "import"
@@ -70,11 +83,11 @@ class ImportAll(BrowserView):
             "relations",
             "zope_users",
             "members",
-            "translations",
+            # "translations",
             "localroles",
             "ordering",
             # "defaultpages",
-            "discussion",
+            # "discussion",
             "portlets",
             "redirects",
         ]
@@ -238,6 +251,14 @@ class CustomImportContent(ImportContent):
 
         return item
 
+    # def dict_hook_folder(self, item):
+    #     item["@type"] = "Document"
+    #     return item
+
+    # def dict_hook_collection(self, item):
+    #     item["@type"] = "Document"
+    #     return item
+
     def dict_hook_plonerelease(self, item):
         # TODO: transfer data to a better format?
         fileinfos = item.get("files", [])
@@ -260,6 +281,14 @@ class CustomImportContent(ImportContent):
             ploneuse = item["ploneuse"]["data"]
             item["merit"]["data"] = f"{merit} \r\n {ploneuse}"
 
+        # fix country to work with vocabulary
+        if item.get("country"):
+            country = pycountry.countries.get(alpha_2=item["country"]) or pycountry.countries.get(alpha_3=item["country"])
+            if not country:
+                logger.info("Could not find country for %s", item["country"])
+            else:
+                item["country"] = country.alpha_2
+
         # TODO: Fix workflow
         item["review_state"] = "published"
         return item
@@ -273,8 +302,11 @@ class CustomImportContent(ImportContent):
 
         # fix country to work with vocabulary
         if item.get("country"):
-            country = pycountry.countries.get(alpha_3=item["country"]["token"])
-            item["country"] = country.alpha_2
+            country = pycountry.countries.get(alpha_2=item["country"]) or pycountry.countries.get(alpha_3=item["country"])
+            if not country:
+                logger.info("Could not find country for %s", item["country"])
+            else:
+                item["country"] = country.alpha_2
 
         # TODO: Fix workflow
         item["review_state"] = "published"
