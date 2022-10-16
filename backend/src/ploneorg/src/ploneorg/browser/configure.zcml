@@ -12,4 +12,29 @@
       type="plone"
       />
 
+  <!-- Import stuff (for migration only) -->
+  <browser:page
+      name="import_content"
+      for="zope.interface.Interface"
+      class=".import_content.CustomImportContent"
+      permission="cmf.ManagePortal"
+      layer="ploneorg.interfaces.IPLONEORGLayer"
+      />
+
+  <browser:page
+      name="import_all"
+      for="zope.interface.Interface"
+      class=".import_content.ImportAll"
+      template="import_all.pt"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
+      name="import_zope_users"
+      for="zope.interface.Interface"
+      class=".import_content.ImportZopeUsers"
+      template="import_zope_users.pt"
+      permission="cmf.ManagePortal"
+      />
+
 </configure>
