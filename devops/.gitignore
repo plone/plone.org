@@ -5,7 +5,7 @@
 bin
 include
 inventory/prod.yml
-host_vars/plone-prod.yml
+host_vars/ploneorg-prod.yml
 lib
 lib64
 pyvenv.cfg
