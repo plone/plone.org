@@ -88,7 +88,7 @@ jobs:
 
       - name: Run tests
         run: |
-          PYTHONWARNINGS=ignore zope-testrunner --auto-color --auto-progress --test-path src/ploneorg/src/
+          pytest
 
   release:
     runs-on: ubuntu-latest

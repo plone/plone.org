@@ -3,9 +3,7 @@
   <permissions>
     <permission acquire="False"
                 name="ploneorg: Add Foundation Member"
-    >
-      <role name="Manager" />
-    </permission>
+    />
     <permission acquire="False"
                 name="ploneorg: Add Foundation Sponsor"
     >

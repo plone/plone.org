@@ -5,7 +5,7 @@ from plone.app.testing import TEST_USER_ID
 from plone.restapi.testing import RelativeSession
 from ploneorg.testing import PLONEORG_FUNCTIONAL_TESTING
 from ploneorg.testing import PLONEORG_INTEGRATION_TESTING
-from ploneorg.tests import create_test_users
+from . import create_test_users
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 

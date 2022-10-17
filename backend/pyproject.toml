@@ -40,3 +40,8 @@ pyflakes = ["+*"]
 [tool.plone-code-analysis]
 paths = "src/ploneorg/setup.py src/ploneorg/src/ scripts/"
 paths_pyroma = "src/ploneorg"
+
+[tool.pytest.ini_options]
+testpaths = [
+  "src/ploneorg/tests"
+]
