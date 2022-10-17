@@ -6,14 +6,18 @@ from collective.exportimport.import_content import ImportContent
 from logging import getLogger
 from pathlib import Path
 from plone import api
+from plone.base.utils import get_installer
+from plone.volto.browser.migrate_to_volto import migrate_richtext_to_blocks
+from plone.volto.setuphandlers import add_behavior
+from plone.volto.setuphandlers import remove_behavior
 from ploneorg.interfaces import IPLONEORGLayer
-from Products.CMFPlone.utils import get_installer
 from Products.Five import BrowserView
 from zope.interface import alsoProvides
 from ZPublisher.HTTPRequest import FileUpload
 
 import json
 import pycountry
+import requests
 import transaction
 
 
@@ -49,6 +53,17 @@ ALLOWED_TYPES = [
 class ImportAll(BrowserView):
     def __call__(self):
         request = self.request
+
+        # Check for Blocks-conversion
+        headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        }
+        r = requests.post(
+            "http://localhost:5000/html", headers=headers, json={"html": "<p>text</p>"}
+        )
+        r.raise_for_status()
+
         if not request.form.get("form.submitted", False):
             return self.index()
 
@@ -62,10 +77,14 @@ class ImportAll(BrowserView):
 
         alsoProvides(self.request, IPLONEORGLayer)
 
-        # allow folders and collections
+        # Fake the target being a classic site...
+        # 1. allow folders and collections
         portal_types = api.portal.get_tool("portal_types")
         portal_types["Collection"].global_allow = True
         portal_types["Folder"].global_allow = True
+        # 2. enable richtext behavior (to enable deserializing it)
+        for type_ in ["Document", "News Item", "Event"]:
+            add_behavior(type_, "plone.richtext")
 
         transaction.commit()
         cfg = getConfiguration()
@@ -113,9 +132,41 @@ class ImportAll(BrowserView):
         logger.info(f"Updated linkintegrity for {results} items")
         transaction.commit()
 
+        # rebuild catalog
+        catalog = api.portal.get_tool("portal_catalog")
+        logger.info("Rebuilding catalog...")
+        catalog.clearFindAndRebuild()
+        transaction.commit()
+        logger.info("Finished rebuilding catalog!")
+
+        logger.info("Start migrating richtext to blocks...")
+        migrate_richtext_to_blocks()
+        transaction.commit()
+        logger.info("Finished migrating richtext to blocks!")
+
+        view = api.content.get_view("migrate_to_volto", portal, request)
+        view.migrate_default_pages = True
+        view.slate = True
+        logger.info("Start migrating Folders to Documents...")
+        view.do_migrate_folders()
+        transaction.commit()
+        logger.info("Finished migrating Folders to Documents!")
+        logger.info("Start migrating Collections to Documents...")
+        view.migrate_collections()
+        transaction.commit()
+        logger.info("Finished migrating Collections to Documents!")
+
         reset_dates = api.content.get_view("reset_dates", portal, request)
         reset_dates()
         transaction.commit()
+
+        # disallow folders and collections again
+        portal_types["Collection"].global_allow = False
+        portal_types["Folder"].global_allow = False
+
+        # disable richtext behavior again
+        for type_ in ["Document", "News Item", "Event"]:
+            remove_behavior(type_, "plone.richtext")
 
         return request.response.redirect(portal.absolute_url())
 
@@ -190,7 +241,11 @@ class CustomImportContent(ImportContent):
 
     DROP_PATHS = []
 
-    DROP_UIDS = []
+    DROP_UIDS = [
+        "cc2b36fa964f417dad63372621180edd",  # /foundation
+        "5d0b45aeadfb497bb047645b8db9a9bd",  # /foundation/members
+        "709623d99e1149c9b7dfb7692c5658c9",  # /images
+    ]
 
     def global_dict_hook(self, item):
         # TODO: implement the missing types
@@ -340,7 +395,7 @@ class ImportZopeUsers(BrowserView):
                 elif isinstance(jsonfile, FileUpload):
                     data = json.loads(jsonfile.read())
                 else:
-                    raise ("Data is neither text nor upload.")
+                    raise RuntimeError("Data is neither text nor upload.")
             except Exception as e:  # noQA
                 status = "error"
                 logger.error(e)
