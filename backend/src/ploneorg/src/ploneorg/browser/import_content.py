@@ -7,10 +7,10 @@ from logging import getLogger
 from pathlib import Path
 from plone import api
 from ploneorg.interfaces import IPLONEORGLayer
-from Products.Five import BrowserView
 from Products.CMFPlone.utils import get_installer
-from ZPublisher.HTTPRequest import FileUpload
+from Products.Five import BrowserView
 from zope.interface import alsoProvides
+from ZPublisher.HTTPRequest import FileUpload
 
 import json
 import pycountry
@@ -47,7 +47,6 @@ ALLOWED_TYPES = [
 
 
 class ImportAll(BrowserView):
-
     def __call__(self):
         request = self.request
         if not request.form.get("form.submitted", False):
@@ -163,7 +162,9 @@ def img_variant_fixer(text, obj=None):
         return text
 
     picture_variants = api.portal.get_registry_record("plone.picture_variants")
-    scale_variant_mapping = {k: v["sourceset"][0]["scale"] for k, v in picture_variants.items()}
+    scale_variant_mapping = {
+        k: v["sourceset"][0]["scale"] for k, v in picture_variants.items()
+    }
     scale_variant_mapping["thumb"] = "mini"
     fallback_variant = "preview"
 
@@ -239,15 +240,21 @@ class CustomImportContent(ImportContent):
                     types_fixed.append(PORTAL_TYPE_MAPPING[portal_type])
                 elif portal_type in ALLOWED_TYPES:
                     types_fixed.append(portal_type)
-            item["exportimport.constrains"]["locally_allowed_types"] = list(set(types_fixed))
+            item["exportimport.constrains"]["locally_allowed_types"] = list(
+                set(types_fixed)
+            )
 
             types_fixed = []
-            for portal_type in item["exportimport.constrains"]["immediately_addable_types"]:
+            for portal_type in item["exportimport.constrains"][
+                "immediately_addable_types"
+            ]:
                 if portal_type in PORTAL_TYPE_MAPPING:
                     types_fixed.append(PORTAL_TYPE_MAPPING[portal_type])
                 elif portal_type in ALLOWED_TYPES:
                     types_fixed.append(portal_type)
-            item["exportimport.constrains"]["immediately_addable_types"] = list(set(types_fixed))
+            item["exportimport.constrains"]["immediately_addable_types"] = list(
+                set(types_fixed)
+            )
 
         return item
 
@@ -264,7 +271,10 @@ class CustomImportContent(ImportContent):
         fileinfos = item.get("files", [])
         item["files"] = []
         for fileinfo in fileinfos:
-            value = f"{fileinfo['description']} ({fileinfo['file_size']}, {fileinfo['platform']}): {fileinfo['url']}"
+            value = (
+                f"{fileinfo['description']} ({fileinfo['file_size']}, "
+                f"{fileinfo['platform']}): {fileinfo['url']}"
+            )
             item["files"].append(value)
         return item
 
@@ -276,14 +286,17 @@ class CustomImportContent(ImportContent):
         # append ploneuse to main text
         ploneuse = item["ploneuse"] and item["ploneuse"]["data"] or ""
         soup = BeautifulSoup(ploneuse, "html.parser")
-        if soup.text.strip() and "no data (carried over from old site)" not in soup.text:
+        soup_text = soup.text.strip()
+        if soup_text and "no data (carried over from old site)" not in soup_text:
             merit = item["merit"]["data"]
             ploneuse = item["ploneuse"]["data"]
             item["merit"]["data"] = f"{merit} \r\n {ploneuse}"
 
         # fix country to work with vocabulary
         if item.get("country"):
-            country = pycountry.countries.get(alpha_2=item["country"]) or pycountry.countries.get(alpha_3=item["country"])
+            country = pycountry.countries.get(
+                alpha_2=item["country"]
+            ) or pycountry.countries.get(alpha_3=item["country"])
             if not country:
                 logger.info("Could not find country for %s", item["country"])
             else:
@@ -302,7 +315,9 @@ class CustomImportContent(ImportContent):
 
         # fix country to work with vocabulary
         if item.get("country"):
-            country = pycountry.countries.get(alpha_2=item["country"]) or pycountry.countries.get(alpha_3=item["country"])
+            country = pycountry.countries.get(
+                alpha_2=item["country"]
+            ) or pycountry.countries.get(alpha_3=item["country"])
             if not country:
                 logger.info("Could not find country for %s", item["country"])
             else:
@@ -326,7 +341,7 @@ class ImportZopeUsers(BrowserView):
                     data = json.loads(jsonfile.read())
                 else:
                     raise ("Data is neither text nor upload.")
-            except Exception as e:
+            except Exception as e:  # noQA
                 status = "error"
                 logger.error(e)
                 api.portal.show_message(
