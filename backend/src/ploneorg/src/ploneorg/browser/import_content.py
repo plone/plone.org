@@ -253,10 +253,10 @@ class CustomImportContent(ImportContent):
             return
 
         # Expires before effective
-        effective = item.get('effective', None)
-        expires = item.get('expires', None)
+        effective = item.get("effective", None)
+        expires = item.get("expires", None)
         if effective and expires and expires <= effective:
-            item.pop('expires')
+            item.pop("expires")
 
         # Some items may have no title or only spaces but it is a required field
         if not item.get("title") or not item.get("title", "").strip():
