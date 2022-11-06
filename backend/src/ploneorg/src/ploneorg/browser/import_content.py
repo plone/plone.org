@@ -228,7 +228,7 @@ def img_variant_fixer(text, obj=None):
         variant = scale_variant_mapping.get(scale, fallback_variant)
         tag["data-picturevariant"] = variant
 
-        classes = tag["class"]
+        classes = tag.get("class", [])
         new_class = f"picture-variant-{variant}"
         if new_class not in classes:
             classes.append(new_class)
@@ -252,9 +252,11 @@ class CustomImportContent(ImportContent):
         if item["@type"] not in ALLOWED_TYPES:
             return
 
-        # fix error_expiration_must_be_after_effective_date
-        if item["UID"] == "0cf016d763af4615b3f06587ef5cd9f4":
-            item["effective"] = "2019-01-01T00:00:00"
+        # Expires before effective
+        effective = item.get('effective', None)
+        expires = item.get('expires', None)
+        if effective and expires and expires <= effective:
+            item.pop('expires')
 
         # Some items may have no title or only spaces but it is a required field
         if not item.get("title") or not item.get("title", "").strip():
@@ -337,6 +339,16 @@ class CustomImportContent(ImportContent):
         firstname = item.pop("fname", "")
         lastname = item.pop("lname", "")
         item["title"] = f"{firstname} {lastname}".strip()
+
+        # Drop empty org
+        if "organization" in item and not item["organization"].strip():
+            item.pop("organization")
+
+        if "email" in item and not item["email"].strip():
+            item.pop("email")
+
+        if "address" in item and item["address"].strip():
+            item["address"] = item["address"].strip()
 
         # append ploneuse to main text
         ploneuse = item["ploneuse"] and item["ploneuse"]["data"] or ""
