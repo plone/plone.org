@@ -242,15 +242,42 @@ class CustomImportContent(ImportContent):
     DROP_PATHS = []
 
     DROP_UIDS = [
-        "cc2b36fa964f417dad63372621180edd",  # /foundation
         "5d0b45aeadfb497bb047645b8db9a9bd",  # /foundation/members
         "709623d99e1149c9b7dfb7692c5658c9",  # /images
+        "ed7f07cf1e8be832094bcb99612fc1ca",  # /news
+        "28ccc0480b2042eabd38c7bbc287ecc1",  # /events
     ]
 
     def global_dict_hook(self, item):
         # TODO: implement the missing types
         if item["@type"] not in ALLOWED_TYPES:
             return
+
+        # handle old news
+        if item["parent"].get("UID", None) == "ed7f07cf1e8be832094bcb99612fc1ca":
+            item["parent"].pop("UID")
+            item["parent"]["@id"] = "http://localhost:8080/Plone/news-and-events/news"
+
+        # handle old events
+        if item["parent"].get("UID", None) == "28ccc0480b2042eabd38c7bbc287ecc1":
+            item["parent"].pop("UID")
+            item["parent"]["@id"] = "http://localhost:8080/Plone/news-and-events/events"
+
+        # /foundation
+        if item["UID"] == "cc2b36fa964f417dad63372621180edd":
+            item["@id"] == item["@id"].replace(
+                "/ploneorg/foundation", "/Plone/foundation-old"
+            )
+            item["id"] = "foundation-old"
+            item["title"] = "Plone Foundation (old)"
+
+        # /community
+        if item["UID"] == "2f7c170c225244a1a467f6451f05b740":
+            item["@id"] == item["@id"].replace(
+                "/ploneorg/community", "/Plone/community-old"
+            )
+            item["id"] = "community-old"
+            item["title"] = "Community (old)"
 
         # Expires before effective
         effective = item.get("effective", None)
@@ -293,6 +320,8 @@ class CustomImportContent(ImportContent):
         if item.get("exportimport.constrains"):
             types_fixed = []
             for portal_type in item["exportimport.constrains"]["locally_allowed_types"]:
+                if portal_type == "FoundationMember":
+                    continue
                 if portal_type in PORTAL_TYPE_MAPPING:
                     types_fixed.append(PORTAL_TYPE_MAPPING[portal_type])
                 elif portal_type in ALLOWED_TYPES:
@@ -305,6 +334,8 @@ class CustomImportContent(ImportContent):
             for portal_type in item["exportimport.constrains"][
                 "immediately_addable_types"
             ]:
+                if portal_type == "FoundationMember":
+                    continue
                 if portal_type in PORTAL_TYPE_MAPPING:
                     types_fixed.append(PORTAL_TYPE_MAPPING[portal_type])
                 elif portal_type in ALLOWED_TYPES:
@@ -336,6 +367,9 @@ class CustomImportContent(ImportContent):
         return item
 
     def dict_hook_foundationmember(self, item):
+        item["parent"].pop("UID")
+        item["parent"]["@id"] = "http://localhost:8080/ploneorg/foundation/members"
+
         firstname = item.pop("fname", "")
         lastname = item.pop("lname", "")
         item["title"] = f"{firstname} {lastname}".strip()
