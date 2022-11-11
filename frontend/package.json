@@ -155,7 +155,7 @@
   },
   "dependencies": {
     "@eeacms/volto-accordion-block": "*",
-    "@eeacms/volto-matomo": "*",
+    "@eeacms/volto-matomo": "3.0.0",
     "@fontsource/assistant": "4.5.11",
     "@fortawesome/fontawesome-svg-core": "1.2.36",
     "@fortawesome/free-regular-svg-icons": "5.15.4",
