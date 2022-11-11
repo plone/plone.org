@@ -249,6 +249,11 @@ class CustomImportContent(ImportContent):
     ]
 
     def global_dict_hook(self, item):
+        item["@id"] = item["@id"].replace("/ploneorg/", "/Plone/", 1)
+        item["parent"]["@id"] = item["parent"]["@id"].replace(
+            "/ploneorg/", "/Plone/", 1
+        )
+
         # TODO: implement the missing types
         if item["@type"] not in ALLOWED_TYPES:
             return
@@ -265,17 +270,13 @@ class CustomImportContent(ImportContent):
 
         # /foundation
         if item["UID"] == "cc2b36fa964f417dad63372621180edd":
-            item["@id"] == item["@id"].replace(
-                "/ploneorg/foundation", "/Plone/foundation-old"
-            )
+            item["@id"] = item["@id"].replace("/foundation", "/foundation-old", 1)
             item["id"] = "foundation-old"
             item["title"] = "Plone Foundation (old)"
 
         # /community
         if item["UID"] == "2f7c170c225244a1a467f6451f05b740":
-            item["@id"] == item["@id"].replace(
-                "/ploneorg/community", "/Plone/community-old"
-            )
+            item["@id"] = item["@id"].replace("/community", "/community-old", 1)
             item["id"] = "community-old"
             item["title"] = "Community (old)"
 
