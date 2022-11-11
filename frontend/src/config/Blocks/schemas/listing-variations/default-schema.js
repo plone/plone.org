@@ -11,7 +11,6 @@ const messages = defineMessages({
     id: 'Description',
     defaultMessage: 'Description',
   },
-
   header_align: {
     id: 'Header alignmnet',
     defaultMessage: 'Header alignment',
@@ -39,7 +38,7 @@ const getDefaultSchema = (schema, formData, intl, position = 0) => {
 
   addSchemaField(
     schema,
-    'title',
+    'headerTitle',
     intl.formatMessage(messages.title),
     null,
     { type: 'string' },
