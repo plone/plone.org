@@ -11,7 +11,7 @@ The main destination for Plone
 
 ### Development Setup
 
-- Python 3.9
+- Python 3.10
 - Node 16
 - yarn
 - Docker

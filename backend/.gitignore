@@ -24,8 +24,10 @@ dist/*
 test.plone_addon/
 sources/
 var/
+.make-sentinels/
 # files
 .installed.cfg
+.installed.txt
 .mr.developer.cfg
 lib64
 log.html
