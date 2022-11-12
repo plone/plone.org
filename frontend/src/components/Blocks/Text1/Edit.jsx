@@ -117,7 +117,7 @@ const Edit = (props) => {
                   }}
                 />
               </h3>
-              {data.have_cta && (
+              {data.have_cta && href && (
                 <div className="block-text1-desktop-btn">{ctaButton}</div>
               )}
             </Grid.Column>
@@ -144,7 +144,7 @@ const Edit = (props) => {
                   />
                 </p>
               </div>
-              {data.have_cta && (
+              {data.have_cta && href && (
                 <div className="block-text1-mobile-btn">{ctaButton}</div>
               )}
             </Grid.Column>

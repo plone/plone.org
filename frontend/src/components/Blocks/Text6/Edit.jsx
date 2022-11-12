@@ -123,7 +123,7 @@ const Edit = (props) => {
             />
           </p>
         </div>
-        {data.have_cta && (
+        {data.have_cta && href && (
           <div className="box-cta">
             <Button
               as={UniversalLink}

@@ -22,7 +22,7 @@ const messages = defineMessages({
   },
   cta_color: {
     id: 'cta_color',
-    defaultMessage: 'CTA colorr',
+    defaultMessage: 'CTA color',
   },
   cta_title: {
     id: 'cta_title',
