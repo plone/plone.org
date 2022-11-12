@@ -3,17 +3,16 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
 
-  <!-- Example upgrade step
   <genericsetup:upgradeSteps
       profile="ploneorg:default"
       source="20221014001"
-      destination="20230229001"
+      destination="20221112001"
       >
     <genericsetup:upgradeDepends
-        title="Update registry value"
-        import_steps="plone.app.registry"
+        title="Update Foundation Member Workflows"
+        import_steps="workflows"
         />
   </genericsetup:upgradeSteps>
-  -->
+
 
 </configure>
