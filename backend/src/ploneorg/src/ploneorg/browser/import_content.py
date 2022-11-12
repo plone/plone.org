@@ -412,8 +412,6 @@ class CustomImportContent(ImportContent):
             else:
                 item["country"] = country.alpha_2
 
-        # TODO: Fix workflow
-        item["review_state"] = "published"
         return item
 
     def dict_hook_foundationsponsor(self, item):
