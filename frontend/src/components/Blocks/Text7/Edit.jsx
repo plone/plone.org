@@ -178,7 +178,7 @@ const Edit = (props) => {
                   <div className="buttonBottom">
                     <Button
                       as={UniversalLink}
-                      size="large"
+                      size="small"
                       href={
                         data.link_to
                           ? flattenToAppURL(data.link_to[0]?.['@id'])

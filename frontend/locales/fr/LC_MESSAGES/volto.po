@@ -564,7 +564,7 @@ msgid "cornerColor"
 msgstr ""
 
 #: components/Blocks/Text1/Sidebar
-# defaultMessage: CTA colorr
+# defaultMessage: CTA color
 msgid "cta_color"
 msgstr ""
 

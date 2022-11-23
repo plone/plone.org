@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-10-15T13:58:27.678Z\n"
+"POT-Creation-Date: 2022-11-12T19:48:50.310Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -551,7 +551,7 @@ msgid "cornerColor"
 msgstr ""
 
 #: components/Blocks/Text1/Sidebar
-# defaultMessage: CTA colorr
+# defaultMessage: CTA color
 msgid "cta_color"
 msgstr ""
 
