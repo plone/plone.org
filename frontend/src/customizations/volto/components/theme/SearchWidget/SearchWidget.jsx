@@ -92,7 +92,7 @@ class SearchWidget extends Component {
     event.preventDefault();
     const section = this.state.section ? `&path=${this.props.pathname}` : '';
     this.props.history.push(
-      `/${this.props.intl.locale}/search?SearchableText=${this.state.text}${section}`,
+      `/search?SearchableText=${this.state.text}${section}`,
     );
   }
 
