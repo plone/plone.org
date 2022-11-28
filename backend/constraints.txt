@@ -1,1 +1,1 @@
--c https://dist.plone.org/release/6.0.0b3/constraints.txt
+-c https://dist.plone.org/release/6.0.0rc1/constraints.txt
