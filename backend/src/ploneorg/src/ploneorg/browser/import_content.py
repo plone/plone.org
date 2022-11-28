@@ -93,7 +93,7 @@ class ImportAll(BrowserView):
         # import content
         view = api.content.get_view("import_content", portal, request)
         request.form["form.submitted"] = True
-        request.form["commit"] = 500
+        request.form["commit"] = 1000
         view(server_file="ploneorg.json", return_json=True)
         transaction.commit()
 
@@ -246,6 +246,8 @@ class CustomImportContent(ImportContent):
         "709623d99e1149c9b7dfb7692c5658c9",  # /images
         "ed7f07cf1e8be832094bcb99612fc1ca",  # /news
         "28ccc0480b2042eabd38c7bbc287ecc1",  # /events
+        "3528fc75c59f4449860bed6278c44d57",  # /news-and-events
+        "f3087811db5d43ab8ba600d29682ab7d",  # /get-started
     ]
 
     def global_dict_hook(self, item):
@@ -279,6 +281,12 @@ class CustomImportContent(ImportContent):
             item["@id"] = item["@id"].replace("/community", "/community-old", 1)
             item["id"] = "community-old"
             item["title"] = "Community (old)"
+
+        # /images
+        if item["UID"] == "709623d99e1149c9b7dfb7692c5658c9":
+            item["@id"] = item["@id"].replace("/images", "/images-old", 1)
+            item["id"] = "images-old"
+            item["title"] = "Images (old)"
 
         # Expires before effective
         effective = item.get("effective", None)
