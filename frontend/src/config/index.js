@@ -56,6 +56,10 @@ export default function applyConfig(config) {
       { match: '', component: CustomCSS },
     ],
   };
+  config.blocks.blocksConfig.__grid = {
+    ...config.blocks.blocksConfig.__grid,
+    gridAllowedBlocks: ['teaser', 'image', 'slate', 'html'],
+  };
 
   SiteBlocks(config); //blocks configuration for Plone.org
   SiteWidgets(config); //widgets configuration for Plone.org
