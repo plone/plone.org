@@ -63,9 +63,9 @@ jobs:
       fail-fast: false
       matrix:
         python:
-          - 3.9
+          - 3.11
         plone:
-          - "6.0.0b3"
+          - "6.0.0rc1"
 
     defaults:
       run:
