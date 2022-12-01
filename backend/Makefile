@@ -15,7 +15,7 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6.0.0b3
+PLONE_VERSION=6.0.0rc1
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -40,7 +40,7 @@ ifeq (, $(shell which $(PYTHON) ))
 endif
 
 # version ok?
-PYTHON_VERSION_MIN=3.8
+PYTHON_VERSION_MIN=3.11
 PYTHON_VERSION_OK=$(shell $(PYTHON) -c 'import sys; print((int(sys.version_info[0]), int(sys.version_info[1])) > tuple(map(int, "$(PYTHON_VERSION_MIN)".split("."))))')
 ifeq ($(PYTHON_VERSION_OK),0)
   $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
