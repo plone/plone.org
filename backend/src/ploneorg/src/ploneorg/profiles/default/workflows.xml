@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="portal_workflow">
+  <object meta_type="Workflow"
+          name="foundation_member_workflow"
+  />
+  <bindings>
+    <type type_id="FoundationMember">
+      <bound-workflow workflow_id="foundation_member_workflow" />
+    </type>
+  </bindings>
+</object>

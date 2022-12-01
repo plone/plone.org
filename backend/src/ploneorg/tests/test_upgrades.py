@@ -22,16 +22,16 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
         source, dest = tuple([source]), tuple([dest])
         return item["source"] == source and item["dest"] == dest
 
-    def available_steps(self) -> list:
+    def available_steps(self, src, dst) -> list:
         """Test available steps."""
-        steps = listUpgradeSteps(self.setup, self.profile, self.src)
-        steps = [s for s in steps if self._match(s[0], self.src, self.dst)]
+        steps = listUpgradeSteps(self.setup, self.profile, src)
+        steps = [s for s in steps if self._match(s[0], src, dst)]
         return steps
 
     # Example of upgrade step test
     @parameterized.expand(
         [
-            ("20221014001", "20230229001", 1),
+            ("20221014001", "20221112001", 1),
         ]
     )
     def test_available(self, src, dst, expected):
