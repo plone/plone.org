@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <dc-workflow initial_state="initial"
              state_variable="review_state"
              title="Approval process for foundation members"
@@ -325,7 +325,7 @@
       <expression>transition/getId|nothing</expression>
     </default>
     <guard>
-    </guard>
+</guard>
   </variable>
   <variable for_catalog="False"
             for_status="True"
@@ -338,7 +338,7 @@
       <expression>user/getId</expression>
     </default>
     <guard>
-    </guard>
+</guard>
   </variable>
   <variable for_catalog="False"
             for_status="True"
@@ -351,7 +351,7 @@
       <expression>python:state_change.kwargs.get('comment', '')</expression>
     </default>
     <guard>
-    </guard>
+</guard>
   </variable>
   <variable for_catalog="False"
             for_status="False"
@@ -379,6 +379,6 @@
       <expression>state_change/getDateTime</expression>
     </default>
     <guard>
-    </guard>
+</guard>
   </variable>
 </dc-workflow>
