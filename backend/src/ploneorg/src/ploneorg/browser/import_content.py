@@ -376,6 +376,10 @@ class CustomImportContent(ImportContent):
         return item
 
     def dict_hook_foundationmember(self, item):
+        # drop rejected applicants
+        if item["review_state"] == "rejected":
+            return
+
         item["parent"].pop("UID")
         item["parent"]["@id"] = "http://localhost:8080/ploneorg/foundation/members"
 
