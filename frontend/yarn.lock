@@ -1694,10 +1694,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-accordion-block@npm:*":
-  version: 4.1.0
-  resolution: "@eeacms/volto-accordion-block@npm:4.1.0"
-  checksum: 4fc34aec80e4b439c0f80213657b427c1ffd8233aa032245604d9ce1f5f444164a5c9e276f254ea086926a8cff6b9233ed2d5f27d6ad98d0ae004397f302203c
+"@eeacms/volto-accordion-block@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@eeacms/volto-accordion-block@npm:6.0.0"
+  checksum: 9653d83ef89ae0a509dc9906606e1a66db47ef413f47a3ed6b875a68ebc034739f65c58fe1d26a1b1e56c1bb90ed0e46fcc35dc2cd17f8c649296450e783a92c
   languageName: node
   linkType: hard
 
@@ -2364,24 +2364,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kitconcept/volto-blocks-grid@npm:*":
-  version: 5.1.1
-  resolution: "@kitconcept/volto-blocks-grid@npm:5.1.1"
+"@kitconcept/volto-blocks-grid@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@kitconcept/volto-blocks-grid@npm:5.2.0"
   peerDependencies:
     "@plone/volto": ">=12.14.0"
-  checksum: b3ba6917c028a96598b20f10fff079f67beb987a5365c871ada9bf4fcab4bbff4ad9b6d3f27cf8b21e805b50bb9cdd9336d3c2deb0e8aa4e2df4b2f73cc70dd5
+  checksum: c17aa934422fda356b4a2078dd7215dc86bddc5cbe351069bc1c62aca010d265396debad3097e846726c6294704aca8782f765951c51094414ca72ad501886e3
   languageName: node
   linkType: hard
 
-"@kitconcept/volto-slider-block@npm:*":
-  version: 2.1.0
-  resolution: "@kitconcept/volto-slider-block@npm:2.1.0"
+"@kitconcept/volto-slider-block@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@kitconcept/volto-slider-block@npm:4.0.0"
   dependencies:
-    "@plone/scripts": "*"
     deepmerge: 4.2.2
     react-slick: 0.29.0
     slick-carousel: 1.8.1
-  checksum: b30c334cded583b5e52beca11d7898ef309a533a6841fe4413e2458bdd0a4b7f7ae3766986843f81a204593338e4fe03407be9a779bcd2395646a8ea35320217
+  peerDependencies:
+    "@plone/volto": ^16.1.0
+  checksum: 9862264195e49d44fd4e7a557ef72c755c1419e78ba2f6d2b44ce741a625eb638443b82aeabb183e1da43aa9ad070eb9f14b6e8cad9cb035c2d237260e7b361b
   languageName: node
   linkType: hard
 
@@ -10577,15 +10578,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "frontend@workspace:."
   dependencies:
-    "@eeacms/volto-accordion-block": "*"
+    "@eeacms/volto-accordion-block": ^6.0.0
     "@eeacms/volto-matomo": 3.0.0
     "@fontsource/assistant": 4.5.11
     "@fortawesome/fontawesome-svg-core": 1.2.36
     "@fortawesome/free-regular-svg-icons": 5.15.4
     "@fortawesome/free-solid-svg-icons": 5.15.4
     "@fortawesome/react-fontawesome": 0.1.15
-    "@kitconcept/volto-blocks-grid": "*"
-    "@kitconcept/volto-slider-block": "*"
+    "@kitconcept/volto-blocks-grid": ^5.2.0
+    "@kitconcept/volto-slider-block": ^4.0.0
     "@plone-collective/volto-authomatic": 1.2.0
     "@plone/scripts": ^2.2.1
     "@plone/volto": 16.2.0
@@ -10607,10 +10608,11 @@ __metadata:
     stylelint-config-prettier: 8.0.1
     stylelint-prettier: 1.1.2
     volto-dropdownmenu: 2.4.3
-    volto-form-block: 2.2.3
+    volto-form-block: ^3.0.0
     volto-gdpr-privacy: 1.3.11
     volto-secondarymenu: 2.2.0
     volto-social-settings: 2.2.0
+    volto-subblocks: ^2.0.0
   languageName: unknown
   linkType: soft
 
@@ -22354,16 +22356,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:2.2.3":
-  version: 2.2.3
-  resolution: "volto-form-block@npm:2.2.3"
+"volto-form-block@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "volto-form-block@npm:3.0.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
-    "@plone/scripts": ^1.0.3
     file-saver: ^2.0.5
     react-google-recaptcha-v3: ^1.8.0
-    volto-subblocks: "github:collective/volto-subblocks#v1.0.1"
-  checksum: 9d58b0215bcf8adb30ff2332a8f362117e604076466a7adb8d49a1db6edd867123d0b20d74b68720b72577f1f0b2ac852702293dd20855f76c9989a6fb5ebc2d
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+    volto-subblocks: ^2.0.0
+  checksum: 75115be24674091f2424547c267c7948ba3de0fc2423819811e07ca36c5551792e9c85421e11e8f57e82f8cae8d0d0dda5e412ebd878291a19495375f959566a
   languageName: node
   linkType: hard
 
@@ -22400,13 +22403,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-subblocks@github:collective/volto-subblocks#v1.0.1":
-  version: 1.0.1
-  resolution: "volto-subblocks@https://github.com/collective/volto-subblocks.git#commit=65b9fecae46eac86e999ec2fed4cb35e03059b46"
+"volto-subblocks@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "volto-subblocks@npm:2.0.0"
   dependencies:
     react-dnd: ^5.0.0
     react-dnd-html5-backend: ^5.0.1
-  checksum: 2ab01203e9d35670be8573c270641b587a234bab579d0a79a9dafd02c9d48ca61568d69dc09c9561f7cfa848b57796f527809a494b9e7420f01ed6ea777118b8
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: 7e4774cd63aad14d46f8371d725d800cc978dafb3672cb9ddb16e032b8fc849948d7e39301c3d55864a40d5143e101fd819165ba5254a016be31812f826c4f76
   languageName: node
   linkType: hard
 
