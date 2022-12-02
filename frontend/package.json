@@ -42,8 +42,7 @@
     "@eeacms/volto-accordion-block",
     "@kitconcept/volto-blocks-grid",
     "@kitconcept/volto-slider-block",
-    "@eeacms/volto-matomo",
-    "@plone-collective/volto-authomatic"
+    "@eeacms/volto-matomo"
   ],
   "jest": {
     "modulePathIgnorePatterns": [

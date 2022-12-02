@@ -97,3 +97,21 @@ strong {
 fieldset {
   min-inline-size: auto;
 }
+
+.contenttype-lrf,
+.contenttype-plone-site {
+  .ui.secondary.vertical.segment.breadcrumbs {
+    display: none;
+  }
+}
+
+.ui.secondary.vertical.segment.breadcrumbs {
+  @media (max-width: @largestTabletScreen) {
+    .ui.segment.breadcrumbs {
+      .ui.container {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

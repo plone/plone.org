@@ -427,19 +427,14 @@ export const SiteBlocks = (config) => {
   removeListingVariation(config, 'summary');
   delete config.blocks.blocksConfig.toc; //remove block 'indice dei contenuti'
 
-  config.blocks.requiredBlocks = [
-    'breadcrumbs',
-    'author',
-    'infobox',
-    'pagetag',
-  ]; //il blocco 'title' non è required perchè al suo posto possono mettere il blocco slider
+  config.blocks.requiredBlocks = ['author', 'infobox', 'pagetag']; //il blocco 'title' non è required perchè al suo posto possono mettere il blocco slider
   config.blocks.initialBlocks = {
     ...config.blocks.initialBlocks,
-    Document: ['breadcrumbs', 'title', 'related_items', 'pagetag'],
-    Event: ['breadcrumbs', 'title', 'infobox', 'related_items', 'pagetag'],
-    Project: ['slider', 'breadcrumbs', 'title'],
-    Story: ['slider', 'breadcrumbs', 'title', 'author', 'related_items'],
-    'News Item': ['slider', 'breadcrumbs', 'title', 'related_items', 'pagetag'],
+    Document: ['title', 'related_items', 'pagetag'],
+    Event: ['title', 'infobox', 'related_items', 'pagetag'],
+    Project: ['slider', 'title'],
+    Story: ['slider', 'title', 'author', 'related_items'],
+    'News Item': ['slider', 'title', 'related_items', 'pagetag'],
   };
   config.blocks.initialBlocksFocus = {
     ...config.blocks.initialBlocksFocus,
