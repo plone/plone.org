@@ -94,6 +94,7 @@ class ImportAll(BrowserView):
         view = api.content.get_view("import_content", portal, request)
         request.form["form.submitted"] = True
         request.form["commit"] = 1000
+        request.form["handle_existing_content"] = 1
         view(server_file="ploneorg.json", return_json=True)
         transaction.commit()
 
@@ -242,12 +243,14 @@ class CustomImportContent(ImportContent):
     DROP_PATHS = []
 
     DROP_UIDS = [
+        "cc2b36fa964f417dad63372621180edd",  # /foundation
         "5d0b45aeadfb497bb047645b8db9a9bd",  # /foundation/members
         "709623d99e1149c9b7dfb7692c5658c9",  # /images
         "ed7f07cf1e8be832094bcb99612fc1ca",  # /news
         "28ccc0480b2042eabd38c7bbc287ecc1",  # /events
         "3528fc75c59f4449860bed6278c44d57",  # /news-and-events
         "f3087811db5d43ab8ba600d29682ab7d",  # /get-started
+        "2f7c170c225244a1a467f6451f05b740",  # /community
     ]
 
     def global_dict_hook(self, item):
@@ -270,17 +273,17 @@ class CustomImportContent(ImportContent):
             item["parent"].pop("UID")
             item["parent"]["@id"] = "http://localhost:8080/Plone/news-and-events/events"
 
-        # /foundation
-        if item["UID"] == "cc2b36fa964f417dad63372621180edd":
-            item["@id"] = item["@id"].replace("/foundation", "/foundation-old", 1)
-            item["id"] = "foundation-old"
-            item["title"] = "Plone Foundation (old)"
+        # # /foundation
+        # if item["UID"] == "cc2b36fa964f417dad63372621180edd":
+        #     item["@id"] = item["@id"].replace("/foundation", "/foundation-old", 1)
+        #     item["id"] = "foundation-old"
+        #     item["title"] = "Plone Foundation (old)"
 
-        # /community
-        if item["UID"] == "2f7c170c225244a1a467f6451f05b740":
-            item["@id"] = item["@id"].replace("/community", "/community-old", 1)
-            item["id"] = "community-old"
-            item["title"] = "Community (old)"
+        # # /community
+        # if item["UID"] == "2f7c170c225244a1a467f6451f05b740":
+        #     item["@id"] = item["@id"].replace("/community", "/community-old", 1)
+        #     item["id"] = "community-old"
+        #     item["title"] = "Community (old)"
 
         # /images
         if item["UID"] == "709623d99e1149c9b7dfb7692c5658c9":
