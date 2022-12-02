@@ -23,11 +23,6 @@ clean: ## Clean installation
 	@echo "Clean installation"
 	rm -Rf node_modules
 
-.PHONY: install
-install: ## Install the frontend
-	@echo "Install frontend"
-	yarn install
-
 .PHONY: build
 build: install ## Build the frontend
 	@echo "Build Frontend"

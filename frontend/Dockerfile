@@ -2,17 +2,20 @@ FROM node:16-slim as base
 FROM base as builder
 
 RUN apt-get update \
-    && buildDeps="python3 build-essential" \
+    && buildDeps="python3 build-essential git ca-certificates" \
     && apt-get install -y --no-install-recommends $buildDeps \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . /build/
-RUN chown -R node:node build
-
+COPY --chown=node .yarnrc.yml Makefile package.json mrs.developer.json jsconfig.json yarn.lock /build/
+COPY --chown=node .yarn /build/.yarn
+RUN corepack enable
 USER node
 WORKDIR /build
-RUN yarn install \
-    && yarn build
+
+RUN mkdir -p src/addons && make install
+
+COPY --chown=node . /build/
+RUN yarn build
 
 FROM base
 

@@ -1,7 +1,7 @@
 build
+cache
 cypress
 node_modules
 omelette
 Dockerfile
-Makefile
 *.log
