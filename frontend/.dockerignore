@@ -4,4 +4,5 @@ cypress
 node_modules
 omelette
 Dockerfile
+.yarn/cache
 *.log
