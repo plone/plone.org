@@ -101,7 +101,7 @@ services:
         # To create user:password pair, it's possible to use this command:
         # echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
         # Defaults to admin:admin
-        - traefik.http.middlewares.backend-auth.basicauth.users=ploneorg:$$apr1$$Rq3FPmcw$$2MVjlQM5OuhRdRpGpn35G0
+        - traefik.http.middlewares.backend-auth.basicauth.users=ploneorg:$$apr1$$SAOhBRqM$$HqoYLlr//h7PfUWidoFg//
         # SERVICE
         - traefik.http.services.plone-backend.loadbalancer.server.port=8080
         # Plone API
