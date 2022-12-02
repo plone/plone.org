@@ -128,7 +128,9 @@ const Footer = ({ intl }) => {
                   <a href="https://plone.teemill.com/">Shop</a>
                 </List.Item>
                 <List.Item>
-                  <a href="https://plone.social/@plone" rel="me">Mastodon</a>
+                  <a href="https://plone.social/@plone" rel="me">
+                    Mastodon
+                  </a>
                 </List.Item>
                 <List.Item>
                   <a href="https://twitter.com/plone">Twitter</a>
