@@ -128,13 +128,16 @@ const Footer = ({ intl }) => {
                   <a href="https://plone.teemill.com/">Shop</a>
                 </List.Item>
                 <List.Item>
+                  <a href="https://plone.social/@plone" rel="me">Mastodon</a>
+                </List.Item>
+                <List.Item>
                   <a href="https://twitter.com/plone">Twitter</a>
                 </List.Item>
                 <List.Item>
                   <a href="https://www.instagram.com/plonecms/">Instagram</a>
                 </List.Item>
                 <List.Item>
-                  <a href="https://www.youtube.com/c/PloneCMS">YouTube</a>
+                  <a href="https://www.youtube.com/@plonecms">YouTube</a>
                 </List.Item>
                 <List.Item>
                   <a href="https://www.linkedin.com/company/plone-foundation/">
