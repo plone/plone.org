@@ -7,7 +7,7 @@ import {
   AlignWidget,
   FontAwesomeIconWidget,
 } from '@package/components/Widgets';
-import { GoogleReCaptchaWidget } from 'volto-form-block';
+// import { GoogleReCaptchaWidget } from 'volto-form-block';
 
 export const SiteWidgets = (config) => {
   //   config.widgets.id.cookie_consent_configuration = MultilingualWidget();
@@ -37,7 +37,7 @@ export const SiteWidgets = (config) => {
       ]}
     />
   );
-  config.widgets.id.captcha = GoogleReCaptchaWidget;
+  // config.widgets.id.captcha = GoogleReCaptchaWidget;
   config.widgets.widget.color_list = ColorListWidget;
   config.widgets.widget.sitealign = AlignWidget;
   config.widgets.widget.fontawesome_icon = FontAwesomeIconWidget;
