@@ -105,7 +105,7 @@ class ImportAll(BrowserView):
             # "translations",
             "localroles",
             "ordering",
-            # "defaultpages",
+            "defaultpages",
             # "discussion",
             "portlets",
             "redirects",
@@ -117,7 +117,7 @@ class ImportAll(BrowserView):
             logger.info(results)
             transaction.commit()
 
-        fixers = [table_class_fixer, img_variant_fixer]
+        fixers = [table_class_fixer, img_variant_fixer, anchor_fixer]
         results = fix_html_in_content_fields(fixers=fixers)
         msg = "Fixed html for {} content items".format(results)
         logger.info(msg)
@@ -205,6 +205,46 @@ def table_class_fixer(text, obj=None):
         if new_classes:
             table["class"] = new_classes
 
+    return soup.decode()
+
+
+def anchor_fixer(text, obj=None):
+    """Remove anchors in headings"""
+    soup = BeautifulSoup(text, "html.parser")
+    for heading in soup.find_all(["h1", "h2", "h3", "h4"]):
+
+        for link in heading.find_all("a"):
+            if not link.href:
+                # drop empty links (anchors)
+                link.decompose()
+
+    return soup.decode()
+
+
+def invalid_html_fixer(text, obj=None):
+    """Tries to wrap invaid html. Not used because it will break restructured text fields.
+    Either evaluate mimetype or portal_type or (better) fix blocks-conversion tool.
+    """
+    valid_tags = [
+        "<ul",
+        "<ol",
+        "<p",
+        "<!DOCTYPE",
+        "<h",
+        "<body",
+        "<img",
+        "<table",
+    ]
+    start = text.strip()[:10]
+    for tag in valid_tags:
+        if start.startswith(tag):
+            return text
+
+    # no valid tag, wrap
+    logger.info("Fixing html without tag in %s", obj.absolute_url())
+    soup = BeautifulSoup(text, "lxml")
+    soup.body.unwrap()
+    soup.html.unwrap()
     return soup.decode()
 
 
