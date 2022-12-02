@@ -10,7 +10,7 @@
       >
     <genericsetup:upgradeDepends
         title="Update Foundation Member Workflows"
-        import_steps="workflows"
+        import_steps="workflow"
         />
   </genericsetup:upgradeSteps>
 
