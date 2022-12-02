@@ -19,7 +19,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v1
@@ -51,7 +51,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Run Prettier
         run: npx prettier@2.0.5 --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}' --config=package.json
@@ -66,7 +66,7 @@ jobs:
 
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v1
@@ -98,7 +98,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v1
@@ -130,7 +130,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Docker meta
         id: meta
@@ -177,7 +177,7 @@ jobs:
     environment: staging
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Deploy to beta.plone.org
         uses: kitconcept/docker-stack-deploy@v1.0.0
