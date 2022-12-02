@@ -26,3 +26,4 @@ export { When, Recurrence } from '@package/components/When/When';
 
 export HotfixView from './Views/Hotfix';
 export VulnerabilityView from './Views/Vulnerability';
+export PlonereleaseView from './Views/Plonerelease';
