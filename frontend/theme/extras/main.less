@@ -97,3 +97,17 @@ strong {
 fieldset {
   min-inline-size: auto;
 }
+
+.ui.secondary.vertical.segment.breadcrumbs {
+  border: none;
+  background-color: transparent;
+
+  @media (max-width: @largestTabletScreen) {
+    .ui.segment.breadcrumbs {
+      .ui.container {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

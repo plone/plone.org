@@ -1,32 +1,122 @@
 /**
  * Breadcrumbs components.
  * @module components/theme/Breadcrumbs/Breadcrumbs
- *
- * CUSTOMIZATIONS:
- * - moved breadcrumbs inside a block
  */
 
-import { useEffect } from 'react';
-import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
-import { useDispatch } from 'react-redux';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { Link } from 'react-router-dom';
+import { Breadcrumb, Container, Segment } from 'semantic-ui-react';
+import { defineMessages, injectIntl } from 'react-intl';
+
 import { getBreadcrumbs } from '@plone/volto/actions';
+import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 
-// export class BreadcrumbsComponent extends Component {
-//   render() {
-//     return null;
-//   }
-// }
+const messages = defineMessages({
+  home: {
+    id: 'Home',
+    defaultMessage: 'Home',
+  },
+  breadcrumbs: {
+    id: 'Breadcrumbs',
+    defaultMessage: 'Breadcrumbs',
+  },
+});
 
-const BreadcrumbsComponent = ({ pathname }) => {
-  const dispatch = useDispatch();
+/**
+ * Breadcrumbs container class.
+ */
+export class BreadcrumbsComponent extends Component {
+  /**
+   * Property types.
+   * @property {Object} propTypes Property types.
+   * @static
+   */
+  static propTypes = {
+    getBreadcrumbs: PropTypes.func.isRequired,
+    pathname: PropTypes.string.isRequired,
+    root: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        url: PropTypes.string,
+      }),
+    ).isRequired,
+  };
 
-  useEffect(() => {
-    if (!hasApiExpander('breadcrumbs', getBaseUrl(pathname))) {
-      dispatch(getBreadcrumbs(getBaseUrl(pathname)));
+  componentDidMount() {
+    if (!hasApiExpander('breadcrumbs', getBaseUrl(this.props.pathname))) {
+      this.props.getBreadcrumbs(getBaseUrl(this.props.pathname));
     }
-  }, [dispatch, pathname]);
-  // We keep the call to the get of the breadcrumbs here, because it also serves for the folderContents.
-  return null;
-};
+  }
 
-export default BreadcrumbsComponent;
+  /**
+   * Component will receive props
+   * @method componentWillReceiveProps
+   * @param {Object} nextProps Next properties
+   * @returns {undefined}
+   */
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.pathname !== this.props.pathname) {
+      if (!hasApiExpander('breadcrumbs', getBaseUrl(this.props.pathname))) {
+        this.props.getBreadcrumbs(getBaseUrl(nextProps.pathname));
+      }
+    }
+  }
+
+  /**
+   * Render method.
+   * @method render
+   * @returns {string} Markup for the component.
+   */
+  render() {
+    return (
+      <Segment
+        role="navigation"
+        aria-label={this.props.intl.formatMessage(messages.breadcrumbs)}
+        className="breadcrumbs"
+        secondary
+        vertical
+      >
+        <Container>
+          <Breadcrumb>
+            <Link
+              to={this.props.root || '/'}
+              className="section"
+              title={this.props.intl.formatMessage(messages.home)}
+            >
+              {/* START CUSTOMIZATION */}
+              {this.props.intl.formatMessage(messages.home)}
+              {/* END CUSTOMIZATION */}
+            </Link>
+            {this.props.items.map((item, index, items) => [
+              <Breadcrumb.Divider key={`divider-${item.url}`} />,
+              index < items.length - 1 ? (
+                <Link key={item.url} to={item.url} className="section">
+                  {item.title}
+                </Link>
+              ) : (
+                <Breadcrumb.Section key={item.url} active>
+                  {item.title}
+                </Breadcrumb.Section>
+              ),
+            ])}
+          </Breadcrumb>
+        </Container>
+      </Segment>
+    );
+  }
+}
+
+export default compose(
+  injectIntl,
+  connect(
+    (state) => ({
+      items: state.breadcrumbs.items,
+      root: state.breadcrumbs.root,
+    }),
+    { getBreadcrumbs },
+  ),
+)(BreadcrumbsComponent);

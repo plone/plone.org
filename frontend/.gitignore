@@ -1,4 +1,3 @@
-.vscode/
 logs
 *.log
 npm-debug.log*
@@ -23,7 +22,6 @@ build
 .DS_Store
 .idea
 lighthouse-report.html
-.vscode/
 .#*
 *~
 
