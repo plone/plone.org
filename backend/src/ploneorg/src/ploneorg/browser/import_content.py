@@ -209,15 +209,15 @@ def table_class_fixer(text, obj=None):
 
 
 def anchor_fixer(text, obj=None):
-    """Remove anchors in headings"""
+    """Remove anchors"""
     soup = BeautifulSoup(text, "html.parser")
-    for heading in soup.find_all(["h1", "h2", "h3", "h4"]):
-
-        for link in heading.find_all("a"):
-            if not link.get("href"):
-                # drop empty links (anchors)
-                link.decompose()
-
+    for link in soup.find_all("a"):
+        if not link.get("href") and not link.text:
+            # drop empty links (e.g. anchors)
+            link.decompose()
+        elif not link.get("href") and link.text:
+            # drop links without a href but keep the text
+            link.unwrap()
     return soup.decode()
 
 
@@ -225,6 +225,14 @@ def invalid_html_fixer(text, obj=None):
     """Tries to wrap invaid html. Not used because it will break restructured text fields.
     Either evaluate mimetype or portal_type or (better) fix blocks-conversion tool.
     """
+    if obj.portal_type in [
+        "plonerelease",
+        "FoundationMember",
+        "FoundationSponsor",
+        "hotfix",
+        "vulnerability",
+    ]:
+        return text
     valid_tags = [
         "<ul",
         "<ol",
