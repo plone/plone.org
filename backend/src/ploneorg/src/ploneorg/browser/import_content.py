@@ -108,7 +108,7 @@ class ImportAll(BrowserView):
             "defaultpages",
             # "discussion",
             "portlets",
-            "redirects",
+            # "redirects",
         ]
         for name in other_imports:
             view = api.content.get_view(f"import_{name}", portal, request)
