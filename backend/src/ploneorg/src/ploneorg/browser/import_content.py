@@ -214,7 +214,7 @@ def anchor_fixer(text, obj=None):
     for heading in soup.find_all(["h1", "h2", "h3", "h4"]):
 
         for link in heading.find_all("a"):
-            if not link.href:
+            if not link.get("href"):
                 # drop empty links (anchors)
                 link.decompose()
 
