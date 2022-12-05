@@ -2576,12 +2576,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone-collective/volto-authomatic@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@plone-collective/volto-authomatic@npm:1.2.0"
+"@plone-collective/volto-authomatic@npm:1.3.0":
+  version: 1.3.0
+  resolution: "@plone-collective/volto-authomatic@npm:1.3.0"
   peerDependencies:
     "@plone/volto": ">=13.8.0"
-  checksum: 7ba3911a2f05e0ed1ea3e27d95c1833bfecbf9bacd537a7ced31f9be447d8403b44dbb425e327b774625c5a9fc6dafef168d129871d01fdb90f8077273f46923
+  checksum: d882f18c267ea8ec9c41bcd263a3f99d14bd0a592384416a763b7276cc8229ea89d32b16a41c6b0d8b1396328f808ad0d595220260c60bc7351f2134b3912d6d
   languageName: node
   linkType: hard
 
@@ -10587,7 +10587,7 @@ __metadata:
     "@fortawesome/react-fontawesome": 0.1.15
     "@kitconcept/volto-blocks-grid": ^5.2.0
     "@kitconcept/volto-slider-block": ^4.0.0
-    "@plone-collective/volto-authomatic": 1.2.0
+    "@plone-collective/volto-authomatic": 1.3.0
     "@plone/scripts": ^2.2.1
     "@plone/volto": 16.2.0
     "@storybook/addon-actions": ^6.3.0
