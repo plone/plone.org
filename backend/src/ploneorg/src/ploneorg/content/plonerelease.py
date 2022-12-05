@@ -12,6 +12,10 @@ from zope.interface import implementer
 from zope.publisher.interfaces.http import IHTTPRequest
 
 import datetime
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 # TODO: Replace datagridfield with something that works in Volto
@@ -81,6 +85,11 @@ class PloneRelease(Item):
 
     def Title(self):
         return self.title
+
+    def setTitle(self, value):
+        # Volto tries to set the title to None.  We ignore this.
+        # See https://github.com/plone/plone.org/issues/46
+        logger.warning("Ignoring setTitle on PloneRelease. Requested value: %r", value)
 
 
 class INameFromVersion(INameFromTitle):
