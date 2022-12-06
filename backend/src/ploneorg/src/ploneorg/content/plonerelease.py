@@ -86,9 +86,13 @@ class PloneRelease(Item):
     def Title(self):
         return self.title
 
-    def setTitle(self, value):
+    @title.setter
+    def title(self, value):
         # Volto tries to set the title to None.  We ignore this.
         # See https://github.com/plone/plone.org/issues/46
+        if not value:
+            return
+        # Otherwise warn.
         logger.warning("Ignoring setTitle on PloneRelease. Requested value: %r", value)
 
 
