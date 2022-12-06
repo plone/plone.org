@@ -1,126 +1,66 @@
 #footer {
-  padding: 3rem 0 0 0;
+  padding: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
   box-shadow: 0px 5px 7px 5px rgba(119, 119, 119, 0.1);
   font-family: @headerFontName;
 
   #footer-main {
     display: flex;
-    margin-right: -15px;
-    margin-left: -15px;
+    /*
+     *margin-right: -15px;
+     *margin-left: -15px;
+     */
+    .ui {
+      width: 100%;
 
-    .footer-column {
-      flex: 1 1 14.2857%;
-      padding: 1rem 0.8rem;
+      .column {
+        flex: 1 1 25%;
+        padding: 1rem 1rem;
 
-      &:last-of-type {
-        flex-basis: 20%;
-        padding: 1rem 2rem;
-        border-left: 1px solid @footerBordersColor;
-        color: @footerLastColumnTextColor;
-
-        a,
-        button {
-          &:not(:hover, :active, :focus, .ui.button) {
-            color: @footerLastColumnTextColor;
-          }
+        &:last-of-type {
+          padding: 1rem 2rem;
+          border-left: 1px solid @footerBordersColor;
         }
 
-        .fa-arrow-right {
-          margin-left: @fontSize;
-          font-size: @fontSize;
-          vertical-align: text-bottom;
-        }
+        .list {
+          padding: 0;
+          font-size: unit((12 / @fontSize), rem);
+          list-style-type: none;
 
-        .social-header {
-          display: flex;
-          flex-wrap: wrap;
+          .header {
+            display: flex;
+            margin-bottom: 0.5rem;
+            font-size: unit((13 / @fontSize), rem);
+            //min-height: 2.8em;
+            //align-items: flex-end;
+            font-weight: normal;
 
-          margin: 1rem 0 1rem 0;
-          font-size: 1.3rem;
-
-          a {
-            margin-right: 0.5rem;
-
-            &:not(:hover, :active, :focus, .ui.button) {
-              color: @linkColor;
-            }
-          }
-        }
-
-        ul {
-          margin: 0;
-          font-size: unit((14 / @fontSize), rem);
-
-          li {
-            margin-bottom: 0.3em;
-            color: @footerLastColumnTextColor;
-
-            button {
-              padding: 0;
-              border: none;
-              margin: 0;
-              background: none;
-              cursor: pointer;
-
+            a {
               &:hover,
               &:active,
               &:focus {
-                color: @linkColor;
+                color: @primaryColor;
                 text-decoration: underline;
               }
             }
-
-            a,
-            button {
-              font-family: @headerFontName;
-              font-size: unit((10 / @fontSize), rem);
-            }
           }
-        }
 
-        .tools {
-          .ui.secondary.pointing.menu {
-            min-height: unset;
-            margin: 0;
-            float: none;
-            font-family: @headerFontName;
-            font-size: unit((10 / @fontSize), rem);
-
+          .content {
             .item {
-              padding: 0;
-              margin: 0 0 0.3em 0;
-            }
-          }
-        }
-      }
+              margin-bottom: 0.7em;
+              color: @footerColumnsTextColor;
+              line-height: 1.5;
 
-      h4 {
-        display: flex;
-        margin-bottom: 0.5rem;
-        font-size: unit((13 / @fontSize), rem);
-        //min-height: 2.8em;
-        //align-items: flex-end;
-        font-weight: normal;
-      }
+              a {
+                color: @footerColumnsTextColor !important;
 
-      ul {
-        padding: 0;
-        font-size: unit((10 / @fontSize), rem);
-        list-style-type: none;
-
-        li {
-          margin-bottom: 0.7em;
-          color: @footerColumnsTextColor;
-          line-height: 1.5;
-
-          a {
-            color: @footerColumnsTextColor;
-
-            &:hover,
-            &:active,
-            &:focus {
-              color: @primaryColor;
-              text-decoration: underline;
+                &:hover,
+                &:active,
+                &:focus {
+                  color: @primaryColor;
+                  text-decoration: underline;
+                }
+              }
             }
           }
         }
@@ -210,6 +150,21 @@
         .address,
         .logo {
           padding: 0.25rem 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @largestMobileScreen) {
+  #footer {
+    #footer-main {
+      .ui {
+        margin-right: 0;
+        margin-left: 0;
+
+        .column {
+          flex: 1 1 50%;
         }
       }
     }
