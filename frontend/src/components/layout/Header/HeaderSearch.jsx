@@ -59,6 +59,7 @@ const HeaderSearch = () => {
       <button
         onClick={() => setViewSearch(!viewSearch)}
         className="search-form-open"
+        aria-label={intl.formatMessage(messages.search_site_title)}
       >
         <FontAwesomeIcon icon={['fas', 'search']} />
       </button>
