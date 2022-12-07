@@ -93,10 +93,10 @@ services:
         - traefik.http.services.plone-frontend.loadbalancer.server.port=3000
         # HOSTS
         # -> Varnish Public
-        - traefik.http.routers.backend-varnish-intern.rule=Host(`beta.plone.org`)
-        - traefik.http.routers.backend-varnish-intern.entrypoints=https
-        - traefik.http.routers.backend-varnish.tls=true
-        - traefik.http.routers.backend-varnish-intern.service=varnish
+        - traefik.http.routers.frontend-varnish-intern.rule=Host(`beta.plone.org`)
+        - traefik.http.routers.frontend-varnish-intern.entrypoints=https
+        - traefik.http.routers.frontend-varnish.tls=true
+        - traefik.http.routers.frontend-varnish-intern.service=varnish
         # Plone Intern
         - traefik.http.routers.frontend.rule=Host(`beta.plone.org`) && Headers(`X-Varnish-Routed`,`1`)
         - traefik.http.routers.frontend.entrypoints=https
