@@ -60,6 +60,8 @@ Only valid for local deployments using Vagrant. This creates a new Vagrant box w
 make provision
 ```
 
+This adds two domain (`beta.plone.org`, `traefik-beta.plone.org`) entries to your `/etc/hosts` file, pointing to the current provisioned box.
+
 ### Run playbook
 Set up the server, by installing base packages, creating `UFW` configuration, adding users, and preparing docker.
 This action happens on local deployments while running provision, for the production it is its own step.
@@ -75,8 +77,20 @@ Run `docker stack` to deploy to the server
 ```shell
 make deploy
 ```
-
 Use this also when there is a new version of any of the images.
+
+After deployment the following pages are available:
+
+- `traefik-beta.plone.org` (web server configuration view, protected)
+- `beta.plone.org` (main site)
+- `beta.plone.org/ClassicUI` (direkt access to Classic UI, protected)
+- `beta.plone.org/zmi` (direkt access to ZMI, protected)
+
+For local deployment entries of the domains were already created in `/etc/hosts`.
+For production public DNS needs configuration.
+
+Once deployed, there is no Plone site installed.
+This can be done by accessing the ZMI or by executing the create-site script with docker.
 
 ## Check Stack Status
 
@@ -91,3 +105,4 @@ make status
 |webserver|`make logs-webserver`|
 |frontend|`make logs-frontend`|
 |backend|`make logs-backend`|
+

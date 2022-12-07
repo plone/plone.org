@@ -37,6 +37,7 @@ endif
 
 DOCKER=docker
 DOCKER_CONTEXT=${DOCKER} --context ${CONTEXT}
+DOMAINS=beta.plone.org traefik-beta.plone.org
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -84,19 +85,27 @@ docker-setup:  ## Setup docker context
 .PHONY: destroy
 destroy: ## Destroy Vagrant box
 ifeq ($(DEPLOY_ENV), local)
-	echo "$(GREEN)==> Destroy Vagrant box $(RESET)"; \
-	vagrant destroy; \
-	rm -Rf .vagrant_private_key .vagrant; \
+	@echo "$(GREEN)==> Destroy Vagrant box $(RESET)"
+	vagrant destroy;
 	ssh-keygen -f ~/.ssh/known_hosts -R "[$(HOST)]:$(DEPLOY_PORT)";
+	sudo sed -i "s/.*${DOMAINS}.*//" /etc/hosts;
 else
-	echo "$(GREEN)==> No destroy for ${DEPLOY_ENV} available $(RESET)";
+	@echo "$(GREEN)==> No destroy for ${DEPLOY_ENV} available $(RESET)";
 endif
 
 .PHONY: provision
 provision: bin/ansible ## Provision Vagrant box
 ifeq ($(DEPLOY_ENV), local)
-	echo "$(GREEN)==> Provision Vagrant box $(RESET)"; \
+	@echo "$(GREEN)==> Provision Vagrant box $(RESET)"; \
 	vagrant up;
+	ssh-keyscan -p $(DEPLOY_PORT) -H $(HOST) >> ~/.ssh/known_hosts;
+	HOST=`python key_from_inventory.py ansible_host`;
+	if grep -FxQ "${DOMAINS}" /etc/hosts
+	then
+		sudo sed -i "s/.*${DOMAINS}$/${HOST} ${DOMAINS}/g" /etc/hosts;
+	else
+		echo "${HOST} ${DOMAINS}" | sudo tee -a /etc/hosts;
+	fi
 else
 	echo "$(GREEN)==> No provisioning for ${DEPLOY_ENV} available $(RESET)";
 endif
@@ -115,10 +124,16 @@ deploy: docker-setup ## Deploy stacks: Plone
 	@echo "$(GREEN)==> Deploy Stack in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack deploy -c stacks/beta.plone.org.yml plone
 
+.PHONY: create-site
+create-site: docker-setup ## Deploy stacks: Plone
+	@echo "$(GREEN)==> Create Plone Site in backend for $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CONTEXT} exec deploy -c stacks/beta.plone.org.yml plone
+
 .PHONY: status
 status: docker-setup ## Check status of stack
 	@echo "$(GREEN)==> Stack status in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack ps -f "desired-state=running" plone
+
 
 .PHONY: logs-webserver
 logs-webserver: ## Display webserver logs
