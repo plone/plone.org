@@ -75,7 +75,7 @@ docker-login: .docker/config.json  ## Login with Docker
 	${DOCKER} login
 
 .PHONY: docker-setup
-docker-setup:  ## Setup docker context
+docker-setup: .docker ## Setup docker context
 	if `docker context ls --format '{{.Name}}'|grep -wq ${CONTEXT}`
 	then
 		rm -r .docker;
@@ -120,25 +120,29 @@ else
 endif
 
 .PHONY: deploy
-deploy: docker-setup ## Deploy stacks: Plone
+deploy: docker-setup stacks/beta.plone.org.yml ## Deploy stacks: Plone
 	@echo "$(GREEN)==> Deploy Stack in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack deploy -c stacks/beta.plone.org.yml plone
 
 .PHONY: create-site
-create-site: docker-setup ## Deploy stacks: Plone
-	@echo "$(GREEN)==> Create Plone Site in backend for $(DEPLOY_ENV) $(RESET)"
-	${DOCKER_CONTEXT} exec deploy -c stacks/beta.plone.org.yml plone
+create-site: docker-setup ## Create Plone Site
+	@echo "$(GREEN)==> Create Plone Site in backend for $(DEPLOY_ENV) $(RESET)";
+	${DOCKER_CONTEXT} exec `${DOCKER_CONTEXT} ps -f 'name=plone_backend.1' -q --no-trunc` /app/docker-entrypoint.sh create-site;
 
 .PHONY: status
 status: docker-setup ## Check status of stack
 	@echo "$(GREEN)==> Stack status in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack ps -f "desired-state=running" plone
 
-
 .PHONY: logs-webserver
 logs-webserver: ## Display webserver logs
 	@echo "$(GREEN)==> Logs for webserver in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} service logs plone_traefik
+
+.PHONY: logs-varnish
+logs-varnish: ## Display varnish logs
+	@echo "$(GREEN)==> Logs for varnish in $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CONTEXT} service logs plone_varnish
 
 .PHONY: logs-frontend
 logs-frontend: ## Display frontend logs

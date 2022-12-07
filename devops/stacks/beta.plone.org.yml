@@ -18,7 +18,7 @@ services:
         - traefik.http.routers.traefik-public-https.entrypoints=https
         - traefik.http.routers.traefik-public-https.tls=true
         - traefik.http.routers.traefik-public-https.service=api@internal
-        - traefik.http.routers.traefik-public-https.middlewares=admin-auth
+        # - traefik.http.routers.traefik-public-https.middlewares=admin-auth
         - traefik.http.services.traefik-public.loadbalancer.server.port=8000
 
         # GENERIC MIDDLEWARES
@@ -149,7 +149,15 @@ services:
         - traefik.http.routers.backend-classic.service=plone-backend
         - "traefik.http.middlewares.backend-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.backend-classic.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
-        - traefik.http.routers.backend-classic.middlewares=gzip,backend-auth,backend-classic
+        - traefik.http.routers.backend-classic.middlewares=gzip,backend-classic
+        # Plone ZMI - uncomment if not needed - protected with basic auth (prevent SEOs from crawl it)
+        - traefik.http.routers.backend-zmi.rule=Host(`beta.plone.org`) && PathPrefix(`/zmi`)
+        - traefik.http.routers.backend-zmi.entrypoints=https
+        - traefik.http.routers.backend-zmi.tls=true
+        - traefik.http.routers.backend-zmi.service=plone-backend
+        - "traefik.http.middlewares.backend-zmi.replacepathregex.regex=^/zmi($$|/.*)"
+        - "traefik.http.middlewares.backend-zmi.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/VirtualHostRoot/_vh_zmi/$$1"
+        - traefik.http.routers.backend-zmi.middlewares=gzip,backend-zmi
 
   db:
     image: postgres:14.2
