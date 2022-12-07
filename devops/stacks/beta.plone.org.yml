@@ -56,6 +56,24 @@ services:
     networks:
       - traefik-public
 
+  varnish:
+    image: varnish:stable
+    configs:
+      - source: varnishvcl
+        target: /etc/varnish/default.vcl
+    tmpfs:
+      - /var/lib/varnish:exec
+    networks:
+      - traefik-public
+    deploy:
+      replicas: 1
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        # SERVICE
+        - traefik.http.services.varnish.loadbalancer.server.port=80
+
   frontend:
     image: ghcr.io/plone/ploneorg-frontend:latest
     environment:
@@ -74,7 +92,13 @@ services:
         # SERVICE
         - traefik.http.services.plone-frontend.loadbalancer.server.port=3000
         # HOSTS
-        - traefik.http.routers.frontend.rule=Host(`beta.plone.org`)
+        # -> Varnish Public
+        - traefik.http.routers.backend-varnish-intern.rule=Host(`beta.plone.org`)
+        - traefik.http.routers.backend-varnish-intern.entrypoints=https
+        - traefik.http.routers.backend-varnish.tls=true
+        - traefik.http.routers.backend-varnish-intern.service=varnish
+        # Plone Intern
+        - traefik.http.routers.frontend.rule=Host(`beta.plone.org`) && Headers(`X-Varnish-Routed`,`1`)
         - traefik.http.routers.frontend.entrypoints=https
         - traefik.http.routers.frontend.tls=true
         - traefik.http.routers.frontend.tls.certresolver=le
@@ -105,7 +129,13 @@ services:
         # SERVICE
         - traefik.http.services.plone-backend.loadbalancer.server.port=8080
         # Plone API
-        - traefik.http.routers.backend.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`))
+        # -> Varnish Public
+        - traefik.http.routers.backend-varnish-intern.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`))
+        - traefik.http.routers.backend-varnish-intern.entrypoints=https
+        - traefik.http.routers.backend-varnish.tls=true
+        - traefik.http.routers.backend-varnish-intern.service=varnish
+        # -> Plone Intern
+        - traefik.http.routers.backend.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`)) && Headers(`X-Varnish-Routed`,`1`)
         - traefik.http.routers.backend.entrypoints=https
         - traefik.http.routers.backend.tls=true
         - traefik.http.routers.backend.service=plone-backend
@@ -132,6 +162,11 @@ services:
     networks:
     - backend
 
+configs:
+  varnishvcl:
+    # name: ploneorg-varnish-0001
+    file: ./default.vcl
+
 volumes:
   traefik-public-certificates:
     driver_opts:
@@ -155,3 +190,4 @@ networks:
     driver: overlay
   backend:
     driver: overlay
+
