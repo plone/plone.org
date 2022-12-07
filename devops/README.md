@@ -10,7 +10,7 @@ source .env_local
 ```
 #### For Production
 
-Create `.env_prod`, if it does not exist, setting all values defined in `.env_local`, then:
+Create `.env_prod`, if it does not exist, setting all values defined in `.env_local` (including values for `DEPLOY_HOST` and `DEPLOY_KEY`), then:
 
 ```shell
 source .env_prod
@@ -42,12 +42,6 @@ Edit the `group_vars/users.yml` file and replace the line **public_keys: []** wi
 
 As the images used in this deployment are public, just make sure you already are logged in with Docker.
 
-After that, we need to create a new docker context, to be stored inside this folder.
-
-```shell
-make docker-setup
-```
-
 ## Deploy
 
 The shortcut is to run all steps at once with:
@@ -56,18 +50,19 @@ The shortcut is to run all steps at once with:
 make all
 ```
 
-This command provision a new machine, if running in the local environment, run the playbook and then deploy the stack.
+This command provisions a new machine, if running in the local environment, run the playbook and then deploy the stack.
+
 ### Provision
 
-Only valid for local deployments using Vagrant. This creates a new Vagrant box with the configuration according to the `Vagrantfile`.
+Only valid for local deployments using Vagrant. This creates a new Vagrant box with the configuration according to the `Vagrantfile` and runs the Ansible playbook.
 
 ```shell
 make provision
 ```
 
 ### Run playbook
-
-Setup the server, by installing base packages, creating `UFW` configuration, and adding users
+Set up the server, by installing base packages, creating `UFW` configuration, adding users, and preparing docker.
+This action happens on local deployments while running provision, for the production it is its own step.
 
 ```shell
 make run-playbook

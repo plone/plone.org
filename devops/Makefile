@@ -21,11 +21,16 @@ ifndef DEPLOY_SCALES
 endif
 
 ifeq ($(DEPLOY_ENV), local)
+	HOST=`python key_from_inventory.py ansible_host`
+	PRIVATE_KEY_FILE=`python key_from_inventory.py ansible_ssh_private_key_file`
 	CONTEXT=ploneorg_local
-	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
+	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(HOST):$(DEPLOY_PORT)
+
 else ifeq ($(DEPLOY_ENV), prod)
+	HOST=$(DEPLOY_HOST)
+	PRIVATE_KEY_FILE=$(DEPLOY_KEY)
 	CONTEXT=ploneorg_prod
-	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
+	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(HOST):$(DEPLOY_PORT)
 else
 $(error DEPLOY_ENV is not supported)
 endif
@@ -70,26 +75,31 @@ docker-login: .docker/config.json  ## Login with Docker
 
 .PHONY: docker-setup
 docker-setup:  ## Setup docker context
+	if `docker context ls --format '{{.Name}}'|grep -wq ${CONTEXT}`
+	then
+		rm -r .docker;
+	fi
 	${DOCKER} context create ${CONTEXT} --description "Plone.org Site deployment" --docker "host=${CONTEXT_HOST}"
 
 .PHONY: destroy
 destroy: ## Destroy Vagrant box
-	if [ "$(DEPLOY_ENV)" = "local" ]; then \
-		echo "$(GREEN)==> Destroy Vagrant box $(RESET)"; \
-		vagrant destroy; \
-		rm -Rf .vagrant_private_key .vagrant; \
-		ssh-keygen -f ~/.ssh/known_hosts -R "[127.0.0.1]:2222"; \
-	fi
+ifeq ($(DEPLOY_ENV), local)
+	echo "$(GREEN)==> Destroy Vagrant box $(RESET)"; \
+	vagrant destroy; \
+	rm -Rf .vagrant_private_key .vagrant; \
+	ssh-keygen -f ~/.ssh/known_hosts -R "[$(HOST)]:$(DEPLOY_PORT)";
+else
+	echo "$(GREEN)==> No destroy for ${DEPLOY_ENV} available $(RESET)";
+endif
 
 .PHONY: provision
 provision: bin/ansible ## Provision Vagrant box
-	if [ "$(DEPLOY_ENV)" = "local" ]; then \
-		echo "$(GREEN)==> Provision Vagrant box $(RESET)"; \
-		vagrant up; \
-		cp .vagrant/machines/default/virtualbox/private_key .vagrant_private_key; \
-		USER=`whoami` sudo chown ${USER}: .vagrant_private_key; \
-		ssh-keyscan -p 2222 -H 127.0.0.1 >> ~/.ssh/known_hosts; \
-	fi
+ifeq ($(DEPLOY_ENV), local)
+	echo "$(GREEN)==> Provision Vagrant box $(RESET)"; \
+	vagrant up;
+else
+	echo "$(GREEN)==> No provisioning for ${DEPLOY_ENV} available $(RESET)";
+endif
 
 .PHONY: run-playbook
 run-playbook: bin/ansible ## Run playbook
@@ -101,12 +111,12 @@ else
 endif
 
 .PHONY: deploy
-deploy: ## Deploy stacks: Plone
+deploy: docker-setup ## Deploy stacks: Plone
 	@echo "$(GREEN)==> Deploy Stack in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack deploy -c stacks/beta.plone.org.yml plone
 
 .PHONY: status
-status: ## Check status of stack
+status: docker-setup ## Check status of stack
 	@echo "$(GREEN)==> Stack status in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack ps -f "desired-state=running" plone
 
@@ -132,8 +142,9 @@ scale-services: ## Scale services
 
 .PHONY: all
 all: ## Create new box, run ansible, deploy stack
-	if [ "$(DEPLOY_ENV)" = "local" ]; then
-		$(MAKE) provision
-	fi
+ifeq ($(DEPLOY_ENV), local)
+	$(MAKE) provision
+else
 	$(MAKE) run-playbook
+endif
 	$(MAKE) deploy
