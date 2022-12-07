@@ -76,8 +76,8 @@ docker-setup:  ## Setup docker context
 destroy: ## Destroy Vagrant box
 	if [ "$(DEPLOY_ENV)" = "local" ]; then \
 		echo "$(GREEN)==> Destroy Vagrant box $(RESET)"; \
-		sudo vagrant destroy; \
-		sudo rm -Rf .vagrant_private_key .vagrant; \
+		vagrant destroy; \
+		rm -Rf .vagrant_private_key .vagrant; \
 		ssh-keygen -f ~/.ssh/known_hosts -R "[127.0.0.1]:2222"; \
 	fi
 
@@ -85,8 +85,8 @@ destroy: ## Destroy Vagrant box
 provision: bin/ansible ## Provision Vagrant box
 	if [ "$(DEPLOY_ENV)" = "local" ]; then \
 		echo "$(GREEN)==> Provision Vagrant box $(RESET)"; \
-		sudo vagrant up; \
-		sudo cp .vagrant/machines/default/virtualbox/private_key .vagrant_private_key; \
+		vagrant up; \
+		cp .vagrant/machines/default/virtualbox/private_key .vagrant_private_key; \
 		USER=`whoami` sudo chown ${USER}: .vagrant_private_key; \
 		ssh-keyscan -p 2222 -H 127.0.0.1 >> ~/.ssh/known_hosts; \
 	fi
@@ -94,7 +94,7 @@ provision: bin/ansible ## Provision Vagrant box
 .PHONY: run-playbook
 run-playbook: bin/ansible ## Run playbook
 	@echo "$(GREEN)==> Apply playbook in $(DEPLOY_ENV) $(RESET)"
-ifeq ($(DEPLOY_ENV), local); then
+ifeq ($(DEPLOY_ENV), local)
 	./bin/ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory playbook-setup.yml
 else
 	./bin/ansible-playbook playbook-setup.yml --limit ${CONTEXT}
