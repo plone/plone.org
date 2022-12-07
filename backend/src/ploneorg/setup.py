@@ -56,6 +56,7 @@ setup(
         "collective.volto.dropdownmenu",
         "collective.volto.secondarymenu",
         "collective.volto.socialsettings",
+        "collective.casestudy",
     ],
     extras_require={
         "test": [

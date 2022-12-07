@@ -14,5 +14,16 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20221112001"
+      destination="20221206001"
+      >
+    <upgradeStep
+        title="Install collective.casestudy"
+        description="Install Case Study content type"
+        handler=".install_case_study"
+        />
+  </genericsetup:upgradeSteps>
 
 </configure>

@@ -5,5 +5,6 @@
   <include package="plone.restapi" />
   <include package="plone.app.vulnerabilities" />
   <include package="pas.plugins.authomatic" />
+  <include package="collective.casestudy" />
 
 </configure>

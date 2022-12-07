@@ -32,6 +32,7 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
     @parameterized.expand(
         [
             ("20221014001", "20221112001", 1),
+            ("20221112001", "20221206001", 1),
         ]
     )
     def test_available(self, src, dst, expected):

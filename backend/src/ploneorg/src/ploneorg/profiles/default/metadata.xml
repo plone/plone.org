@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-  <version>20221112001</version>
+  <version>20221206001</version>
   <dependencies>
     <dependency>profile-plone.volto:default</dependency>
     <dependency>profile-plone.app.vulnerabilities:default</dependency>
@@ -9,5 +9,6 @@
     <dependency>profile-collective.volto.formsupport:default</dependency>
     <dependency>profile-collective.volto.secondarymenu:default</dependency>
     <dependency>profile-collective.volto.socialsettings:default</dependency>
+    <dependency>profile-collective.casestudy:default</dependency>
   </dependencies>
 </metadata>
