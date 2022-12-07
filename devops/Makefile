@@ -75,7 +75,7 @@ docker-login: .docker/config.json  ## Login with Docker
 	${DOCKER} login
 
 .PHONY: docker-setup
-docker-setup: .docker ## Setup docker context
+docker-setup: ## Setup docker context
 	if `docker context ls --format '{{.Name}}'|grep -wq ${CONTEXT}`
 	then
 		rm -r .docker;
@@ -120,7 +120,7 @@ else
 endif
 
 .PHONY: deploy
-deploy: docker-setup stacks/beta.plone.org.yml ## Deploy stacks: Plone
+deploy: docker-setup ## Deploy stacks: Plone
 	@echo "$(GREEN)==> Deploy Stack in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack deploy -c stacks/beta.plone.org.yml plone
 
