@@ -16,7 +16,7 @@ Create `.env_prod`, if it does not exist, setting all values defined in `.env_lo
 source .env_prod
 ```
 
-Also, add a `prod.yml` file to `inventory` folder (with information about the production server), and a `plone-prod.yml` to `host_vars` folder.
+Also, add a `prod.yml` file to the `inventory` folder (with information about the production server), and a `plone-prod.yml` to the `host_vars` folder.
 
 ### Install Ansible
 
@@ -67,7 +67,7 @@ make provision
 
 ### Run playbook
 
-Setup the server, by installing base packages, creating `UFW` configuration and adding users
+Setup the server, by installing base packages, creating `UFW` configuration, and adding users
 
 ```shell
 make run-playbook

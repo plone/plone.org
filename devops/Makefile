@@ -21,10 +21,10 @@ ifndef DEPLOY_SCALES
 endif
 
 ifeq ($(DEPLOY_ENV), local)
-	CONTEXT=local
+	CONTEXT=ploneorg_local
 	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
 else ifeq ($(DEPLOY_ENV), prod)
-	CONTEXT=prod
+	CONTEXT=ploneorg_prod
 	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
 else
 $(error DEPLOY_ENV is not supported)
@@ -94,7 +94,11 @@ provision: bin/ansible ## Provision Vagrant box
 .PHONY: run-playbook
 run-playbook: bin/ansible ## Run playbook
 	@echo "$(GREEN)==> Apply playbook in $(DEPLOY_ENV) $(RESET)"
+ifeq ($(DEPLOY_ENV), local); then
+	./bin/ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory playbook-setup.yml
+else
 	./bin/ansible-playbook playbook-setup.yml --limit ${CONTEXT}
+endif
 
 .PHONY: deploy
 deploy: ## Deploy stacks: Plone
