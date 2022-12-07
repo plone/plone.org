@@ -93,17 +93,16 @@ services:
         - traefik.http.services.plone-frontend.loadbalancer.server.port=3000
         # HOSTS
         # -> Varnish Public
-        - traefik.http.routers.frontend-varnish-intern.rule=Host(`beta.plone.org`)
-        - traefik.http.routers.frontend-varnish-intern.entrypoints=https
+        - traefik.http.routers.frontend-varnish.rule=Host(`beta.plone.org`)
+        - traefik.http.routers.frontend-varnish.entrypoints=https
         - traefik.http.routers.frontend-varnish.tls=true
-        - traefik.http.routers.frontend-varnish-intern.service=varnish
+        - traefik.http.routers.frontend-varnish.tls.certresolver=le
+        - traefik.http.routers.frontend-varnish.service=varnish
         # Plone Intern
-        - traefik.http.routers.frontend.rule=Host(`beta.plone.org`) && Headers(`X-Varnish-Routed`,`1`)
-        - traefik.http.routers.frontend.entrypoints=https
-        - traefik.http.routers.frontend.tls=true
-        - traefik.http.routers.frontend.tls.certresolver=le
-        - traefik.http.routers.frontend.service=plone-frontend
-        - traefik.http.routers.frontend.middlewares=gzip
+        - traefik.http.routers.frontend-intern.rule=Host(`beta.plone.org`) && Headers(`X-Varnish-Routed`,`1`)
+        - traefik.http.routers.frontend-intern.entrypoints=http
+        - traefik.http.routers.frontend-intern.service=plone-frontend
+        - traefik.http.routers.frontend-intern.middlewares=gzip
 
   backend:
     image: ghcr.io/plone/ploneorg-backend:latest
@@ -130,14 +129,13 @@ services:
         - traefik.http.services.plone-backend.loadbalancer.server.port=8080
         # Plone API
         # -> Varnish Public
-        - traefik.http.routers.backend-varnish-intern.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`))
-        - traefik.http.routers.backend-varnish-intern.entrypoints=https
+        - traefik.http.routers.backend-varnish.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`))
+        - traefik.http.routers.backend-varnish.entrypoints=https
         - traefik.http.routers.backend-varnish.tls=true
-        - traefik.http.routers.backend-varnish-intern.service=varnish
+        - traefik.http.routers.backend-varnish.service=varnish
         # -> Plone Intern
         - traefik.http.routers.backend.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`)) && Headers(`X-Varnish-Routed`,`1`)
-        - traefik.http.routers.backend.entrypoints=https
-        - traefik.http.routers.backend.tls=true
+        - traefik.http.routers.backend.entrypoints=http
         - traefik.http.routers.backend.service=plone-backend
         - "traefik.http.middlewares.backend.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
         - "traefik.http.middlewares.backend.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/Plone/++api++/VirtualHostRoot/$$1"
@@ -149,7 +147,7 @@ services:
         - traefik.http.routers.backend-classic.service=plone-backend
         - "traefik.http.middlewares.backend-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.backend-classic.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
-        - traefik.http.routers.backend-classic.middlewares=gzip,backend-classic
+        - traefik.http.routers.backend-classic.middlewares=gzip,backend-auth,backend-classic
         # Plone ZMI - uncomment if not needed - protected with basic auth (prevent SEOs from crawl it)
         - traefik.http.routers.backend-zmi.rule=Host(`beta.plone.org`) && PathPrefix(`/zmi`)
         - traefik.http.routers.backend-zmi.entrypoints=https
@@ -157,7 +155,7 @@ services:
         - traefik.http.routers.backend-zmi.service=plone-backend
         - "traefik.http.middlewares.backend-zmi.replacepathregex.regex=^/zmi($$|/.*)"
         - "traefik.http.middlewares.backend-zmi.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/VirtualHostRoot/_vh_zmi/$$1"
-        - traefik.http.routers.backend-zmi.middlewares=gzip,backend-zmi
+        - traefik.http.routers.backend-zmi.middlewares=gzip,backend-auth,backend-zmi
 
   db:
     image: postgres:14.2

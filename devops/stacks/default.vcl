@@ -246,12 +246,6 @@ sub vcl_backend_response {
         return(deliver);
     }
 
-    # TODO this one is very plone specific and should be removed, not sure if its needed any more
-    if (bereq.url ~ "(createObject|@@captcha)") {
-        set beresp.uncacheable = true;
-        return(deliver);
-    }
-
     set beresp.grace = 600s;
 
     return (deliver);
