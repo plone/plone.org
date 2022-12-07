@@ -78,6 +78,7 @@ services:
     image: ghcr.io/plone/ploneorg-frontend:latest
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+      RAZZLE_API_PATH: https://beta.plone.org
     depends_on:
       - backend
     networks:
