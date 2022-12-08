@@ -3,6 +3,8 @@
 # This is not a security problem, because the schemas are already
 # public in the plone.org repository.
 
+from plone.restapi.services.types import get
+
 import logging
 
 
@@ -14,7 +16,4 @@ def bypass_security_check(context):
 
 
 logger.info("Patching plone.restapi.services.types.get.check_security")
-from plone.restapi.services.types import get
-
-
 get.check_security = bypass_security_check
