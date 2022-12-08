@@ -5,11 +5,16 @@
 
 import logging
 
+
 logger = logging.getLogger(__name__)
+
 
 def bypass_security_check(context):
     pass
 
+
 logger.info("Patching plone.restapi.services.types.get.check_security")
 from plone.restapi.services.types import get
+
+
 get.check_security = bypass_security_check
