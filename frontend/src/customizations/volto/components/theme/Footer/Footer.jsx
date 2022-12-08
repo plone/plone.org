@@ -97,7 +97,9 @@ const Footer = ({ intl }) => {
                 </List.Header>
                 <List.Content>
                   <List.Item>
-                    <Link to="/foundation/members/application-procedure">Join the foundation</Link>
+                    <Link to="/foundation/members/application-procedure">
+                      Join the foundation
+                    </Link>
                   </List.Item>
                   <List.Item>
                     <Link to="/foundation/board">Board</Link>
@@ -109,7 +111,9 @@ const Footer = ({ intl }) => {
                     <Link to="/foundation/sponsors">Sponsors</Link>
                   </List.Item>
                   <List.Item>
-                    <Link to="/foundation/materials/foundation-resolutions/code-of-conduct">Code of conduct</Link>
+                    <Link to="/foundation/materials/foundation-resolutions/code-of-conduct">
+                      Code of conduct
+                    </Link>
                   </List.Item>
                   <List.Item>
                     <Link to="/foundation/members">Foundation members</Link>
@@ -120,7 +124,9 @@ const Footer = ({ intl }) => {
             <Grid.Column>
               <List inverted>
                 <List.Header>
-                  <Link to="/news-and-events/plone-in-social-media">Follow us</Link>
+                  <Link to="/news-and-events/plone-in-social-media">
+                    Follow us
+                  </Link>
                 </List.Header>
                 <List.Content>
                   <List.Item>
