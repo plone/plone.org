@@ -7,3 +7,6 @@ import logging
 _ = MessageFactory("ploneorg")
 
 logger = logging.getLogger("ploneorg")
+
+
+from . import patches  # noqa
