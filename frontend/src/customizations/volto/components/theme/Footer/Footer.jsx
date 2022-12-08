@@ -36,20 +36,20 @@ const Footer = ({ intl }) => {
             <Grid.Column>
               <List>
                 <List.Header>
-                  <Link to="/about-plone">About Plone</Link>
+                  <Link to="/why-plone">About Plone</Link>
                 </List.Header>
                 <List.Content>
                   <List.Item>
                     <Link to="/try-plone">Try Plone</Link>
                   </List.Item>
                   <List.Item>
-                    <Link to="/downloads">Download Plone</Link>
+                    <Link to="/download">Download Plone</Link>
                   </List.Item>
                   <List.Item>
                     <a href="https://docs.plone.org">Documentation</a>
                   </List.Item>
                   <List.Item>
-                    <a href="https://docs.plone.org">Training</a>
+                    <a href="https://training.plone.org">Training</a>
                   </List.Item>
                   <List.Item>
                     <Link to="/security">Security</Link>
@@ -66,14 +66,14 @@ const Footer = ({ intl }) => {
             <Grid.Column>
               <List>
                 <List.Header>
-                  <Link to="/community">Community</Link>
+                  <Link to="/community/contribute">Community</Link>
                 </List.Header>
                 <List.Content>
                   <List.Item>
                     <a href="https://community.plone.org/">Forum</a>
                   </List.Item>
                   <List.Item>
-                    <Link to="/commnity/chat">Chat</Link>
+                    <Link to="/community/chat">Chat</Link>
                   </List.Item>
                   <List.Item>
                     <Link to="/contribute">Contribute code</Link>
@@ -85,7 +85,7 @@ const Footer = ({ intl }) => {
                     <Link to="/news">News and events</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="https://2021.ploneconf.org/">Conference</a>
+                    <a href="https://ploneconf.org/">Conference</a>
                   </List.Item>
                 </List.Content>
               </List>
@@ -97,7 +97,7 @@ const Footer = ({ intl }) => {
                 </List.Header>
                 <List.Content>
                   <List.Item>
-                    <Link to="/foundation/join">Join the foundation</Link>
+                    <Link to="/foundation/members/application-procedure">Join the foundation</Link>
                   </List.Item>
                   <List.Item>
                     <Link to="/foundation/board">Board</Link>
@@ -109,7 +109,7 @@ const Footer = ({ intl }) => {
                     <Link to="/foundation/sponsors">Sponsors</Link>
                   </List.Item>
                   <List.Item>
-                    <Link to="/foundation/coc">Code of conduct</Link>
+                    <Link to="/foundation/materials/foundation-resolutions/code-of-conduct">Code of conduct</Link>
                   </List.Item>
                   <List.Item>
                     <Link to="/foundation/members">Foundation members</Link>
@@ -120,7 +120,7 @@ const Footer = ({ intl }) => {
             <Grid.Column>
               <List inverted>
                 <List.Header>
-                  <Link to="/follow">Follow us</Link>
+                  <Link to="/news-and-events/plone-in-social-media">Follow us</Link>
                 </List.Header>
                 <List.Content>
                   <List.Item>
