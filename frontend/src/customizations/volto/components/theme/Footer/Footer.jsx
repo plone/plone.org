@@ -79,13 +79,15 @@ const Footer = ({ intl }) => {
                     <Link to="/contribute">Contribute code</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="https://github.com/plone">Report an issue</a>
+                    <a href="https://github.com/plone/Products.CMFPlone/issues">
+                      Report an issue
+                    </a>
                   </List.Item>
                   <List.Item>
-                    <Link to="/news">News and events</Link>
+                    <Link to="/news-and-events">News and events</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="https://ploneconf.org/">Conference</a>
+                    <a href="https://ploneconf.org">Conference</a>
                   </List.Item>
                 </List.Content>
               </List>
