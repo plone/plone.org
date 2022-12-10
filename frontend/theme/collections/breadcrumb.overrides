@@ -3,6 +3,7 @@
     margin: 0 0.3rem;
     color: @textColor;
     font-size: 0.8rem;
+    opacity: 0.9;
   }
 
   a.section {

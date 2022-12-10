@@ -85,7 +85,7 @@
 --------------------*/
 
 @lineHeight: 1.4em;
-@textColor: #777777;
+@textColor: #595959;
 
 /*-------------------
      Breakpoints
