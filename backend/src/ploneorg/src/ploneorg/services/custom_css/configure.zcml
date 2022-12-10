@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    >
+
+
+  <!-- endpoint to get custom css -->
+  <plone:service
+      method="GET"
+      factory=".get.CustomCSS"
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      permission="zope2.View"
+      name="@custom-css"
+      />
+
+
+</configure>

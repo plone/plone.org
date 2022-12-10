@@ -12,6 +12,16 @@
       type="plone"
       />
 
+  <!-- Ploneorg settings controlpanel -->
+  <browser:page
+      name="ploneorg-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class="..controlpanel.PloneorgSettings"
+      permission="cmf.ManagePortal"
+      layer="ploneorg.interfaces.IPLONEORGLayer"
+      />
+
+
   <!-- Import stuff (for migration only) -->
   <browser:page
       name="import_content"
