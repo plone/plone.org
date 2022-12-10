@@ -56,9 +56,49 @@ export default function applyConfig(config) {
       { match: '', component: CustomCSS },
     ],
   };
+
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
     gridAllowedBlocks: ['teaser', 'image', 'slate', 'html'],
+  };
+
+  config.settings['volto-gdpr-privacy'].defaultPanelConfig = {
+    ...config.settings['volto-gdpr-privacy'].defaultPanelConfig,
+    last_updated: '2022-12-10T00:07:00+00:00',
+    technical: {
+      text: {
+        en: {
+          title: 'Required cookies',
+          description:
+            'The site uses cookies to analyze traffic anonymously to and from the site. These cookies also allow us to provide a better navigation service on the site, and collect navigation information for this purpose.',
+        },
+      },
+      choices: [
+        {
+          config_key: 'MATOMO',
+          text: {
+            en: {
+              title: 'Anonymous analytics with Matomo',
+              description:
+                'Matomo is used to analyze navigation on the site in order to improve it and provide the user with the best possible browsing experience.',
+            },
+          },
+        },
+      ],
+    },
+    profiling: {
+      text: {
+        en: {
+          title: 'Third party integrations',
+          description:
+            config.settings['volto-gdpr-privacy'].defaultPanelConfig.profiling
+              .text.en.description,
+        },
+      },
+      choices:
+        config.settings['volto-gdpr-privacy'].defaultPanelConfig.profiling
+          .choices,
+    },
   };
 
   SiteBlocks(config); //blocks configuration for Plone.org
