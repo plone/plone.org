@@ -46,7 +46,7 @@ export default function applyConfig(config) {
     defaultLanguage: 'en',
     showTags: false,
     matomoSiteId: '9',
-    matomoUrlBase: 'https://stats.ploneconf.org/',
+    matomoUrlBase: 'https://stats.plone.org/',
     appExtras: [
       ...config.settings.appExtras,
       {
