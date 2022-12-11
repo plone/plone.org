@@ -188,7 +188,7 @@ const Footer = ({ intl }) => {
               </List>
               <List>
                 <List.Header>
-                  <List.Item><Link to="/privacy-statement">Privacy Statement</Link></List.Item>
+                  <List.Item><Link to="/privacy-policy">Privacy Policy</Link></List.Item>
                 </List.Header>
                 <List.Content>
                   <List.Item>
