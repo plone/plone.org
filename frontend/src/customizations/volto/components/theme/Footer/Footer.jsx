@@ -13,7 +13,6 @@ import { displayBanner } from 'volto-gdpr-privacy';
 import { useDispatch } from 'react-redux';
 import { LI } from '../../../../../../omelette/packages/volto-slate/src/constants';
 
-
 const messages = defineMessages({
   copyright: {
     id: 'Copyright',
@@ -37,9 +36,7 @@ const messages = defineMessages({
  * @returns {string} Markup of the component
  */
 const Footer = ({ intl }) => {
-
   const dispatch = useDispatch();
-
 
   return (
     <div id="footer">
@@ -136,16 +133,15 @@ const Footer = ({ intl }) => {
                   <List.Item>
                     <a href="https://plone.teemill.com/">Shop</a>
                   </List.Item>
-
                 </List.Content>
               </List>
             </Grid.Column>
             <Grid.Column className="separated">
               <List>
                 <List.Header>
-                      <Link to="/news-and-events/plone-in-social-media">
-                        Follow us
-                      </Link>
+                  <Link to="/news-and-events/plone-in-social-media">
+                    Follow us
+                  </Link>
                 </List.Header>
                 <List.Content>
                   <Grid textAlign="left" columns={2}>
@@ -161,7 +157,9 @@ const Footer = ({ intl }) => {
                             <a href="https://twitter.com/plone">Twitter</a>
                           </List.Item>
                           <List.Item>
-                            <a href="https://www.instagram.com/plonecms/">Instagram</a>
+                            <a href="https://www.instagram.com/plonecms/">
+                              Instagram
+                            </a>
                           </List.Item>
                         </List.Content>
                       </List>
@@ -170,7 +168,9 @@ const Footer = ({ intl }) => {
                       <List>
                         <List.Content>
                           <List.Item>
-                            <a href="https://www.youtube.com/@plonecms">YouTube</a>
+                            <a href="https://www.youtube.com/@plonecms">
+                              YouTube
+                            </a>
                           </List.Item>
                           <List.Item>
                             <a href="https://www.linkedin.com/company/plone-foundation/">
@@ -178,7 +178,9 @@ const Footer = ({ intl }) => {
                             </a>
                           </List.Item>
                           <List.Item>
-                            <a href="https://www.facebook.com/plonecms">Facebook</a>
+                            <a href="https://www.facebook.com/plonecms">
+                              Facebook
+                            </a>
                           </List.Item>
                         </List.Content>
                       </List>
@@ -188,24 +190,26 @@ const Footer = ({ intl }) => {
               </List>
               <List>
                 <List.Header>
-                  <List.Item><Link to="/privacy-policy">Privacy Policy</Link></List.Item>
+                  <List.Item>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
+                  </List.Item>
                 </List.Header>
                 <List.Content>
                   <List.Item>
-                  <a
-                    className=""
-                    onClick={(e) => {
-                      dispatch(displayBanner(true, true));
-                    }}
-                    title={intl.formatMessage(messages.cookieSettings)}
-                  >
-                    {intl.formatMessage(messages.cookieSettings)}
-                  </a>
+                    <a
+                      className=""
+                      onClick={(e) => {
+                        dispatch(displayBanner(true, true));
+                      }}
+                      title={intl.formatMessage(messages.cookieSettings)}
+                    >
+                      {intl.formatMessage(messages.cookieSettings)}
+                    </a>
                   </List.Item>
                 </List.Content>
               </List>
             </Grid.Column>
-            </Grid>
+          </Grid>
         </div>
       </Container>
       <div id="footer-small-wrapper">

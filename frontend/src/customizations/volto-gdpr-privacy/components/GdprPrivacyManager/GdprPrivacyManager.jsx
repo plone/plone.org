@@ -1,7 +1,9 @@
 import React from 'react';
-import { usePanelConfigAndPreferences, GDPRCookies } from 'volto-gdpr-privacy/helpers';
+import {
+  usePanelConfigAndPreferences,
+  GDPRCookies,
+} from 'volto-gdpr-privacy/helpers';
 import CookieBanner from 'volto-gdpr-privacy/components/CookieBanner/CookieBanner';
-import ShowGdprBanner from 'volto-gdpr-privacy/components/ShowGdprBanner/ShowGdprBanner';
 import GdprPrivacyManagerIncludeComponents from 'volto-gdpr-privacy/components/GdprPrivacyManager/GdprPrivacyManagerIncludeComponents';
 
 const GdprPrivacyManager = () => {

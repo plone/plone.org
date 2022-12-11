@@ -68,8 +68,7 @@ export default function applyConfig(config) {
     text: {
       en: {
         title: 'Privacy settings',
-        description: 
-        'Please update your preferred privacy settings below.'
+        description: 'Please update your preferred privacy settings below.',
       },
     },
     technical: {
