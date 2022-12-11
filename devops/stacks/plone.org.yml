@@ -81,7 +81,7 @@ services:
         - traefik.http.routers.betaploneorg-backend.entrypoints=https
         - traefik.http.routers.betaploneorg-backend.tls=true
         - traefik.http.routers.betaploneorg-backend.service=ploneorg-backend
-        - traefik.http.routers.betaploneorg-backend.middlewares=gzip,ploneorg-vhm
+        - traefik.http.routers.betaploneorg-backend.middlewares=gzip,betaploneorg-vhm
         ### Beta.Plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
         - traefik.http.routers.betaploneorg-classicui.rule=Host(`beta.plone.org`) && (PathPrefix(`/ClassicUI`))
         - traefik.http.routers.betaploneorg-classicui.entrypoints=https
