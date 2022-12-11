@@ -65,12 +65,19 @@ export default function applyConfig(config) {
   config.settings['volto-gdpr-privacy'].defaultPanelConfig = {
     ...config.settings['volto-gdpr-privacy'].defaultPanelConfig,
     last_updated: '2022-12-10T00:07:00+00:00',
+    text: {
+      en: {
+        title: 'Privacy settings',
+        description: 
+        'Please update your preferred privacy settings below.'
+      },
+    },
     technical: {
       text: {
         en: {
           title: 'Required cookies',
           description:
-            'The site uses cookies to analyze traffic anonymously to and from the site. These cookies also allow us to provide a better navigation service on the site, and collect navigation information for this purpose.',
+            'This website uses cookies for visitor analytics and login functionality. No personal identifiable information is collected or exchanged with third parties.',
         },
       },
       choices: [
@@ -80,7 +87,7 @@ export default function applyConfig(config) {
             en: {
               title: 'Anonymous analytics with Matomo',
               description:
-                'Matomo is used to analyze navigation on the site in order to improve it and provide the user with the best possible browsing experience.',
+                'We host and use our own instance of Matomo, an open source application for anonymous visitor analytics.',
             },
           },
         },
@@ -91,8 +98,7 @@ export default function applyConfig(config) {
         en: {
           title: 'Third party integrations',
           description:
-            config.settings['volto-gdpr-privacy'].defaultPanelConfig.profiling
-              .text.en.description,
+            'To show rich content from other websites we use integrations from third parties. These might set cookies and collect personal data that can be used for profiling purposes across websites. You can disable individual services below.',
         },
       },
       choices:
