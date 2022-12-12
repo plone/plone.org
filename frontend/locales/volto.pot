@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-12-12T03:19:12.033Z\n"
+"POT-Creation-Date: 2022-12-12T04:53:06.722Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -210,6 +210,7 @@ msgstr ""
 
 #: config/Blocks/schemas/listing-variations/news-card-variation-schema
 #: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+#: config/Blocks/schemas/listing-variations/sponsor-card-variation-schema
 # defaultMessage: Number of columns
 msgid "Number of columns"
 msgstr ""

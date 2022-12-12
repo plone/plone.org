@@ -19,6 +19,7 @@
 @import 'site/components/slider_wrapper.less';
 
 @import 'site/components/cards/simple_card.less';
+@import 'site/components/cards/sponsor_card.less';
 @import 'site/components/cards/news_card.less';
 
 @import 'site/components/blocks/listing/simple_card.less';

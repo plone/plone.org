@@ -227,6 +227,7 @@ msgstr ""
 
 #: config/Blocks/schemas/listing-variations/news-card-variation-schema
 #: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+#: config/Blocks/schemas/listing-variations/sponsor-card-variation-schema
 # defaultMessage: Number of columns
 msgid "Number of columns"
 msgstr ""
