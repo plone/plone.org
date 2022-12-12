@@ -11,7 +11,6 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { displayBanner } from 'volto-gdpr-privacy';
 
 import { useDispatch } from 'react-redux';
-import { LI } from '../../../../../../omelette/packages/volto-slate/src/constants';
 
 const messages = defineMessages({
   copyright: {
@@ -195,16 +194,12 @@ const Footer = ({ intl }) => {
                   </List.Item>
                 </List.Header>
                 <List.Content>
-                  <List.Item>
-                    <a
-                      className=""
-                      onClick={(e) => {
-                        dispatch(displayBanner(true, true));
-                      }}
-                      title={intl.formatMessage(messages.cookieSettings)}
-                    >
-                      {intl.formatMessage(messages.cookieSettings)}
-                    </a>
+                  <List.Item
+                    onClick={(e) => {
+                      dispatch(displayBanner(true, true));
+                    }}
+                  >
+                    {intl.formatMessage(messages.cookieSettings)}
                   </List.Item>
                 </List.Content>
               </List>
