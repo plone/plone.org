@@ -26,4 +26,25 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20221206001"
+      destination="20221212001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update Foundation Member and Sponsor Workflows"
+        import_steps="workflow"
+        />
+    <upgradeStep
+        title="Reindex Foundation Members"
+        description="Reindex Description of Foundation Members"
+        handler=".reindex_foundation_members"
+        />
+    <upgradeStep
+        title="Fix Sponsor workflow"
+        description="Set correct Foundation Sponsor Workflows"
+        handler=".sponsors.set_state_sponsors"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
