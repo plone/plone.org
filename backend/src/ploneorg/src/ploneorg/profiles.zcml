@@ -22,6 +22,14 @@
       />
 
   <genericsetup:registerProfile
+      name="oauth"
+      title="Plone.org Site: Local pas.plugins.authomatic"
+      description="Uninstall Local pas.plugins.authomatic."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/oauth"
+      />
+
+  <genericsetup:registerProfile
       name="uninstall"
       title="Plone.org Site: Uninstall"
       description="Uninstall Plone.org Site setup."
