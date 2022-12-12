@@ -95,3 +95,25 @@ def reindex_sponsorship_type(setup_tool=None):
         obj.reindexObject(idxs=["sponsorship_type"])
 
     logger.info(f"Reindexed {len(brains)} sponsors")
+
+
+def reindex_is_provider(setup_tool=None):
+    """Reindex sponsor is_provider."""
+    brains = api.content.find(portal_type="FoundationSponsor")
+    logger.info(f"Found {len(brains)} sponsors")
+    for brain in brains:
+        obj = brain.getObject()
+        obj.reindexObject(idxs=["is_provider"])
+
+    logger.info(f"Reindexed {len(brains)} sponsors")
+
+
+def add_is_provider(setup_tool=None):
+    """Add add_is_provider querystring."""
+    brains = api.content.find(portal_type="FoundationSponsor")
+    logger.info(f"Found {len(brains)} sponsors")
+    for brain in brains:
+        obj = brain.getObject()
+        obj.reindexObject(idxs=["is_provider"])
+
+    logger.info(f"Reindexed {len(brains)} sponsors")

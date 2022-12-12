@@ -5,5 +5,11 @@
   >
     <indexed_attr value="sponsorship_type" />
   </index>
+  <index meta_type="FieldIndex"
+         name="is_provider"
+  >
+    <indexed_attr value="is_provider" />
+  </index>
   <column value="sponsorship_type" />
+  <column value="is_provider" />
 </object>

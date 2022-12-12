@@ -23,5 +23,26 @@
     </value>
     <value key="vocabulary">ploneorg.vocabulary.sponsorship_types</value>
   </records>
+&gt;
+
+  <!-- Add options to search by is_provider -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.is_provider"
+  >
+    <value key="title"
+           i18n:translate="label_is_provider"
+    >Provider</value>
+    <value key="description"
+           i18n:translate="description_sponsorship_type"
+    >Check only for providers.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="group"
+           i18n:translate=""
+    >Sponsors</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.boolean.isTrue</element>
+    </value>
+  </records>
 
 </registry>
