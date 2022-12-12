@@ -68,7 +68,8 @@ export default function applyConfig(config) {
     text: {
       en: {
         title: 'This site uses cookies',
-        description: 'For this website we use cookies for anonymous analytics gathering and show external content. You can also enable third parties independently.',
+        description:
+          'For this website we use cookies for anonymous analytics gathering and show external content. You can also enable third parties independently.',
       },
     },
     technical: {
