@@ -1,11 +1,24 @@
+from plone import api
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.schema.email import Email
 from plone.supermodel import model
 from ploneorg import _
+from unicodedata import lookup
 from zope import schema
 from zope.interface import implementer
+
+
+def flag_for_country_code(code: str) -> str:
+    """Return the unicode representing the flag of a Country."""
+    flag = code
+    if len(code) == 2:
+        code = code.lower()
+        flag = lookup(f"REGIONAL INDICATOR SYMBOL LETTER {code[0]}") + lookup(
+            f"REGIONAL INDICATOR SYMBOL LETTER {code[1]}"
+        )
+    return flag
 
 
 class IFoundationMember(model.Schema):
@@ -18,6 +31,7 @@ class IFoundationMember(model.Schema):
             "title",
             "email",
             "organization",
+            "merit",
         ],
     )
 
@@ -53,12 +67,12 @@ class IFoundationMember(model.Schema):
     state = schema.TextLine(title=_("State"), required=False)
 
     directives.read_permission(postal_code="ploneorg.ViewFoundationMemberDetails")
-    postal_code = schema.TextLine(title=_("Postal code"), required=True)
+    postal_code = schema.TextLine(title=_("Postal code"), required=False)
 
     country = schema.Choice(
         title=_("Country"),
         vocabulary="ploneorg.vocabulary.countries",
-        required=False,
+        required=True,
         missing_value="",
     )
 
@@ -89,3 +103,18 @@ class FoundationMember(Container):
     @property
     def fullname(self):
         return self.title
+
+    @property
+    def description(self):
+        organization = ""
+        # Only list organization for active members
+        if api.content.get_state(self) in ("approved", "pending_renewal"):
+            organization = self.organization or ""
+        city = self.city or ""
+        country = flag_for_country_code(self.country or "")
+        description = [organization, city, country]
+        return " | ".join([item for item in description if item.strip()])
+
+    @description.setter
+    def description(self, value):
+        pass

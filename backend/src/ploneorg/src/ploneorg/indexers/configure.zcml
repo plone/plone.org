@@ -1,10 +1,13 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <!-- Indexers/Metadata -->
-  <!--
   <adapter
-      factory=".indexer.industry_indexer"
-      name="industry"
+      factory=".member.description_indexer"
+      name="Description"
       />
--->
+  <adapter
+      factory=".sponsor.remote_url_indexer"
+      name="getRemoteUrl"
+      />
+
 </configure>

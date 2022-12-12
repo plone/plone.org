@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-10-15 11:38+0000\n"
+"POT-Creation-Date: 2022-12-12 03:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,43 +18,43 @@ msgstr ""
 msgid "A member of the Plone Foundation."
 msgstr ""
 
-#: ploneorg/content/member.py:16
+#: ploneorg/content/member.py:29
 msgid "About you"
 msgstr ""
 
-#: ploneorg/content/member.py:51
+#: ploneorg/content/member.py:65
 msgid "Address"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:53
+#: ploneorg/content/plonerelease.py:57
 msgid "Changelog"
 msgstr ""
 
-#: ploneorg/content/member.py:52
+#: ploneorg/content/member.py:66
 msgid "City"
 msgstr ""
 
-#: ploneorg/content/member.py:26
+#: ploneorg/content/member.py:40
 msgid "Contact Information"
 msgstr ""
 
-#: ploneorg/content/member.py:67
+#: ploneorg/content/member.py:81
 msgid "Contributions"
 msgstr ""
 
-#: ploneorg/content/member.py:59
+#: ploneorg/content/member.py:73
 msgid "Country"
 msgstr ""
 
-#: ploneorg/content/member.py:68
+#: ploneorg/content/member.py:82
 msgid "Describe your contributions to the Plone community."
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:21
+#: ploneorg/content/plonerelease.py:25
 msgid "Description"
 msgstr ""
 
-#: ploneorg/content/member.py:46
+#: ploneorg/content/member.py:60
 msgid "Email address"
 msgstr ""
 
@@ -62,11 +62,11 @@ msgstr ""
 msgid "Enter a http:// or https:// web address"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:26
+#: ploneorg/content/plonerelease.py:30
 msgid "File size"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:67
+#: ploneorg/content/plonerelease.py:71
 msgid "Files"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Foundation Member"
 msgstr ""
 
-#: ploneorg/content/member.py:73
+#: ploneorg/content/member.py:87
 msgid "Github username"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Initial content for our website."
 msgstr ""
 
-#: ploneorg/content/member.py:79
+#: ploneorg/content/member.py:93
 msgid "Linkedin profile"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ploneorg/content/member.py:43
+#: ploneorg/content/member.py:57
 msgid "Name"
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Organization size"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:23
+#: ploneorg/content/plonerelease.py:27
 msgid "Platform"
 msgstr ""
 
@@ -122,31 +122,31 @@ msgstr ""
 msgid "Policy package to install our site"
 msgstr ""
 
-#: ploneorg/content/member.py:56
+#: ploneorg/content/member.py:70
 msgid "Postal code"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:38
+#: ploneorg/content/plonerelease.py:42
 msgid "Release date"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:41
+#: ploneorg/content/plonerelease.py:45
 msgid "Release notes"
 msgstr ""
 
-#: ploneorg/content/member.py:38
+#: ploneorg/content/member.py:52
 msgid "Social Networds"
 msgstr ""
 
-#: ploneorg/content/member.py:53
+#: ploneorg/content/member.py:67
 msgid "State"
 msgstr ""
 
-#: ploneorg/content/member.py:76
+#: ploneorg/content/member.py:90
 msgid "Twitter username"
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:25
+#: ploneorg/content/plonerelease.py:29
 msgid "URL"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Uninstall Plone.org Site setup."
 msgstr ""
 
-#: ploneorg/content/plonerelease.py:32
+#: ploneorg/content/plonerelease.py:36
 msgid "Version"
 msgstr ""
 
@@ -162,10 +162,10 @@ msgstr ""
 msgid "What is your connection to Plone? How is Plone used by your organization?"
 msgstr ""
 
-#: ploneorg/content/member.py:81
+#: ploneorg/content/member.py:95
 msgid "i.e.: https://www.linkedin.com/in/plone/"
 msgstr ""
 
-#: ploneorg/content/member.py:74
+#: ploneorg/content/member.py:88
 msgid "i.e.: plone"
 msgstr ""

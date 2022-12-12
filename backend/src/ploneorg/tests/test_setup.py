@@ -34,7 +34,7 @@ class TestSetup(unittest.TestCase):
         """Test latest version of default profile."""
         self.assertEqual(
             self.setup.getLastVersionForProfile("ploneorg:default")[0],
-            "20221206001",
+            "20221212001",
         )
 
 

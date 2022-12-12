@@ -1,4 +1,5 @@
 import SimpleCardListing from '@package/components/Blocks/Listing/variations/SimpleCardListing';
+import MemberCardListing from '@package/components/Blocks/Listing/variations/MemberCardListing';
 import NewsCardListing from '@package/components/Blocks/Listing/variations/NewsCardListing';
 import DownloadListing from '@package/components/Blocks/Listing/variations/DownloadListing';
 import SearchResults from '@package/components/Blocks/Listing/variations/SearchResults';
@@ -382,6 +383,17 @@ export const SiteBlocks = (config) => {
           schemaEnhancer: ({ schema, formData, intl }) => {
             let pos = getDefaultSchema(schema, formData, intl);
             getNewsCardVariationSchema(schema, formData, intl, pos);
+            return schema;
+          },
+        },
+        {
+          id: 'memberCardListing',
+          isDefault: false,
+          title: 'Foundation Member Card',
+          template: MemberCardListing,
+          schemaEnhancer: ({ schema, formData, intl }) => {
+            let pos = getDefaultSchema(schema, formData, intl);
+            getSimpleCardVariationSchema(schema, formData, intl, pos);
             return schema;
           },
         },
