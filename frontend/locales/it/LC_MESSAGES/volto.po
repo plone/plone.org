@@ -208,6 +208,7 @@ msgstr ""
 
 #: config/Blocks/schemas/listing-variations/news-card-variation-schema
 #: config/Blocks/schemas/listing-variations/simple-card-variation-schema
+#: config/Blocks/schemas/listing-variations/sponsor-card-variation-schema
 # defaultMessage: Number of columns
 msgid "Number of columns"
 msgstr ""
@@ -259,6 +260,7 @@ msgstr ""
 msgid "Privacy and Cookies"
 msgstr ""
 
+#: components/Blocks/Listing/variations/MemberCardListing
 #: components/Blocks/Listing/variations/SimpleCardListing
 # defaultMessage: Read more
 msgid "Read more"

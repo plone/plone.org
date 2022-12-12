@@ -9,7 +9,7 @@ services:
       - backend
       - frontend
     ports:
-    - "80:80"
+      - "80:80"
 
   frontend:
     build:
@@ -17,28 +17,28 @@ services:
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
-    - "3000:3000"
+      - "3000:3000"
     depends_on:
       - backend
 
   backend:
     build:
       context: ../../backend
+    ports:
+      - "8080:8080"
     environment:
-      SITE: Plone
-      ADDITIONAL_PROFILES: "ploneorg:default,ploneorg:initial"
-      RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-plone}'"
     depends_on:
       - db
 
   db:
-    image: postgres
+    image: postgres:14.2
     environment:
       POSTGRES_USER: plone
       POSTGRES_PASSWORD: plone
       POSTGRES_DB: plone
     volumes:
-    - data:/var/lib/postgresql/data
+      - data:/var/lib/postgresql/data
 
 volumes:
   data: {}

@@ -1,11 +1,14 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'semantic-ui-react';
+import { Icon } from '@plone/volto/components';
 import { useIntl, defineMessages } from 'react-intl';
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import playSVG from '@plone/volto/icons/play.svg';
+import pauseSVG from '@plone/volto/icons/pause.svg';
 
 const messages = defineMessages({
   viewImage: {
@@ -85,7 +88,7 @@ const SliderWrapper = ({
                   : intl.formatMessage(messages.play)
               }
             >
-              <Icon name={userAutoplay ? 'pause' : 'play'} />
+              <Icon name={userAutoplay ? pauseSVG : playSVG} />
             </button>
           </div>
         )}

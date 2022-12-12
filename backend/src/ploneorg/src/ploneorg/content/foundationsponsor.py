@@ -12,7 +12,6 @@ from ploneorg.vocabularies import org_size_vocabulary
 from ploneorg.vocabularies import payment_currency_vocabulary
 from ploneorg.vocabularies import payment_frequency_vocabulary
 from ploneorg.vocabularies import payment_method_vocabulary
-from ploneorg.vocabularies import sponsorship_type_vocabulary
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
@@ -111,7 +110,7 @@ class IFoundationSponsor(Schema):
 
     sponsorship_type = schema.Choice(
         title=_PMF("Sponsor Type", default="Sponsor Type"),
-        vocabulary=sponsorship_type_vocabulary,
+        vocabulary="ploneorg.vocabulary.sponsorship_types",
         required=True,
     )
 
@@ -294,6 +293,30 @@ class FoundationSponsor(Item):
             self.lname,
         ]
         return " ".join([name for name in names if name])
+
+    @property
+    def preview_image(self):
+        return self.logo
+
+    @preview_image.setter
+    def preview_image(self, value):
+        self.logo = value
+
+    @property
+    def preview_caption(self):
+        return self.title
+
+    @preview_caption.setter
+    def preview_caption(self, value):
+        pass
+
+    @property
+    def remoteUrl(self):
+        return self.website
+
+    @remoteUrl.setter
+    def remoteUrl(self, value):
+        self.website = value
 
     def toXML(self, schematas=["contact", "survey"]):
         """To XML for Paul ;)"""

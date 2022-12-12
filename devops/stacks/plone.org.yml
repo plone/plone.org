@@ -1,0 +1,97 @@
+version: '3.3'
+
+services:
+
+  frontend:
+    image: ghcr.io/plone/ploneorg-frontend:latest
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+    depends_on:
+      - backend
+    networks:
+      - public
+      - ploneorg
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.ploneorg-frontend.loadbalancer.server.port=3000
+        # Routers
+        - traefik.http.routers.ploneorg-frontend.rule=Host(`plone.org`,`beta.plone.org`)
+        - traefik.http.routers.ploneorg-frontend.entrypoints=https
+        - traefik.http.routers.ploneorg-frontend.tls=true
+        - traefik.http.routers.ploneorg-frontend.tls.certresolver=le
+        - traefik.http.routers.ploneorg-frontend.service=ploneorg-frontend
+        - traefik.http.routers.ploneorg-frontend.middlewares=gzip
+
+  backend:
+    image: ghcr.io/plone/ploneorg-backend:latest
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-plone}'"
+    depends_on:
+      - db
+    networks:
+      - public
+      - ploneorg
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.ploneorg-backend.loadbalancer.server.port=8080
+        # Middlewares
+        ### Authentication
+        - traefik.http.middlewares.ploneorg-backend-auth.basicauth.users=ploneorg:$$apr1$$SAOhBRqM$$HqoYLlr//h7PfUWidoFg//
+        ### Plone.org
+        - "traefik.http.middlewares.ploneorg-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.ploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/plone.org/Plone/++api++/VirtualHostRoot/$$1"
+        - "traefik.http.middlewares.ploneorg-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
+        - "traefik.http.middlewares.ploneorg-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
+        ### Beta.Plone.org
+        - "traefik.http.middlewares.betaploneorg-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.betaploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/Plone/++api++/VirtualHostRoot/$$1"
+        - "traefik.http.middlewares.betaploneorg-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
+        - "traefik.http.middlewares.betaploneorg-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/beta.plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
+        # Routers
+        ## Plone.org
+        - traefik.http.routers.ploneorg-backend.rule=Host(`plone.org`) && (PathPrefix(`/++api++`))
+        - traefik.http.routers.ploneorg-backend.entrypoints=https
+        - traefik.http.routers.ploneorg-backend.tls=true
+        - traefik.http.routers.ploneorg-backend.service=ploneorg-backend
+        - traefik.http.routers.ploneorg-backend.middlewares=gzip,ploneorg-vhm
+        ### Plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
+        - traefik.http.routers.ploneorg-classicui.rule=Host(`plone.org`) && (PathPrefix(`/ClassicUI`))
+        - traefik.http.routers.ploneorg-classicui.entrypoints=https
+        - traefik.http.routers.ploneorg-classicui.tls=true
+        - traefik.http.routers.ploneorg-classicui.service=ploneorg-backend
+        - traefik.http.routers.ploneorg-classicui.middlewares=gzip,ploneorg-backend-auth,ploneorg-vhm-classic
+        ## Beta.Plone.org
+        - traefik.http.routers.betaploneorg-backend.rule=Host(`beta.plone.org`) && (PathPrefix(`/++api++`))
+        - traefik.http.routers.betaploneorg-backend.entrypoints=https
+        - traefik.http.routers.betaploneorg-backend.tls=true
+        - traefik.http.routers.betaploneorg-backend.service=ploneorg-backend
+        - traefik.http.routers.betaploneorg-backend.middlewares=gzip,betaploneorg-vhm
+        ### Beta.Plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
+        - traefik.http.routers.betaploneorg-classicui.rule=Host(`beta.plone.org`) && (PathPrefix(`/ClassicUI`))
+        - traefik.http.routers.betaploneorg-classicui.entrypoints=https
+        - traefik.http.routers.betaploneorg-classicui.tls=true
+        - traefik.http.routers.betaploneorg-classicui.service=ploneorg-backend
+        - traefik.http.routers.betaploneorg-classicui.middlewares=gzip,ploneorg-backend-auth,betaploneorg-vhm-classic
+
+networks:
+  public:
+    external: true
+    driver: overlay
+  ploneorg:
+    driver: overlay

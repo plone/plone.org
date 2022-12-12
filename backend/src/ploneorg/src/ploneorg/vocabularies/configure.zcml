@@ -3,4 +3,8 @@
       name="ploneorg.vocabulary.countries"
       component=".countries.countries_vocabulary"
       />
+  <utility
+      name="ploneorg.vocabulary.sponsorship_types"
+      component=".sponsors.types_vocabulary"
+      />
 </configure>

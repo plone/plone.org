@@ -118,6 +118,18 @@
               min-height: 8rem;
               max-height: 8rem;
             }
+
+            img[src*='png'],
+            img[src*='jpg'],
+            img[src*='jpeg'],
+            img[src*='gif'] {
+              width: 100%;
+              min-height: unset;
+              max-height: unset;
+              aspect-ratio: var(--grid-images-aspect-ratio, 1.77777778);
+              object-fit: cover;
+              object-position: var(--grid-images-object-position, top left);
+            }
           }
         }
 

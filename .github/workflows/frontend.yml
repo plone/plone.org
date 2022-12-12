@@ -148,8 +148,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Deploy to beta.plone.org
-        uses: kitconcept/docker-stack-deploy@v1.0.0
+      - name: Deploy to plone.org
+        uses: kitconcept/docker-stack-deploy@v1.2.0
         with:
           registry: "ghcr.io"
           username: ${{ github.actor }}
@@ -158,6 +158,7 @@ jobs:
           remote_port: ${{ secrets.DEPLOY_PORT }}
           remote_user: ${{ secrets.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: "devops/stacks/beta.plone.org.yml"
-          stack_name: "plone"
+          stack_file: "devops/stacks/plone.org.yml"
+          stack_name: "ploneorg"
+          env_file: ${{ secrets.ENV_FILE }}
           deploy_timeout: 480

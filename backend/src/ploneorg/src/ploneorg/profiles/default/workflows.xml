@@ -3,9 +3,15 @@
   <object meta_type="Workflow"
           name="foundation_member_workflow"
   />
+  <object meta_type="Workflow"
+          name="foundation_sponsor_workflow"
+  />
   <bindings>
     <type type_id="FoundationMember">
       <bound-workflow workflow_id="foundation_member_workflow" />
+    </type>
+    <type type_id="FoundationSponsor">
+      <bound-workflow workflow_id="foundation_sponsor_workflow" />
     </type>
   </bindings>
 </object>

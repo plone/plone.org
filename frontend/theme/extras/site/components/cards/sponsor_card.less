@@ -1,0 +1,48 @@
+.sponsor-card {
+  display: flex;
+  width: 100% !important;
+  height: 100%;
+  min-height: 130px !important;
+  align-items: center;
+  justify-content: center;
+  border: 0px !important;
+  box-shadow: none !important;
+
+  .item-image {
+    max-width: 320px;
+    object-fit: cover;
+  }
+}
+
+// Only Tablet
+@media (min-width: @largestMobileScreen + 1) and (max-width: @largestTabletScreen) {
+  .simple-card {
+    .item-text {
+      padding: 0 1rem;
+    }
+
+    .item-button {
+      padding: 0 0.3rem;
+      margin-right: auto;
+      margin-left: auto;
+
+      .ui.button {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Mobile + Tablet
+@media (max-width: @largestTabletScreen) {
+  .ui.basic.segment .simple-card .item-button {
+    padding-bottom: 1rem;
+  }
+}
+
+// Mobile
+@media (max-width: @largestMobileScreen) {
+  .ui.basic.segment .simple-card .item-header {
+    align-items: flex-start;
+  }
+}

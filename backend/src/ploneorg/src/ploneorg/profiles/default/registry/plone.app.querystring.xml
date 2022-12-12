@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="ploneorg"
+>
+
+  <!-- Add options to search by sponsorship_type -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.sponsorship_type"
+  >
+    <value key="title"
+           i18n:translate="label_sponsorship_type"
+    >Type of Sponsorship</value>
+    <value key="description"
+           i18n:translate="description_sponsorship_type"
+    >Categorization by type of Sponsorship.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="group"
+           i18n:translate=""
+    >Sponsors</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">ploneorg.vocabulary.sponsorship_types</value>
+  </records>
+
+</registry>
