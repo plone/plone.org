@@ -1,0 +1,14 @@
+.block.teaser .grid-image-wrapper,
+.block.teaser .grid-teaser-item {
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+
+  img {
+    // [2] Transition property for smooth transformation of images
+    transition: transform 0.5s ease;
+  }
+
+  &:hover img {
+    // [3] Finally, transforming the image when container gets hovered
+    transform: scale(1.05);
+  }
+}

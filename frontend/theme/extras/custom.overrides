@@ -45,6 +45,7 @@
 @import 'site/components/blocks/html.less';
 @import 'site/components/blocks/page_metadata.less';
 @import 'site/components/blocks/page_tag.less';
+@import 'site/components/blocks/teaser.less';
 
 @import 'site/components/blocks/icons_and_numbers.less';
 @import 'site/components/blocks/icons_and_text.less';
