@@ -70,7 +70,7 @@ STATE_LAUNCH = {
 
 
 def set_state_sponsors(setup_tool=None):
-    """Reindex Foundation Members Description."""
+    """Fix Sponsor review states."""
     brains = api.content.find(portal_type="FoundationSponsor")
     logger.info(f"Found {len(brains)} sponsors")
     for brain in brains:
@@ -84,3 +84,14 @@ def set_state_sponsors(setup_tool=None):
         obj.reindexObject()
 
     logger.info(f"Transitioned {len(brains)} sponsors")
+
+
+def reindex_sponsorship_type(setup_tool=None):
+    """Reindex sponsor sponsorship_type."""
+    brains = api.content.find(portal_type="FoundationSponsor")
+    logger.info(f"Found {len(brains)} sponsors")
+    for brain in brains:
+        obj = brain.getObject()
+        obj.reindexObject(idxs=["sponsorship_type"])
+
+    logger.info(f"Reindexed {len(brains)} sponsors")

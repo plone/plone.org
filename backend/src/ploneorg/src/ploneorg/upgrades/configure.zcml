@@ -47,4 +47,24 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20221212001"
+      destination="20221212002"
+      >
+    <genericsetup:upgradeDepends
+        title="Add sponsorship_type index and metadata"
+        import_steps="catalog"
+        />
+    <genericsetup:upgradeDepends
+        title="Add querystring for sponsorship_type"
+        import_steps="plone.app.registry"
+        />
+    <upgradeStep
+        title="Reindex sponsorship_type"
+        description="Reindex sponsorship_type for all Sponsors"
+        handler=".sponsors.reindex_sponsorship_type"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
