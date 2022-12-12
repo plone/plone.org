@@ -5,5 +5,9 @@
       factory=".member.description_indexer"
       name="Description"
       />
+  <adapter
+      factory=".sponsor.remote_url_indexer"
+      name="getRemoteUrl"
+      />
 
 </configure>

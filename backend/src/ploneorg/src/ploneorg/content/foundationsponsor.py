@@ -295,6 +295,30 @@ class FoundationSponsor(Item):
         ]
         return " ".join([name for name in names if name])
 
+    @property
+    def preview_image(self):
+        return self.logo
+
+    @preview_image.setter
+    def preview_image(self, value):
+        self.logo = value
+
+    @property
+    def preview_caption(self):
+        return self.title
+
+    @preview_caption.setter
+    def preview_caption(self, value):
+        pass
+
+    @property
+    def remoteUrl(self):
+        return self.website
+
+    @remoteUrl.setter
+    def remoteUrl(self, value):
+        self.website = value
+
     def toXML(self, schematas=["contact", "survey"]):
         """To XML for Paul ;)"""
 
