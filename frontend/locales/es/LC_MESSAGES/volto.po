@@ -269,6 +269,7 @@ msgstr ""
 msgid "Privacy and Cookies"
 msgstr ""
 
+#: components/Blocks/Listing/variations/MemberCardListing
 #: components/Blocks/Listing/variations/SimpleCardListing
 # defaultMessage: Read more
 msgid "Read more"
