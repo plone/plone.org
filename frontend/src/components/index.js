@@ -17,6 +17,7 @@ export ListingHeader from '@package/components/Blocks/Listing/ListingHeader/List
 export ListingLinkMore from '@package/components/Blocks/Listing/ListingLinkMore/ListingLinkMore';
 export ListingImage from '@package/components/Blocks/Listing/ListingImage/ListingImage';
 export SimpleCard from '@package/components/cards/SimpleCard';
+export MemberCard from '@package/components/cards/MemberCard';
 export NewsCard from '@package/components/cards/NewsCard';
 
 export TextBlockStyleSidebar from '@package/components/Blocks/common/TextBlocksStyleSidebar';
