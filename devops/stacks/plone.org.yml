@@ -86,7 +86,7 @@ services:
         - traefik.http.routers.betaploneorg-classicui.rule=Host(`beta.plone.org`) && (PathPrefix(`/ClassicUI`))
         - traefik.http.routers.betaploneorg-classicui.entrypoints=https
         - traefik.http.routers.betaploneorg-classicui.tls=true
-        - traefik.http.routers.betaploneorg-classicui.service=betaploneorg-backend
+        - traefik.http.routers.betaploneorg-classicui.service=ploneorg-backend
         - traefik.http.routers.betaploneorg-classicui.middlewares=gzip,ploneorg-backend-auth,betaploneorg-vhm-classic
 
 networks:
