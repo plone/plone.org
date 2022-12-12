@@ -67,8 +67,8 @@ export default function applyConfig(config) {
     last_updated: '2022-12-10T00:07:00+00:00',
     text: {
       en: {
-        title: 'Privacy settings',
-        description: 'Please update your preferred privacy settings below.',
+        title: 'This site uses cookies',
+        description: 'For this website we use cookies for anonymous analytics gathering and show external content. You can also enable third parties independently.',
       },
     },
     technical: {
