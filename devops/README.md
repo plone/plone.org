@@ -90,7 +90,7 @@ For local deployment entries of the domains were already created in `/etc/hosts`
 For production public DNS needs configuration.
 
 Once deployed, there is no Plone site installed.
-This can be done by accessing the ZMI or by executing the create-site script with docker.
+This can be done by accessing the ZMI or by executing `make create-site`.
 
 ## Check Stack Status
 
