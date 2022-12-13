@@ -18,6 +18,10 @@
         title="ploneorg: Add Foundation Sponsor"
         />
     <permission
+        id="ploneorg.foundationsponsor.view"
+        title="ploneorg: View Foundation Sponsor Details"
+        />
+    <permission
         id="ploneorg.plonerelease.add"
         title="Add Plone Release"
         />
