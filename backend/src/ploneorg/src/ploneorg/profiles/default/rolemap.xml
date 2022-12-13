@@ -21,5 +21,12 @@
       <role name="Editor" />
       <role name="Owner" />
     </permission>
+    <permission acquire="True"
+                name="ploneorg: View Foundation Sponsor Details"
+    >
+      <role name="Manager" />
+      <role name="Editor" />
+      <role name="Owner" />
+    </permission>
   </permissions>
 </rolemap>
