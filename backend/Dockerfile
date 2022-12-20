@@ -1,4 +1,4 @@
-ARG PLONE_VERSION=6.0.0
+ARG PLONE_VERSION=6.0.0.1
 FROM plone/plone-backend:${PLONE_VERSION}
 
 LABEL maintainer="Plone Foundation <marketing@plone.org>" \
