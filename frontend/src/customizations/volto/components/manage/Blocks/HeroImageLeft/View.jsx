@@ -33,7 +33,7 @@ const View = ({ data }) => (
       )}
       <div className="hero-body">
         <div className="hero-text">
-          {data.title && <h1>{data.title}</h1>}
+          {data.title && <h2>{data.title}</h2>}
           <p>
             {redraft(
               data.description,
