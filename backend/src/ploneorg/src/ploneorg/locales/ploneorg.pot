@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-12-12 03:19+0000\n"
+"POT-Creation-Date: 2023-01-13 16:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: ploneorg/src/ploneorg/content/foundationsponsor.py:132
+#: ploneorg/src/ploneorg/content/foundationsponsor.py:131
 msgid "Enter a http:// or https:// web address"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Linkedin profile"
 msgstr ""
 
-#: ploneorg/src/ploneorg/content/foundationsponsor.py:108
+#: ploneorg/src/ploneorg/content/foundationsponsor.py:107
 msgid "Logo"
 msgstr ""
 
@@ -97,11 +97,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ploneorg/src/ploneorg/content/foundationsponsor.py:121
+#: ploneorg/src/ploneorg/content/foundationsponsor.py:120
 msgid "Number of people in your organization. It's fine to estimate."
 msgstr ""
 
-#: ploneorg/src/ploneorg/content/foundationsponsor.py:120
+#: ploneorg/src/ploneorg/content/foundationsponsor.py:119
 msgid "Organization size"
 msgstr ""
 
@@ -118,6 +118,10 @@ msgid "Plone.org Site: Install"
 msgstr ""
 
 #: ploneorg/src/ploneorg/profiles.zcml:30
+msgid "Plone.org Site: Local pas.plugins.authomatic"
+msgstr ""
+
+#: ploneorg/src/ploneorg/profiles.zcml:38
 msgid "Plone.org Site: Uninstall"
 msgstr ""
 
@@ -141,6 +145,10 @@ msgstr ""
 msgid "Social Networds"
 msgstr ""
 
+#: ploneorg/src/ploneorg/profiles/default/registry/plone.app.querystring.xml
+msgid "Sponsors"
+msgstr ""
+
 #: ploneorg/src/ploneorg/content/member.py:67
 msgid "State"
 msgstr ""
@@ -154,6 +162,10 @@ msgid "URL"
 msgstr ""
 
 #: ploneorg/src/ploneorg/profiles.zcml:30
+msgid "Uninstall Local pas.plugins.authomatic."
+msgstr ""
+
+#: ploneorg/src/ploneorg/profiles.zcml:38
 msgid "Uninstall Plone.org Site setup."
 msgstr ""
 
@@ -161,8 +173,13 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: ploneorg/src/ploneorg/content/foundationsponsor.py:218
+#: ploneorg/src/ploneorg/content/foundationsponsor.py:217
 msgid "What is your connection to Plone? How is Plone used by your organization?"
+msgstr ""
+
+#. Default: "Categorization by type of Sponsorship."
+#: ploneorg/src/ploneorg/profiles/default/registry/plone.app.querystring.xml
+msgid "description_sponsorship_type"
 msgstr ""
 
 #: ploneorg/src/ploneorg/content/member.py:95
@@ -171,4 +188,14 @@ msgstr ""
 
 #: ploneorg/src/ploneorg/content/member.py:88
 msgid "i.e.: plone"
+msgstr ""
+
+#. Default: "Provider"
+#: ploneorg/src/ploneorg/profiles/default/registry/plone.app.querystring.xml
+msgid "label_is_provider"
+msgstr ""
+
+#. Default: "Type of Sponsorship"
+#: ploneorg/src/ploneorg/profiles/default/registry/plone.app.querystring.xml
+msgid "label_sponsorship_type"
 msgstr ""

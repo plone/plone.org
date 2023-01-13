@@ -127,6 +127,11 @@ msgstr ""
 msgid "Draftjs buttons align center"
 msgstr ""
 
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Features
+msgid "Features"
+msgstr ""
+
 #: components/layout/Footer/SiteFooter
 # defaultMessage: The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution-ShareAlike 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see https://plone.org/foundation/logo. All other trademarks are owned by their respective owners.
 msgid "Footer infos"
@@ -192,6 +197,11 @@ msgstr ""
 msgid "ItemBgColor"
 msgstr ""
 
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Knowledge Box
+msgid "Knowledge Box"
+msgstr ""
+
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Legal
 msgid "Legal"
@@ -210,6 +220,11 @@ msgstr ""
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Login
 msgid "Login"
+msgstr ""
+
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Nuclia search
+msgid "Nuclia search"
 msgstr ""
 
 #: config/Blocks/schemas/listing-variations/news-card-variation-schema
@@ -491,6 +506,11 @@ msgstr ""
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: View image
 msgid "View image"
+msgstr ""
+
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Zone
+msgid "Zone"
 msgstr ""
 
 #: components/Blocks/IconsAndText/Sidebar
