@@ -1,18 +1,19 @@
 import React from 'react';
 
-const loadNucliaSearch = (callback, widgetId) => {
+let __NUCLIA_SEARCH_LOADED__ = false;
+const loadNucliaSearch = (callback) => {
   const scriptSrc = `https://cdn.nuclia.cloud/nuclia-video-widget.umd.js`;
-  const existingScript = document.getElementById(widgetId);
-  if (existingScript && callback) {
+  if (__NUCLIA_SEARCH_LOADED__ && callback) {
     callback(true);
   } else {
+    __NUCLIA_SEARCH_LOADED__ = true;
     if (callback) callback(false);
     const script = document.createElement('script');
     script.src = scriptSrc;
-    script.id = widgetId;
     script.async = true;
     document.body.appendChild(script);
     script.onload = () => {
+      document.body.removeChild(script);
       if (callback) callback(true);
     };
   }
@@ -23,12 +24,7 @@ const Body = (props) => {
   const [loaded, setLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    const scriptId = 'nuclia-search-script';
-    loadNucliaSearch(setLoaded, scriptId);
-    return () => {
-      const script = document.getElementById(scriptId);
-      if (script) script.remove();
-    };
+    loadNucliaSearch(setLoaded);
   }, []);
 
   return (
