@@ -59,6 +59,7 @@
 @import 'site/components/blocks/search.less';
 @import 'site/components/blocks/table.less';
 @import 'site/components/blocks/image-columns.less';
+@import 'site/components/blocks/nuclia.less';
 
 @import 'site/components/widgets/color_list_widget.less';
 @import 'site/components/widgets/image_widget.less';

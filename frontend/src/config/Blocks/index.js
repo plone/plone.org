@@ -97,6 +97,10 @@ import downSVG from '@package/icons/arrow-down.svg';
 import rightSVG from '@package/icons/arrow-right.svg';
 import upSVG from '@package/icons/arrow-up.svg';
 
+import zoomSVG from '@plone/volto/icons/zoom.svg';
+import NucliaEdit from '@package/components/Blocks/Nuclia/Edit';
+import NucliaView from '@package/components/Blocks/Nuclia/View';
+
 export const SiteBlocks = (config) => {
   const defaultBlocksConfig = {
     restricted: false,
@@ -444,6 +448,22 @@ export const SiteBlocks = (config) => {
         //   },
         // },
       ],
+    },
+    nuclia: {
+      id: 'nuclia',
+      title: 'Nuclia',
+      icon: zoomSVG,
+      group: 'common',
+      view: NucliaView,
+      edit: NucliaEdit,
+      restricted: false,
+      mostUsed: false,
+      blockHasOwnFocusManagement: true,
+      sidebarTab: 1,
+      security: {
+        addPermission: [],
+        view: [],
+      },
     },
   };
 
