@@ -21,7 +21,7 @@ const Sidebar = (props) => {
   return (
     <Segment.Group raised>
       <header className="header pulled">
-        <h2>{intl.formatMesssage(messages.related_items)}:</h2>
+        <h2>{intl.formatMessage(messages.related_items)}:</h2>
       </header>
       <Segment className="form sidebar-listing-data">
         <TextWidget
