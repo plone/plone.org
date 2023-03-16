@@ -1,11 +1,8 @@
 name: plone.org code analysis
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - "frontend/**"
-      - ".github/workflows/frontend.yml"
+
 env:
   node-version: 16.x
 
