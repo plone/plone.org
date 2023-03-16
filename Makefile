@@ -118,12 +118,12 @@ build-images:  ## Build docker images
 .PHONY: start-stack
 start-stack:  ## Start local stack
 	@echo "Start local Docker stack"
-	@docker-compose -f devops/stacks/docker-compose-local.yml up -d --build
+	@docker-compose -f docker-compose.yml up -d --build
 
 .PHONY: stop-stack
 stop-stack:  ## Stop local stack
 	@echo "Stop local Docker stack"
-	@docker-compose -f devops/stacks/docker-compose-local.yml down
+	@docker-compose -f docker-compose.yml down
 
 ## Acceptance
 .PHONY: build-acceptance-servers
