@@ -1,0 +1,118 @@
+name: plone.org code analysis
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "frontend/**"
+      - ".github/workflows/frontend.yml"
+env:
+  node-version: 16.x
+
+jobs:
+
+  eslint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node-version }}
+          cache: 'yarn'
+          cache-dependency-path: 'frontend/yarn.lock'
+
+      - name: Install packages
+        run: make install
+
+      - name: Lint
+        run: yarn run lint:ci
+
+  prettier:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run Prettier
+        run: npx prettier@2.0.5 --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}' --config=package.json
+
+  i18n:
+    name: i18n sync
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node-version }}
+          cache: 'yarn'
+          cache-dependency-path: 'frontend/yarn.lock'
+
+      - name: Install packages
+        run: make install
+
+      - name: Test i18n sync
+        run: make i18n-ci
+
+   black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'black'
+
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'flake8'
+
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'isort'
+
+  zpretty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'zpretty'
