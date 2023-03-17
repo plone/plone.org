@@ -1,15 +1,7 @@
 name: Frontend testing.plone.org CI and deploy
 
-## Test and deply frontend to testing 
-
 on:
   workflow_dispatch:
-
-#  push:
-#    paths:
-#      - "frontend/**"
-#      - ".github/workflows/frontend.yml"
-
 
 env:
   node-version: 16.x
