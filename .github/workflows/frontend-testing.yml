@@ -105,6 +105,8 @@ jobs:
         with:
           images: |
             ${{ vars.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}
+          flavor: |
+            latest=false
           tags: |
             type=ref,event=branch
             type=sha
