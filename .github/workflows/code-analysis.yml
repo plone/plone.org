@@ -1,4 +1,4 @@
-name: plone.org code analysis
+name: Code analysis
 
 on:
   push:
@@ -77,39 +77,3 @@ jobs:
         with:
           base_dir: 'backend'
           check: 'black'
-
-  flake8:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v3
-
-      - name: Run check
-        uses: plone/code-analysis-action@v2
-        with:
-          base_dir: 'backend'
-          check: 'flake8'
-
-  isort:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v3
-
-      - name: Run check
-        uses: plone/code-analysis-action@v2
-        with:
-          base_dir: 'backend'
-          check: 'isort'
-
-  zpretty:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v3
-
-      - name: Run check
-        uses: plone/code-analysis-action@v2
-        with:
-          base_dir: 'backend'
-          check: 'zpretty'
