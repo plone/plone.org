@@ -159,6 +159,6 @@ jobs:
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
           stack_file: "devops/stacks/testing.plone.org.yml"
-          stack_name: "testing_plone_org"
+          stack_name: "testing-plone-org"
           env_file: ${{ secrets.ENV_FILE }}
           deploy_timeout: 480
