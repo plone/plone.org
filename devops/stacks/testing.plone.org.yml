@@ -21,7 +21,7 @@ services:
         - traefik.docker.network=public
         - traefik.constraint-label=public
         # Middlewares
-        # - traefik.http.middlewares.testing_ploneorg-frontend-auth.basicauth.users=${BASIC_AUTH:-ploneorg:$$2y$$05$$fualodIaWj3UsYcnu01aq.OkEMA70jU.a65u8CHXtNEM4rjk4kqM2}
+        - traefik.http.middlewares.testing_ploneorg-frontend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
 
         # Services
         - traefik.http.services.testing_ploneorg-frontend.loadbalancer.server.port=3000
@@ -31,7 +31,7 @@ services:
         - traefik.http.routers.testing_ploneorg-frontend.tls=true
         - traefik.http.routers.testing_ploneorg-frontend.tls.certresolver=le
         - traefik.http.routers.testing_ploneorg-frontend.service=testing_ploneorg-frontend
-        - traefik.http.routers.testing_ploneorg-frontend.middlewares=gzip
+        - traefik.http.routers.testing_ploneorg-frontend.middlewares=gzip,testing_ploneorg-frontend-auth
 
   backend:
     image: ghcr.io/plone/ploneorg-backend:latest
@@ -55,7 +55,7 @@ services:
         - traefik.http.services.testing_ploneorg-backend.loadbalancer.server.port=8080
         # Middlewares
         ### Authentication
-        # - traefik.http.middlewares.testing_ploneorg-backend-auth.basicauth.users=${BASIC_AUTH:-ploneorg:$$2y$$05$$fualodIaWj3UsYcnu01aq.OkEMA70jU.a65u8CHXtNEM4rjk4kqM2}
+        - traefik.http.middlewares.testing_ploneorg-backend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
         ### backend ++api++ VHM
         - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
         - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing.plone.org/Plone/++api++/VirtualHostRoot/$$1"
@@ -74,7 +74,7 @@ services:
         - traefik.http.routers.testing_ploneorg-classicui.entrypoints=https
         - traefik.http.routers.testing_ploneorg-classicui.tls=true
         - traefik.http.routers.testing_ploneorg-classicui.service=testing_ploneorg-backend
-        - traefik.http.routers.testing_ploneorg-classicui.middlewares=gzip,testing_ploneorg-vhm-classic
+        - traefik.http.routers.testing_ploneorg-classicui.middlewares=gzip,testing_ploneorg-backend-auth,testing_ploneorg-vhm-classic
 
 networks:
   public:
