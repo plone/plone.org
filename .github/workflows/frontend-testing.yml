@@ -5,7 +5,6 @@ on:
   push:
     paths:
       - "frontend/**"
-      - ".github/workflows/frontend-testing.yml"
 env:
   node-version: 16.x
 
@@ -13,6 +12,8 @@ jobs:
 
 
   eslint:
+    if: github.ref_type == 'branch'
+    concurrency: deploy_testing
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -35,6 +36,7 @@ jobs:
         run: yarn run lint:ci
 
   prettier:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -47,6 +49,7 @@ jobs:
         run: npx prettier@2.0.5 --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}' --config=package.json
 
   i18n:
+    if: github.ref_type == 'branch'
     name: i18n sync
     runs-on: ubuntu-latest
     defaults:
@@ -71,6 +74,7 @@ jobs:
         run: make i18n-ci
 
   unit:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -93,6 +97,7 @@ jobs:
         run: make test
 
   release:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     needs: [eslint, prettier, i18n, unit]
 

@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - "backend/**"
-      - ".github/workflows/backend-testing.yml"
   workflow_dispatch:
 
 env:
@@ -14,6 +13,7 @@ env:
 jobs:
 
   black:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -26,6 +26,7 @@ jobs:
           check: 'black'
 
   flake8:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -38,6 +39,7 @@ jobs:
           check: 'flake8'
 
   isort:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -50,6 +52,7 @@ jobs:
           check: 'isort'
 
   zpretty:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -62,6 +65,7 @@ jobs:
           check: 'zpretty'
 
   tests:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -95,6 +99,7 @@ jobs:
           pytest
 
   release:
+    if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
     needs: [black, flake8, isort, zpretty, tests]
 
@@ -138,6 +143,7 @@ jobs:
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
+    concurrency: deploy_testing
     needs:
       - release
     runs-on: ubuntu-latest
