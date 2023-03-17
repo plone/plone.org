@@ -143,7 +143,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: testing.plone.org
-      url: testing.plone.org
+      url: https://testing.plone.org
     steps:
       - name: Checkout
         uses: actions/checkout@v3

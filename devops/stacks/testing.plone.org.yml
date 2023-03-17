@@ -80,5 +80,5 @@ networks:
   public:
     external: true
     driver: overlay
-  ploneorg:
+  testing_ploneorg:
     driver: overlay
