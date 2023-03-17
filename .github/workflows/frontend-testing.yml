@@ -2,7 +2,10 @@ name: Frontend testing.plone.org CI and deploy
 
 on:
   workflow_dispatch:
-
+  push:
+    paths:
+      - "frontend/**"
+      - ".github/workflows/frontend-testing.yml"
 env:
   node-version: 16.x
 
@@ -155,6 +158,6 @@ jobs:
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
           stack_file: "devops/stacks/testing.plone.org.yml"
-          stack_name: "testing_ploneorg"
+          stack_name: "testing_plone_org"
           env_file: ${{ secrets.ENV_FILE }}
           deploy_timeout: 480
