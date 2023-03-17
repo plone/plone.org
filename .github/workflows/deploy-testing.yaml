@@ -1,0 +1,31 @@
+name: Deploy latest image tags to testing.plone.org 
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    environment: 
+      name: testing.plone.org
+      url: https://testing.plone.org
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy 'latest' image tags to testing.plone.org
+        uses: kitconcept/docker-stack-deploy@v1.2.0
+        with:
+          registry: "ghcr.io"
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          remote_host: ${{ vars.DEPLOY_HOST }}
+          remote_port: ${{ vars.DEPLOY_PORT }}
+          remote_user: ${{ vars.DEPLOY_USER }}
+          remote_private_key: ${{ secrets.DEPLOY_SSH }}
+          stack_file: "devops/stacks/testing.plone.org.yml"
+          stack_name: "testing_plone_org"
+          env_file: ${{ secrets.ENV_FILE }}
+          deploy_timeout: 480
