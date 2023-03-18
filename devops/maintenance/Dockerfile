@@ -1,5 +1,5 @@
 ARG PLONE_VERSION=6.0.2
-FROM plone/plone-backend:${PLONE_VERSION}
+FROM plone/server-builder:${PLONE_VERSION}
 
 LABEL maintainer="Plone Foundation <marketing@plone.org>" \
       org.label-schema.name="plone.org-backend" \
@@ -11,7 +11,6 @@ COPY . .
 
 # Install local requirements and fix permissions
 RUN ./bin/pip install mxdev \
-    sed -i 's/PLONE_VERSION_REPLACE/${PLONE_VERSION}/g' constraints.txt \
     && mv requirements-docker.txt requirements.txt \
     && ./bin/mxdev -c mx.ini \
     && ./bin/pip install -r requirements-mxdev.txt \

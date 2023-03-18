@@ -18,6 +18,12 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
+# Versions
+#PLONE_VERSION=$$(cat ${PROJECT_DIR}/backend/version.txt)
+#VOLTO_VERSION=$$(cat ${PROJECT_DIR}/frontend/version.txt)
+PROJECT_VERSION=$$(cat version.txt)
+
+
 .PHONY: all
 all: build
 
@@ -152,3 +158,12 @@ run-acceptance-tests: ## Run Acceptance tests
 	npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
 	$(MAKE) -C "./frontend/" test-acceptance-headless
 	$(MAKE) stop-acceptance-servers
+
+create-tag: # Create a new tag using git
+	@echo "Creating new tag $(PROJECT_VERSION)"
+	if git show-ref --tags v$(PROJECT_VERSION) --quiet; then echo "$(PROJECT_VERSION) already exists";else git tag -a v$(PROJECT_VERSION) -m "Release $(PROJECT_VERSION)" && git push && git push --tags;fi
+
+commit-and-release: # Commit new version change and create tag
+	@echo "Commiting changes"
+	@git commit -am "Tag release as $(PROJECT_VERSION) to deploy"
+	make create-tag

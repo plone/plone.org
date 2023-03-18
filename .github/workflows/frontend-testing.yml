@@ -5,19 +5,19 @@ on:
   push:
     paths:
       - "frontend/**"
+
 env:
   node-version: 16.x
 
-jobs:
+defaults:
+  run:
+    working-directory: ./frontend
 
+jobs:
 
   eslint:
     if: github.ref_type == 'branch'
-    concurrency: deploy_testing
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - name: Checkout codebase
         uses: actions/checkout@v3
@@ -38,9 +38,6 @@ jobs:
   prettier:
     if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - name: Checkout codebase
         uses: actions/checkout@v3
@@ -52,10 +49,6 @@ jobs:
     if: github.ref_type == 'branch'
     name: i18n sync
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
-
     steps:
       - name: Checkout codebase
         uses: actions/checkout@v3
@@ -76,9 +69,6 @@ jobs:
   unit:
     if: github.ref_type == 'branch'
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - name: Checkout codebase
         uses: actions/checkout@v3
@@ -142,6 +132,7 @@ jobs:
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
+    concurrency: deploy_testing
     needs:
       - release
     runs-on: ubuntu-latest

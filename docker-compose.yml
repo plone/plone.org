@@ -11,6 +11,7 @@ services:
     ports:
       - "80:80"
 
+
   frontend:
     build:
       context: ../../frontend
@@ -20,6 +21,7 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+
 
   backend:
     build:
@@ -39,6 +41,7 @@ services:
       POSTGRES_DB: plone
     volumes:
       - data:/var/lib/postgresql/data
+
 
 volumes:
   data: {}
