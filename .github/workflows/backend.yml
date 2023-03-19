@@ -81,6 +81,7 @@ jobs:
 
       - name: Install package
         run: |
+         	sed "s/PLONE_VERSION/${{matrix.plone}/g" constraints-template.txt > constraints.txt
           pip install mxdev
           mxdev -c mx.ini
           pip install -r requirements-mxdev.txt
