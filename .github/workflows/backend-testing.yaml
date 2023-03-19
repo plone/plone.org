@@ -6,10 +6,6 @@ on:
       - "backend/**"
   workflow_dispatch:
 
-env:
-
-
-
 jobs:
 
   black:
