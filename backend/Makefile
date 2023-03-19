@@ -110,7 +110,8 @@ i18n: bin/i18ndude ## Update locales
 .PHONY: build-dev
 build-dev: config ## pip install Plone packages
 	@echo "$(GREEN)==> Setup Build$(RESET)"
-	bin/mxdev -c mx.ini
+	sed "s/PLONE_VERSION/$(PLONE_VERSION)/g" constraints-template.txt > constraints.txt
+	@bin/mxdev -c mx.ini
 	bin/pip install -r requirements-mxdev.txt
 
 .PHONY: format
@@ -163,4 +164,8 @@ debug: instance/etc/zope.ini ## Run debug console
 
 .PHONY: build-image
 build-image:  ## Build Docker Image
-	@docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@docker buildx build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+
+.PHONY: build-image-clean
+build-image-clean:  ## Build Docker Image
+	@docker buildx build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION) --no-cache

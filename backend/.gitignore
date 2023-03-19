@@ -44,3 +44,4 @@ live.cfg
 inituser
 pip-wheel-metadata
 pyvenv.cfg
+constraints.txt
