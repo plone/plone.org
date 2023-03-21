@@ -1,4 +1,8 @@
-# 2023-03-21
+1.0.2 (2023-03-21)
+
+* Fix workflow for tag deploy [fredvd]
+
+1.0.1 (2023-03-21)
 
 * Test first tag live deployment. [fredvd]
 
