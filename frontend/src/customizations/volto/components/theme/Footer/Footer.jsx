@@ -114,7 +114,7 @@ const Footer = ({ intl }) => {
                     <Link to="/foundation/board">Board</Link>
                   </List.Item>
                   <List.Item>
-                    <Link to="https://github.com/sponsors/plone">Donate</Link>
+                    <a href="https://github.com/sponsors/plone">Donate</a>
                   </List.Item>
                   <List.Item>
                     <Link to="/foundation/sponsorship">Sponsors</Link>
