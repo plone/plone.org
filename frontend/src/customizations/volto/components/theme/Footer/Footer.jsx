@@ -88,9 +88,7 @@ const Footer = ({ intl }) => {
                     <Link to="/contribute">Contribute code</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="/community/bugs">
-                      Report an issue
-                    </a>
+                    <a href="/community/bugs">Report an issue</a>
                   </List.Item>
                   <List.Item>
                     <Link to="/news-and-events">News and events</Link>
