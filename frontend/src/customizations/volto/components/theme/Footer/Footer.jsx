@@ -55,7 +55,7 @@ const Footer = ({ intl }) => {
                     <Link to="/download">Download Plone</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="https://docs.plone.org">Documentation</a>
+                    <a href="https://6.docs.plone.org">Documentation</a>
                   </List.Item>
                   <List.Item>
                     <a href="https://training.plone.org">Training</a>
@@ -75,7 +75,7 @@ const Footer = ({ intl }) => {
             <Grid.Column>
               <List>
                 <List.Header>
-                  <Link to="/community/contribute">Community</Link>
+                  <Link to="/community">Community</Link>
                 </List.Header>
                 <List.Content>
                   <List.Item>
@@ -88,7 +88,7 @@ const Footer = ({ intl }) => {
                     <Link to="/contribute">Contribute code</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="https://github.com/plone/Products.CMFPlone/issues">
+                    <a href="/community/bugs">
                       Report an issue
                     </a>
                   </List.Item>
@@ -116,7 +116,7 @@ const Footer = ({ intl }) => {
                     <Link to="/foundation/board">Board</Link>
                   </List.Item>
                   <List.Item>
-                    <Link to="/foundation/donate">Donate</Link>
+                    <Link to="https://github.com/sponsors/plone">Donate</Link>
                   </List.Item>
                   <List.Item>
                     <Link to="/foundation/sponsorship">Sponsors</Link>
