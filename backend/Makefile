@@ -15,7 +15,10 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6.0.2
+# Versions
+PLONE_VERSION=$$(cat ${PROJECT_DIR}/backend/version.txt)
+VOLTO_VERSION=$$(cat ${PROJECT_DIR}/frontend/version.txt)
+PROJECT_VERSION=$$(cat version.txt)
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -169,3 +172,12 @@ build-image:  ## Build Docker Image
 .PHONY: build-image-clean
 build-image-clean:  ## Build Docker Image
 	@docker buildx build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION) --no-cache
+
+create-tag: # Create a new tag using git
+	@echo "Creating new tag $(PROJECT_VERSION)"
+	if git show-ref --tags v$(PROJECT_VERSION) --quiet; then echo "$(PROJECT_VERSION) already exists";else git tag -a v$(PROJECT_VERSION) -m "Release $(PROJECT_VERSION)" && git push && git push --tags;fi
+
+commit-and-release: # Commit new version change and create tag
+	@echo "Commiting changes"
+	@git commit -am "Tag release as $(PROJECT_VERSION) to deploy"
+	make create-tag
