@@ -16,9 +16,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 # Versions
-PLONE_VERSION=$$(cat ${PROJECT_DIR}/backend/version.txt)
-VOLTO_VERSION=$$(cat ${PROJECT_DIR}/frontend/version.txt)
-PROJECT_VERSION=$$(cat version.txt)
+PLONE_VERSION=$$(cat version.txt)
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 

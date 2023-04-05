@@ -18,8 +18,11 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
+# Folder containing this Makefile
+PROJECT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
 # Versions
-#PLONE_VERSION=$$(cat ${PROJECT_DIR}/backend/version.txt)
+PLONE_VERSION=$$(cat ${PROJECT_DIR}/backend/version.txt)
 #VOLTO_VERSION=$$(cat ${PROJECT_DIR}/frontend/version.txt)
 PROJECT_VERSION=$$(cat version.txt)
 
