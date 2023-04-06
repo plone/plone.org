@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import moment from 'moment/min/moment-with-locales';
+import moment from 'moment';
 
 const messages = defineMessages({
   pubblication_date: {

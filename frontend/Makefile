@@ -10,6 +10,9 @@ MAKEFLAGS+=--no-builtin-rules
 IMAGE_NAME=ghcr.io/plone/ploneorg-frontend
 IMAGE_TAG=latest
 
+# not used yet
+VOLTO_VERSION=$$(cat version.txt)
+
 NODEBIN = ./node_modules/.bin
 
 # Add the following 'help' target to your Makefile
