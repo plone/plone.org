@@ -124,6 +124,8 @@ class IFoundationSponsor(Schema):
 
     is_provider = schema.Bool(
         title=_PMF("Is a Plone provider", default="Is a Plone provider"),
+        required=False,
+        default=False
     )
 
     website = schema.URI(
