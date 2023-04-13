@@ -117,3 +117,15 @@ def add_is_provider(setup_tool=None):
         obj.reindexObject(idxs=["is_provider"])
 
     logger.info(f"Reindexed {len(brains)} sponsors")
+
+
+def fix_title(setup_tool=None):
+    """Fill title information for sponsors."""
+    brains = api.content.find(portal_type="FoundationSponsor")
+    logger.info(f"Found {len(brains)} sponsors")
+    for brain in brains:
+        obj = brain.getObject()
+        obj.title = obj.org_name
+        logger.info(f"- Set {obj.title} on {obj.absolute_url()}")
+
+    logger.info(f"Updated {len(brains)} sponsors")

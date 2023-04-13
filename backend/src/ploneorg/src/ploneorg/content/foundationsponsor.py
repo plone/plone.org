@@ -99,7 +99,7 @@ class IFoundationSponsor(Schema):
         ],
     )
 
-    org_name = schema.TextLine(
+    title = schema.TextLine(
         title=_PMF("Organization name", default="Organization name"), required=True
     )
 
@@ -279,16 +279,9 @@ alsoProvides(IFoundationSponsor["logo"], IPrimaryField)
 
 @implementer(IFoundationSponsor)
 class FoundationSponsor(Item):
-    @property
-    def title(self):
-        return self.org_name
-
-    def setTitle(self, value):
-        return
-
     def get_full_name(self):
         names = [
-            self.org_name,
+            self.title,
             self.fname,
             self.lname,
         ]
@@ -350,4 +343,4 @@ class NameFromPersonNames(object):
 
     @property
     def title(self):
-        return self.context.org_name
+        return self.context.title
