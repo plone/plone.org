@@ -139,7 +139,7 @@ msgid "Release notes"
 msgstr ""
 
 #: ploneorg/content/member.py:52
-msgid "Social Networds"
+msgid "Social Networks"
 msgstr ""
 
 #: ploneorg/profiles/default/registry/plone.app.querystring.xml
