@@ -49,7 +49,7 @@ class IFoundationMember(model.Schema):
 
     model.fieldset(
         "social_networks",
-        _("Social Networds"),
+        _("Social Networks"),
         fields=["github", "twitter", "linkedin"],
     )
 
