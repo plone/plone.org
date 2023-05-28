@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:users="http://namespaces.plone.org/supermodel/users"
+       i18n:domain="ploneorg"
+>
+  <schema name="member-fields">
+    <field name="portrait"
+           type="zope.schema.URI"
+           users:forms=""
+    >
+      <description i18n:translate="help_portrait">
+        Portrait URL
+      </description>
+      <required>False</required>
+      <title i18n:translate="label_portrait">Portrait URL</title>
+    </field>
+    <field name="github_username"
+           type="zope.schema.TextLine"
+           users:forms=""
+    >
+      <description i18n:translate="help_github_username">
+        GitHub Username
+      </description>
+      <required>False</required>
+      <title i18n:translate="label_github_username">GitHub Username</title>
+    </field>
+  </schema>
+</model>

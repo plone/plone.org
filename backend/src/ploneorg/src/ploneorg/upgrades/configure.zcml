@@ -99,4 +99,20 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20230412001"
+      destination="20230528001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update userschema"
+        import_steps="usersschema"
+        />
+    <upgradeStep
+        title="Update Authomatic convfiguration"
+        description="Add portrait and github_username to Authomatic mapping"
+        handler=".authomatic.update_mapping_github"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

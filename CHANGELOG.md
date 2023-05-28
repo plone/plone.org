@@ -4,6 +4,8 @@
 
 - Update to Volto 16.19.0 [fredvd]
 
+- Add github_username and portrait fields to user schema (Closed #125)
+
 
 1.0.3 (2023-03-23)
 

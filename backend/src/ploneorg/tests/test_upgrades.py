@@ -37,6 +37,8 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
             ("20221212001", "20221212002", 1),
             ("20221212002", "20221212003", 1),
             ("20221212003", "20230412001", 1),
+            ("20230412001", "20230528001", 1),
+
         ]
     )
     def test_available(self, src, dst, expected):
