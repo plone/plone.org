@@ -2,7 +2,7 @@
 
 [![Built with Cookiecutter Plone Starter](https://img.shields.io/badge/built%20with-Cookiecutter%20Plone%20Starter-0083be.svg?logo=cookiecutter)](https://github.com/collective/cookiecutter-plone-starter/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-[![Backend Tests](https://img.shields.io/badge/Tests-Backend-green)](https://github.com/plone/plone.org/actions/workflows/backend.yml)
+[![Backend testing.plone.org CI and Deploy](https://github.com/plone/plone.org/actions/workflows/backend-testing.yaml/badge.svg)](https://github.com/plone/plone.org/actions/workflows/backend-testing.yaml)
 [![Frontend Tests](https://img.shields.io/badge/Tests-Frontend-orange)](https://github.com/plone/plone.org/actions/workflows/frontend.yml)
 
 The main destination for Plone
