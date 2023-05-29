@@ -1,7 +1,7 @@
 # Plone.org Site
 
 [![Built with Cookiecutter Plone Starter](https://img.shields.io/badge/built%20with-Cookiecutter%20Plone%20Starter-0083be.svg?logo=cookiecutter)](https://github.com/collective/cookiecutter-plone-starter/)
-[![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![Code analysis](https://github.com/plone/plone.org/actions/workflows/code-analysis.yml/badge.svg)](https://github.com/plone/plone.org/actions/workflows/code-analysis.yml)
 [![Backend testing.plone.org CI and Deploy](https://github.com/plone/plone.org/actions/workflows/backend-testing.yaml/badge.svg)](https://github.com/plone/plone.org/actions/workflows/backend-testing.yaml)
 [![Frontend Tests](https://img.shields.io/badge/Tests-Frontend-orange)](https://github.com/plone/plone.org/actions/workflows/frontend.yml)
 
