@@ -1,5 +1,5 @@
-from ploneorg import logger
 from plone import api
+from ploneorg import logger
 
 
 def update_security(context):
