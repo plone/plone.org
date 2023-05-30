@@ -3,6 +3,7 @@ import {
   VulnerabilityView,
   HotfixView,
   PlonereleaseView,
+  FoundationMemberView,
 } from '@package/components';
 
 export const SiteViews = (config) => {
@@ -13,5 +14,6 @@ export const SiteViews = (config) => {
     hotfix: HotfixView,
     vulnerability: VulnerabilityView,
     plonerelease: PlonereleaseView,
+    FoundationMember: FoundationMemberView,
   };
 };

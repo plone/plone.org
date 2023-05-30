@@ -14,7 +14,7 @@
     >
       <role name="Manager" />
     </permission>
-    <permission acquire="True"
+    <permission acquire="False"
                 name="ploneorg: View Foundation Member Details"
     >
       <role name="Manager" />

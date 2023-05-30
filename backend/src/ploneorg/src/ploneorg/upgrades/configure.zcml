@@ -115,4 +115,20 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20230528001"
+      destination="20230530001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update foundation_member_workflow"
+        import_steps="workflows"
+        />
+    <upgradeStep
+        title="Update Security"
+        description="Update permissions on every Foundation Member object"
+        handler=".workflow.update_security"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
