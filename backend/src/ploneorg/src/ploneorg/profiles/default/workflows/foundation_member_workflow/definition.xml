@@ -7,7 +7,7 @@
   <permission>Access contents information</permission>
   <permission>Modify portal content</permission>
   <permission>View</permission>
-  <permission>Change portal events</permission>
+  <permission>ploneorg: View Foundation Member Details</permission>
   <state state_id="approved"
          title="Approved member"
   >
@@ -22,15 +22,17 @@
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
       <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="Modify portal content"
     >
       <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="True"
@@ -55,15 +57,17 @@
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
       <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="Modify portal content"
     >
       <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="True"
@@ -88,15 +92,17 @@
       <permission-role>Reviewer</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
       <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="Modify portal content"
     >
       <permission-role>Manager</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
@@ -121,16 +127,16 @@
       <permission-role>Reviewer</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
       <permission-role>Manager</permission-role>
-      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="Modify portal content"
     >
       <permission-role>Manager</permission-role>
-      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="View"
@@ -154,7 +160,7 @@
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
       <permission-role>Editor</permission-role>
       <permission-role>Manager</permission-role>
@@ -189,14 +195,16 @@
       <permission-role>Reviewer</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
+      <permission-role>Editor</permission-role>
       <permission-role>Manager</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="Modify portal content"
     >
+      <permission-role>Editor</permission-role>
       <permission-role>Manager</permission-role>
       <permission-role>Owner</permission-role>
     </permission-map>
@@ -219,7 +227,7 @@
       <permission-role>Owner</permission-role>
     </permission-map>
     <permission-map acquired="False"
-                    name="Change portal events"
+                    name="ploneorg: View Foundation Member Details"
     >
       <permission-role>Manager</permission-role>
       <permission-role>Owner</permission-role>

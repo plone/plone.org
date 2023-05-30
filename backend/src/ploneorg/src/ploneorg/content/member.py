@@ -1,6 +1,7 @@
 from plone import api
 from plone.app.textfield import RichText
-from plone.autoform import directives
+from plone.autoform.directives import read_permission
+from plone.autoform.directives import widget
 from plone.dexterity.content import Container
 from plone.schema.email import Email
 from plone.supermodel import model
@@ -8,6 +9,9 @@ from ploneorg import _
 from unicodedata import lookup
 from zope import schema
 from zope.interface import implementer
+
+
+VIEW_DETAILS_PERMISSION = "ploneorg.ViewFoundationMemberDetails"
 
 
 def flag_for_country_code(code: str) -> str:
@@ -55,20 +59,14 @@ class IFoundationMember(model.Schema):
 
     # Basic info
     title = schema.TextLine(title=_("Name"), required=True)
-
-    directives.read_permission(email="ploneorg.ViewFoundationMemberDetails")
     email = Email(title=_("Email address"), required=False)
     organization = schema.TextLine(title=("Organization"), required=True)
 
     # Contact information
-    directives.read_permission(address="ploneorg.ViewFoundationMemberDetails")
     address = schema.TextLine(title=_("Address"), required=False)
     city = schema.TextLine(title=_("City"), required=False)
     state = schema.TextLine(title=_("State"), required=False)
-
-    directives.read_permission(postal_code="ploneorg.ViewFoundationMemberDetails")
     postal_code = schema.TextLine(title=_("Postal code"), required=False)
-
     country = schema.Choice(
         title=_("Country"),
         vocabulary="ploneorg.vocabulary.countries",
@@ -85,14 +83,18 @@ class IFoundationMember(model.Schema):
 
     # Social Networks
     github = schema.TextLine(title=_("Github username"), required=False)
-    directives.widget("github", placeholder=_("i.e.: plone"))
-
     twitter = schema.TextLine(title=_("Twitter username"), required=False)
-    directives.widget("twitter", placeholder=_("i.e.: plone"))
-
     linkedin = schema.URI(title=_("Linkedin profile"), required=False)
-    directives.widget(
-        "linkedin", placeholder=_("i.e.: https://www.linkedin.com/in/plone/")
+    widget("twitter", placeholder=_("i.e.: plone"))
+    widget("github", placeholder=_("i.e.: plone"))
+    widget("linkedin", placeholder=_("i.e.: https://www.linkedin.com/in/plone/"))
+
+    # Read Permission
+    read_permission(
+        email=VIEW_DETAILS_PERMISSION,
+        address=VIEW_DETAILS_PERMISSION,
+        postal_code=VIEW_DETAILS_PERMISSION,
+        merit=VIEW_DETAILS_PERMISSION,
     )
 
 
