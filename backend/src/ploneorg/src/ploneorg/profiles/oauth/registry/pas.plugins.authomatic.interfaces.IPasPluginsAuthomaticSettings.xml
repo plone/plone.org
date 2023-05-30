@@ -18,7 +18,9 @@
             "email": "email",
             "link": "home_page",
             "location": "location",
-            "name": "fullname"
+            "name": "fullname",
+            "avatar_url": "portrait",
+            "username": "github_username"
         },
         "class_": "authomatic.providers.oauth2.GitHub",
         "consumer_key": "189741eef5b73f7f3298",
