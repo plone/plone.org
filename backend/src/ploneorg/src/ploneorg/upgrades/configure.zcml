@@ -122,7 +122,7 @@
       >
     <genericsetup:upgradeDepends
         title="Update foundation_member_workflow"
-        import_steps="workflows"
+        import_steps="workflow"
         />
     <upgradeStep
         title="Update Security"
