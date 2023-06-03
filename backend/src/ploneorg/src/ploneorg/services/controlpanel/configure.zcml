@@ -1,0 +1,10 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- controlpanel service -->
+  <adapter
+      factory=".controlpanel.PloneorgSettingsControlpanel"
+      provides="ploneorg.interfaces.IPLONEORGSettings"
+      name="ploneorg-settings"
+      />
+
+</configure>

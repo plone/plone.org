@@ -1,3 +1,6 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
+  <include package=".controlpanel" />
+  <include package=".custom_css" />
+
 </configure>
