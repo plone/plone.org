@@ -1765,12 +1765,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-matomo@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@eeacms/volto-matomo@npm:3.0.0"
+"@eeacms/volto-matomo@npm:4.1.3":
+  version: 4.1.3
+  resolution: "@eeacms/volto-matomo@npm:4.1.3"
   dependencies:
     "@datapunt/matomo-tracker-react": 0.3.1
-  checksum: 244e5d4cd10263bfe6a5c4501782aa1e17e96fd75856c24d31187f30deab9eca06e297cc429aa90678af3b88acbe80a591c0af82c75b1884238b9334ea76739a
+  checksum: 6c84a246215ebadd935e3fd8c528823d85a6eca932a0f2c3c50cc6284f921b8d0ecb87ee20442f02ef405c5dbd8f3b647f38cf692722db5d42c58d6832341d6a
   languageName: node
   linkType: hard
 
@@ -11768,7 +11768,7 @@ __metadata:
   resolution: "frontend@workspace:."
   dependencies:
     "@eeacms/volto-accordion-block": ^6.0.0
-    "@eeacms/volto-matomo": 3.0.0
+    "@eeacms/volto-matomo": 4.1.3
     "@fontsource/assistant": 4.5.11
     "@fortawesome/fontawesome-svg-core": 1.2.36
     "@fortawesome/free-regular-svg-icons": 5.15.4
