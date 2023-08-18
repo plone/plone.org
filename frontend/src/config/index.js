@@ -55,6 +55,13 @@ export default function applyConfig(config) {
       },
       { match: '', component: CustomCSS },
     ],
+    serverConfig: {
+      ...config.settings.serverConfig,
+      extractScripts: {
+        ...config.settings.serverConfig.extractScripts,
+        errorPages: true,
+      },
+    },
   };
 
   config.blocks.blocksConfig.__grid = {
