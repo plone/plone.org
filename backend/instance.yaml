@@ -5,4 +5,7 @@ default_context:
     load_zcml:
         package_includes: ['ploneorg']
 
-    db_storage: direct
+    db_storage: relstorage
+    db_relstorage_postgresql_driver: psycopg2
+    db_relstorage_postgresql_dsn: dbname='ploneorg' user='ploneorg' host='localhost' password='ploneorg'
+    db_blobs_mode: cache
