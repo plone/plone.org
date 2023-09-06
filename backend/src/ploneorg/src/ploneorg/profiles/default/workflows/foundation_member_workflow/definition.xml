@@ -90,6 +90,7 @@
       <permission-role>Manager</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>Reviewer</permission-role>
+      <permission-role>Anonymous</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="ploneorg: View Foundation Member Details"

@@ -131,4 +131,26 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20230530001"
+      destination="20230904001"
+      >
+    <upgradeStep
+        title="Update Foundation Member workflow"
+        description="Update permission and update security"
+        handler=".v20230904.update_workflow"
+        />
+    <upgradeStep
+        title="Update Authomatic Settings"
+        description="Modify update_userid_factory_name to username"
+        handler=".v20230904.update_userid_factory_name"
+        />
+    <upgradeStep
+        title="Update existing GitHub users to use username as user_id"
+        description="Change all existing users, update group membership and local roles."
+        handler=".v20230904.update_users"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

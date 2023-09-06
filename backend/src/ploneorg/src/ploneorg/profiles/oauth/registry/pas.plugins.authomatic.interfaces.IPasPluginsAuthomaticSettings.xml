@@ -31,6 +31,6 @@
     }
 }</value>
     <value key="secret">4SiyrCO6ZV</value>
-    <value key="userid_factory_name">uuid</value>
+    <value key="userid_factory_name">username</value>
   </records>
 </registry>
