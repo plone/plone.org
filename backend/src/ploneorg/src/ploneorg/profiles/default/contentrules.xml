@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentrules>
+  <rule cascading="False"
+        description="Move a foundation member to renew state"
+        enabled="True"
+        event="Products.CMFCore.interfaces.IActionSucceededEvent"
+        name="rule-pf-renew"
+        stop-after="False"
+        title="Foundation Member Renew"
+  >
+    <conditions>
+      <condition type="plone.conditions.PortalType">
+        <property name="check_types">
+          <element>FoundationMember</element>
+        </property>
+      </condition>
+      <condition type="plone.conditions.WorkflowTransition">
+        <property name="wf_transitions">
+          <element>suspend</element>
+        </property>
+      </condition>
+    </conditions>
+    <actions>
+      <action type="plone.actions.Mail">
+        <property name="subject">Reminder: Time to Renew Your Plone Foundation Membership</property>
+        <property name="source">Plone Foundation&lt;ploneorg@mg.plone.org&gt;</property>
+        <property name="recipients">${pf_member_email}</property>
+        <property name="exclude_actor">True</property>
+        <property name="message">Dear ${title},
+
+As we approach another exciting year for the Plone Foundation, it's time to renew your membership to maintain your active status and continue enjoying the benefits that come with it. As an active member, you have the privilege to:
+
+    1. Vote for the Plone Foundation Board of Directors
+    2. Participate in selecting the location for the next Plone Conference
+    3. Approve the minutes of the annual meeting
+    4. Exercise all other rights and privileges granted to Plone Foundation members
+
+How to Renew Your Membership
+
+    1. Log in to your account at https://plone.org/login using your GitHub credentials.
+    2. Navigate to ${pf_renew_url} and click on the Renew Membership button.
+
+If you no longer wish to maintain an active membership, you may choose to retire it by clicking on the Retire Membership button.
+
+Need Assistance?
+
+Should you encounter any issues or have questions regarding the renewal process, please don't hesitate to reach out to us at board@plone.org. We are here to assist you.
+
+We look forward to another year of collaboration and growth with you as part of the Plone Foundation.
+
+Best regards,
+Plone Foundation Board
+board@plone.org</property>
+      </action>
+    </actions>
+  </rule>
+  <assignment bubbles="True"
+              enabled="True"
+              location="/foundation/members"
+              name="rule-pf-renew"
+  />
+</contentrules>
