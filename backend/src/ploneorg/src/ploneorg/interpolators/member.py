@@ -23,4 +23,4 @@ class RenewURLSubstitution(BaseSubstitution):
 
     def safe_call(self):
         url = self.context.absolute_url()
-        return f"{url}/renew_membership>"
+        return f"{url}?mtm_campaign=PFM&mtm_kwd=Renew"

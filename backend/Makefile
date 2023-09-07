@@ -157,7 +157,7 @@ create-site: instance/etc/zope.ini ## Create a new site from scratch
 
 .PHONY: start
 start: ## Start a Plone instance on localhost:8080
-	PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
+	ENABLE_PRINTING_MAILHOST=True PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
 
 .PHONY: debug
 debug: instance/etc/zope.ini ## Run debug console

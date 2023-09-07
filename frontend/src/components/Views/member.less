@@ -1,0 +1,31 @@
+@blue: #007db9;
+@yellow: #efbd0b;
+@green: #5eb618;
+@lightGrey: #cdcdcd;
+
+div.ui.container.memberActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > .actions {
+    text-align: center;
+  }
+}
+
+button.ui.button.transition {
+  padding: 2rem 4rem;
+  font-size: 14px;
+  font-weight: 700;
+
+  &.transition-Renew {
+    background-color: @green;
+    color: white;
+  }
+
+  &.transition-Retire {
+    margin-left: 3rem;
+    background-color: @lightGrey;
+    color: black;
+  }
+}

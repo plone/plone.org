@@ -16,11 +16,7 @@ const routes = [
   {
     path: '/',
     component: App, // Change this if you want a different component
-    routes: [
-      // Add your routes here
-      ...(config.addonRoutes || []),
-      ...defaultRoutes,
-    ],
+    routes: [...(config.addonRoutes || []), ...defaultRoutes],
   },
 ];
 
