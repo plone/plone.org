@@ -153,4 +153,14 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20230904001"
+      destination="20230907001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add a content rule to send a reminder to Foundation Members to renew their membership"
+        import_steps="contentrules"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

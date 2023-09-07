@@ -27,5 +27,6 @@
   <include package=".serializers" />
   <include package=".services" />
   <include package=".subscribers" />
+  <include package=".interpolators" />
 
 </configure>

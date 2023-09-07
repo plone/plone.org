@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <adapter
+      factory=".member.EmailSubstitution"
+      provides="plone.stringinterp.interfaces.IStringSubstitution"
+      for="ploneorg.content.member.IFoundationMember"
+      name="pf_member_email"
+      />
+
+  <adapter
+      factory=".member.RenewURLSubstitution"
+      provides="plone.stringinterp.interfaces.IStringSubstitution"
+      for="ploneorg.content.member.IFoundationMember"
+      name="pf_renew_url"
+      />
+
+</configure>
