@@ -14,12 +14,24 @@ logging.basicConfig()
 logger.setLevel(logging.INFO)
 
 
+environ = {
+    "SERVER_NAME": "plone.org",
+    "SERVER_PORT": "443",
+    "SERVER_URL": "https://plone.org",
+    "VH_ROOT": "/Plone",
+}
+
 app = makerequest(globals()["app"])
+app.REQUEST.environ.update(environ)
+app.REQUEST.setServerURL("https", environ["SERVER_NAME"])
 admin = app.acl_users.getUserById("admin")
 admin = admin.__of__(app.acl_users)
 newSecurityManager(None, admin)
 
+
 site = app.Plone
+site.REQUEST.other["Parents"] = [app]
+site.REQUEST.other["VirtualRootPhysicalPath"] = ("", "Plone")
 setSite(site)
 
 COLUMNS = [
