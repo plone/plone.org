@@ -88,7 +88,8 @@ app._p_jar.sync()
 for idx, info in enumerate(members):
     old_id = info["id"].strip()
     new_id = info["New Id"].strip() or old_id
-    path = info["path"][6 : -len(old_id)]
+    size_old_id = -len(old_id)
+    path = info["path"][6:size_old_id]
     path = f"{path}{new_id}"
     title = info["title"]
     year = info["year"]
