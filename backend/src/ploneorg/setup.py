@@ -50,7 +50,7 @@ setup(
         "kitconcept.api",
         "plone.app.vulnerabilities",
         "collective.exportimport",
-        "pas.plugins.authomatic",
+        "pas.plugins.authomatic>=1.2.0",
         "pycountry",
         "collective.volto.formsupport",
         "collective.volto.dropdownmenu",
