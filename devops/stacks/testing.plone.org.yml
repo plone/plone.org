@@ -57,7 +57,7 @@ services:
         ### Authentication
         - traefik.http.middlewares.testing_ploneorg-backend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
         ### backend ++api++ VHM
-        - "traefik.http.middlewares.testing_ploneorg-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+\/){1,})($$|.*)"
+        - "traefik.http.middlewares.testing_ploneorg-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+\/){{1,}})($$|.*)"
         - "traefik.http.middlewares.testing_ploneorg-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/plone.org/Plone/++api++/VirtualHostRoot/$$3"
         - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
         - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing.plone.org/Plone/++api++/VirtualHostRoot/$$1"
