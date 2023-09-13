@@ -82,7 +82,7 @@ with transaction.manager as tm:
         # Fix local roles
         new_local_role = info["Fix Local  Role"].strip()
         if new_local_role:
-            obj.manage_setLocalRoles(new_local_role, "Owner")
+            obj.manage_setLocalRoles(new_local_role, ("Owner", ))
             logger.info(f"-- Updated local role Owner to {new_local_role}")
         # Change Id
         new_id = info["New Id"].strip()
