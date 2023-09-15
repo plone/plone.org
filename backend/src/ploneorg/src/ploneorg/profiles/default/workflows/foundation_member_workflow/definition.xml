@@ -305,7 +305,7 @@
   </transition>
   <transition after_script=""
               before_script=""
-              new_state="remind_renewal"
+              new_state="pending_renewal"
               title="Send Reminder about Renewal"
               transition_id="remind_renewal"
               trigger="USER"
