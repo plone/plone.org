@@ -67,6 +67,11 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Back
+msgid "Back"
+msgstr ""
+
 #: components/Blocks/Numbers/Sidebar
 # defaultMessage: Background color
 msgid "Background color"
@@ -121,6 +126,11 @@ msgstr ""
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Copyright
 msgid "Copyright"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Countries
+msgid "Countries"
 msgstr ""
 
 #: components/Blocks/Slider/Sidebar
@@ -231,6 +241,11 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Membership Management
+msgid "Membership Management"
+msgstr ""
+
 #: components/Blocks/Nuclia/Schema
 # defaultMessage: Nuclia search
 msgid "Nuclia search"
@@ -255,6 +270,11 @@ msgstr ""
 msgid "NumbersBlock"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Overview
+msgid "Overview"
+msgstr ""
+
 #: components/Blocks/Break/Edit
 # defaultMessage: Page break
 msgid "Page break"
@@ -273,6 +293,11 @@ msgstr ""
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: Play
 msgid "Play slider"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Plone Foundation Membership
+msgid "Plone Foundation Membership"
 msgstr ""
 
 #: components/Blocks/HTML/Edit
@@ -299,6 +324,11 @@ msgstr ""
 #: components/Blocks/RelatedItems/Sidebar
 # defaultMessage: Related items
 msgid "Related items"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Review State
+msgid "Review State"
 msgstr ""
 
 #: components/layout/Header/HeaderSearch
@@ -394,6 +424,11 @@ msgstr ""
 #: components/Blocks/HTML/Edit
 # defaultMessage: Source
 msgid "Source"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Stats
+msgid "Stats"
 msgstr ""
 
 #: components/Blocks/Tabs/Schema
@@ -515,6 +550,11 @@ msgstr ""
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: View image
 msgid "View image"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Years
+msgid "Years"
 msgstr ""
 
 #: components/Blocks/Nuclia/Schema

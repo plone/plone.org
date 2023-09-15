@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-01-13T16:28:42.963Z\n"
+"POT-Creation-Date: 2023-09-15T19:16:19.410Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -52,6 +52,11 @@ msgstr ""
 #: components/Blocks/Author/Sidebar
 # defaultMessage: Author
 msgid "Author"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Back
+msgid "Back"
 msgstr ""
 
 #: components/Blocks/Numbers/Sidebar
@@ -108,6 +113,11 @@ msgstr ""
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Copyright
 msgid "Copyright"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Countries
+msgid "Countries"
 msgstr ""
 
 #: components/Blocks/Slider/Sidebar
@@ -218,6 +228,11 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Membership Management
+msgid "Membership Management"
+msgstr ""
+
 #: components/Blocks/Nuclia/Schema
 # defaultMessage: Nuclia search
 msgid "Nuclia search"
@@ -242,6 +257,11 @@ msgstr ""
 msgid "NumbersBlock"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Overview
+msgid "Overview"
+msgstr ""
+
 #: components/Blocks/Break/Edit
 # defaultMessage: Page break
 msgid "Page break"
@@ -260,6 +280,11 @@ msgstr ""
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: Play
 msgid "Play slider"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Plone Foundation Membership
+msgid "Plone Foundation Membership"
 msgstr ""
 
 #: components/Blocks/HTML/Edit
@@ -286,6 +311,11 @@ msgstr ""
 #: components/Blocks/RelatedItems/Sidebar
 # defaultMessage: Related items
 msgid "Related items"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Review State
+msgid "Review State"
 msgstr ""
 
 #: components/layout/Header/HeaderSearch
@@ -381,6 +411,11 @@ msgstr ""
 #: components/Blocks/HTML/Edit
 # defaultMessage: Source
 msgid "Source"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Stats
+msgid "Stats"
 msgstr ""
 
 #: components/Blocks/Tabs/Schema
@@ -502,6 +537,11 @@ msgstr ""
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: View image
 msgid "View image"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Years
+msgid "Years"
 msgstr ""
 
 #: components/Blocks/Nuclia/Schema
