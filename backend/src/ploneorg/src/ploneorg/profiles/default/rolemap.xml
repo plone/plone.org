@@ -28,5 +28,11 @@
       <role name="Editor" />
       <role name="Owner" />
     </permission>
+    <permission acquire="False"
+                name="ploneorg: Manage Foundation Members"
+    >
+      <role name="Site Administrator" />
+      <role name="Manager" />
+    </permission>
   </permissions>
 </rolemap>

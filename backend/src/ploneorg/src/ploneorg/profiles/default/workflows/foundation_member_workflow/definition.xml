@@ -49,6 +49,7 @@
     <exit-transition transition_id="renew" />
     <exit-transition transition_id="retire" />
     <exit-transition transition_id="remember" />
+    <exit-transition transition_id="remind_renewal" />
     <permission-map acquired="True"
                     name="Access contents information"
     >
@@ -257,7 +258,7 @@
             url="%(content_url)s/content_publish_form"
     >Approve</action>
     <guard>
-      <guard-permission>Foundation Member: Manage Members</guard-permission>
+      <guard-permission>ploneorg: Manage Foundation Members</guard-permission>
     </guard>
   </transition>
   <transition after_script=""
@@ -271,7 +272,7 @@
             url="%(content_url)s/content_reject_form"
     >Reject</action>
     <guard>
-      <guard-permission>Foundation Member: Manage Members</guard-permission>
+      <guard-permission>ploneorg: Manage Foundation Members</guard-permission>
     </guard>
   </transition>
   <transition after_script=""
@@ -299,7 +300,21 @@
             url="%(content_url)s/content_publish_form"
     >Suspend for Renewal</action>
     <guard>
-      <guard-permission>Foundation Member: Manage Members</guard-permission>
+      <guard-permission>ploneorg: Manage Foundation Members</guard-permission>
+    </guard>
+  </transition>
+  <transition after_script=""
+              before_script=""
+              new_state="remind_renewal"
+              title="Send Reminder about Renewal"
+              transition_id="remind_renewal"
+              trigger="USER"
+  >
+    <action category="workflow"
+            url="%(content_url)s/content_publish_form"
+    >Send Reminder about Renewal</action>
+    <guard>
+      <guard-permission>ploneorg: Manage Foundation Members</guard-permission>
     </guard>
   </transition>
   <transition after_script=""
@@ -313,7 +328,7 @@
             url="%(content_url)s/content_publish_form"
     >Move to In-Memorian</action>
     <guard>
-      <guard-permission>Foundation Member: Manage Members</guard-permission>
+      <guard-permission>ploneorg: Manage Foundation Members</guard-permission>
     </guard>
   </transition>
   <transition after_script=""

@@ -14,6 +14,10 @@
         title="ploneorg: View Foundation Member Details"
         />
     <permission
+        id="ploneorg.ManageFoundationMembers"
+        title="ploneorg: Manage Foundation Members"
+        />
+    <permission
         id="ploneorg.foundationsponsor.add"
         title="ploneorg: Add Foundation Sponsor"
         />

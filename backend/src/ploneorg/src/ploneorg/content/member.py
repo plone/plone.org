@@ -6,23 +6,12 @@ from plone.dexterity.content import Container
 from plone.schema.email import Email
 from plone.supermodel import model
 from ploneorg import _
-from unicodedata import lookup
+from ploneorg.utils import flag_for_country_code
 from zope import schema
 from zope.interface import implementer
 
 
 VIEW_DETAILS_PERMISSION = "ploneorg.ViewFoundationMemberDetails"
-
-
-def flag_for_country_code(code: str) -> str:
-    """Return the unicode representing the flag of a Country."""
-    flag = code
-    if len(code) == 2:
-        code = code.lower()
-        flag = lookup(f"REGIONAL INDICATOR SYMBOL LETTER {code[0]}") + lookup(
-            f"REGIONAL INDICATOR SYMBOL LETTER {code[1]}"
-        )
-    return flag
 
 
 class IFoundationMember(model.Schema):
