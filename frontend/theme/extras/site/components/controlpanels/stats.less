@@ -1,0 +1,116 @@
+body {
+  .stats-numbers-wrapper {
+    align-items: baseline;
+    padding: 4em 1em;
+    text-align: center;
+
+    .ui.container.stats-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: auto;
+      margin-left: auto;
+
+      &.stats-states {
+        max-width: 70%;
+
+        .stat {
+          width: 33%;
+
+          .stat-title {
+            font-size: 1.3rem;
+          }
+
+          .stat-content {
+            .stat-number {
+              font-size: 6rem;
+              line-height: 1.2em;
+            }
+          }
+        }
+      }
+
+      &.stats-countries {
+        max-width: 100%;
+
+        .stat {
+          width: 10%;
+
+          .stat-title {
+            font-size: 2rem;
+
+            &:after {
+              bottom: -0.4rem;
+              width: 1.2rem;
+            }
+          }
+
+          .stat-content {
+            .stat-number {
+              font-size: 2rem;
+              line-height: 1em;
+            }
+          }
+        }
+      }
+
+      &.stats-years {
+        max-width: 100%;
+
+        .stat {
+          width: 10%;
+
+          .stat-title {
+            font-size: 1rem;
+
+            &:after {
+              bottom: -0.4rem;
+              width: 1.2rem;
+            }
+          }
+
+          .stat-content {
+            .stat-number {
+              font-size: 2rem;
+              line-height: 1em;
+            }
+          }
+        }
+      }
+
+      .stat {
+        flex-grow: 1;
+        padding: 1em;
+
+        .stat-title,
+        .stat-number {
+          color: @primaryColor;
+          font-family: @headerFontName;
+          font-weight: @headerFontWeight;
+        }
+
+        .stat-title {
+          position: relative;
+          margin-bottom: 0.5rem;
+
+          &:after {
+            position: absolute;
+            bottom: -0.75rem;
+            left: calc(50%);
+            display: block;
+            width: 4rem;
+            height: 0.23rem;
+            background-color: @primaryColor;
+            content: '';
+            transform: translateX(-50%);
+          }
+        }
+
+        .stat-content {
+          .stat-number {
+            color: #595959;
+          }
+        }
+      }
+    }
+  }
+}

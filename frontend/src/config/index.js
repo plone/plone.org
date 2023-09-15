@@ -17,6 +17,7 @@ import {
   dom as faDom,
   library,
 } from '@fortawesome/fontawesome-svg-core';
+import MembershipControlPanel from '../components/Controlpanels/MembershipControlPanel';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
 import * as IconsRegular from '@fortawesome/free-regular-svg-icons';
 import { CustomCSS } from '@package/components';
@@ -25,6 +26,7 @@ import { SiteWidgets } from '@package/config/Widgets';
 import { SiteViews } from '@package/config/Views';
 import applyRichTextConfig from '@package/config/RichTextEditor/config';
 import applyAccordionConfig from '@package/config/Accordion/config';
+import groupSVG from '@plone/volto/icons/group.svg';
 import '@plone/volto/config';
 
 faConfig.autoAddCss = false;
@@ -39,6 +41,14 @@ export default function applyConfig(config) {
   config = applyRichTextConfig(config);
   config = applyAccordionConfig(config);
 
+  config.addonRoutes = [
+    ...(config.addonRoutes || []),
+    {
+      path: '/controlpanel/membership',
+      component: MembershipControlPanel,
+    },
+  ];
+
   config.settings = {
     ...config.settings,
     isMultilingual: false,
@@ -47,6 +57,22 @@ export default function applyConfig(config) {
     showTags: false,
     matomoSiteId: '9',
     matomoUrlBase: 'https://stats.plone.org/',
+    controlpanels: [
+      ...config.settings.controlpanels,
+      {
+        '@id': '/membership',
+        group: 'Plone Foundation',
+        title: 'Membership',
+      },
+    ],
+    controlPanelsIcons: {
+      ...config.settings.controlPanelsIcons,
+      membership: groupSVG,
+    },
+    nonContentRoutes: [
+      ...config.settings.nonContentRoutes,
+      '/controlpanel/membership',
+    ],
     appExtras: [
       ...config.settings.appExtras,
       {

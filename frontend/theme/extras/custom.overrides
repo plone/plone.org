@@ -64,4 +64,6 @@
 @import 'site/components/widgets/color_list_widget.less';
 @import 'site/components/widgets/image_widget.less';
 
+@import 'site/components/controlpanels/stats.less';
+
 @import 'site/print.less';

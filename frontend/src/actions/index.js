@@ -12,4 +12,5 @@
  */
 
 import { getCustomCSS } from './getCustomCSS';
-export { getCustomCSS };
+import { getMembershipStats } from './membership/membership';
+export { getCustomCSS, getMembershipStats };
