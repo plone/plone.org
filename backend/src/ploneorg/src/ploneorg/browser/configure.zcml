@@ -12,6 +12,15 @@
       type="plone"
       />
 
+  <!-- Membership Management-->
+  <browser:page
+      name="pf-downloads"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".foundation_downloads.CSVDownloadsView"
+      permission="ploneorg.ManageFoundationMembers"
+      layer="ploneorg.interfaces.IPLONEORGLayer"
+      />
+
   <!-- Import stuff (for migration only) -->
   <browser:page
       name="import_content"

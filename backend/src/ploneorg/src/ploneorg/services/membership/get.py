@@ -1,24 +1,10 @@
 from collections import defaultdict
 from plone import api
 from plone.restapi.services import Service
+from ploneorg.services.membership.settings import ACTIONS
+from ploneorg.services.membership.settings import CURRENT_STATES
+from ploneorg.services.membership.settings import STATES
 from ploneorg.utils import flag_for_country_code
-
-
-STATES = [
-    ("approved", "Approved"),
-    ("pending_renewal", "Waiting Renewal"),
-    ("pending", "Pending Review"),
-    ("initial", "Newly Created"),
-    ("rejected", "Rejected"),
-    ("emeritus", "Emeritus"),
-    ("deceased", "Deceased"),
-]
-
-
-CURRENT_STATES = [
-    "approved",
-    "pending_renewal",
-]
 
 
 def sort_state_stats(data: dict) -> list:
@@ -52,6 +38,33 @@ def sort_country_stats(data: dict, current: dict) -> list:
 
 class MembershipGet(Service):
     _members: list = None
+    has_pending_renewal: bool = False
+
+    def actions(self) -> list:
+        """Returns a list of possible actions."""
+        actions = []
+        for action in ACTIONS:
+            check = action.get("_check_has_pending_renewal")
+            if self.has_pending_renewal is check:
+                actions.append(
+                    {k: v for k, v in action.items() if not k.startswith("_")}
+                )
+        return actions
+
+    def downloads(self) -> list:
+        """Returns a list of possible downloads."""
+        portal_url = api.portal.get().absolute_url()
+        return [
+            {
+                "@id": f"{portal_url}/@@pf-downloads/voters.csv",
+                "id": "pf-voters",
+                "title": "Voters' emails",
+                "description": (
+                    "List of emails of Plone Foundation Members that "
+                    "are eligible to vote."
+                ),
+            },
+        ]
 
     @property
     def members(self):
@@ -83,6 +96,7 @@ class MembershipGet(Service):
             if review_state in CURRENT_STATES:
                 stats_year[year] += 1
                 stats_current[country] += 1
+        self.has_pending_renewal = True if stats_state["pending_renewal"] > 0 else False
         total_members = sum([v for v in stats_current.values()])
         total_countries = len([k for k in stats_current.keys() if k != "UN"])
         return {
@@ -99,4 +113,6 @@ class MembershipGet(Service):
         return {
             "@id": f"{portal_url}/@membership",
             "stats": stats,
+            "downloads": self.downloads(),
+            "actions": self.actions(),
         }

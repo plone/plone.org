@@ -3,17 +3,34 @@
  * @module components/Controlpanels/MembershipControlPanel
  */
 
-import React, { useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Portal } from 'react-portal';
 import { useClient } from '../../hooks';
-import { Container, Header, Segment, Dimmer, Loader } from 'semantic-ui-react';
+import {
+  Accordion,
+  Button,
+  Container,
+  Divider,
+  Header,
+  Segment,
+  Dimmer,
+  Loader,
+} from 'semantic-ui-react';
+import circleBottomSVG from '@plone/volto/icons/circle-bottom.svg';
+import circleTopSVG from '@plone/volto/icons/circle-top.svg';
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import { Helmet } from '@plone/volto/helpers';
 import backSVG from '@plone/volto/icons/back.svg';
-import { Icon, Toolbar } from '@plone/volto/components';
-import { getMembershipStats } from '../../actions/membership/membership';
+import { Icon, Toolbar, Toast } from '@plone/volto/components';
+import {
+  getMembershipStats,
+  openRenewalCycle,
+  closeRenewalCycle,
+  triggerReminderRenewalCycle,
+} from '../../actions/membership/membership';
+import { toast } from 'react-toastify';
 
 const messages = defineMessages({
   back: {
@@ -24,12 +41,21 @@ const messages = defineMessages({
     id: 'Plone Foundation Membership',
     defaultMessage: 'Plone Foundation Membership',
   },
+  success: {
+    id: 'Success',
+    defaultMessage: 'Success',
+  },
+  error: {
+    id: 'Error',
+    defaultMessage: 'Error',
+  },
 });
 
 const MembershipControlPanel = (props) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const pathname = props.location.pathname;
+  const [activeIndex, setactiveIndex] = useState(-1);
   const isClient = useClient();
   const total_countries = useSelector(
     (state) => state.membership?.total_countries,
@@ -51,11 +77,54 @@ const MembershipControlPanel = (props) => {
     (state) => state.membership?.stats_year,
     shallowEqual,
   );
+  const downloads = useSelector((state) => state.membership?.downloads);
+  const actions = useSelector((state) => state.membership?.actions);
   const loadingMembership = useSelector((state) => state.membership?.loading);
+
+  const onAccordionClick = (event, item) => {
+    const newIndex = activeIndex === item.index ? -1 : item.index;
+    setactiveIndex(newIndex);
+  };
 
   useEffect(() => {
     dispatch(getMembershipStats());
   }, [dispatch]);
+
+  const onAction = useCallback(
+    (event, { value }) => {
+      event.preventDefault();
+      let action = undefined;
+      if (value === 'open-renewal-cycle') {
+        action = openRenewalCycle;
+      } else if (value === 'reminder-renewal-cycle') {
+        action = triggerReminderRenewalCycle;
+      } else if (value === 'close-renewal-cycle') {
+        action = closeRenewalCycle;
+      }
+
+      dispatch(action())
+        .then((result) => {
+          toast.success(
+            <Toast
+              success
+              title={intl.formatMessage(messages.success)}
+              content={result.msg}
+            />,
+          );
+        })
+        .catch((result) => {
+          toast.error(
+            <Toast
+              error
+              title={intl.formatMessage(messages.error)}
+              content={result.msg}
+            />,
+          );
+        })
+        .finally(() => dispatch(getMembershipStats()));
+    },
+    [dispatch, intl],
+  );
 
   return (
     <Container id="page-membership" className="controlpanel-membership">
@@ -143,6 +212,88 @@ const MembershipControlPanel = (props) => {
                   </div>
                 ))}
               </Container>
+            </Container>
+            <Container className={'downloads-wrapper'}>
+              <Header as="h2">
+                <FormattedMessage id="Downloads" defaultMessage="Downloads" />
+              </Header>
+              <Accordion key="downloads">
+                <Divider />
+                {downloads.map((item) => (
+                  <div key={item.id}>
+                    <Accordion.Title
+                      active={activeIndex === item.id}
+                      index={item.id}
+                      onClick={onAccordionClick}
+                    >
+                      {item.title}
+                      <Icon
+                        name={
+                          activeIndex === item.id
+                            ? circleTopSVG
+                            : circleBottomSVG
+                        }
+                        size="23px"
+                        className={`accordionToggle ${item.title}`}
+                      />
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === item.id}>
+                      <div className="description">{item.description}</div>
+                      <Button.Group floated="right">
+                        <a href={item['@id']} className={'ui primary button'}>
+                          <FormattedMessage
+                            id="Download"
+                            defaultMessage="Download"
+                            className="button-label"
+                          />
+                        </a>
+                      </Button.Group>
+                    </Accordion.Content>
+                    <Divider />
+                  </div>
+                ))}
+              </Accordion>
+            </Container>
+            <Container className={'actions-wrapper'}>
+              <Header as="h2">
+                <FormattedMessage id="Actions" defaultMessage="Actions" />
+              </Header>
+              <Accordion key="actions">
+                <Divider />
+                {actions.map((item) => (
+                  <div key={item.id}>
+                    <Accordion.Title
+                      active={activeIndex === item.id}
+                      index={item.id}
+                      onClick={onAccordionClick}
+                    >
+                      {item.title}
+                      <Icon
+                        name={
+                          activeIndex === item.id
+                            ? circleTopSVG
+                            : circleBottomSVG
+                        }
+                        size="23px"
+                        className={`accordionToggle ${item.title}`}
+                      />
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === item.id}>
+                      <div className="description">{item.description}</div>
+                      <Button.Group floated="right">
+                        <Button
+                          onClick={onAction}
+                          value={item.id}
+                          className={`${item.className}`}
+                        >
+                          <FormattedMessage id="Run" defaultMessage="Run" />
+                        </Button>
+                      </Button.Group>
+                    </Accordion.Content>
+                    <Divider />
+                  </div>
+                ))}
+              </Accordion>
             </Container>
           </>
         )}

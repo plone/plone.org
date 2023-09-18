@@ -11,4 +11,12 @@
       name="@membership"
       />
 
+  <plone:service
+      method="POST"
+      factory=".post.MembershipPost"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      permission="ploneorg.ManageFoundationMembers"
+      name="@membership"
+      />
+
 </configure>

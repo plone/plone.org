@@ -37,6 +37,11 @@ const iconListRegular = Object.keys(IconsRegular.far).map(
 
 library.add(...iconList, ...iconListRegular);
 
+const additionalExpressMiddlewareServerConfig =
+  typeof __SERVER__ !== 'undefined' && __SERVER__
+    ? require('../express-middleware').default
+    : false;
+
 export default function applyConfig(config) {
   config = applyRichTextConfig(config);
   config = applyAccordionConfig(config);
@@ -89,6 +94,13 @@ export default function applyConfig(config) {
       },
     },
   };
+
+  if (additionalExpressMiddlewareServerConfig) {
+    config.settings.expressMiddleware = [
+      ...config.settings.expressMiddleware,
+      ...additionalExpressMiddlewareServerConfig,
+    ];
+  }
 
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
