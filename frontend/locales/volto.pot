@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-09-15T19:16:19.410Z\n"
+"POT-Creation-Date: 2023-09-18T18:44:24.417Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 #: components/Blocks/HTML/Edit
 # defaultMessage: <p>Add some HTML here</p>
 msgid "<p>Add some HTML here</p>"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Actions
+msgid "Actions"
 msgstr ""
 
 #: components/Widgets/AlignWidget/AlignWidget
@@ -128,9 +133,24 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Download
+msgid "Download"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Downloads
+msgid "Downloads"
+msgstr ""
+
 #: components/Blocks/common/TextBlocksStyleSidebar
 # defaultMessage: Center align buttons in text
 msgid "Draftjs buttons align center"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Error
+msgid "Error"
 msgstr ""
 
 #: components/Blocks/Nuclia/Schema
@@ -318,6 +338,11 @@ msgstr ""
 msgid "Review State"
 msgstr ""
 
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Run
+msgid "Run"
+msgstr ""
+
 #: components/layout/Header/HeaderSearch
 # defaultMessage: Type a keyword...
 msgid "Search Site"
@@ -427,6 +452,11 @@ msgstr ""
 #: components/Blocks/Text5/Edit
 # defaultMessage: Subtitle
 msgid "Subtitle"
+msgstr ""
+
+#: components/Controlpanels/MembershipControlPanel
+# defaultMessage: Success
+msgid "Success"
 msgstr ""
 
 #: components/Blocks/Tabs/Schema

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-01-13 16:28+0000\n"
+"POT-Creation-Date: 2023-09-18 18:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 msgid "A member of the Plone Foundation."
 msgstr ""
 
-#: ploneorg/content/member.py:29
+#: ploneorg/content/member.py:22
 msgid "About you"
 msgstr ""
 
-#: ploneorg/content/member.py:65
+#: ploneorg/content/member.py:55
 msgid "Address"
 msgstr ""
 
@@ -30,23 +30,23 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: ploneorg/content/member.py:66
+#: ploneorg/content/member.py:56
 msgid "City"
 msgstr ""
 
-#: ploneorg/content/member.py:40
+#: ploneorg/content/member.py:33
 msgid "Contact Information"
 msgstr ""
 
-#: ploneorg/content/member.py:81
+#: ploneorg/content/member.py:68
 msgid "Contributions"
 msgstr ""
 
-#: ploneorg/content/member.py:73
+#: ploneorg/content/member.py:60
 msgid "Country"
 msgstr ""
 
-#: ploneorg/content/member.py:82
+#: ploneorg/content/member.py:69
 msgid "Describe your contributions to the Plone community."
 msgstr ""
 
@@ -54,11 +54,11 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ploneorg/content/member.py:60
+#: ploneorg/content/member.py:51
 msgid "Email address"
 msgstr ""
 
-#: ploneorg/content/foundationsponsor.py:131
+#: ploneorg/content/foundationsponsor.py:133
 msgid "Enter a http:// or https:// web address"
 msgstr ""
 
@@ -70,11 +70,12 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
+#: ploneorg/interpolators/member.py:9
 #: ploneorg/profiles/default/types/FoundationMember.xml
 msgid "Foundation Member"
 msgstr ""
 
-#: ploneorg/content/member.py:87
+#: ploneorg/content/member.py:74
 msgid "Github username"
 msgstr ""
 
@@ -82,7 +83,7 @@ msgstr ""
 msgid "Initial content for our website."
 msgstr ""
 
-#: ploneorg/content/member.py:93
+#: ploneorg/content/member.py:76
 msgid "Linkedin profile"
 msgstr ""
 
@@ -90,7 +91,11 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ploneorg/content/member.py:57
+#: ploneorg/interpolators/member.py:10
+msgid "Member E-mail"
+msgstr ""
+
+#: ploneorg/content/member.py:50
 msgid "Name"
 msgstr ""
 
@@ -126,7 +131,7 @@ msgstr ""
 msgid "Policy package to install our site"
 msgstr ""
 
-#: ploneorg/content/member.py:70
+#: ploneorg/content/member.py:58
 msgid "Postal code"
 msgstr ""
 
@@ -138,7 +143,11 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: ploneorg/content/member.py:52
+#: ploneorg/interpolators/member.py:22
+msgid "Renew URL"
+msgstr ""
+
+#: ploneorg/content/member.py:45
 msgid "Social Networks"
 msgstr ""
 
@@ -146,11 +155,11 @@ msgstr ""
 msgid "Sponsors"
 msgstr ""
 
-#: ploneorg/content/member.py:67
+#: ploneorg/content/member.py:57
 msgid "State"
 msgstr ""
 
-#: ploneorg/content/member.py:90
+#: ploneorg/content/member.py:75
 msgid "Twitter username"
 msgstr ""
 
@@ -170,7 +179,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: ploneorg/content/foundationsponsor.py:217
+#: ploneorg/content/foundationsponsor.py:219
 msgid "What is your connection to Plone? How is Plone used by your organization?"
 msgstr ""
 
@@ -179,17 +188,37 @@ msgstr ""
 msgid "description_sponsorship_type"
 msgstr ""
 
-#: ploneorg/content/member.py:95
+#. Default: "GitHub Username"
+#: ploneorg/profiles/default/userschema.xml
+msgid "help_github_username"
+msgstr ""
+
+#. Default: "Portrait URL"
+#: ploneorg/profiles/default/userschema.xml
+msgid "help_portrait"
+msgstr ""
+
+#: ploneorg/content/member.py:79
 msgid "i.e.: https://www.linkedin.com/in/plone/"
 msgstr ""
 
-#: ploneorg/content/member.py:88
+#: ploneorg/content/member.py:77
 msgid "i.e.: plone"
+msgstr ""
+
+#. Default: "GitHub Username"
+#: ploneorg/profiles/default/userschema.xml
+msgid "label_github_username"
 msgstr ""
 
 #. Default: "Provider"
 #: ploneorg/profiles/default/registry/plone.app.querystring.xml
 msgid "label_is_provider"
+msgstr ""
+
+#. Default: "Portrait URL"
+#: ploneorg/profiles/default/userschema.xml
+msgid "label_portrait"
 msgstr ""
 
 #. Default: "Type of Sponsorship"
