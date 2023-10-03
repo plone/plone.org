@@ -190,5 +190,8 @@
   "resolutions": {
     "@plone/scripts": "^2.2.1"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.3",
+  "volta": {
+    "node": "16.20.2"
+  }
 }

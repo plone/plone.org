@@ -1,4 +1,11 @@
-1.0.4.dev  (unreleased)
+
+1.0.12.dev0 (unreleased)
+
+- Update GHA workflow actions to latest versions [fredvd]
+
+- Update to Volto 16.24.0 [fredvd]
+
+- Update to Plone backend 6.0.6 [fredvd]
 
 - Update to Plone 6.0.3 [fredvd]
 
