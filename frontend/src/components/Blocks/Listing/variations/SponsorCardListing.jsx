@@ -11,12 +11,17 @@ import {
 const SponsorCardListing = (props) => {
   const { items, isEditMode, cols = 3 } = props;
 
+  const randomized_items = items
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+
   return (
     <PresetWrapper {...props} className="simple-card-listing">
       <ListingHeader {...props} />
       <Grid columns={cols} stackable>
         <Grid.Row>
-          {items.map((item) => {
+          {randomized_items.map((item) => {
             return (
               <Grid.Column key={item['@id']}>
                 <SponsorCard
