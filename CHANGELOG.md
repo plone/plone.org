@@ -1,4 +1,4 @@
-1.0.13.dev0 (unreleased)
+## 1.0.13 (2023-10-09)
 ------------------------
 
 - Add randomnmess to sponsors block variaion listing [pbauer]
