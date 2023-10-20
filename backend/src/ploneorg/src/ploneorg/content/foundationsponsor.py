@@ -178,7 +178,6 @@ class IFoundationSponsor(Schema):
     country = schema.Choice(
         title=_PMF("Country", default="Country"),
         vocabulary="ploneorg.vocabulary.countries",
-        default="USA",
         required=True,
     )
 
