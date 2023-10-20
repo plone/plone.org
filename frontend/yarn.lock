@@ -2759,9 +2759,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/volto@npm:16.19.0":
-  version: 16.19.0
-  resolution: "@plone/volto@npm:16.19.0"
+"@plone/volto@npm:16.25.0":
+  version: 16.25.0
+  resolution: "@plone/volto@npm:16.25.0"
   dependencies:
     "@babel/core": ^7.0.0
     "@babel/plugin-proposal-export-default-from": 7.18.9
@@ -2851,7 +2851,7 @@ __metadata:
     lodash-move: 1.1.1
     lodash-webpack-plugin: 0.11.5
     mini-css-extract-plugin: 0.9.0
-    moment: 2.24.0
+    moment: 2.29.4
     object-assign: 4.1.1
     pofile: 1.0.10
     postcss: 8.4.13
@@ -2943,7 +2943,7 @@ __metadata:
     webpack-node-externals: 3.0.0
     xmlrpc: 1.3.2
     yarnhook: 0.5.1
-  checksum: 4be6a649349c4210126a6024dd6a9e0f1b7f518fdf24b2256d5e811a193219c5065363e320e524abb58cf91c41ffa61d5b038885277d45cfd0c87bfa11c247ec
+  checksum: 3046c1a2a8f225ff5e3ff2f7ef110d1df244f05e8984d1189b685572a6613ade20cb29a11b72e98077af82279281a60ab183b63f1e7eb6b18352c19c4bb66428
   languageName: node
   linkType: hard
 
@@ -11778,7 +11778,7 @@ __metadata:
     "@kitconcept/volto-slider-block": ^4.0.0
     "@plone-collective/volto-authomatic": 1.3.0
     "@plone/scripts": ^2.2.1
-    "@plone/volto": 16.19.0
+    "@plone/volto": 16.25.0
     "@storybook/addon-actions": ^6.3.0
     "@storybook/addon-controls": 6.3.0
     "@storybook/addon-essentials": ^6.3.0
@@ -16541,14 +16541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment@npm:2.24.0":
-  version: 2.24.0
-  resolution: "moment@npm:2.24.0"
-  checksum: 9cd93a251a2b33cb1b532eade0e496a2a7547faa6cfe37a283ee7bf69e202cd7c8ab0673d66883b5b29aed051353176dc0e6684f04073a75b0a155c500be1580
-  languageName: node
-  linkType: hard
-
-"moment@npm:2.x, moment@npm:>=1.6.0":
+"moment@npm:2.29.4, moment@npm:2.x, moment@npm:>=1.6.0":
   version: 2.29.4
   resolution: "moment@npm:2.29.4"
   checksum: 0ec3f9c2bcba38dc2451b1daed5daded747f17610b92427bebe1d08d48d8b7bdd8d9197500b072d14e326dd0ccf3e326b9e3d07c5895d3d49e39b6803b76e80e
