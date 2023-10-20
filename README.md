@@ -15,6 +15,14 @@ The main destination for Plone
 - Node 16
 - yarn
 - Docker
+- Postgres 14
+
+### Create database
+
+```shell
+createdb ploneorg
+createuser ploneorg
+```
 
 ### Install
 
