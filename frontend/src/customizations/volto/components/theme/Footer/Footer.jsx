@@ -67,7 +67,7 @@ const Footer = ({ intl }) => {
                     <Link to="/roadmap">Roadmap</Link>
                   </List.Item>
                   <List.Item>
-                    <a href="https://github.com/plone">Github</a>
+                    <a href="https://github.com/plone">GitHub</a>
                   </List.Item>
                 </List.Content>
               </List>
