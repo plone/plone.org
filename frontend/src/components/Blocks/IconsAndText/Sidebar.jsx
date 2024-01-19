@@ -1,19 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
-import {
-  FormattedMessage,
-  useIntl,
-  injectIntl,
-  defineMessages,
-} from 'react-intl';
-import {
-  CheckboxWidget,
-  ObjectListWidget,
-  TextWidget,
-  ObjectBrowserWidget,
-  SelectWidget,
-} from '@plone/volto/components';
+import { FormattedMessage, useIntl, injectIntl, defineMessages } from 'react-intl';
+import { CheckboxWidget, ObjectListWidget, TextWidget, ObjectBrowserWidget, SelectWidget } from '@plone/volto/components';
 
 import { ColorListWidget, AlignWidget } from '@package/components/Widgets';
 
@@ -64,6 +53,10 @@ const messages = defineMessages({
     id: 'icon',
     defaultMessage: 'Icon',
   },
+  mobileStyles: {
+    id: 'mobileStyles',
+    defaultMessage: 'Center column heading on mobile',
+  },
 });
 
 const Sidebar = (props) => {
@@ -74,11 +67,7 @@ const Sidebar = (props) => {
     <Segment.Group raised>
       <header className="header pulled">
         <h2>
-          <FormattedMessage
-            id="IconsAndTextBlock"
-            defaultMessage="Icons and text block"
-          />
-          :
+          <FormattedMessage id="IconsAndTextBlock" defaultMessage="Icons and text block" />:
         </h2>
       </header>
       <Segment className="form">
@@ -93,9 +82,7 @@ const Sidebar = (props) => {
             { name: 'light-grey', label: intl.formatMessage(messages.grey) },
           ]}
           value={data.bg_color ?? 'outline-white'}
-          onChange={(name, value) =>
-            onChangeBlock(block, { ...data, [name]: value })
-          }
+          onChange={(name, value) => onChangeBlock(block, { ...data, [name]: value })}
         />
         <CheckboxWidget
           id="fullWidth"
@@ -114,9 +101,7 @@ const Sidebar = (props) => {
             { name: 'blue', label: intl.formatMessage(messages.blue) },
           ]}
           value={data.title_color ?? 'grey'}
-          onChange={(name, value) =>
-            onChangeBlock(block, { ...data, [name]: value })
-          }
+          onChange={(name, value) => onChangeBlock(block, { ...data, [name]: value })}
         />
 
         <AlignWidget
@@ -162,9 +147,7 @@ const Sidebar = (props) => {
           {...props}
           id="columns"
           value={data?.columns ?? []}
-          onChange={(id, value) =>
-            onChangeBlock(block, { ...data, [id]: value })
-          }
+          onChange={(id, value) => onChangeBlock(block, { ...data, [id]: value })}
           schema={() => {
             const columnsSchema = {
               title: intl.formatMessage(messages.column),
@@ -173,21 +156,13 @@ const Sidebar = (props) => {
                 {
                   id: 'default',
                   title: 'Default',
-                  fields: [
-                    'iconImage',
-                    'iconSize',
-                    'headerTextPosition',
-                    'dividerPosition',
-                    'href',
-                    'href_title',
-                  ],
+                  fields: ['iconImage', 'iconSize', 'headerTextPosition', 'dividerPosition', 'href', 'href_title'],
                 },
               ],
               properties: {
                 iconImage: {
                   title: intl.formatMessage(messages.icon),
-                  description:
-                    'The image must be a PNG or SVG. The maximum recommended size for PNG is 200x200px.',
+                  description: 'The image must be a PNG or SVG. The maximum recommended size for PNG is 200x200px.',
                   widget: 'image_upload_widget',
                   openObjectBrowser: props.openObjectBrowser,
                 },
@@ -229,8 +204,7 @@ const Sidebar = (props) => {
                 },
                 href_title: {
                   title: 'Link title',
-                  description:
-                    'If no title is entered, and a link is selected, the link will be added to the block title.',
+                  description: 'If no title is entered, and a link is selected, the link will be added to the block title.',
                 },
               },
 
@@ -261,6 +235,18 @@ const Sidebar = (props) => {
           id="href_title"
           title="Title for link more"
           value={data.href_title ?? ''}
+          onChange={(name, value) => {
+            onChangeBlock(block, { ...data, [name]: value });
+          }}
+        />
+      </Segment>
+      <Segment>
+        <label>Mobile Appearance</label>
+
+        <CheckboxWidget
+          id="mobileStyles"
+          title={intl.formatMessage(messages.mobileStyles)}
+          value={data.mobileStyles ? data.mobileStyles : false}
           onChange={(name, value) => {
             onChangeBlock(block, { ...data, [name]: value });
           }}
