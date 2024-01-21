@@ -1,16 +1,5 @@
-version: "3"
+version: "3.8"
 
 # To use this override, add a data directory
-# rename override.yml.orig to override.yml
-
-services:
-  backend:
-    environment:
-      - RELSTORAGE_DSN: ""
-    volumes:
-      - ${PROJECT_DIR}/data:/data
-
-services:
-  db: 
-    profiles:
-      - relstorage
+# rename override.yml.orig to override.yml and fill it with overrides
+# 

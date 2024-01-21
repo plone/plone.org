@@ -2,7 +2,22 @@
 
 ---
 
+- Use mxdev 3.1.0 and pip 23.3.2 by overriding them in mx.ini. [fredvd]
+
+- List and pin backend bootstrap packages in backend/requirements-bootstrap.txt and install them in the 'bin/pip' Makefile target while passing in the full project constraints. [fredvd]
+
+- Add zodbconvert example and instructions in devops/zodbconvert to create filestorage version of the content database from a locally running postgresql server. [fredvd]
+
+- Add alternative filestorage based configuration profile for the backend with build-dev-fs (and config-fs) targets in backend/Makefile. [fredvd]
+
+- Update docker-compose example with latest postgresql 14 and local bind mount for the postgesql data. [fredvd]
+
+- Update to Volto 16.30.1. [fredvd]
+
+- Update to Plone backend 6.0.9 [fredvd]
+
 - Update to Volto 16.25.0 [davisagli]
+
 
 ## 1.0.13 (2023-10-09)
 

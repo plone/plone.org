@@ -88,12 +88,19 @@ clean-test: ## remove test and coverage artifacts
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
 	$(PYTHON) -m venv .
-	bin/pip install -U "pip" "wheel" "cookiecutter" "mxdev"
+	bin/pip install -U -r requirements-bootstrap.txt -c constraints-mxdev.txt
 
 .PHONY: config
 config: bin/pip  ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
 	bin/cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+
+.PHONY: config-fs
+config-fs: bin/pip  ## Create instance configuration
+	@echo "$(GREEN)==> Create instance configuration$(RESET)"
+	bin/cookiecutter -f --no-input --config-file instance-filestorage.yaml gh:plone/cookiecutter-zope-instance
+
+
 
 # i18n
 bin/i18ndude: bin/pip
@@ -110,6 +117,13 @@ i18n: bin/i18ndude ## Update locales
 
 .PHONY: build-dev
 build-dev: config ## pip install Plone packages
+	@echo "$(GREEN)==> Setup Build$(RESET)"
+	sed "s/PLONE_VERSION/$(PLONE_VERSION)/g" constraints-template.txt > constraints.txt
+	@bin/mxdev -c mx.ini
+	bin/pip install -r requirements-mxdev.txt
+
+.PHONY: build-dev-fs
+build-dev-fs: config-fs ## pip install Plone packages
 	@echo "$(GREEN)==> Setup Build$(RESET)"
 	sed "s/PLONE_VERSION/$(PLONE_VERSION)/g" constraints-template.txt > constraints.txt
 	@bin/mxdev -c mx.ini
