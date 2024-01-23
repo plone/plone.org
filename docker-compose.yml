@@ -3,17 +3,13 @@ version: "3.8"
 services:
 
   db:
-    image: postgres:14.2
+    image: postgres:14.10
     environment:
       POSTGRES_USER: ploneorg
       POSTGRES_PASSWORD: ploneorg
       POSTGRES_DB: ploneorg
-    command: postgres -c shared_buffers=4GB -c effective_cache_size=12GB -c maintenance_work_mem=1GB -c wal_buffers=16MB -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=20971kB -c min_wal_size=2GB -c max_wal_size=8GB -c wal_keep_size=1GB -c max_locks_per_transaction=512
+    command: postgres -c shared_buffers=2GB -c effective_cache_size=4GB -c maintenance_work_mem=1GB -c wal_buffers=16MB -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=20971kB -c min_wal_size=2GB -c max_wal_size=8GB -c wal_keep_size=1GB -c max_locks_per_transaction=512
     ports:
-      - 5432:5432
+      - "127.0.0.1:5432:5432"
     volumes:
-      - data:/var/lib/postgresql/data
-
-
-volumes:
-  data: {}
+      - ./data/postgresql:/var/lib/postgresql/data
