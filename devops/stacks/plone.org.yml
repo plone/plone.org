@@ -52,7 +52,7 @@ services:
         - traefik.http.services.ploneorg-backend.loadbalancer.server.port=8080
         # Middlewares
         ### Authentication
-        - traefik.http.middlewares.ploneorg-backend-auth.basicauth.users=ploneorg:$$apr1$$SAOhBRqM$$HqoYLlr//h7PfUWidoFg//
+        - traefik.http.middlewares.ploneorg-backend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
         ### backend ++api++ VHM
         - "traefik.http.middlewares.ploneorg-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+/){1,})($$|.*)"
         - "traefik.http.middlewares.ploneorg-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/plone.org/Plone/++api++/VirtualHostRoot/$$3"
