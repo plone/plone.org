@@ -7,7 +7,6 @@ h1 {
 h2 {
   color: @headerColor;
   line-height: @h2LineHeight;
-  text-align: center;
 }
 
 h3 {
@@ -72,3 +71,19 @@ h5:last-child {
     font-size: unit((7 / 18), em);
   }
 }
+
+#page-document, #page-edit {
+
+  p a, ul a, ol a {
+    text-decoration:underline;
+    text-underline-position: under;
+    &:hover {
+      text-decoration:none;
+    }
+  }
+}
+#page-edit {
+  p a:hover, ul a:hover, ol a:hover {
+      text-decoration:underline;
+    }
+  }

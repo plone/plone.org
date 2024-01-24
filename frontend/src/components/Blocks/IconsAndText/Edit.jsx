@@ -106,11 +106,7 @@ const Edit = (props) => {
           />
         ))}
       </div>
-      <ListingLinkMore
-        linkTitle={data.href_title}
-        linkHref={data.href}
-        buttonClassName="site--button-blue"
-      />
+      <ListingLinkMore linkTitle={data.href_title} linkHref={data.href} buttonClassName="site--button-blue" />
     </>
   );
 
