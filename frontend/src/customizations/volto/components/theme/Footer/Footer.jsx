@@ -55,6 +55,9 @@ const Footer = ({ intl }) => {
                     <Link to="/download">Download Plone</Link>
                   </List.Item>
                   <List.Item>
+                    <Link to="/download/releases">Plone Releases</Link>
+                  </List.Item>
+                  <List.Item>
                     <a href="https://6.docs.plone.org">Documentation</a>
                   </List.Item>
                   <List.Item>
