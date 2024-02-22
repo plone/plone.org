@@ -72,18 +72,24 @@ h5:last-child {
   }
 }
 
-#page-document, #page-edit {
-
-  p a, ul a, ol a {
-    text-decoration:underline;
+#page-document,
+#page-edit {
+  p a,
+  ul a,
+  ol a {
+    text-decoration: underline;
     text-underline-position: under;
+
     &:hover {
-      text-decoration:none;
+      text-decoration: none;
     }
   }
 }
+
 #page-edit {
-  p a:hover, ul a:hover, ol a:hover {
-      text-decoration:underline;
-    }
+  p a:hover,
+  ul a:hover,
+  ol a:hover {
+    text-decoration: underline;
   }
+}

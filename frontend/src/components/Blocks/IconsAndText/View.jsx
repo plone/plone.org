@@ -18,7 +18,15 @@ const View = ({ data }) => {
       {(data.title || checkHasContent(data.description)) && (
         <div className="block-content-header">
           {data.title && <div className={cx('title')}>{data.title}</div>}
-          {checkHasContent(data.description) && <div className="description">{redraft(data.description, config.settings.richtextViewSettings.ToHTMLRenderers, config.settings.richtextViewSettings.ToHTMLOptions)}</div>}
+          {checkHasContent(data.description) && (
+            <div className="description">
+              {redraft(
+                data.description,
+                config.settings.richtextViewSettings.ToHTMLRenderers,
+                config.settings.richtextViewSettings.ToHTMLOptions,
+              )}
+            </div>
+          )}
         </div>
       )}
       <div className="columns-wrapper">
@@ -26,7 +34,11 @@ const View = ({ data }) => {
           <ViewBlock data={numberBlock} {...data} key={i} />
         ))}
       </div>
-      <ListingLinkMore linkTitle={data.href_title} linkHref={data.href} buttonClassName="site--button-blue" />
+      <ListingLinkMore
+        linkTitle={data.href_title}
+        linkHref={data.href}
+        buttonClassName="site--button-blue"
+      />
     </>
   );
 

@@ -836,6 +836,11 @@ msgid "link_to_description"
 msgstr ""
 
 #: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Center column heading on mobile
+msgid "mobileStyles"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
 # defaultMessage: Do not fit the columns to the available space
 msgid "noAdaptColumns"
 msgstr ""

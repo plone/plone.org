@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-09-18T18:44:24.417Z\n"
+"POT-Creation-Date: 2024-02-22T20:31:53.047Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -825,6 +825,11 @@ msgstr ""
 #: components/Blocks/Text7/Sidebar
 # defaultMessage: Enter a link for the block's CTA. You can type an external URL or select content.
 msgid "link_to_description"
+msgstr ""
+
+#: components/Blocks/IconsAndText/Sidebar
+# defaultMessage: Center column heading on mobile
+msgid "mobileStyles"
 msgstr ""
 
 #: components/Blocks/IconsAndText/Sidebar
