@@ -5,7 +5,7 @@ services:
   frontend:
     image: ghcr.io/plone/ploneorg-frontend:latest
     environment:
-      RAZZLE_INTERNAL_API_PATH: http://testing-plone-org_backend:8080/Plone
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     depends_on:
       - backend
     networks:
