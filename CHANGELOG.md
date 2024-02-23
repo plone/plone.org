@@ -2,6 +2,14 @@
 
 ---
 
+- Use relstorage 4.0.0 and psycopg2 2.9.9. [fredvd]
+
+- Use Volto 16.30.3. [frevd]]
+
+- Fix copying contentdb from live to testing where the INTERNAL_RAZZLE_API_PATH is different so it doesn't detect internal url's correctly. [sneridagh]
+
+- Fix for plone.org issues 73 and 110 [miropaananen]
+
 - Use mxdev 3.1.0 and pip 23.3.2 by overriding them in mx.ini. [fredvd]
 
 - List and pin backend bootstrap packages in backend/requirements-bootstrap.txt and install them in the 'bin/pip' Makefile target while passing in the full project constraints. [fredvd]
