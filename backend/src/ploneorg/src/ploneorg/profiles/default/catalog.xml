@@ -10,6 +10,11 @@
   >
     <indexed_attr value="is_provider" />
   </index>
+  <index name="recurrence" meta_type="FieldIndex">
+    <indexed_attr value="recurrence"/>
+  </index>
   <column value="sponsorship_type" />
   <column value="is_provider" />
+  <column value="recurrence"/>
+
 </object>

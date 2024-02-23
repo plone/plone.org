@@ -1,6 +1,16 @@
-## 1.0.14 (unreleased)
+## 1.0.17 (unreleased)
 
----
+- Add volto-fullcalendar-block [fredvd]
+
+- Add recurrence index to catalog.xml [fredvd]
+
+
+## 1.0.16 (2024-02-23)
+
+- Rereleased to get a tagged version deployed on docker swarm
+
+
+## 1.0.15 (2024-02-23)
 
 - Use relstorage 4.0.0 and psycopg2 2.9.9. [fredvd]
 

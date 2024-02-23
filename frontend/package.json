@@ -43,7 +43,8 @@
     "@kitconcept/volto-blocks-grid",
     "@kitconcept/volto-slider-block",
     "@eeacms/volto-matomo",
-    "@plone-collective/volto-authomatic"
+    "@plone-collective/volto-authomatic",
+    "@mbarde/volto-fullcalendar-block"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -158,6 +159,7 @@
     "@fortawesome/react-fontawesome": "0.1.15",
     "@kitconcept/volto-blocks-grid": "^5.2.0",
     "@kitconcept/volto-slider-block": "^4.3.0",
+    "@mbarde/volto-fullcalendar-block": "^0.7.0",
     "@plone-collective/volto-authomatic": "^2.0.0",
     "@plone/volto": "16.30.3",
     "react-slick": "0.28.1",
