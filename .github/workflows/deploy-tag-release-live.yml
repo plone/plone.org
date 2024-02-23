@@ -24,7 +24,7 @@ jobs:
       - name: Set Env Vars
         id: vars
         run: |
-          echo "TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "TAG=${{ github.ref_name }}" >> $GITHUB_OUTPUT
 
   release-frontend:
     runs-on: ubuntu-latest
