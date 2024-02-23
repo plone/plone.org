@@ -1,9 +1,9 @@
-version: '3.3'
+version: '3.8'
 
 services:
 
   frontend:
-    image: ghcr.io/plone/ploneorg-frontend:latest
+    image: ghcr.io/plone/ploneorg-frontend:${STACK_PARAM:-latest}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     depends_on:
@@ -31,7 +31,7 @@ services:
         - traefik.http.routers.ploneorg-frontend.middlewares=gzip
 
   backend:
-    image: ghcr.io/plone/ploneorg-backend:latest
+    image: ghcr.io/plone/ploneorg-backend:${STACK_PARAM:-latest}
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-plone}'"
     depends_on:
