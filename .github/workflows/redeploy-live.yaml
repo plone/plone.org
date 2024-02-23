@@ -1,0 +1,49 @@
+name: Redeploy version.txt tag to plone.org
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  meta:
+    runs-on: ubuntu-latest
+    outputs:
+      TAG: ${{ steps.vars.outputs.TAG }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set Env Vars
+        id: vars
+        run: |
+          echo "TAG=$(cat version.txt)" >> $GITHUB_OUTPUT
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency: deploy
+    runs-on: ubuntu-latest
+    needs:
+      - meta
+    environment:
+    environment:
+      name: plone.org
+      url: https://plone.org
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to cluster
+        uses: kitconcept/docker-stack-deploy@v1.2.0
+        with:
+          registry: "ghcr.io"
+          username: ${{ github.actor }}
+          password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
+          remote_host: ${{ vars.DEPLOY_HOST }}
+          remote_port: ${{ vars.DEPLOY_PORT }}
+          remote_user: ${{ vars.DEPLOY_USER }}
+          remote_private_key: ${{ secrets.DEPLOY_SSH }}
+          stack_file: devops/stacks/plone.org.yml
+          stack_name: plone-org
+          stack_param: ${{ needs.meta.outputs.TAG }}
+          env_file: ${{ secrets.ENV_FILE }}
+          deploy_timeout: 480
