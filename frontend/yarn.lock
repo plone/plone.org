@@ -2684,7 +2684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mbarde/volto-fullcalendar-block@npm:*":
+"@mbarde/volto-fullcalendar-block@npm:^0.7.0":
   version: 0.7.0
   resolution: "@mbarde/volto-fullcalendar-block@npm:0.7.0"
   dependencies:
@@ -11872,7 +11872,7 @@ __metadata:
     "@fortawesome/react-fontawesome": 0.1.15
     "@kitconcept/volto-blocks-grid": ^5.2.0
     "@kitconcept/volto-slider-block": ^4.3.0
-    "@mbarde/volto-fullcalendar-block": "*"
+    "@mbarde/volto-fullcalendar-block": ^0.7.0
     "@plone-collective/volto-authomatic": ^2.0.0
     "@plone/scripts": ^2.2.1
     "@plone/volto": 16.30.3
