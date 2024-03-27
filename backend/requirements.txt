@@ -1,7 +1,9 @@
 -c constraints.txt
 -e src/ploneorg[test]
 
+
 relstorage==4.0.0
-psycopg2==2.9.9
+# See requirements-docker.txt:
+# psycopg2==2.9.9
 collective.revisionmanager==1.2.2
 zope.testrunner

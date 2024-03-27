@@ -2,5 +2,7 @@
 -e src/ploneorg
 
 relstorage==4.0.0
-psycopg2==2.9.9
+#Don't try to updaet psycopg2, it need libpq-dev installed to run, but we don't have that because we import
+#from plone-backend Docker image
+#psycopg2==2.9.9
 collective.revisionmanager==1.2.2
