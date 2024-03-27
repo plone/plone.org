@@ -1,13 +1,8 @@
 default_context:
     initial_user_name: 'admin'
-    initial_user_password: 'admin'
-
-    load_zcml:
-        package_includes: ['ploneorg']
-
+    initial_user_password: 'adminadmin'
+    zcml_package_includes: ploneorg, collective.revisionmanager
     dos_protection_available: true
-
     db_storage: direct
-
     db_filestorage_location: ../data/filestorage/Data.fs
     db_blobs_location: ../data/blobs

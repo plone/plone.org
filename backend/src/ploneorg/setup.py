@@ -57,6 +57,7 @@ setup(
         "collective.volto.secondarymenu",
         "collective.volto.socialsettings",
         "collective.casestudy",
+        "collective.revisionmanager",
     ],
     extras_require={
         "test": [

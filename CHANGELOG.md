@@ -1,5 +1,16 @@
 ## 1.0.17 (unreleased)
 
+
+- Pin cookiecutter-zope-instance version in backend/Makefile. [fredvd]
+
+- Update instance(-filstorage).yaml to remove deprecated load_zcml. [fredvd]
+
+- Test backend/requirements-docker.txt updating relstorage/psycopg2 versions. [fredvd]
+
+- Update to Plone 6.0.10.1. Sync requirements-bootstrap.txt[fredvd]
+
+- Add collective.revisionmanager 1.2.2. [fredvd]
+
 - Add volto-fullcalendar-block [fredvd]
 
 - Add recurrence index to catalog.xml [fredvd]

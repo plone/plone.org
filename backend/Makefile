@@ -88,19 +88,17 @@ clean-test: ## remove test and coverage artifacts
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
 	$(PYTHON) -m venv .
-	bin/pip install -U -r requirements-bootstrap.txt -c constraints-mxdev.txt
+	bin/pip install -U -r requirements-bootstrap.txt
 
 .PHONY: config
 config: bin/pip  ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	bin/cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+	bin/cookiecutter -f --no-input --config-file instance.yaml --checkout 2.1.0 gh:plone/cookiecutter-zope-instance
 
 .PHONY: config-fs
 config-fs: bin/pip  ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	bin/cookiecutter -f --no-input --config-file instance-filestorage.yaml gh:plone/cookiecutter-zope-instance
-
-
+	bin/cookiecutter -f --no-input --config-file instance-filestorage.yaml --checkout 2.1.0 gh:plone/cookiecutter-zope-instance
 
 # i18n
 bin/i18ndude: bin/pip

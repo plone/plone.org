@@ -1,7 +1,8 @@
 # These packages are installed after creating the virtualenv and are needed to further configure and
 # install the main backend application. Keep these versions pinned and add possible subdependencies
-pip==23.3.2
+# We cannoot use the generated constraints-mxdev.txt because it doesn't exist when bootstrapping
+pip==24.0
 wheel==0.42.0
-cookiecutter==2.5.0
 mxdev==3.1.0
+cookiecutter==2.6.0
 prettyconf==2.2.1

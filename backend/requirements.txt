@@ -3,4 +3,5 @@
 
 relstorage==4.0.0
 psycopg2==2.9.9
+collective.revisionmanager==1.2.2
 zope.testrunner
