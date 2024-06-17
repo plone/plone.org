@@ -1,38 +1,30 @@
-FROM node:16-slim as base
-FROM base as builder
+# syntax=docker/dockerfile:1
+ARG VOLTO_VERSION
+# TODO: Replace with
+# FROM plone/frontend-builder:${VOLTO_VERSION}
+# when the main image is ready
+FROM ghcr.io/kitconcept/frontend-builder:${VOLTO_VERSION} as builder
 
-RUN apt-get update \
-    && buildDeps="python3 build-essential git ca-certificates" \
-    && apt-get install -y --no-install-recommends $buildDeps \
-    && rm -rf /var/lib/apt/lists/*
+COPY --chown=node packages/volto-plone-org /app/packages/volto-plone-org
+COPY --chown=node volto.config.js /app/
+COPY --chown=node package.json /app/package.json.temp
 
-COPY --chown=node .yarnrc.yml Makefile package.json mrs.developer.json jsconfig.json yarn.lock /build/
-COPY --chown=node .yarn /build/.yarn
-RUN corepack enable
-USER node
-WORKDIR /build
+RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
+     python3 -c "import json; data = json.load(open('package.json.temp')); deps = data['dependencies']; data['dependencies'].update(deps); json.dump(data, open('package.json', 'w'), indent=2)"
+     rm package.json.temp
+     pnpm install && pnpm build:deps
+     pnpm build
+     pnpm install --prod
+EOT
 
-RUN mkdir -p src/addons && make install
+# TODO: Replace with
+# FROM plone/frontend-prod-config:${VOLTO_VERSION}
+# when the main image is ready
+FROM ghcr.io/kitconcept/frontend-prod-config:${VOLTO_VERSION}
 
-COPY --chown=node . /build/
-RUN yarn build
-
-FROM base
-
-LABEL maintainer="Plone Foundation <marketing@plone.org>" \
-      org.label-schema.name="plone.org-frontend" \
-      org.label-schema.description="Plone.org Site frontend image." \
+LABEL maintainer="Plone Foundation <collective@plone.org>" \
+      org.label-schema.name="project-title-frontend" \
+      org.label-schema.description="Project Title frontend image." \
       org.label-schema.vendor="Plone Foundation"
 
-RUN apt-get update \
-    && buildDeps="busybox" \
-    && apt-get install -y --no-install-recommends $buildDeps \
-    && busybox --install -s \
-    && rm -rf /var/lib/apt/lists/*
-
-USER node
-COPY --from=builder /build/ /app/
-
-WORKDIR /app
-EXPOSE 3000
-CMD ["yarn", "start:prod"]
+COPY --from=builder /app/ /app/

@@ -1,200 +1,44 @@
 {
-  "name": "frontend",
-  "description": "The main destination for Plone",
+  "name": "volto-plone-org-dev",
+  "version": "1.0.0-alpha.0",
+  "description": "A new project using Plone 6.",
+  "author": "Plone Foundation",
+  "homepage": "https://github.com/collective/volto-plone-org",
   "license": "MIT",
-  "version": "1.0.0",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
   "scripts": {
-    "start": "razzle start",
-    "postinstall": "make omelette && make patches",
-    "build": "razzle build --noninteractive",
-    "lint": "./node_modules/eslint/bin/eslint.js --max-warnings=0 'src/**/*.{js,jsx}'",
-    "lint:fix": "./node_modules/eslint/bin/eslint.js --max-warnings=0 --fix 'src/**/*.{js,jsx}'",
-    "lint:ci": "./node_modules/eslint/bin/eslint.js --max-warnings=0 -f checkstyle 'src/**/*.{js,jsx}' > eslint.xml",
-    "prettier": "./node_modules/.bin/prettier --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}'",
-    "prettier:fix": "./node_modules/.bin/prettier --single-quote --write 'src/**/*.{js,jsx,ts,tsx,css,scss}'",
-    "prettier:ci": "./node_modules/.bin/prettier --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}'",
-    "stylelint": "stylelint 'theme/**/*.{css,less}' 'src/**/*.{css,less}'",
-    "stylelint:overrides": "stylelint 'theme/**/*.overrides' 'src/**/*.overrides'",
-    "stylelint:fix": "yarn stylelint --fix && yarn stylelint:overrides --fix",
-    "test": "razzle test --passWithNoTests",
-    "cypress:run": "NODE_ENV=test cypress run",
-    "cypress:open": "NODE_ENV=test cypress open",
-    "cypress:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn start",
-    "cypress:test-acceptance-server": "make test-acceptance-server",
-    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
-    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
-    "ci:start-backend": "make start-test-backend",
-    "ci:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn build && start-test start:prod http-get://localhost:3000 cypress:run",
-    "ci:cypress:run": "start-test ci:start-backend http-get://localhost:55001/plone ci:start-frontend",
-    "start:prod": "NODE_ENV=production node build/server.js",
-    "i18n": "rm -rf build/messages && NODE_ENV=production i18n",
-    "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=addons --fetch-https",
-    "develop": "missdev --config=jsconfig.json --output=addons --fetch-https",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "addons": [
-    "volto-social-settings",
-    "volto-secondarymenu",
-    "volto-dropdownmenu",
-    "volto-gdpr-privacy",
-    "volto-form-block",
-    "@eeacms/volto-accordion-block",
-    "@kitconcept/volto-blocks-grid",
-    "@kitconcept/volto-slider-block",
-    "@eeacms/volto-matomo",
-    "@plone-collective/volto-authomatic",
-    "@mbarde/volto-fullcalendar-block"
-  ],
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "api"
-    ],
-    "transform": {
-      "^.+\\.js(x)?$": "babel-jest",
-      "^.+\\.(png)$": "jest-file",
-      "^.+\\.(jpg)$": "jest-file",
-      "^.+\\.(svg)$": "./node_modules/@plone/volto/jest-svgsystem-transform.js"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules/(?!@plone/volto).+\\.js$"
-    ],
-    "moduleNameMapper": {
-      "@plone/volto/cypress/(.*)$": "<rootDir>/node_modules/@plone/volto/cypress/$1",
-      "@plone/volto/addon-registry": "<rootDir>/node_modules/@plone/volto/addon-registry",
-      "@plone/volto/webpack-plugins/webpack-less-plugin": "<rootDir>/node_modules/@plone/volto/webpack-plugins/webpack-less-plugin",
-      "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
-      "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
-      "load-volto-addons": "<rootDir>/node_modules/@plone/volto/jest-addons-loader.js",
-      "@package/(.*)$": "<rootDir>/src/$1",
-      "@root/(.*)$": "<rootDir>/src/$1",
-      "~/(.*)$": "<rootDir>/src/$1",
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-      "volto-secondarymenu/(.*)$": "<rootDir>/src/addons/volto-secondarymenu/src/$1",
-      "volto-dropdownmenu/(.*)$": "<rootDir>/src/addons/volto-dropdownmenu/src/$1",
-      "volto-gdpr-privacy/(.*)$": "<rootDir>/src/addons/volto-gdpr-privacy/src/$1"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 10,
-        "functions": 10,
-        "lines": 10,
-        "statements": 10
-      }
-    },
-    "setupFiles": [
-      "@plone/volto/test-setup-globals.js",
-      "@plone/volto/test-setup-config.js"
-    ],
-    "globals": {
-      "__DEV__": true
-    }
-  },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.overrides",
-        "options": {
-          "parser": "less"
-        }
-      }
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-idiomatic-order"
-    ],
-    "plugins": [
-      "stylelint-prettier"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.less"
-        ],
-        "customSyntax": "postcss-less"
-      },
-      {
-        "files": [
-          "**/*.overrides"
-        ],
-        "customSyntax": "postcss-less"
-      }
-    ],
-    "rules": {
-      "prettier/prettier": true,
-      "rule-empty-line-before": [
-        "always-multi-line",
-        {
-          "except": [
-            "first-nested"
-          ],
-          "ignore": [
-            "after-comment"
-          ]
-        }
-      ]
-    },
-    "ignoreFiles": "theme/themes/default/**/*.overrides"
-  },
-  "browserslist": [
-    ">1%",
-    "last 4 versions",
-    "Firefox ESR",
-    "not ie 11",
-    "not dead"
-  ],
-  "engines": {
-    "node": "^14 || ^16"
+    "preinstall": "npx only-allow pnpm",
+    "start": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
+    "start:prod": "pnpm --filter @plone/volto start:prod",
+    "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "i18n": "pnpm --filter volto-plone-org i18n",
+    "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests",
+    "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
+    "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
+    "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix --allow-empty-input",
+    "dry-release": "pnpm --filter volto-plone-org dry-release",
+    "release": "pnpm --filter volto-plone-org release",
+    "release-major-alpha": "pnpm --filter volto-plone-org release-major-alpha",
+    "release-alpha": "pnpm --filter volto-plone-org release-alpha",
+    "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
+    "build-storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
-    "@eeacms/volto-accordion-block": "^6.0.0",
-    "@eeacms/volto-matomo": "4.2.1",
-    "@fontsource/assistant": "4.5.11",
-    "@fortawesome/fontawesome-svg-core": "1.2.36",
-    "@fortawesome/free-regular-svg-icons": "5.15.4",
-    "@fortawesome/free-solid-svg-icons": "5.15.4",
-    "@fortawesome/react-fontawesome": "0.1.15",
-    "@kitconcept/volto-blocks-grid": "^5.2.0",
-    "@kitconcept/volto-slider-block": "^4.3.0",
-    "@mbarde/volto-fullcalendar-block": "^0.7.0",
-    "@plone-collective/volto-authomatic": "^2.0.0",
-    "@plone/volto": "16.30.3",
-    "react-slick": "0.28.1",
-    "slick-carousel": "1.8.1",
-    "volto-dropdownmenu": "2.4.3",
-    "volto-form-block": "^3.0.0",
-    "volto-gdpr-privacy": "2.0.0",
-    "volto-secondarymenu": "2.2.0",
-    "volto-social-settings": "2.2.0",
-    "volto-subblocks": "^2.0.0"
+    "@plone/volto": "workspace:*",
+    "@plone/registry": "workspace:*",
+    "volto-plone-org": "workspace:*"
   },
   "devDependencies": {
-    "@plone/scripts": "^2.2.1",
-    "@storybook/addon-actions": "^6.3.0",
-    "@storybook/addon-controls": "6.3.0",
-    "@storybook/addon-essentials": "^6.3.0",
-    "@storybook/addon-links": "^6.3.0",
-    "@storybook/react": "^6.3.0",
-    "eslint-plugin-prettier": "3.1.3",
-    "jest-junit": "8.0.0",
-    "mrs-developer": "*",
-    "postcss": "8.4.13",
-    "prettier": "2.0.5",
-    "razzle": "4.2.17",
-    "stylelint": "14.0.1",
-    "stylelint-config-idiomatic-order": "8.1.0",
-    "stylelint-config-prettier": "8.0.1",
-    "stylelint-prettier": "1.1.2"
+    "mrs-developer": "^2.2.0"
   },
-  "resolutions": {
-    "@plone/scripts": "^2.2.1"
-  },
-  "packageManager": "yarn@3.2.3",
-  "volta": {
-    "node": "16.20.2",
-    "yarn": "3.8.0"
-  }
+  "packageManager": "pnpm@9.1.1"
 }
