@@ -40,8 +40,7 @@ const baseArgs = {
           entityRanges: [],
           inlineStyleRanges: [],
           key: 'bsqiu',
-          text:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta sem in nisi pellentesque imperdiet. Maecenas tempus molestie felis, at varius nibh egestas ac. Quisque ultrices nisl neque. Duis cursus tortor velit, nec commodo libero mollis sit amet. Vivamus a dignissim arcu, pellentesque tincidunt ipsum',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta sem in nisi pellentesque imperdiet. Maecenas tempus molestie felis, at varius nibh egestas ac. Quisque ultrices nisl neque. Duis cursus tortor velit, nec commodo libero mollis sit amet. Vivamus a dignissim arcu, pellentesque tincidunt ipsum',
           type: 'unstyled',
         },
       ],

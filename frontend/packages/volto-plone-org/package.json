@@ -52,7 +52,7 @@
     "@kitconcept/volto-heading-block": "^2.4.0",
     "@kitconcept/volto-highlight-block": "^3.0.1",
     "@kitconcept/volto-introduction-block": "^1.0.0",
-    "@kitconcept/volto-light-theme": "^3.3.2",
+    "@kitconcept/volto-light-theme": "^6.0.0-alpha.2",
     "@kitconcept/volto-separator-block": "^4.1.1",
     "@kitconcept/volto-slider-block": "^6.3.1",
     "@mbarde/volto-fullcalendar-block": "^0.7.0",
@@ -69,7 +69,7 @@
   "peerDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-intl": "3.8.0"
+    "react-intl": "^3.12.1"
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",

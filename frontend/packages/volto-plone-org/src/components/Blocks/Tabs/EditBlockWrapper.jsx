@@ -58,14 +58,8 @@ class EditBlockWrapper extends React.Component {
   blockNode = React.createRef();
 
   render() {
-    const {
-      intl,
-      blockProps,
-      draginfo,
-      extraControls,
-      disabled,
-      children,
-    } = this.props;
+    const { intl, blockProps, draginfo, extraControls, disabled, children } =
+      this.props;
 
     const {
       allowedBlocks,

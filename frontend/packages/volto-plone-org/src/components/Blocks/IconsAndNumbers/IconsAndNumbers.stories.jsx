@@ -36,8 +36,7 @@ const baseArgs = {
           entityRanges: [],
           inlineStyleRanges: [],
           key: 'bsqiu',
-          text:
-            'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+          text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
           type: 'unstyled',
         },
       ],
@@ -57,8 +56,7 @@ const baseArgs = {
               entityRanges: [],
               inlineStyleRanges: [],
               key: 'bsqiu',
-              text:
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+              text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
               type: 'unstyled',
             },
           ],
@@ -76,8 +74,7 @@ const baseArgs = {
               entityRanges: [],
               inlineStyleRanges: [],
               key: 'bsqiu',
-              text:
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+              text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
               type: 'unstyled',
             },
           ],
@@ -95,8 +92,7 @@ const baseArgs = {
               entityRanges: [],
               inlineStyleRanges: [],
               key: 'bsqiu',
-              text:
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+              text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
               type: 'unstyled',
             },
           ],

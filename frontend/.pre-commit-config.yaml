@@ -9,7 +9,7 @@ repos:
         types: [file]
       - id: eslint
         name: eslint
-        entry: pnpm exec eslint --max-warnings=0 --fix
+        entry: bash -c "VOLTOCONFIG=$(pwd)/volto.config.js pnpm exec eslint --max-warnings=0 --fix"
         language: system
         files: '^packages/.*/src/.*/?.*.(js|jsx|ts|tsx)$'
         types: [file]

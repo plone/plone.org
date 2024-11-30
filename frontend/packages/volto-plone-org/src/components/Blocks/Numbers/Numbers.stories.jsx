@@ -26,8 +26,7 @@ const baseArgs = {
               entityRanges: [],
               inlineStyleRanges: [],
               key: 'bsqiu',
-              text:
-                'Consectetur adipiscing elit. In porta sem in nisi pellentesque imperdiet.',
+              text: 'Consectetur adipiscing elit. In porta sem in nisi pellentesque imperdiet.',
               type: 'unstyled',
             },
           ],
@@ -45,8 +44,7 @@ const baseArgs = {
               entityRanges: [],
               inlineStyleRanges: [],
               key: 'bsqiu',
-              text:
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+              text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
               type: 'unstyled',
             },
           ],
@@ -66,8 +64,7 @@ const baseArgs = {
               entityRanges: [],
               inlineStyleRanges: [],
               key: 'bsqiu',
-              text:
-                'Maecenas tempus molestie felis, at varius nibh egestas ac. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+              text: 'Maecenas tempus molestie felis, at varius nibh egestas ac. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
               type: 'unstyled',
             },
           ],

@@ -38,7 +38,7 @@ help: ## Show this help
 install: ## Installs the add-on in a development environment
 	pnpm dlx mrs-developer missdev --no-config --fetch-https
 	pnpm i
-	pnpm build:deps
+	make build-deps
 
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
@@ -48,10 +48,10 @@ start: ## Starts Volto, allowing reloading of the add-on during development
 build: ## Build a production bundle for distribution of the project with the add-on
 	pnpm build
 
-core/packages/registry/dist: core/packages/registry/src
+core/packages/registry/dist: $(shell find core/packages/registry/src -type f)
 	pnpm --filter @plone/registry build
 
-core/packages/components/dist: core/packages/components/src
+core/packages/components/dist: $(shell find core/packages/components/src -type f)
 	pnpm --filter @plone/components build
 
 .PHONY: build-deps
@@ -89,8 +89,10 @@ release-dry-run: ## Dry-run the release of the add-on on npmjs.org
 test: ## Run unit tests
 	pnpm test
 
-.PHONY: test-ci
+.PHONY: ci-test
 ci-test: ## Run unit tests in CI
+	# Unit Tests need the i18n to be built
+	VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n
 	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
 
 .PHONY: backend-docker-start
@@ -108,7 +110,7 @@ storybook-start: ## Start Storybook server on port 6006
 storybook-build: ## Build Storybook
 	@echo "$(GREEN)==> Build Storybook$(RESET)"
 	mkdir -p $(CURRENT_DIR)/.storybook-build
-	pnpm run build-storybook -o $(CURRENT_DIR)/.storybook-build
+	pnpm run storybook-build -o $(CURRENT_DIR)/.storybook-build
 
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start

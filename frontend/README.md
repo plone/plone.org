@@ -1,4 +1,4 @@
-# Project Title (volto-plone-org)
+# Plone.org site (volto-plone-org)
 
 A new project using Plone 6.
 
