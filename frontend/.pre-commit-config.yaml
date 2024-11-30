@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: pnpm exec prettier --write
+        language: system
+        files: '^packages/.*/src/.*/?.*.(js|jsx|ts|tsx)$'
+        types: [file]
+      - id: eslint
+        name: eslint
+        entry: bash -c "VOLTOCONFIG=$(pwd)/volto.config.js pnpm exec eslint --max-warnings=0 --fix"
+        language: system
+        files: '^packages/.*/src/.*/?.*.(js|jsx|ts|tsx)$'
+        types: [file]
+      - id: stylelint
+        name: stylelint
+        entry: pnpm exec stylelint --fix
+        language: system
+        files: '^packages/.*/src/.*/?.*.(css|scss|less)$'
+        types: [file]
+      - id: i18n
+        name: i18n
+        entry: make ci-i18n
+        language: system
+        files: '^packages/.*/src/.*/?.*.(js|jsx|ts|tsx)$'
+        types: [file]

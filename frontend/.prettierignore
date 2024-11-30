@@ -1,2 +1,3 @@
-src/**/CHANGELOG.md
-src/**/README.md
+.storybook
+CHANGELOG.md
+README.md
