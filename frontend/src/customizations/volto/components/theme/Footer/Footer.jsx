@@ -100,9 +100,9 @@ const Footer = ({ intl }) => {
                     <a href="https://ploneconf.org">Conference</a>
                   </List.Item>
                   <List.Item>
-                    <a href="/news-and-events/join-the-plone-newsletter">
+                    <Link href="/news-and-events/join-the-plone-newsletter">
                       Join the Plone newsletter
-                    </a>
+                    </Link>
                   </List.Item>
                 </List.Content>
               </List>
