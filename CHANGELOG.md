@@ -1,6 +1,8 @@
 ## 1.0.17 (unreleased)
 
 
+- Add link to newsletter subscribe to footer. [Adityaadpandey]
+
 - Pin cookiecutter-zope-instance version in backend/Makefile. [fredvd]
 
 - Update instance(-filstorage).yaml to remove deprecated load_zcml. [fredvd]
