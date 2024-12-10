@@ -1,4 +1,4 @@
-## 1.0.17 (unreleased)
+## 1.0.17 (2024-12-10)
 
 
 - Add link to newsletter subscribe to footer. [Adityaadpandey]
