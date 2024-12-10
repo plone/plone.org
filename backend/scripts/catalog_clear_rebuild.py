@@ -10,6 +10,7 @@ import argparse
 import sys
 import transaction
 
+
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--site",
@@ -51,10 +52,10 @@ for site in plones:
     setSite(site)
     catalog = api.portal.get_tool(name="portal_catalog")
     catalog.manage_catalogRebuild()
-    print("Catalog is rebuilt, now doing a search to empty the indexing queue. This may take long.")
-    catalog.unrestrictedSearchResults(SearchableText="Maro 1:3")
-    note = (
-        "Cleared and rebuilt the catalog for %s." % site.id
+    print(
+        "Catalog is rebuilt, now doing a search to empty the indexing queue. This may take long."
     )
+    catalog.unrestrictedSearchResults(SearchableText="Maro 1:3")
+    note = "Cleared and rebuilt the catalog for %s." % site.id
     commit(note)
     print("Done.")
