@@ -1,7 +1,6 @@
 ## 1.0.18 (unreleased)
 
-
-- Nothing changed yet.
+- Update to Plone 5.0.15. [davisagli]
 
 
 ## 1.0.17 (2024-12-10)
