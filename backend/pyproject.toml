@@ -45,6 +45,3 @@ paths_pyroma = "src/ploneorg"
 testpaths = [
   "src/ploneorg/tests"
 ]
-filterwarnings = [
-    "ignore::DeprecationWarning"
-]

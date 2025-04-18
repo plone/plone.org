@@ -61,7 +61,7 @@ setup(
     ],
     extras_require={
         "test": [
-            "gocept.pytestlayer",
+            "gocept.pytestlayer<8.1.1",
             "parameterized",
             "zest.releaser[recommended]",
             "plone.app.testing[robot]>=7.0.0a3",
