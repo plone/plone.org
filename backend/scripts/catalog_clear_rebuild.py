@@ -1,3 +1,4 @@
+# flake8: noqa
 # Run this from the backend directory with:
 # bin/zconsole run instance/etc/zope.conf scripts/catalog_clear_rebuild.py
 # or with extra options: --site=nl

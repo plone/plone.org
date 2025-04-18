@@ -1,3 +1,4 @@
+# flake8: noqa
 # Run this with:
 # bin/zconsole run instance/etc/zope.conf scripts/purge_image_scales.py
 #
