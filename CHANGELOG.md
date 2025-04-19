@@ -1,4 +1,4 @@
-## 1.0.18 (unreleased)
+## 1.0.18 (2025-04-19)
 
 - Update Database connection live & redeploy GHA workflows. [fredvd]
 
