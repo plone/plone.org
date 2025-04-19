@@ -11,7 +11,7 @@ The main destination for Plone
 
 ### Development Setup
 
-- Python 3.10
+- Python 3.11
 - Node 16
 - yarn
 - Docker
@@ -87,10 +87,9 @@ There are `Makefile` commands in place:
 The default setup assumes for local development you also have a PostgreSQL server running. As a convenience an example docker compose file is provided in the project root for such a service. If you prefer to use filestorage, you can look in the backend directory its Makefile and
 look at the alternative 'build-dev-fs' target, which depends on 'config-fs'. The difference with the normal 'config' target is the usages of
 instance-filestorage.yaml instead of instanc.yaml. These files are used as input for the application server scaffolding and switch the storage
-layer to either relstorage/postgresql or direct/filestorage. 
+layer to either relstorage/postgresql or direct/filestorage.
 
-For both storages, if you want to develop for plone.org and need a copy of the data, you will need to as another community member (preferably from the website-team or the AI-team) for a database dump. 
-
+For both storages, if you want to develop for plone.org and need a copy of the data, you will need to as another community member (preferably from the website-team or the AI-team) for a database dump.
 
 ## Credits
 
