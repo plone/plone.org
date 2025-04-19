@@ -2,6 +2,8 @@
 
 - Update to Plone 6.0.15. [davisagli]
 
+- Update Database connection parameters. [fredvd]
+
 
 ## 1.0.17 (2024-12-10)
 
