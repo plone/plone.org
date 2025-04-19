@@ -1,5 +1,6 @@
 ### Defensive settings for make:
 #   https://tech.davis-hansson.com/p/make/
+#
 SHELL:=bash
 .ONESHELL:
 .SHELLFLAGS:=-xeu -o pipefail -O inherit_errexit -c

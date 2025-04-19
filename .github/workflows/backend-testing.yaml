@@ -163,7 +163,7 @@ jobs:
           stack_file: "devops/stacks/testing.plone.org.yml"
           stack_name: "testing-plone-org"
           env_file: |
-            STACK_NAME="testing-plone-org"
+            STACK_NAME=testing-plone-org
             DB_HOST=${{ vars.DB_HOST }}
             DB_NAME=${{ vars.DB_NAME }}
             DB_USER=${{ vars.DB_USER }}
