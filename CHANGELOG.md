@@ -1,8 +1,10 @@
 ## 1.0.18 (unreleased)
 
+- Update Database connection live & redeploy GHA workflows. [fredvd]
+
 - Update to Plone 6.0.15. [davisagli]
 
-- Update Database connection parameters. [fredvd]
+- Update Database connection CI parameters testing. [fredvd]
 
 
 ## 1.0.17 (2024-12-10)
