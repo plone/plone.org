@@ -1,3 +1,9 @@
+## 1.0.19 (unreleased)
+
+
+- Nothing changed yet.
+
+
 ## 1.0.18 (2025-04-19)
 
 - Update Database connection live & redeploy GHA workflows. [fredvd]
