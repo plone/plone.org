@@ -1,4 +1,4 @@
-## 1.0.19 (unreleased)
+## 1.0.19 (2025-04-20)
 
 - Also add DB_PORT in live stack file.  [fredvd]
 - Update stack config version. [fredvd]
