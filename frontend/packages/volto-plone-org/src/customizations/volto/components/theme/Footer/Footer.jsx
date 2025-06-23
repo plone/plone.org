@@ -99,6 +99,11 @@ const Footer = ({ intl }) => {
                   <List.Item>
                     <a href="https://ploneconf.org">Conference</a>
                   </List.Item>
+                  <List.Item>
+                    <Link to="/news-and-events/join-the-plone-newsletter">
+                      Join the Plone newsletter
+                    </Link>
+                  </List.Item>
                 </List.Content>
               </List>
             </Grid.Column>

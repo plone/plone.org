@@ -1,5 +1,28 @@
-## 1.0.17 (unreleased)
+## 1.0.20 (unreleased)
 
+
+- Nothing changed yet.
+
+
+## 1.0.19 (2025-04-20)
+
+- Also add DB_PORT in live stack file.  [fredvd]
+- Update stack config version. [fredvd]
+
+
+## 1.0.18 (2025-04-19)
+
+- Update Database connection live & redeploy GHA workflows. [fredvd]
+
+- Update to Plone 6.0.15. [davisagli]
+
+- Update Database connection CI parameters testing. [fredvd]
+
+
+## 1.0.17 (2024-12-10)
+
+
+- Add link to newsletter subscribe to footer. [Adityaadpandey]
 
 - Pin cookiecutter-zope-instance version in backend/Makefile. [fredvd]
 

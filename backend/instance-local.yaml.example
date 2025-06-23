@@ -1,3 +1,8 @@
+# If you rename this file to instance-local.yaml, the Makefile config/build commands
+# will use this file for local development
+# In it you can override the backend setup to use for example file/blobstorage
+# instead of the relstorage connection used in testing/production deployment
+
 default_context:
     initial_user_name: 'admin'
     initial_user_password: 'adminadmin'
