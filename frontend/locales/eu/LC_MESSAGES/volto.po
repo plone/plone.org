@@ -224,16 +224,6 @@ msgstr ""
 msgid "Legal"
 msgstr ""
 
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Linked items
-msgid "Linked items"
-msgstr ""
-
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Linked items
-msgid "LinkedItems"
-msgstr ""
-
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Login
 msgid "Login"
@@ -504,7 +494,6 @@ msgstr ""
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
 #: components/Blocks/ImageColumns/Edit
-#: components/Blocks/LinkedItems/Edit
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
@@ -708,11 +697,6 @@ msgstr ""
 msgid "faIconWidgetDesc"
 msgstr ""
 
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Full width
-msgid "full-width"
-msgstr ""
-
 #: components/Blocks/IconsAndText/Sidebar
 # defaultMessage: Full width
 msgid "fullWidth"
@@ -723,7 +707,6 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: components/Blocks/LinkedItems/Sidebar
 #: components/Blocks/PageMetadata/Sidebar
 #: components/Blocks/PageTag/Sidebar
 # defaultMessage: Set grey background

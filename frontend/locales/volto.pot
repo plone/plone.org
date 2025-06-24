@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-06-24T16:47:58.279Z\n"
+"POT-Creation-Date: 2025-06-24T16:59:07.066Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -219,16 +219,6 @@ msgstr ""
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Legal
 msgid "Legal"
-msgstr ""
-
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Linked items
-msgid "Linked items"
-msgstr ""
-
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Linked items
-msgid "LinkedItems"
 msgstr ""
 
 #: components/layout/Footer/SiteFooter
@@ -501,7 +491,6 @@ msgstr ""
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
 #: components/Blocks/ImageColumns/Edit
-#: components/Blocks/LinkedItems/Edit
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
@@ -705,11 +694,6 @@ msgstr ""
 msgid "faIconWidgetDesc"
 msgstr ""
 
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Full width
-msgid "full-width"
-msgstr ""
-
 #: components/Blocks/IconsAndText/Sidebar
 # defaultMessage: Full width
 msgid "fullWidth"
@@ -720,7 +704,6 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: components/Blocks/LinkedItems/Sidebar
 #: components/Blocks/PageMetadata/Sidebar
 #: components/Blocks/PageTag/Sidebar
 # defaultMessage: Set grey background

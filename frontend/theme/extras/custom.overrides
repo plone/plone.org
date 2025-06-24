@@ -49,7 +49,6 @@
 @import 'site/components/blocks/icons_and_text.less';
 @import 'site/components/blocks/accordion.less';
 @import 'site/components/blocks/form.less';
-@import 'site/components/blocks/linked_items.less';
 @import 'site/components/blocks/image.less';
 @import 'site/components/blocks/video.less';
 @import 'site/components/blocks/tabs.less';

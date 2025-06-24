@@ -60,9 +60,6 @@ import imageColumnsSVG from '@package/icons/image_columns.svg';
 import ImageColumnsView from '@package/components/Blocks/ImageColumns/View';
 import ImageColumnsEdit from '@package/components/Blocks/ImageColumns/Edit';
 
-import linkSVG from '@plone/volto/icons/link.svg';
-import LinkedItemsView from '@package/components/Blocks/LinkedItems/View';
-import LinkedItemsEdit from '@package/components/Blocks/LinkedItems/Edit';
 import TextEdit from '@package/components/Blocks/Text/Edit';
 import TextView from '@package/components/Blocks/Text/View';
 
@@ -303,17 +300,6 @@ export const SiteBlocks = (config) => {
         closed: { leftPosition: rightSVG, rightPosition: downSVG },
         opened: { leftPosition: downSVG, rightPosition: upSVG },
       },
-    },
-
-    linked_items: {
-      ...defaultBlocksConfig,
-      id: 'linked_items',
-      title: 'Linked items',
-      icon: linkSVG,
-      group: 'common',
-      view: LinkedItemsView,
-      edit: LinkedItemsEdit,
-      sidebarTab: 1,
     },
 
     listing: {
