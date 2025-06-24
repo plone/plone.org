@@ -196,11 +196,6 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: components/Blocks/IconsAndNumbers/Sidebar
-# defaultMessage: Icons and numbers block
-msgid "IconsAndNumbersBlock"
-msgstr ""
-
 #: components/Blocks/IconsAndText/Sidebar
 # defaultMessage: Icons and text block
 msgid "IconsAndTextBlock"
@@ -273,7 +268,6 @@ msgstr ""
 msgid "Number of columns"
 msgstr ""
 
-#: components/Blocks/IconsAndNumbers/Block/EditBlock
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/Numbers/Block/EditBlock
 # defaultMessage: 0.00
@@ -482,8 +476,6 @@ msgstr ""
 msgid "Text 5"
 msgstr ""
 
-#: components/Blocks/IconsAndNumbers/Block/EditBlock
-#: components/Blocks/IconsAndNumbers/Edit
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
 #: components/Blocks/ImageColumns/Edit
@@ -521,8 +513,6 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: components/Blocks/IconsAndNumbers/Block/EditBlock
-#: components/Blocks/IconsAndNumbers/Edit
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
 #: components/Blocks/ImageColumns/Edit
