@@ -94,12 +94,6 @@ export const SiteBlocks = (config) => {
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
     title: { ...config.blocks.blocksConfig.title, restricted: false }, //lo si può aggiungere sempre
-    text: {
-      ...config.blocks.blocksConfig.text,
-      edit: TextEdit,
-      view: TextView,
-      sidebarTab: 1,
-    },
     related_items: {
       id: 'related_items',
       title: 'Related items',
