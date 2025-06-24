@@ -62,9 +62,6 @@ import imageColumnsSVG from '@package/icons/image_columns.svg';
 import ImageColumnsView from '@package/components/Blocks/ImageColumns/View';
 import ImageColumnsEdit from '@package/components/Blocks/ImageColumns/Edit';
 
-import TextEdit from '@package/components/Blocks/Text/Edit';
-import TextView from '@package/components/Blocks/Text/View';
-
 import tabsSVG from '@package/icons/tabs.svg';
 import TabsView from '@package/components/Blocks/Tabs/View';
 import TabsEdit from '@package/components/Blocks/Tabs/Edit';
