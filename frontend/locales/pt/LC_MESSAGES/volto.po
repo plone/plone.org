@@ -699,7 +699,6 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: components/Blocks/PageMetadata/Sidebar
 #: components/Blocks/PageTag/Sidebar
 # defaultMessage: Set grey background
 msgid "greyBg"
@@ -782,17 +781,6 @@ msgstr ""
 #: components/Blocks/InfoBox/Body
 # defaultMessage: Tel.
 msgid "phone"
-msgstr ""
-
-#: components/Blocks/PageMetadata/Edit
-#: components/Blocks/PageMetadata/View
-# defaultMessage: Publication date
-msgid "pubblication_date"
-msgstr ""
-
-#: components/Blocks/PageMetadata/Sidebar
-# defaultMessage: Publication date
-msgid "publication_date"
 msgstr ""
 
 #: components/cards/NewsCard

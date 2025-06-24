@@ -41,7 +41,6 @@
 @import 'site/components/blocks/slider.less';
 @import 'site/components/blocks/numbers.less';
 @import 'site/components/blocks/html.less';
-@import 'site/components/blocks/page_metadata.less';
 @import 'site/components/blocks/page_tag.less';
 @import 'site/components/blocks/teaser.less';
 

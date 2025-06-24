@@ -65,10 +65,6 @@ import tabsSVG from '@package/icons/tabs.svg';
 import TabsView from '@package/components/Blocks/Tabs/View';
 import TabsEdit from '@package/components/Blocks/Tabs/Edit';
 
-import calendarSVG from '@plone/volto/icons/calendar.svg';
-import PageMetadataView from '@package/components/Blocks/PageMetadata/View';
-import PageMetadataEdit from '@package/components/Blocks/PageMetadata/Edit';
-
 import tagSVG from '@plone/volto/icons/tag.svg';
 import PageTagView from '@package/components/Blocks/PageTag/View';
 import PageTagEdit from '@package/components/Blocks/PageTag/Edit';
@@ -112,22 +108,6 @@ export const SiteBlocks = (config) => {
       view: RelatedItemsView,
       edit: RelatedItemsEdit,
       restricted: true,
-      mostUsed: false,
-      blockHasOwnFocusManagement: false,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-      sidebarTab: 1,
-    },
-    pagemetadata: {
-      id: 'pagemetadata',
-      title: 'Publication date',
-      icon: calendarSVG,
-      group: 'common',
-      view: PageMetadataView,
-      edit: PageMetadataEdit,
-      restricted: false,
       mostUsed: false,
       blockHasOwnFocusManagement: false,
       security: {

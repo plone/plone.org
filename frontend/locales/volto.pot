@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-06-24T17:03:17.297Z\n"
+"POT-Creation-Date: 2025-06-24T17:06:55.040Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -693,7 +693,6 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: components/Blocks/PageMetadata/Sidebar
 #: components/Blocks/PageTag/Sidebar
 # defaultMessage: Set grey background
 msgid "greyBg"
@@ -776,17 +775,6 @@ msgstr ""
 #: components/Blocks/InfoBox/Body
 # defaultMessage: Tel.
 msgid "phone"
-msgstr ""
-
-#: components/Blocks/PageMetadata/Edit
-#: components/Blocks/PageMetadata/View
-# defaultMessage: Publication date
-msgid "pubblication_date"
-msgstr ""
-
-#: components/Blocks/PageMetadata/Sidebar
-# defaultMessage: Publication date
-msgid "publication_date"
 msgstr ""
 
 #: components/cards/NewsCard
