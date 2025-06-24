@@ -31,7 +31,6 @@
 @import 'site/components/blocks/listing/search_results.less';
 
 @import 'site/components/blocks/breadcrumbs.less';
-@import 'site/components/blocks/author.less';
 @import 'site/components/blocks/infobox.less';
 @import 'site/components/blocks/hero.less';
 @import 'site/components/blocks/text.less';

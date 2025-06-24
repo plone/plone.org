@@ -17,10 +17,6 @@ import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import BreakView from '@package/components/Blocks/Break/View';
 import BreakEdit from '@package/components/Blocks/Break/Edit';
 
-import userSVG from '@plone/volto/icons/user.svg';
-import AuthorView from '@package/components/Blocks/Author/View';
-import AuthorEdit from '@package/components/Blocks/Author/Edit';
-
 import infoSVG from '@plone/volto/icons/info.svg';
 import InfoboxView from '@package/components/Blocks/InfoBox/View';
 import InfoboxEdit from '@package/components/Blocks/InfoBox/Edit';
@@ -122,22 +118,6 @@ export const SiteBlocks = (config) => {
       view: BreadcrumbsView,
       edit: BreadcrumbsEdit,
       restricted: true,
-      sidebarTab: 1,
-    },
-    author: {
-      id: 'author',
-      title: 'Author',
-      icon: userSVG,
-      group: 'common',
-      view: AuthorView,
-      edit: AuthorEdit,
-      restricted: true,
-      mostUsed: false,
-      blockHasOwnFocusManagement: false,
-      security: {
-        addPermission: [],
-        view: [],
-      },
       sidebarTab: 1,
     },
     related_items: {
@@ -444,13 +424,13 @@ export const SiteBlocks = (config) => {
   removeListingVariation(config, 'summary');
   delete config.blocks.blocksConfig.toc; //remove block 'indice dei contenuti'
 
-  config.blocks.requiredBlocks = ['author', 'infobox', 'pagetag']; //il blocco 'title' non è required perchè al suo posto possono mettere il blocco slider
+  config.blocks.requiredBlocks = ['infobox', 'pagetag']; //il blocco 'title' non è required perchè al suo posto possono mettere il blocco slider
   config.blocks.initialBlocks = {
     ...config.blocks.initialBlocks,
     Document: ['title', 'related_items', 'pagetag'],
     Event: ['title', 'infobox', 'related_items', 'pagetag'],
     Project: ['slider', 'title'],
-    Story: ['slider', 'title', 'author', 'related_items'],
+    Story: ['slider', 'title', 'related_items'],
     'News Item': ['slider', 'title', 'related_items', 'pagetag'],
   };
   config.blocks.initialBlocksFocus = {

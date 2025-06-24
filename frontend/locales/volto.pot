@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-06-24T16:38:47.295Z\n"
+"POT-Creation-Date: 2025-06-24T16:47:58.279Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -51,12 +51,6 @@ msgstr ""
 #: components/Widgets/AlignWidget/AlignWidget
 # defaultMessage: top
 msgid "Align top"
-msgstr ""
-
-#: components/Blocks/Author/Body
-#: components/Blocks/Author/Sidebar
-# defaultMessage: Author
-msgid "Author"
 msgstr ""
 
 #: components/Controlpanels/MembershipControlPanel
@@ -193,7 +187,6 @@ msgstr ""
 msgid "IconsAndTextBlock"
 msgstr ""
 
-#: components/Blocks/Author/Edit
 #: components/Blocks/Slider/Sidebar
 #: components/Blocks/Text5/Edit
 #: components/Blocks/Text5/Sidebar
@@ -542,11 +535,6 @@ msgstr ""
 msgid "Upload a new image"
 msgstr ""
 
-#: components/Blocks/Author/Edit
-# defaultMessage: Upload or search a new image
-msgid "Upload or search a new image"
-msgstr ""
-
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: View image
 msgid "View image"
@@ -570,11 +558,6 @@ msgstr ""
 #: components/Blocks/InfoBox/Body
 # defaultMessage: Attendees
 msgid "attendees"
-msgstr ""
-
-#: components/Blocks/Author/Sidebar
-# defaultMessage: Autore
-msgid "autore"
 msgstr ""
 
 #: components/Blocks/IconsAndText/Sidebar
@@ -727,9 +710,8 @@ msgstr ""
 msgid "full-width"
 msgstr ""
 
-#: components/Blocks/Author/Sidebar
 #: components/Blocks/IconsAndText/Sidebar
-# defaultMessage: Set full-width background
+# defaultMessage: Full width
 msgid "fullWidth"
 msgstr ""
 
@@ -738,7 +720,6 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: components/Blocks/Author/Sidebar
 #: components/Blocks/LinkedItems/Sidebar
 #: components/Blocks/PageMetadata/Sidebar
 #: components/Blocks/PageTag/Sidebar
