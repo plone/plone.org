@@ -1,8 +1,6 @@
+*.log
 build
 cache
 cypress
-node_modules
-omelette
 Dockerfile
-.yarn/cache
-*.log
+node_modules

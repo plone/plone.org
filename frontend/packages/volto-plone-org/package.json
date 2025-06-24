@@ -1,0 +1,79 @@
+{
+  "name": "volto-plone-org",
+  "version": "1.0.0-alpha.0",
+  "description": "A new project using Plone 6.",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "Plone Foundation",
+  "homepage": "https://github.com/collective/volto-plone-org#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:collective/volto-plone-org.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "addons": [
+    "volto-social-settings",
+    "volto-secondarymenu",
+    "volto-dropdownmenu",
+    "volto-gdpr-privacy",
+    "volto-form-block",
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-slider-block",
+    "@eeacms/volto-matomo",
+    "@plone-collective/volto-authomatic",
+    "@mbarde/volto-fullcalendar-block",
+    "@kitconcept/volto-light-theme"
+  ],
+  "dependencies": {
+    "@eeacms/volto-accordion-block": "^10.4.6",
+    "@eeacms/volto-matomo": "4.2.1",
+    "@fontsource/assistant": "4.5.11",
+    "@fortawesome/fontawesome-svg-core": "1.2.36",
+    "@fortawesome/free-regular-svg-icons": "5.15.4",
+    "@fortawesome/free-solid-svg-icons": "5.15.4",
+    "@fortawesome/react-fontawesome": "0.1.15",
+    "@kitconcept/volto-button-block": "^2.3.1",
+    "@kitconcept/volto-dsgvo-banner": "^2.3.2",
+    "@kitconcept/volto-heading-block": "^2.4.0",
+    "@kitconcept/volto-highlight-block": "^3.0.1",
+    "@kitconcept/volto-introduction-block": "^1.0.0",
+    "@kitconcept/volto-light-theme": "^6.0.1",
+    "@kitconcept/volto-separator-block": "^4.1.1",
+    "@kitconcept/volto-slider-block": "^6.3.1",
+    "@mbarde/volto-fullcalendar-block": "^0.7.0",
+    "@plone-collective/volto-authomatic": "^2.0.1",
+    "@plone/components": "workspace:^",
+    "react-outside-click-handler": "^1.3.0",
+    "react-portal": "^4.2.2",
+    "volto-dropdownmenu": "2.4.3",
+    "volto-form-block": "^3.0.0",
+    "volto-gdpr-privacy": "2.2.7",
+    "volto-secondarymenu": "2.2.0",
+    "volto-social-settings": "2.2.0",
+    "volto-subblocks": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "^3.12.1"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "release-it": "^17.1.1"
+  }
+}

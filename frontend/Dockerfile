@@ -1,38 +1,32 @@
-FROM node:16-slim as base
-FROM base as builder
+# syntax=docker/dockerfile:1
+ARG VOLTO_VERSION
+FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
 
-RUN apt-get update \
-    && buildDeps="python3 build-essential git ca-certificates" \
-    && apt-get install -y --no-install-recommends $buildDeps \
-    && rm -rf /var/lib/apt/lists/*
+COPY --chown=node packages/volto-plone-org /app/packages/volto-plone-org
+COPY --chown=node volto.config.js /app/
+COPY --chown=node package.json /app/package.json.temp
 
-COPY --chown=node .yarnrc.yml Makefile package.json mrs.developer.json jsconfig.json yarn.lock /build/
-COPY --chown=node .yarn /build/.yarn
-RUN corepack enable
-USER node
-WORKDIR /build
+RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
+    set -e
+    python3 -c "import json; orig_data = json.load(open('package.json.temp')); orig_deps = orig_data['dependencies']; data = json.load(open('package.json')); data['dependencies'].update(orig_deps); json.dump(data, open('package.json', 'w'), indent=2)"
+    rm package.json.temp
+    pnpm install && pnpm build:deps
+    pnpm build
+    pnpm install --prod
+EOT
 
-RUN mkdir -p src/addons && make install
+FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
-COPY --chown=node . /build/
-RUN yarn build
-
-FROM base
-
-LABEL maintainer="Plone Foundation <marketing@plone.org>" \
-      org.label-schema.name="plone.org-frontend" \
-      org.label-schema.description="Plone.org Site frontend image." \
+LABEL maintainer="Plone Foundation <collective@plone.org>" \
+      org.label-schema.name="project-title-frontend" \
+      org.label-schema.description="Project Title frontend image." \
       org.label-schema.vendor="Plone Foundation"
 
-RUN apt-get update \
-    && buildDeps="busybox" \
-    && apt-get install -y --no-install-recommends $buildDeps \
-    && busybox --install -s \
-    && rm -rf /var/lib/apt/lists/*
+COPY --from=builder /app/ /app/
 
-USER node
-COPY --from=builder /build/ /app/
-
-WORKDIR /app
-EXPOSE 3000
-CMD ["yarn", "start:prod"]
+RUN <<EOT
+    set -e
+    corepack enable pnpm
+    corepack use pnpm@9.1.1
+    corepack prepare pnpm@9.1.1 --activate
+EOT
