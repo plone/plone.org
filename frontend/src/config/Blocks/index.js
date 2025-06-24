@@ -33,10 +33,6 @@ import text5SVG from '@package/icons/text5.svg';
 import Text5View from '@package/components/Blocks/Text5/View';
 import Text5Edit from '@package/components/Blocks/Text5/Edit';
 
-import text4SVG from '@package/icons/text4.svg';
-import Text4View from '@package/components/Blocks/Text4/View';
-import Text4Edit from '@package/components/Blocks/Text4/Edit';
-
 import text6SVG from '@package/icons/text6.svg';
 import Text6View from '@package/components/Blocks/Text6/View';
 import Text6Edit from '@package/components/Blocks/Text6/Edit';
@@ -257,16 +253,6 @@ export const SiteBlocks = (config) => {
       group: 'text',
       view: Text1View,
       edit: Text1Edit,
-      blockHasOwnFocusManagement: true,
-    },
-    text4: {
-      ...defaultBlocksConfig,
-      id: 'text4',
-      title: 'Text 4',
-      icon: text4SVG,
-      group: 'text',
-      view: Text4View,
-      edit: Text4Edit,
       blockHasOwnFocusManagement: true,
     },
     text5: {

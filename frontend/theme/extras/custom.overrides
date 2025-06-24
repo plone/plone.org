@@ -37,7 +37,6 @@
 @import 'site/components/blocks/text.less';
 @import 'site/components/blocks/text1.less';
 @import 'site/components/blocks/text5.less';
-@import 'site/components/blocks/text4.less';
 @import 'site/components/blocks/text6.less';
 @import 'site/components/blocks/text7.less';
 @import 'site/components/blocks/break.less';

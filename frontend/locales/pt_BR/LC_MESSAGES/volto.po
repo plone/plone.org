@@ -473,11 +473,6 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: components/Blocks/Text4/Sidebar
-# defaultMessage: Text 4
-msgid "Text 4"
-msgstr ""
-
 #: components/Blocks/Text5/Sidebar
 # defaultMessage: Text 5
 msgid "Text 5"
@@ -491,7 +486,6 @@ msgstr ""
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
-#: components/Blocks/Text4/Edit
 #: components/Blocks/Text6/Edit
 # defaultMessage: Type text...
 msgid "Text placeholder"
@@ -532,7 +526,6 @@ msgstr ""
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
-#: components/Blocks/Text4/Edit
 #: components/Blocks/Text6/Edit
 # defaultMessage: Title...
 msgid "Title placeholder"
@@ -936,11 +929,6 @@ msgstr ""
 #: components/Blocks/Text1/Sidebar
 # defaultMessage: Text 1
 msgid "text1"
-msgstr ""
-
-#: components/Blocks/Text4/Sidebar
-# defaultMessage: Align title on left
-msgid "text4AlignLeft"
 msgstr ""
 
 #: components/Blocks/Text6/Sidebar
