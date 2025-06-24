@@ -44,6 +44,7 @@
 @import 'site/components/blocks/page_tag.less';
 @import 'site/components/blocks/teaser.less';
 
+@import 'site/components/blocks/icons_and_numbers.less';
 @import 'site/components/blocks/icons_and_text.less';
 @import 'site/components/blocks/accordion.less';
 @import 'site/components/blocks/form.less';

@@ -50,6 +50,10 @@ import moreSVG from '@plone/volto/icons/more.svg';
 import ViewHTMLBlock from '@package/components/Blocks/HTML/View';
 import EditHTMLBlock from '@package/components/Blocks/HTML/Edit';
 
+import iconsNumbersSVG from '@package/icons/icons_and_numbers.svg';
+import IconsAndNumbersView from '@package/components/Blocks/IconsAndNumbers/View';
+import IconsAndNumbersEdit from '@package/components/Blocks/IconsAndNumbers/Edit';
+
 import iconsAndTextSVG from '@package/icons/icons_and_text.svg';
 import IconsAndTextView from '@package/components/Blocks/IconsAndText/View';
 import IconsAndTextEdit from '@package/components/Blocks/IconsAndText/Edit';
@@ -236,6 +240,16 @@ export const SiteBlocks = (config) => {
       group: 'text',
       view: NumbersView,
       edit: NumbersEdit,
+      sidebarTab: 1,
+    },
+    icons_and_numbers: {
+      ...defaultBlocksConfig,
+      id: 'icons_and_numbers',
+      title: 'Icons and numbers',
+      icon: iconsNumbersSVG,
+      group: 'text',
+      view: IconsAndNumbersView,
+      edit: IconsAndNumbersEdit,
       sidebarTab: 1,
     },
     icons_and_text: {
