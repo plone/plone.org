@@ -7,9 +7,10 @@ import { Input, Button, Message, Grid, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { SidebarPortal, Icon, UniversalLink } from '@plone/volto/components';
 import clearSVG from '@plone/volto/icons/clear.svg';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 
 import { PresetWrapper, ShareButtons } from '@package/components';
-import { ImageWidget, TextEditorWidget } from '@package/components/Widgets';
+import { ImageWidget } from '@package/components/Widgets';
 import Sidebar from './Sidebar';
 
 const messages = defineMessages({
@@ -160,18 +161,14 @@ const Edit = (props) => {
                 />
                 {/* eslint-disable-next-line */}
                 <div onClick={() => focusField('content')}>
-                  <TextEditorWidget
-                    data={data}
-                    fieldName="content"
+                  <DetachedTextBlockEditor
+                    data={{ value: data.content }}
+                    onChangeBlock={(block, { value }) =>
+                      onChange({ content: value }, 'content')
+                    }
                     selected={selected && focusOn === 'content'}
-                    block={block}
-                    onChangeBlock={(data) => onChange(data, 'content')}
+                    readOnly={false}
                     placeholder={props.intl.formatMessage(messages.description)}
-                    prevFocus="title"
-                    setFocus={(f) => focusField(f)}
-                    showToolbar={true}
-                    key="content"
-                    disableMoveToNearest={true}
                   />
                 </div>
                 {data.has_cta && (

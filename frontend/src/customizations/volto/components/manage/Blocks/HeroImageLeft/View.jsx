@@ -9,10 +9,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { LinkMore } from '@plone/volto/components';
-import config from '@plone/volto/registry';
+
 /**
  * View image block class.
  * @class View
@@ -35,11 +34,11 @@ const View = ({ data }) => (
         <div className="hero-text">
           {data.title && <h2>{data.title}</h2>}
           <p>
-            {redraft(
+            {/* {redraft(
               data.description,
               config.settings.richtextViewSettings.ToHTMLRenderers,
               config.settings.richtextViewSettings.ToHTMLOptions,
-            )}
+            )} */}
           </p>
         </div>
         <LinkMore data={data} />

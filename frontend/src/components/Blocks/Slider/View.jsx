@@ -6,10 +6,11 @@
 
 import React from 'react';
 import cx from 'classnames';
-import redraft from 'redraft';
 import PropTypes from 'prop-types';
 import Body from './Body';
 import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+
 /**
  * View icons blocks class.
  * @class View
@@ -31,11 +32,7 @@ const View = ({ data }) => {
               {data.title && <div className={cx('title')}>{data.title}</div>}
               {checkHasContent(data.description) && (
                 <div className="description">
-                  {redraft(
-                    data.description,
-                    config.settings.richtextViewSettings.ToHTMLRenderers,
-                    config.settings.richtextViewSettings.ToHTMLOptions,
-                  )}
+                  <TextBlockView data={{ value: data.description }} />
                 </div>
               )}
             </div>
