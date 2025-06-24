@@ -46,8 +46,6 @@ import NumbersView from '@package/components/Blocks/Numbers/View';
 import NumbersEdit from '@package/components/Blocks/Numbers/Edit';
 
 import moreSVG from '@plone/volto/icons/more.svg';
-import BreadcrumbsView from '@package/components/Blocks/Breadcrumbs/View';
-import BreadcrumbsEdit from '@package/components/Blocks/Breadcrumbs/Edit';
 
 import ViewHTMLBlock from '@package/components/Blocks/HTML/View';
 import EditHTMLBlock from '@package/components/Blocks/HTML/Edit';
@@ -104,17 +102,6 @@ export const SiteBlocks = (config) => {
       ...config.blocks.blocksConfig.text,
       edit: TextEdit,
       view: TextView,
-      sidebarTab: 1,
-    },
-    breadcrumbs: {
-      ...defaultBlocksConfig,
-      id: 'breadcrumbs',
-      title: 'Breadcrumbs',
-      icon: moreSVG,
-      group: 'text',
-      view: BreadcrumbsView,
-      edit: BreadcrumbsEdit,
-      restricted: true,
       sidebarTab: 1,
     },
     related_items: {

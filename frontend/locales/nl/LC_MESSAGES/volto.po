@@ -85,12 +85,6 @@ msgstr ""
 msgid "BackgroundImage"
 msgstr ""
 
-#: components/Blocks/Breadcrumbs/Body
-#: components/Blocks/Breadcrumbs/Sidebar
-# defaultMessage: Breadcrumbs
-msgid "Breadcrumbs"
-msgstr ""
-
 #: components/Widgets/ImageWidget/ImageWidget
 # defaultMessage: Browse the site, drop an image, or type an URL
 msgid "Browse the site, drop an image, or type an URL"
@@ -192,11 +186,6 @@ msgstr ""
 #: config/Blocks/schemas/listing-variations/default-schema
 # defaultMessage: Header alignment
 msgid "Header alignmnet"
-msgstr ""
-
-#: components/Blocks/Breadcrumbs/Body
-# defaultMessage: Home
-msgid "Home"
 msgstr ""
 
 #: components/Blocks/IconsAndText/Sidebar
