@@ -4,7 +4,8 @@
  */
 
 import React from 'react';
-import { Container, List, Grid } from 'semantic-ui-react';
+import { Container } from '@plone/components';
+import { List, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { Logo } from '@plone/volto/components';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -38,7 +39,7 @@ const Footer = ({ intl }) => {
   const dispatch = useDispatch();
 
   return (
-    <div id="footer">
+    <footer id="footer">
       <Container>
         <div id="footer-main">
           <Grid textAlign="left" columns={4}>
@@ -225,7 +226,7 @@ const Footer = ({ intl }) => {
           </div>
         </Container>
       </div>
-    </div>
+    </footer>
   );
 };
 

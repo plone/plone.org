@@ -1601,6 +1601,9 @@ importers:
       '@plone-collective/volto-authomatic':
         specifier: ^2.0.1
         version: 2.0.1(@plone/volto@18.23.0(@babel/runtime@7.26.0)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+      '@plone/components':
+        specifier: workspace:^
+        version: link:../../core/packages/components
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -21756,7 +21759,7 @@ snapshots:
   '@storybook/instrumenter@8.4.6(storybook@8.4.6(prettier@3.2.5))':
     dependencies:
       '@storybook/global': 5.0.0
-      '@vitest/utils': 2.1.6
+      '@vitest/utils': 2.1.9
       storybook: 8.4.6(prettier@3.2.5)
     optional: true
 
@@ -22513,7 +22516,7 @@ snapshots:
   '@types/vinyl@2.0.12':
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 20.17.9
+      '@types/node': 22.15.32
 
   '@types/webpack-sources@3.2.3':
     dependencies:
