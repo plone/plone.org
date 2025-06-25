@@ -8,6 +8,7 @@ import transaction
 BLOCK_FIELDS = {
     "icons_and_numbers": ["columns.text"],
     "icons_and_text": ["description", "columns.text"],
+    "image_columns": ["description"],
     "numbers": ["numbers.text"],
     "slider": ["description"],
     "text1": ["content"],
