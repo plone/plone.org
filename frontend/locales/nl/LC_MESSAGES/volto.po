@@ -70,12 +70,6 @@ msgstr ""
 msgid "Align top"
 msgstr ""
 
-#: components/Blocks/Author/Body
-#: components/Blocks/Author/Sidebar
-# defaultMessage: Author
-msgid "Author"
-msgstr ""
-
 #: components/Controlpanels/MembershipControlPanel
 # defaultMessage: Back
 msgid "Back"
@@ -89,12 +83,6 @@ msgstr ""
 #: components/Blocks/Numbers/Sidebar
 # defaultMessage: Background image
 msgid "BackgroundImage"
-msgstr ""
-
-#: components/Blocks/Breadcrumbs/Body
-#: components/Blocks/Breadcrumbs/Sidebar
-# defaultMessage: Breadcrumbs
-msgid "Breadcrumbs"
 msgstr ""
 
 #: components/Widgets/ImageWidget/ImageWidget
@@ -200,11 +188,6 @@ msgstr ""
 msgid "Header alignmnet"
 msgstr ""
 
-#: components/Blocks/Breadcrumbs/Body
-# defaultMessage: Home
-msgid "Home"
-msgstr ""
-
 #: components/Blocks/IconsAndNumbers/Sidebar
 # defaultMessage: Icons and numbers block
 msgid "IconsAndNumbersBlock"
@@ -215,18 +198,12 @@ msgstr ""
 msgid "IconsAndTextBlock"
 msgstr ""
 
-#: components/Blocks/Author/Edit
 #: components/Blocks/Slider/Sidebar
 #: components/Blocks/Text5/Edit
 #: components/Blocks/Text5/Sidebar
 #: components/Blocks/Text7/Edit
 # defaultMessage: Image
 msgid "Image"
-msgstr ""
-
-#: components/Blocks/ImageColumns/Sidebar
-# defaultMessage: Side by side images
-msgid "Image columns"
 msgstr ""
 
 #: components/Blocks/Text5/Edit
@@ -248,16 +225,6 @@ msgstr ""
 #: components/layout/Footer/SiteFooter
 # defaultMessage: Legal
 msgid "Legal"
-msgstr ""
-
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Linked items
-msgid "Linked items"
-msgstr ""
-
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Linked items
-msgid "LinkedItems"
 msgstr ""
 
 #: components/layout/Footer/SiteFooter
@@ -486,11 +453,6 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: components/Blocks/Text4/Sidebar
-# defaultMessage: Text 4
-msgid "Text 4"
-msgstr ""
-
 #: components/Blocks/Text5/Sidebar
 # defaultMessage: Text 5
 msgid "Text 5"
@@ -500,11 +462,9 @@ msgstr ""
 #: components/Blocks/IconsAndNumbers/Edit
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
-#: components/Blocks/ImageColumns/Edit
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
-#: components/Blocks/Text4/Edit
 #: components/Blocks/Text6/Edit
 # defaultMessage: Type text...
 msgid "Text placeholder"
@@ -540,12 +500,9 @@ msgstr ""
 #: components/Blocks/IconsAndNumbers/Edit
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
-#: components/Blocks/ImageColumns/Edit
-#: components/Blocks/LinkedItems/Edit
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
-#: components/Blocks/Text4/Edit
 #: components/Blocks/Text6/Edit
 # defaultMessage: Title...
 msgid "Title placeholder"
@@ -576,11 +533,6 @@ msgstr ""
 msgid "Upload a new image"
 msgstr ""
 
-#: components/Blocks/Author/Edit
-# defaultMessage: Upload or search a new image
-msgid "Upload or search a new image"
-msgstr ""
-
 #: components/SliderWrapper/SliderWrapper
 # defaultMessage: View image
 msgid "View image"
@@ -604,11 +556,6 @@ msgstr ""
 #: components/Blocks/InfoBox/Body
 # defaultMessage: Attendees
 msgid "attendees"
-msgstr ""
-
-#: components/Blocks/Author/Sidebar
-# defaultMessage: Autore
-msgid "autore"
 msgstr ""
 
 #: components/Blocks/IconsAndText/Sidebar
@@ -756,14 +703,8 @@ msgstr ""
 msgid "faIconWidgetDesc"
 msgstr ""
 
-#: components/Blocks/LinkedItems/Sidebar
-# defaultMessage: Full width
-msgid "full-width"
-msgstr ""
-
-#: components/Blocks/Author/Sidebar
 #: components/Blocks/IconsAndText/Sidebar
-# defaultMessage: Set full-width background
+# defaultMessage: Full width
 msgid "fullWidth"
 msgstr ""
 
@@ -772,9 +713,6 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: components/Blocks/Author/Sidebar
-#: components/Blocks/LinkedItems/Sidebar
-#: components/Blocks/PageMetadata/Sidebar
 #: components/Blocks/PageTag/Sidebar
 # defaultMessage: Set grey background
 msgid "greyBg"
@@ -859,17 +797,6 @@ msgstr ""
 msgid "phone"
 msgstr ""
 
-#: components/Blocks/PageMetadata/Edit
-#: components/Blocks/PageMetadata/View
-# defaultMessage: Publication date
-msgid "pubblication_date"
-msgstr ""
-
-#: components/Blocks/PageMetadata/Sidebar
-# defaultMessage: Publication date
-msgid "publication_date"
-msgstr ""
-
 #: components/cards/NewsCard
 # defaultMessage: Read more
 msgid "readMore"
@@ -949,11 +876,6 @@ msgstr ""
 #: components/Blocks/Text1/Sidebar
 # defaultMessage: Text 1
 msgid "text1"
-msgstr ""
-
-#: components/Blocks/Text4/Sidebar
-# defaultMessage: Align title on left
-msgid "text4AlignLeft"
 msgstr ""
 
 #: components/Blocks/Text6/Sidebar

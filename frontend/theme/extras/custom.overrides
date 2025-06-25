@@ -30,21 +30,17 @@
 @import 'site/components/blocks/listing/listing_link_more.less';
 @import 'site/components/blocks/listing/search_results.less';
 
-@import 'site/components/blocks/breadcrumbs.less';
-@import 'site/components/blocks/author.less';
 @import 'site/components/blocks/infobox.less';
 @import 'site/components/blocks/hero.less';
 @import 'site/components/blocks/text.less';
 @import 'site/components/blocks/text1.less';
 @import 'site/components/blocks/text5.less';
-@import 'site/components/blocks/text4.less';
 @import 'site/components/blocks/text6.less';
 @import 'site/components/blocks/text7.less';
 @import 'site/components/blocks/break.less';
 @import 'site/components/blocks/slider.less';
 @import 'site/components/blocks/numbers.less';
 @import 'site/components/blocks/html.less';
-@import 'site/components/blocks/page_metadata.less';
 @import 'site/components/blocks/page_tag.less';
 @import 'site/components/blocks/teaser.less';
 
@@ -52,13 +48,11 @@
 @import 'site/components/blocks/icons_and_text.less';
 @import 'site/components/blocks/accordion.less';
 @import 'site/components/blocks/form.less';
-@import 'site/components/blocks/linked_items.less';
 @import 'site/components/blocks/image.less';
 @import 'site/components/blocks/video.less';
 @import 'site/components/blocks/tabs.less';
 @import 'site/components/blocks/search.less';
 @import 'site/components/blocks/table.less';
-@import 'site/components/blocks/image-columns.less';
 @import 'site/components/blocks/nuclia.less';
 
 @import 'site/components/widgets/color_list_widget.less';

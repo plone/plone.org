@@ -17,10 +17,6 @@ import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import BreakView from '@package/components/Blocks/Break/View';
 import BreakEdit from '@package/components/Blocks/Break/Edit';
 
-import userSVG from '@plone/volto/icons/user.svg';
-import AuthorView from '@package/components/Blocks/Author/View';
-import AuthorEdit from '@package/components/Blocks/Author/Edit';
-
 import infoSVG from '@plone/volto/icons/info.svg';
 import InfoboxView from '@package/components/Blocks/InfoBox/View';
 import InfoboxEdit from '@package/components/Blocks/InfoBox/Edit';
@@ -32,10 +28,6 @@ import Text1Edit from '@package/components/Blocks/Text1/Edit';
 import text5SVG from '@package/icons/text5.svg';
 import Text5View from '@package/components/Blocks/Text5/View';
 import Text5Edit from '@package/components/Blocks/Text5/Edit';
-
-import text4SVG from '@package/icons/text4.svg';
-import Text4View from '@package/components/Blocks/Text4/View';
-import Text4Edit from '@package/components/Blocks/Text4/Edit';
 
 import text6SVG from '@package/icons/text6.svg';
 import Text6View from '@package/components/Blocks/Text6/View';
@@ -54,8 +46,6 @@ import NumbersView from '@package/components/Blocks/Numbers/View';
 import NumbersEdit from '@package/components/Blocks/Numbers/Edit';
 
 import moreSVG from '@plone/volto/icons/more.svg';
-import BreadcrumbsView from '@package/components/Blocks/Breadcrumbs/View';
-import BreadcrumbsEdit from '@package/components/Blocks/Breadcrumbs/Edit';
 
 import ViewHTMLBlock from '@package/components/Blocks/HTML/View';
 import EditHTMLBlock from '@package/components/Blocks/HTML/Edit';
@@ -68,23 +58,9 @@ import iconsAndTextSVG from '@package/icons/icons_and_text.svg';
 import IconsAndTextView from '@package/components/Blocks/IconsAndText/View';
 import IconsAndTextEdit from '@package/components/Blocks/IconsAndText/Edit';
 
-import imageColumnsSVG from '@package/icons/image_columns.svg';
-import ImageColumnsView from '@package/components/Blocks/ImageColumns/View';
-import ImageColumnsEdit from '@package/components/Blocks/ImageColumns/Edit';
-
-import linkSVG from '@plone/volto/icons/link.svg';
-import LinkedItemsView from '@package/components/Blocks/LinkedItems/View';
-import LinkedItemsEdit from '@package/components/Blocks/LinkedItems/Edit';
-import TextEdit from '@package/components/Blocks/Text/Edit';
-import TextView from '@package/components/Blocks/Text/View';
-
 import tabsSVG from '@package/icons/tabs.svg';
 import TabsView from '@package/components/Blocks/Tabs/View';
 import TabsEdit from '@package/components/Blocks/Tabs/Edit';
-
-import calendarSVG from '@plone/volto/icons/calendar.svg';
-import PageMetadataView from '@package/components/Blocks/PageMetadata/View';
-import PageMetadataEdit from '@package/components/Blocks/PageMetadata/Edit';
 
 import tagSVG from '@plone/volto/icons/tag.svg';
 import PageTagView from '@package/components/Blocks/PageTag/View';
@@ -115,39 +91,6 @@ export const SiteBlocks = (config) => {
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
     title: { ...config.blocks.blocksConfig.title, restricted: false }, //lo si può aggiungere sempre
-    text: {
-      ...config.blocks.blocksConfig.text,
-      edit: TextEdit,
-      view: TextView,
-      sidebarTab: 1,
-    },
-    breadcrumbs: {
-      ...defaultBlocksConfig,
-      id: 'breadcrumbs',
-      title: 'Breadcrumbs',
-      icon: moreSVG,
-      group: 'text',
-      view: BreadcrumbsView,
-      edit: BreadcrumbsEdit,
-      restricted: true,
-      sidebarTab: 1,
-    },
-    author: {
-      id: 'author',
-      title: 'Author',
-      icon: userSVG,
-      group: 'common',
-      view: AuthorView,
-      edit: AuthorEdit,
-      restricted: true,
-      mostUsed: false,
-      blockHasOwnFocusManagement: false,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-      sidebarTab: 1,
-    },
     related_items: {
       id: 'related_items',
       title: 'Related items',
@@ -156,22 +99,6 @@ export const SiteBlocks = (config) => {
       view: RelatedItemsView,
       edit: RelatedItemsEdit,
       restricted: true,
-      mostUsed: false,
-      blockHasOwnFocusManagement: false,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-      sidebarTab: 1,
-    },
-    pagemetadata: {
-      id: 'pagemetadata',
-      title: 'Publication date',
-      icon: calendarSVG,
-      group: 'common',
-      view: PageMetadataView,
-      edit: PageMetadataEdit,
-      restricted: false,
       mostUsed: false,
       blockHasOwnFocusManagement: false,
       security: {
@@ -223,16 +150,6 @@ export const SiteBlocks = (config) => {
       edit: SliderEdit,
       sidebarTab: 1,
     },
-    image_columns: {
-      ...defaultBlocksConfig,
-      id: 'image_columns',
-      title: 'Side by side images',
-      icon: imageColumnsSVG,
-      group: 'media',
-      view: ImageColumnsView,
-      edit: ImageColumnsEdit,
-      sidebarTab: 1,
-    },
     tabs: {
       id: 'tabs',
       title: 'Tabs',
@@ -257,16 +174,6 @@ export const SiteBlocks = (config) => {
       group: 'text',
       view: Text1View,
       edit: Text1Edit,
-      blockHasOwnFocusManagement: true,
-    },
-    text4: {
-      ...defaultBlocksConfig,
-      id: 'text4',
-      title: 'Text 4',
-      icon: text4SVG,
-      group: 'text',
-      view: Text4View,
-      edit: Text4Edit,
       blockHasOwnFocusManagement: true,
     },
     text5: {
@@ -351,17 +258,6 @@ export const SiteBlocks = (config) => {
         closed: { leftPosition: rightSVG, rightPosition: downSVG },
         opened: { leftPosition: downSVG, rightPosition: upSVG },
       },
-    },
-
-    linked_items: {
-      ...defaultBlocksConfig,
-      id: 'linked_items',
-      title: 'Linked items',
-      icon: linkSVG,
-      group: 'common',
-      view: LinkedItemsView,
-      edit: LinkedItemsEdit,
-      sidebarTab: 1,
     },
 
     listing: {
@@ -472,13 +368,13 @@ export const SiteBlocks = (config) => {
   removeListingVariation(config, 'summary');
   delete config.blocks.blocksConfig.toc; //remove block 'indice dei contenuti'
 
-  config.blocks.requiredBlocks = ['author', 'infobox', 'pagetag']; //il blocco 'title' non è required perchè al suo posto possono mettere il blocco slider
+  config.blocks.requiredBlocks = ['infobox', 'pagetag']; //il blocco 'title' non è required perchè al suo posto possono mettere il blocco slider
   config.blocks.initialBlocks = {
     ...config.blocks.initialBlocks,
     Document: ['title', 'related_items', 'pagetag'],
     Event: ['title', 'infobox', 'related_items', 'pagetag'],
     Project: ['slider', 'title'],
-    Story: ['slider', 'title', 'author', 'related_items'],
+    Story: ['slider', 'title', 'related_items'],
     'News Item': ['slider', 'title', 'related_items', 'pagetag'],
   };
   config.blocks.initialBlocksFocus = {
