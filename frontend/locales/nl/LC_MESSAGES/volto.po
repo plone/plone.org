@@ -206,11 +206,6 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: components/Blocks/ImageColumns/Sidebar
-# defaultMessage: Side by side images
-msgid "Image columns"
-msgstr ""
-
 #: components/Blocks/Text5/Edit
 #: components/Blocks/Text5/GalleryBody
 # defaultMessage: Uploaded images will be placed here
@@ -467,7 +462,6 @@ msgstr ""
 #: components/Blocks/IconsAndNumbers/Edit
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
-#: components/Blocks/ImageColumns/Edit
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit
@@ -506,7 +500,6 @@ msgstr ""
 #: components/Blocks/IconsAndNumbers/Edit
 #: components/Blocks/IconsAndText/Block/EditBlock
 #: components/Blocks/IconsAndText/Edit
-#: components/Blocks/ImageColumns/Edit
 #: components/Blocks/Numbers/Block/EditBlock
 #: components/Blocks/Slider/Edit
 #: components/Blocks/Text1/Edit

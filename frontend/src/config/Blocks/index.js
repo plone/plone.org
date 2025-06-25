@@ -58,10 +58,6 @@ import iconsAndTextSVG from '@package/icons/icons_and_text.svg';
 import IconsAndTextView from '@package/components/Blocks/IconsAndText/View';
 import IconsAndTextEdit from '@package/components/Blocks/IconsAndText/Edit';
 
-import imageColumnsSVG from '@package/icons/image_columns.svg';
-import ImageColumnsView from '@package/components/Blocks/ImageColumns/View';
-import ImageColumnsEdit from '@package/components/Blocks/ImageColumns/Edit';
-
 import tabsSVG from '@package/icons/tabs.svg';
 import TabsView from '@package/components/Blocks/Tabs/View';
 import TabsEdit from '@package/components/Blocks/Tabs/Edit';
@@ -152,16 +148,6 @@ export const SiteBlocks = (config) => {
       group: 'media',
       view: SliderView,
       edit: SliderEdit,
-      sidebarTab: 1,
-    },
-    image_columns: {
-      ...defaultBlocksConfig,
-      id: 'image_columns',
-      title: 'Side by side images',
-      icon: imageColumnsSVG,
-      group: 'media',
-      view: ImageColumnsView,
-      edit: ImageColumnsEdit,
       sidebarTab: 1,
     },
     tabs: {
