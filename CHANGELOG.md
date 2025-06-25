@@ -1,7 +1,6 @@
 ## 1.0.20 (unreleased)
 
-
-- Nothing changed yet.
+- Remove unused blocks: author, breadcrumbs, image_columns, linked_items, pagemetadata, text, text4. [davisagli]
 
 
 ## 1.0.19 (2025-04-20)
