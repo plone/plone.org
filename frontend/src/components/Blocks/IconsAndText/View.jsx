@@ -6,18 +6,12 @@ import { Container } from 'semantic-ui-react';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const View = ({ data }) => {
-  const checkHasContent = (content) => {
-    if (content) {
-      let blocks = content.blocks.filter((block) => block?.text !== '');
-      return blocks.length > 0 ? true : false;
-    }
-  };
   let content = (
     <>
-      {(data.title || checkHasContent(data.description)) && (
+      {(data.title || data.description) && (
         <div className="block-content-header">
           {data.title && <div className={cx('title')}>{data.title}</div>}
-          {checkHasContent(data.description) && (
+          {data.description && (
             <div className="description">
               <TextBlockView data={{ value: data.description }} />
             </div>

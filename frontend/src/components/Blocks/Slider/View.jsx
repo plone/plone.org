@@ -8,7 +8,6 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import Body from './Body';
-import config from '@plone/volto/registry';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 /**
@@ -17,20 +16,14 @@ import { TextBlockView } from '@plone/volto-slate/blocks/Text';
  * @extends Component
  */
 const View = ({ data }) => {
-  const checkHasContent = (content) => {
-    if (content) {
-      let blocks = content.blocks.filter((block) => block?.text !== '');
-      return blocks.length > 0 ? true : false;
-    }
-  };
   return (
     <div className="block slider">
       {data.showMainTitleAndDescription && (
         <>
-          {(data.title || checkHasContent(data.description)) && (
+          {(data.title || data.description) && (
             <div className="block-content-header">
               {data.title && <div className={cx('title')}>{data.title}</div>}
-              {checkHasContent(data.description) && (
+              {data.description && (
                 <div className="description">
                   <TextBlockView data={{ value: data.description }} />
                 </div>

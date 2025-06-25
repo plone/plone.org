@@ -19,12 +19,6 @@ const View = (props) => {
   const { data } = props;
   let href = data.link_to?.[0]?.['@id'];
 
-  const checkHasContent = (content) => {
-    if (content) {
-      let blocks = content.blocks.filter((block) => block?.text !== '');
-      return blocks.length > 0 ? true : false;
-    }
-  };
   return (
     <PresetWrapper
       {...props.data}
@@ -53,7 +47,7 @@ const View = (props) => {
           </div>
         )}
 
-        {checkHasContent(data.content) && (
+        {data.content && (
           <div className="content">
             <TextBlockView data={{ value: data.content }} />
           </div>
