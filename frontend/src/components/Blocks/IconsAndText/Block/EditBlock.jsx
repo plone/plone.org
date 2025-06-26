@@ -5,7 +5,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { useIntl, defineMessages } from 'react-intl';
 import { Input, TextArea } from 'semantic-ui-react';
-import { TextEditorWidget } from '@package/components/Widgets';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { Button } from '@package/components';
 
 const messages = defineMessages({
@@ -92,18 +92,12 @@ const EditBlock = ({
           onClick={(e) => setFocusOn('text' + index)}
           onKeyDown={() => setFocusOn('text' + index)}
         >
-          <TextEditorWidget
-            data={data}
-            fieldName={'text'}
+          <DetachedTextBlockEditor
+            data={{ value: data.text }}
+            onChangeBlock={(block, { value }) => onChange(index, 'text', value)}
             selected={selected && focusOn === 'text' + index}
-            onChangeBlock={(v) => {
-              onChange(index, 'text', v.text);
-            }}
+            readOnly={false}
             placeholder={intl.formatMessage(messages.textPlaceholder)}
-            prevFocus={'number' + index}
-            setFocus={(f) => setFocusOn(f)}
-            showToolbar={true}
-            key={'text' + index}
           />
         </div>
       </div>

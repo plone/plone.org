@@ -8,7 +8,7 @@ import { Grid, TextArea } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink, SidebarPortal } from '@plone/volto/components';
 import { Button, PresetWrapper, ShareButtons } from '@package/components';
-import { TextEditorWidget } from '@package/components/Widgets';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import Sidebar from './Sidebar';
 
 const messages = defineMessages({
@@ -130,17 +130,14 @@ const Edit = (props) => {
                 )}
                 {/* eslint-disable-next-line */}
                 <p onClick={() => focusField('content')}>
-                  <TextEditorWidget
-                    data={data}
-                    fieldName="content"
+                  <DetachedTextBlockEditor
+                    data={{ value: data.content }}
+                    onChangeBlock={(block, { value }) =>
+                      onChange({ content: value }, 'content')
+                    }
                     selected={selected && focusOn === 'content'}
-                    block={block}
-                    onChangeBlock={(data) => onChange(data, 'content')}
+                    readOnly={false}
                     placeholder={intl.formatMessage(messages.textPlaceholder)}
-                    prevFocus="title"
-                    setFocus={(f) => focusField(f)}
-                    showToolbar={true}
-                    key="content"
                   />
                 </p>
               </div>
