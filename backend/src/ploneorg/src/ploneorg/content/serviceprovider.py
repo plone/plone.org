@@ -85,7 +85,7 @@ class IServiceProvider(Schema):
     )
 
     sponsorship_type = schema.Choice(
-        title=_PMF("Sponsor Type", default="Sponsor Type"),
+        title=_("Sponsor Type", default="Sponsor Type"),
         vocabulary="ploneorg.vocabulary.sponsorship_types",
         required=True,
     )
@@ -307,26 +307,24 @@ class IServiceProvider(Schema):
     )
 
     start_date = schema.Date(
-        title=_PMF("Start Date", default="Start Date"), required=False
+        title=_("Start Date", default="Start Date"), required=False
     )
 
-    end_date = schema.Date(title=_PMF("End Date", default="End Date"), required=False)
+    end_date = schema.Date(title=_("End Date", default="End Date"), required=False)
 
     payment_date = schema.Date(
-        title=_PMF("Payment Date", default="Payment Date"), required=False
+        title=_("Payment Date", default="Payment Date"), required=False
     )
 
     last_verified_date = schema.Date(
-        title=_PMF("Status last verified date", default="Status last verified date"),
+        title=_("Status last verified date", default="Status last verified date"),
         required=False,
     )
 
-    notes = RichText(
-        title=_PMF("Private notes", default="Private notes"), required=False
-    )
+    notes = RichText(title=_("Private notes", default="Private notes"), required=False)
 
     public_notes = RichText(
-        title=_PMF("Public notes", default="Public notes"), required=False
+        title=_("Public notes", default="Public notes"), required=False
     )
 
 
