@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.app.content.interfaces import INameFromTitle
 from plone.app.textfield import RichText
-from plone.autoform.directives import read_permission
 from plone.dexterity.content import Item
 from plone.namedfile.field import NamedBlobImage
 from plone.rfc822.interfaces import IPrimaryField
