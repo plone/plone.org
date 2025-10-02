@@ -11,6 +11,7 @@ from ploneorg.app.vocabularies import AllContentLanguages
 from ploneorg.content.foundationsponsor import isEmail
 from ploneorg.content.foundationsponsor import isHTTP
 from ploneorg.vocabularies.countries import countries_vocabulary
+from ploneorg.vocabularies import org_size_vocabulary
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
