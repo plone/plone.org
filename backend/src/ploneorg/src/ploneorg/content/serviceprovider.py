@@ -8,10 +8,10 @@ from plone.rfc822.interfaces import IPrimaryField
 from plone.supermodel.directives import fieldset
 from plone.supermodel.model import Schema
 from ploneorg import _
+from ploneorg.app.vocabularies import AllContentLanguages
 from ploneorg.content.foundationsponsor import isEmail
 from ploneorg.content.foundationsponsor import isHTTP
-from ploneorg.vocabularies import countries_vocabulary
-from ploneorg.vocabularies import languages_vocabulary
+from ploneorg.vocabularies.countries import countries_vocabulary
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
@@ -20,25 +20,37 @@ from zope.interface import implementer
 class IServiceProvider(Schema):
 
     fieldset(
-        "ContactPerson",
-        label="Contact Person",
-        fields=["contact_fullname", "contact_email", "contact_phone", "contact_role"],
-    )
-
-    fieldset(
-        "Contacts",
+        "Location",
         label="Contacts",
         fields=[
             "address",
             "city",
             "zip_code",
-            "contact_country",
+            "country",
             "email1",
             "email2",
             "phone1",
             "phone2",
             "website",
             "contact_form_url",
+        ],
+    )
+
+    fieldset(
+        "ContactPerson",
+        label="Contact Person",
+        fields=["contact_fullname", "contact_email", "contact_phone", "contact_role"],
+    )
+
+    fieldset(
+        "Services",
+        label="Services and Portfolio",
+        fields=[
+            "services",
+            "portfolio",
+            "industries",
+            "customer_retention",
+            "certificates",
         ],
     )
 
@@ -72,11 +84,16 @@ class IServiceProvider(Schema):
         required=True,
     )
 
-    sponsor_level = schema.Choice(
-        title=_("Sponsor Level"),
-        description=_("Choose the sponsorship level if applicable."),
-        values=["Basic", "Standard", "Premium"],
-        required=False,
+    sponsorship_type = schema.Choice(
+        title=_PMF("Sponsor Type", default="Sponsor Type"),
+        vocabulary="ploneorg.vocabulary.sponsorship_types",
+        required=True,
+    )
+    orgsize = schema.Choice(
+        title=_("Organization size"),
+        description=_("Number of people in your organization. It's fine to estimate."),
+        vocabulary=org_size_vocabulary,
+        required=True,
     )
 
     website = schema.URI(
@@ -97,7 +114,7 @@ class IServiceProvider(Schema):
     languages = schema.List(
         title=_("Languages"),
         description=_("Languages spoken or supported by the provider."),
-        value_type=schema.Choice(vocabulary=languages_vocabulary),
+        value_type=schema.Choice(vocabulary=AllContentLanguages),
         required=False,
     )
 
@@ -120,8 +137,8 @@ class IServiceProvider(Schema):
         required=False,
     )
 
-    certifications = RichText(
-        title=_("Certifications"),
+    certificates = RichText(
+        title=_("Certificates"),
         description=_("Relevant certifications or awards."),
         required=False,
     )
@@ -206,13 +223,6 @@ class IServiceProvider(Schema):
         required=False,
     )
 
-    contact_country = schema.Choice(
-        title=_("Country"),
-        description=_("Country of the contact office."),
-        vocabulary=countries_vocabulary,
-        required=False,
-    )
-
     email1 = schema.TextLine(
         title=_("Email 1"),
         description=_("General contact email address."),
@@ -294,6 +304,29 @@ class IServiceProvider(Schema):
     )
     photo5 = NamedBlobImage(
         title=_("Photo 5"), description=_("Optional showcase photo."), required=False
+    )
+
+    start_date = schema.Date(
+        title=_PMF("Start Date", default="Start Date"), required=False
+    )
+
+    end_date = schema.Date(title=_PMF("End Date", default="End Date"), required=False)
+
+    payment_date = schema.Date(
+        title=_PMF("Payment Date", default="Payment Date"), required=False
+    )
+
+    last_verified_date = schema.Date(
+        title=_PMF("Status last verified date", default="Status last verified date"),
+        required=False,
+    )
+
+    notes = RichText(
+        title=_PMF("Private notes", default="Private notes"), required=False
+    )
+
+    public_notes = RichText(
+        title=_PMF("Public notes", default="Public notes"), required=False
     )
 
 
