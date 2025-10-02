@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
-from zope.interface import implementer, alsoProvides
-from plone.dexterity.content import Item
-from plone.supermodel.model import Schema
-from plone.supermodel.directives import fieldset
+from plone.app.content.interfaces import INameFromTitle
+from plone.app.textfield import RichText
 from plone.autoform.directives import read_permission
+from plone.dexterity.content import Item
 from plone.namedfile.field import NamedBlobImage
 from plone.rfc822.interfaces import IPrimaryField
-from plone.app.textfield import RichText
-from plone.app.content.interfaces import INameFromTitle
+from plone.supermodel.directives import fieldset
+from plone.supermodel.model import Schema
 from ploneorg import _
-from ploneorg.vocabularies import countries_vocabulary, languages_vocabulary
-
+from ploneorg.content.foundationsponsor import isEmail
+from ploneorg.content.foundationsponsor import isHTTP
+from ploneorg.vocabularies import countries_vocabulary
+from ploneorg.vocabularies import languages_vocabulary
 from zope import schema
-
-from ploneorg.content.foundationsponsor import isEmail, isHTTP
+from zope.interface import alsoProvides
+from zope.interface import implementer
 
 
 class IServiceProvider(Schema):
@@ -301,7 +302,6 @@ alsoProvides(IServiceProvider["logo"], IPrimaryField)
 
 @implementer(IServiceProvider)
 class ServiceProvider(Item):
-
     def get_full_name(self):
         return self.title
 
