@@ -7,7 +7,7 @@ from plone.rfc822.interfaces import IPrimaryField
 from plone.supermodel.directives import fieldset
 from plone.supermodel.model import Schema
 from ploneorg import _
-from ploneorg.app.vocabularies import AllContentLanguages
+from plone.app.vocabularies.language import AllContentLanguages
 from ploneorg.content.foundationsponsor import isEmail
 from ploneorg.content.foundationsponsor import isHTTP
 from ploneorg.vocabularies.countries import countries_vocabulary
