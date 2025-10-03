@@ -113,7 +113,9 @@ class IServiceProvider(Schema):
     languages = schema.List(
         title=_("Languages"),
         description=_("Languages spoken or supported by the provider."),
-        value_type=schema.Choice(vocabulary="plone.app.vocabularies.AvailableContentLanguages"),
+        value_type=schema.Choice(
+            vocabulary="plone.app.vocabularies.AvailableContentLanguages"
+        ),
         required=False,
     )
 
