@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.app.content.interfaces import INameFromTitle
 from plone.app.textfield import RichText
-from plone.app.vocabularies.language import AllContentLanguages
 from plone.dexterity.content import Item
 from plone.namedfile.field import NamedBlobImage
 from plone.rfc822.interfaces import IPrimaryField
@@ -114,7 +113,7 @@ class IServiceProvider(Schema):
     languages = schema.List(
         title=_("Languages"),
         description=_("Languages spoken or supported by the provider."),
-        value_type=schema.Choice(vocabulary=AllContentLanguages),
+        value_type=schema.Choice(vocabulary="plone.app.vocabularies.AvailableContentLanguages"),
         required=False,
     )
 
