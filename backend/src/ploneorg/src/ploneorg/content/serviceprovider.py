@@ -10,7 +10,6 @@ from ploneorg import _
 from ploneorg.content.foundationsponsor import isEmail
 from ploneorg.content.foundationsponsor import isHTTP
 from ploneorg.vocabularies import org_size_vocabulary
-from ploneorg.vocabularies.countries import countries_vocabulary
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
@@ -122,7 +121,7 @@ class IServiceProvider(Schema):
     country = schema.Choice(
         title=_("Country"),
         description=_("Select the primary country of operation."),
-        vocabulary=countries_vocabulary,
+        vocabulary="ploneorg.vocabulary.countries",
         required=False,
     )
 
@@ -363,7 +362,7 @@ class ServiceProvider(Item):
 
     def toXML(self, schematas=None):
         if schematas is None:
-            schematas = ["Contacts", "ContactPerson", "Social"]
+            schematas = ["Location", "ContactPerson", "Services", "Social", "Photos"]
         out = f'<serviceprovider id="{self.getId()}">'
         for name in schematas:
             value = getattr(self, name, None)
