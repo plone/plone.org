@@ -19,7 +19,7 @@ const SponsorCardListing = (props) => {
   return (
     <PresetWrapper {...props} className="simple-card-listing">
       <ListingHeader {...props} />
-      <Grid columns={cols} stackable>
+      <Grid columns={+cols} stackable>
         <Grid.Row>
           {randomized_items.map((item) => {
             return (
@@ -46,6 +46,6 @@ SponsorCardListing.propTypes = {
   linkTitle: PropTypes.string,
   linkHref: PropTypes.any,
   preset_color: PropTypes.any,
-  cols: PropTypes.number,
+  cols: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 export default SponsorCardListing;
