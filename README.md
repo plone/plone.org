@@ -84,10 +84,29 @@ There are `Makefile` commands in place:
 
 ## Filestorage based backend alternative
 
-The default setup assumes for local development you also have a PostgreSQL server running. As a convenience an example docker compose file is provided in the project root for such a service. If you prefer to use filestorage, you can look in the backend directory its Makefile and
-look at the alternative 'build-dev-fs' target, which depends on 'config-fs'. The difference with the normal 'config' target is the usages of
-instance-filestorage.yaml instead of instanc.yaml. These files are used as input for the application server scaffolding and switch the storage
-layer to either relstorage/postgresql or direct/filestorage.
+The default setup assumes for local development you also have a PostgreSQL server running. As a convenience, an example docker compose file is provided in the project root for such a service. If you prefer to use filestorage instead of PostgreSQL, you can configure the backend to use direct filestorage.
+
+### Setup for filestorage development
+
+1. **Create the data directory** at the project root:
+   ```shell
+   mkdir data
+   ```
+
+2. **Configure the backend for filestorage** by copying the example configuration:
+   ```shell
+   cp backend/instance-local.yaml.example backend/instance-local.yaml
+   ```
+
+3. **Install and start the backend** as usual:
+   ```shell
+   make install
+   make start-backend
+   ```
+
+The Makefile will automatically detect and use the `instance-local.yaml` file when it exists, switching the storage layer from relstorage/PostgreSQL to direct filestorage.
+
+### Getting data for development
 
 For both storages, if you want to develop for plone.org and need a copy of the data, you will need to as another community member (preferably from the website-team or the AI-team) for a database dump.
 
