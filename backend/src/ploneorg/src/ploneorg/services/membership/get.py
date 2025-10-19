@@ -90,7 +90,7 @@ class MembershipGet(Service):
         for member in self.members:
             review_state = api.content.get_state(member)
             year = member.created().year()
-            country = member.country or "UN"
+            country = member.country_origin or "UN"
             stats_state[review_state] += 1
             stats_country[country] += 1
             if review_state in CURRENT_STATES:

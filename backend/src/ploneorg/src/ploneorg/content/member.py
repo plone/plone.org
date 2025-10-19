@@ -62,6 +62,12 @@ class IFoundationMember(model.Schema):
         required=True,
         missing_value="",
     )
+    country_origin = schema.Choice(
+        title=_("Country of Origin"),
+        vocabulary="ploneorg.vocabulary.countries",
+        required=False,
+        missing_value="",
+    )
 
     # Merit
     merit = RichText(
@@ -84,6 +90,7 @@ class IFoundationMember(model.Schema):
         address=VIEW_DETAILS_PERMISSION,
         postal_code=VIEW_DETAILS_PERMISSION,
         merit=VIEW_DETAILS_PERMISSION,
+        country_origin=VIEW_DETAILS_PERMISSION,
     )
 
 
@@ -109,3 +116,11 @@ class FoundationMember(Container):
     @description.setter
     def description(self, value):
         pass
+
+    @property
+    def country_origin(self):
+        return self._origin_county and self._origin_county or self.country
+
+    @country_origin.setter
+    def country_origin(self, value):
+        self._country_origin = value
