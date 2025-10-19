@@ -11,4 +11,7 @@
   <object meta_type="Dexterity FTI"
           name="FoundationSponsor"
   />
+  <object meta_type="Dexterity FTI"
+          name="ServiceProvider"
+  />
 </object>
