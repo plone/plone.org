@@ -70,6 +70,6 @@ MemberCardListing.propTypes = {
   have_image: PropTypes.bool,
   have_cta: PropTypes.bool,
   card_link_title: PropTypes.string,
-  cols: PropTypes.number,
+  cols: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 export default MemberCardListing;

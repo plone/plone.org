@@ -101,7 +101,7 @@ const View = (props) => {
             <TabContent
               key={uid}
               active={activeIndex === index}
-              tabindex="0"
+              tabIndex="0"
               role="tabpanel"
               id={'tabcontent-' + uid}
               aria-labelledby={'tab-' + uid}
