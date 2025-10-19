@@ -38,7 +38,7 @@ pyflakes = ["+*"]
 "flake8-*" = ["+*"]
 
 [tool.plone-code-analysis]
-paths = "src/ploneorg/setup.py src/ploneorg/src/ scripts/"
+paths = "src/ploneorg/setup.py src/ploneorg/src/"
 paths_pyroma = "src/ploneorg"
 
 [tool.pytest.ini_options]
