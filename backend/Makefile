@@ -115,12 +115,14 @@ i18n: bin/i18ndude ## Update locales
 # TODO `make build`
 # build:
 
-.PHONY: build-dev
+.PHONY: build-dev install
 build-dev: config ## pip install Plone packages
 	@echo "$(GREEN)==> Setup Build$(RESET)"
 	sed "s/PLONE_VERSION/$(PLONE_VERSION)/g" constraints-template.txt > constraints.txt
 	@bin/mxdev -c mx.ini
 	bin/pip install -r requirements-mxdev.txt
+# Forward compatibility
+install: build-dev
 
 .PHONY: format
 format: ## Format the codebase according to our standards
