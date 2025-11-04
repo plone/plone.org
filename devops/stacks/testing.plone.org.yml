@@ -102,7 +102,7 @@ services:
     configs:
       - zodbpack_conf
     networks:
-      - internal
+      - testing_ploneorg
 
 
 networks:

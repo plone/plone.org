@@ -99,7 +99,7 @@ services:
     configs:
       - zodbpack_conf
     networks:
-      - internal
+      - ploneorg
 
 networks:
   public:
