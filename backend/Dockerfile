@@ -11,11 +11,14 @@ LABEL maintainer="Plone Foundation <marketing@plone.org>" \
 COPY . .
 
 # Install local requirements and fix permissions
-RUN sed "s/PLONE_VERSION/${PLONE_VERSION}/g" constraints-template.txt > constraints.txt
+RUN  
 
 RUN --mount=type=cache,id=ploneorg-pip,target=/root/.cache/pip \
-    ./bin/pip install mxdev \
+    echo "-c https://dist.plone.org/release/${PLONE_VERSION}/constraints.txt" > constraints-kgs.txt \
+    mkdir /data/relstorage-cache /data/blob-cache \
+    && ./bin/pip install mxdev \
     && mv requirements-docker.txt requirements.txt \
     && ./bin/mxdev -c mx.ini \
     && ./bin/pip install -r requirements-mxdev.txt \
-    && chown -R plone: /app
+    && chown -R plone: /app \
+    && mv conf/relstorage.conf etc/relstorage.conf

@@ -1,6 +1,16 @@
 ## 1.0.21 (unreleased)
 
 
+- Update to Relstorage 4.2.1
+- Simplify and make mxdev config explicit
+- Add collective.casestudy to mxdev, pin 1.0.0b1 for testing/production.
+- Add zodbpack utility container.
+- Add maintenance scripts. 
+- Add docs to use local filestorage, add make install for backend.
+- Deployment fixes for frontend, use newer linux base image for frontend.
+- Fix several frontend jsx template issues and warnings.
+- Updated Volto to 16.34.1
+
 
 ## 1.0.20 (2025-06-25)
 

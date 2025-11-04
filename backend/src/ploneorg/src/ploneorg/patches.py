@@ -31,6 +31,15 @@ def patch_user_portrait():
     get_users._getPortraitUrl = get_users.getPortraitUrl
     get_users.getPortraitUrl = getPortraitUrl
 
-
 logger.info("Patching plone.restapi.services.users.get.getPortraitUrl")
 patch_user_portrait()
+
+def add_sigterm_handler():
+    # Shut down cleanly on SIGTERM
+    import signal
+    import sys
+
+    signal.signal(signal.SIGTERM, lambda *a: sys.exit(0))
+
+add_sigterm_handler()
+

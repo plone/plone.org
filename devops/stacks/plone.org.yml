@@ -34,16 +34,17 @@ services:
     image: ghcr.io/plone/ploneorg-backend:${STACK_PARAM:-latest}
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' port='${DB_PORT:-5432}' password='${DB_PASSWORD:-plone}'"
-    depends_on:
-      - db
     networks:
       - public
       - ploneorg
     deploy:
-      replicas: 2
+      replicas: 3
+      update_config:
+        order: stop-first
       placement:
         constraints:
           - node.labels.type == app
+        max_replicas_per_node: 1
       labels:
         - traefik.enable=true
         - traefik.docker.network=public
@@ -74,6 +75,31 @@ services:
         - traefik.http.routers.ploneorg-classicui.tls=true
         - traefik.http.routers.ploneorg-classicui.service=ploneorg-backend
         - traefik.http.routers.ploneorg-classicui.middlewares=gzip,ploneorg-backend-auth,ploneorg-vhm-classic
+    volumes:
+      - relstorage-cache:/data/relstorage-cache
+      - blob-cache:/data/blob-cache
+
+  pack:
+    image: ghcr.io/plone/ploneorg-backend:${STACK_PARAM:-latest}
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' port='${DB_PORT:-5432}' password='${DB_PASSWORD:-plone}'"
+    command: bin/zodbpack -d 3 /zodbpack_conf
+    healthcheck:
+      disable: true
+    deploy:
+      replicas: 0
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - "swarm.cronjob.enable=true"
+        - "swarm.cronjob.schedule=0 4 * * *"
+      restart_policy:
+        condition: none
+    configs:
+      - zodbpack_conf
+    networks:
+      - internal
 
 networks:
   public:
@@ -81,3 +107,11 @@ networks:
     driver: overlay
   ploneorg:
     driver: overlay
+
+configs:
+  zodbpack_conf:
+    file: ../configs/zodbpack.conf
+
+volumes:
+  relstorage-cache: {}
+  blob-cache: {}

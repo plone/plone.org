@@ -1,8 +1,11 @@
--c constraints.txt
+# This is the requirements file used to build the Docker images for plone.org backend
+# Thes are the Known Good Set constraints downloaed from dist.plnone.org
+-c constraints-kgs.txt
 -e src/ploneorg
 
-relstorage==4.0.0
-#Don't try to updaet psycopg2, it need libpq-dev installed to run, but we don't have that because we import
+relstorage==4.2.0
+#Don't try to update psycopg2, it need libpq-dev installed to run, but we don't have that because we import
 #from plone-backend Docker image
 #psycopg2==2.9.9
 collective.revisionmanager==1.2.2
+collective.casestudy==1.0.0b1

@@ -118,7 +118,7 @@ i18n: bin/i18ndude ## Update locales
 .PHONY: build-dev install
 build-dev: config ## pip install Plone packages
 	@echo "$(GREEN)==> Setup Build$(RESET)"
-	sed "s/PLONE_VERSION/$(PLONE_VERSION)/g" constraints-template.txt > constraints.txt
+	echo "-c https://dist.plone.org/release/${PLONE_VERSION}/constraints.txt" > constraints-kgs.txt
 	@bin/mxdev -c mx.ini
 	bin/pip install -r requirements-mxdev.txt
 # Forward compatibility

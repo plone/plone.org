@@ -6,4 +6,6 @@ default_context:
     db_storage: relstorage
     db_relstorage_postgresql_driver: psycopg2
     db_relstorage_postgresql_dsn: dbname='ploneorg' user='ploneorg' host='127.0.0.1' password='ploneorg'
+    db_relstorage_cache_local_mb: 30
     db_blobs_mode: cache
+    db_blob_cache_size: 5GB

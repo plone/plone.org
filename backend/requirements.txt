@@ -1,8 +1,12 @@
--c constraints.txt
+# These are the Known Good Set constraints downloaded from dist.plnone.org
+-c constraints-kgs.txt
+# Our local backend main policy file
 -e src/ploneorg[test]
 
+# Other packages we need, these are for development when you install from source
+# Requirements-docker.txt has the same packages that need to be in testing/live
 
-relstorage==4.0.0
+relstorage==4.2.0
 # See requirements-docker.txt:
 # psycopg2==2.9.9
 collective.revisionmanager==1.2.2
