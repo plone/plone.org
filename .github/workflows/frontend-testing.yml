@@ -46,7 +46,8 @@ jobs:
         run: npx prettier@2.0.5 --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}' --config=package.json
 
   i18n:
-    if: github.ref_type == 'branch'
+    if: false
+    #if: github.ref_type == 'branch'
     name: i18n sync
     runs-on: ubuntu-latest
     steps:
