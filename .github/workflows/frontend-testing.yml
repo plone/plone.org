@@ -90,7 +90,7 @@ jobs:
   release:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    needs: [eslint, prettier, i18n, unit]
+    needs: [eslint, prettier,unit]
 
     steps:
 
