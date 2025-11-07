@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import redraft from 'redraft';
 import { Grid, Image } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 import { PresetWrapper, ShareButtons, Button } from '@package/components';
-import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   cta_title_default: {
@@ -55,11 +54,7 @@ const View = (props) => {
             <div className="block-text7-body">
               {data.title && <h3 className="title">{data.title}</h3>}
               <div className="content">
-                {redraft(
-                  data.content,
-                  config.settings.richtextViewSettings.ToHTMLRenderers,
-                  config.settings.richtextViewSettings.ToHTMLOptions,
-                )}
+                <TextBlockView data={{ value: data.content }} />
               </div>
               {data.has_cta && (
                 <div className="buttonBottom">
