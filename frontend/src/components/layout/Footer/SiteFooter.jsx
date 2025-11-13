@@ -49,7 +49,7 @@ const messages = defineMessages({
   footerInfos: {
     id: 'Footer infos',
     defaultMessage:
-      'The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution-ShareAlike 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see https://plone.org/foundation/logo. All other trademarks are owned by their respective owners.',
+      'The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution-ShareAlike 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.',
   },
 });
 
@@ -163,9 +163,12 @@ const Footer = ({ pathanme }) => {
             <div className="logo">
               <Logo />
             </div>
-            <div className="address">
-              {intl.formatMessage(messages.footerInfos)}
-            </div>
+            <div
+              className="address"
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage(messages.footerInfos),
+              }}
+            />
           </div>
         </Container>
       </div>

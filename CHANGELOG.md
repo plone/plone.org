@@ -1,6 +1,6 @@
 ## 1.0.21 (unreleased)
 
-
+- Hyperlink URL in site footer trademark text. Fixes #191 [stevepiercy]
 - Update to Relstorage 4.2.1
 - Simplify and make mxdev config explicit
 - Add collective.casestudy to mxdev, pin 1.0.0b1 for testing/production.
