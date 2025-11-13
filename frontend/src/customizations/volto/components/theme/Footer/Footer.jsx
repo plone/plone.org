@@ -128,6 +128,11 @@ const Footer = ({ intl }) => {
                     <Link to="/foundation/sponsorship">Sponsors</Link>
                   </List.Item>
                   <List.Item>
+                    <Link to="/foundation/event-sponsorship">
+                      Apply for Event and Sprint Funds
+                    </Link>
+                  </List.Item>
+                  <List.Item>
                     <Link to="/foundation/materials/foundation-resolutions/code-of-conduct">
                       Code of conduct
                     </Link>
