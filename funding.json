@@ -1,24 +1,18 @@
 {
     "$schema": "https://fundingjson.org/schema/v1.1.0.json",
-
-    // Optional. Version of the manifest contents.
-    "version": "v1.0.0",
-
-    // Required. The entity associated with the project, soliciting funds.
-    // This can be an individual, organisation, community etc.
+    "version": "v1.1.0",
     "entity": {
-        "type": "",                     // Required. [individual, group, organisation, other]. Use the closest approximation.
-        "role": "",                     // Required. [owner, steward, maintainer, contributor, other]. Use the closest approximation.
-        "name": "",                     // Required. Name of the entity. Max len 250.
-        "email": "",                    // Required. Max len 250.
-        "phone": "",                    // Optional. Generally suitable for organisations. Max len 32.
-        "description": "",              // Required. Information about the entity. Max len 2000.
+        "type": "organisation",
+        "role": "owner",
+        "name": "Plone Foundation",
+        "email": "board@plone.org",
+        "phone": "+18055075663",
+        "description": "The Foundation is a 501(c)(3) non-profit organization that exists to protect and promote Plone. We provide support for development and marketing, and are modelled after similar ventures, such as the Apache Software Foundation. We are the legal owner of the Plone code base, trademarks, and domain names. Our goal is to ensure Plone remains the premier open-source content management system to broaden its acceptance and visibility. The Foundation is governed by an elected Board of Directors and supported by Members, Sponsors, Plone Teams, and the global community.",
         "webpageUrl": {
-            "url": "",                  // Required. Webpage with information about the entity. Starts with https:// or http://. Max len 250.
-            "wellKnown": ""             // Optional. If the above URL's hostname does not match the hostname of the funding.json manifest, this establishes provenance. Starts with https:// or http://. Max len 250.
+            "url": "https://plone.org/foundation/about",
+            "wellKnown": ""
         }
     },
-
     // Optional. One or more projects for which the funding is solicited.
     "projects": [{
         "guid": "",                     // Required. A short unique ID for the project. Lowercase-alphanumeric-dashes only. eg: my-cool-project. Max len 32.
