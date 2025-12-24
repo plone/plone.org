@@ -51,16 +51,60 @@
             "address": "https://github.com/sponsors/plone",
             "description": "Requires a GitHub account. Through GitHub Sponsors, we accept payment by credit card or invoice, either one-time or monthly."
         }],
-        // Required. One or more funding and payment plans.
         "plans": [{
-            "guid": "",                 // Required. A short unique ID for the plan. Lowercase-alphanumeric-dashes only. eg: mybank, paypal. Max len 32.
-            "status": "",               // Required. [active, inactive]. Indicates whether this plan is currently active or inactive.
-            "name": "",                 // Required. Name of the funding plan. eg: "Starter support plan", "Infra hosting", "Monthly funding plan".
-            "description": "",          // Optional. Any additional description or instructions for the funding plan.
-            "amount": 0,                // Required. The solicited amount for this plan. 0 is a wildcard that indicates "any amount".
-            "currency": "",             // Required. Three letter ISO 4217 currency code. eg: USD
-            "frequency": "",            // Required. [one-time, weekly, fortnightly, monthly, yearly, other]
-            "channels": []              // Required. One or more channel IDs defined in channels[] via which this plan can accept payments.
+            "guid": "one-time-donation",
+            "status": "active",
+            "name": "One-time donation",
+            "description": "",
+            "amount": 0,
+            "currency": "USD",
+            "frequency": "one-time",
+            "channels": ["wise-account", "wise-bank-us", "wise-bank-eu", "github-sponsors"]
+        },{
+            "guid": "annual-platinum-sponsor",
+            "status": "active",
+            "name": "Plone Foundation Platinum Sponsor",
+            "description": "https://plone.org/foundation/sponsorship",
+            "amount": 7200,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["wise-account", "wise-bank-us", "wise-bank-eu"]
+        },{
+            "guid": "annual-premium-sponsor",
+            "status": "active",
+            "name": "Plone Foundation Premium Sponsor",
+            "description": "https://plone.org/foundation/sponsorship",
+            "amount": 3600,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["wise-account", "wise-bank-us", "wise-bank-eu"]
+        },{
+            "guid": "annual-standard-sponsor",
+            "status": "active",
+            "name": "Plone Foundation Standard Sponsor",
+            "description": "https://plone.org/foundation/sponsorship",
+            "amount": 1200,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["wise-account", "wise-bank-us", "wise-bank-eu"]
+        },{
+            "guid": "annual-basic-sponsor",
+            "status": "active",
+            "name": "Plone Foundation Basic Sponsor",
+            "description": "https://plone.org/foundation/sponsorship",
+            "amount": 600,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["wise-account", "wise-bank-us", "wise-bank-eu"]
+        },{
+            "guid": "monthly-donation",
+            "status": "active",
+            "name": "Monthly donation",
+            "description": "",
+            "amount": 0,
+            "currency": "USD",
+            "frequency": "monthly",
+            "channels": ["wise-account", "wise-bank-us", "wise-bank-eu", "github-sponsors"]
         }],
         "history": [{
             "year": 2021,
