@@ -29,17 +29,28 @@
         "licenses": [],                 // Required. The project's licenses (up to 5). For standard licenses, use the license ID from the SDPX index prefixed by "spdx:". eg: "spdx:GPL-3.0", "spdx:CC-BY-SA-4.0"
         "tags": []                      // Required. Up to 10 general tags describing the project. Lowercase-alphanumeric-dashes (max 32 chars). eg: ["programming", "developer-tools"]. For reference, see tags.txt
     }],
-
-    // Required.
     "funding": {
-        // Required. This describes one or more channels via which the entity can receive funds.
         "channels": [{
-            "guid": "",                 // Required. A short unique ID for the channel. Lowercase-alphanumeric-dashes only. eg: mybank, my-paypal. Max len 32.
-            "type": "",                 // Required. [bank, payment-provider, cheque, cash, other].
-            "address": "",              // Optional. A short unstructured textual representation of the payment address for the channel. eg: "Account: 12345 (branch: ABCX)", "mypaypal@domain.com", "https://payment-url.com", or a physical address for cheques. Max len 250.
-            "description": ""           // Optional. Any additional description or instructions for the payment channel. Max len 500.
+            "guid": "wise-account",
+            "type": "payment-provider",
+            "address": "https://wise.com/pay/business/theplonefoundation1",
+            "description": "Requires a Wise account. Through Wise, we accept payments by Wise account balance, credit and debit cards, and bank transfer."
+        },{
+            "guid": "wise-bank-us",
+            "type": "bank",
+            "address": "Name: The Plone Foundation. Routing number: 084009519. Account number: 496441645260729. Account type: Deposit. Swift/BIC: TRWIUS35XXX. Address: Wise US Inc, 108 W 13th St, Wilmington, DE, 19801, United States.",
+            "description": "For transferring USD directly from your bank account into our US bank account."
+        },{
+            "guid": "wise-bank-eu",
+            "type": "bank",
+            "address": "Name: The Plone Foundation. IBAN: BE31 9056 7395 1155. Swift/BIC: TRWIBEB1XXX. Bank name and address: Wise, Rue du Trône 100, 3rd floor, Brussels, 1050, Belgium.",
+            "description": "For transferring EUR directly from your bank account into our EU bank account from SEPA and most other countries."
+        },{
+            "guid": "github-sponsors",
+            "type": "payment-provider",
+            "address": "https://github.com/sponsors/plone",
+            "description": "Requires a GitHub account. Through GitHub Sponsors, we accept payment by credit card or invoice, either one-time or monthly."
         }],
-
         // Required. One or more funding and payment plans.
         "plans": [{
             "guid": "",                 // Required. A short unique ID for the plan. Lowercase-alphanumeric-dashes only. eg: mybank, paypal. Max len 32.
