@@ -51,15 +51,41 @@
             "frequency": "",            // Required. [one-time, weekly, fortnightly, monthly, yearly, other]
             "channels": []              // Required. One or more channel IDs defined in channels[] via which this plan can accept payments.
         }],
-
-        // Optional. A simple summary of funding history. Only include if at least one, either income or expenses, have to be communicated.
         "history": [{
-            "year": 2024,               // Required. Year (fiscal, preferably).
-            "income": 0,                // Optional.
-            "expenses": 0,              // Optional.
-            "taxes": 0,                 // Optional.
-            "currency": "",             // Required. Three letter ISO 4217 currency code. eg: USD
-            "description": ""           // Optional. Any additional description. Max length 500.
+            "year": 2021,
+            "income": 31083,
+            "expenses": 20758,
+            "taxes": 0,
+            "currency": "USD",
+            "description": ""
+        },{
+            "year": 2022,
+            "income": 21691,
+            "expenses": 25499,
+            "taxes": 0,
+            "currency": "USD",
+            "description": ""
+        },{
+            "year": 2023,
+            "income": 31891,
+            "expenses": 40557,
+            "taxes": 0,
+            "currency": "USD",
+            "description": ""
+        },{
+            "year": 2024,
+            "income": 50656,
+            "expenses": 70605,
+            "taxes": 0,
+            "currency": "USD",
+            "description": ""
+        },{
+            "year": 2025,
+            "income": 67623,
+            "expenses": 74511,
+            "taxes": 0,
+            "currency": "USD",
+            "description": "Year to date"
         }]
     }
 }
