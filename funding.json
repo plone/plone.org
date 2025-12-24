@@ -10,24 +10,23 @@
         "description": "The Foundation is a 501(c)(3) non-profit organization that exists to protect and promote Plone. We provide support for development and marketing, and are modelled after similar ventures, such as the Apache Software Foundation. We are the legal owner of the Plone code base, trademarks, and domain names. Our goal is to ensure Plone remains the premier open-source content management system to broaden its acceptance and visibility. The Foundation is governed by an elected Board of Directors and supported by Members, Sponsors, Plone Teams, and the global community.",
         "webpageUrl": {
             "url": "https://plone.org/foundation/about",
-            "wellKnown": ""
+            "wellKnown": "https://plone.org/.well-known/funding-manifest-urls"
         }
     },
-    // Optional. One or more projects for which the funding is solicited.
     "projects": [{
-        "guid": "",                     // Required. A short unique ID for the project. Lowercase-alphanumeric-dashes only. eg: my-cool-project. Max len 32.
-        "name": "",                     // Required. Name of the project. Max len 250.
-        "description": "",              // Required. Description of the project. Max len 2000.
+        "guid": "plone",
+        "name": "Plone",
+        "description": "Plone is an open source content management system (CMS) that is used to create, edit, and manage digital content, like websites, intranets and custom solutions. It comes with over 20 years of growth, optimisations, and refinements. The result is a system trusted by governments, universities, businesses, and other organisations all over the world.",
         "webpageUrl": {
-            "url": "",                  // Required. Webpage with information about the project. Starts with https:// or http://. Max len 250.
-            "wellKnown": ""             // Optional. If the above URL's hostname does not match the hostname of the funding.json manifest, this establishes provenance. Starts with https:// or http://. Max len 250.
+            "url": "https://plone.org/why-plone/what-is-plone",
+            "wellKnown": ""
         },
         "repositoryUrl": {
-            "url": "",                  // Required. URL of the repository where the project's source code and other assets are available. Starts with https:// or http://. Max len 250.
-            "wellKnown": ""             // Optional. If the above URL's hostname does not match the hostname of the funding.json manifest, this establishes provenance. Starts with https:// or http://. Max len 250.
+            "url": "https://github.com/plone",
+            "wellKnown": "https://github.com/plone/plone.org/.well-known/funding-manifest-urls"
         },
-        "licenses": [],                 // Required. The project's licenses (up to 5). For standard licenses, use the license ID from the SDPX index prefixed by "spdx:". eg: "spdx:GPL-3.0", "spdx:CC-BY-SA-4.0"
-        "tags": []                      // Required. Up to 10 general tags describing the project. Lowercase-alphanumeric-dashes (max 32 chars). eg: ["programming", "developer-tools"]. For reference, see tags.txt
+        "licenses": ["spdx:GPL-2.0-only", "spdx:MIT", "spdx:ZPL-2.1", "spdx:CC-BY-4.0"],
+        "tags": ["api","development","documentation","information-management","programming","publishing","software-engineering","user-experience","web-design","web-development"]
     }],
     "funding": {
         "channels": [{
