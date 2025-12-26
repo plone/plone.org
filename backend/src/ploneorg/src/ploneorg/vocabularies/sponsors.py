@@ -8,6 +8,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 def types_vocabulary(context):
     """Vocabulary of sponsorship types."""
     terms = []
-    for token in ["premium", "standard", "basic", "university"]:
+    for token in ["platinum", "premium", "standard", "basic", "university"]:
         terms.append(SimpleTerm(token, token, token.title()))
     return SimpleVocabulary(terms)
