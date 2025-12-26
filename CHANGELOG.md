@@ -10,6 +10,7 @@
 - Deployment fixes for frontend, use newer linux base image for frontend.
 - Fix several frontend jsx template issues and warnings.
 - Updated Volto to 16.34.1
+- Create a `funding.json` manifest file and a `wellKnown` file. See https://github.com/plone/plone.org/issues/222. [stevepiercy]
 
 
 ## 1.0.20 (2025-06-25)
