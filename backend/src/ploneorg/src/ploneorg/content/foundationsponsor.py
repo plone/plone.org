@@ -212,6 +212,15 @@ class IFoundationSponsor(Schema):
         required=False,
     )
 
+    mastodon = schema.URI(
+        title=_PMF("Mastodon profile", default="Mastodon profile"),
+        description=_PMF(
+            "Full Mastodon profile URL (e.g., https://plone.social/@plone)",
+            default="Full Mastodon profile URL (e.g., https://plone.social/@plone)",
+        ),
+        required=False,
+    )
+
     read_permission(connection_to_plone="ploneorg.foundationsponsor.view")
     connection_to_plone = RichText(
         title=_PMF("Connection to Plone", default="Connection to Plone"),

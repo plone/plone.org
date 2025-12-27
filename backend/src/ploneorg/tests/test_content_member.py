@@ -1,4 +1,5 @@
 """Tests for Foundation Member content type."""
+
 from AccessControl.unauthorized import Unauthorized
 from kitconcept import api
 from plone.app.testing import setRoles
@@ -48,6 +49,8 @@ class TestFoundationMember(unittest.TestCase):
             "github": "holden-space",
             "twitter": "holden-space",
             "linkedin": "https://www.linkedin.com/in/holden-space/",
+            "mastodon": "https://plone.social/@holden-space",
+            "website": "https://rocinante.space",
         }
 
     def test_cannot_create_outside_container(self):
@@ -128,6 +131,8 @@ class TestFoundationMemberFunctional(unittest.TestCase):
             "github": "holden-space",
             "twitter": "holden-space",
             "linkedin": "https://www.linkedin.com/in/holden-space/",
+            "mastodon": "https://plone.social/@holden-space",
+            "website": "https://rocinante.space",
         }
 
     def test_manager_create_new_foundation_member(self):

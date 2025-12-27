@@ -43,7 +43,7 @@ class IFoundationMember(model.Schema):
     model.fieldset(
         "social_networks",
         _("Social Networks"),
-        fields=["github", "twitter", "linkedin"],
+        fields=["github", "twitter", "linkedin", "mastodon", "website"],
     )
 
     # Basic info
@@ -74,9 +74,13 @@ class IFoundationMember(model.Schema):
     github = schema.TextLine(title=_("Github username"), required=False)
     twitter = schema.TextLine(title=_("Twitter username"), required=False)
     linkedin = schema.URI(title=_("Linkedin profile"), required=False)
+    mastodon = schema.URI(title=_("Mastodon profile"), required=False)
+    website = schema.URI(title=_("Website"), required=False)
     widget("twitter", placeholder=_("i.e.: plone"))
     widget("github", placeholder=_("i.e.: plone"))
     widget("linkedin", placeholder=_("i.e.: https://www.linkedin.com/in/plone/"))
+    widget("mastodon", placeholder=_("i.e.: https://plone.social/@plone"))
+    widget("website", placeholder=_("i.e.: https://plone.org"))
 
     # Read Permission
     read_permission(
