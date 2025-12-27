@@ -1,6 +1,7 @@
 ## 1.0.21 (unreleased)
 
-- Add "Apply for Event and Sprint Funds" link to footer navigation for easier access to /foundation/event-sponsorship page. Fixes #215. [GitHub Copilot]
+
+- Fix event info block: Move Website URL to separate section with its own heading. [#175]
 - Update to Relstorage 4.2.1
 - Simplify and make mxdev config explicit
 - Add collective.casestudy to mxdev, pin 1.0.0b1 for testing/production.
@@ -10,6 +11,7 @@
 - Deployment fixes for frontend, use newer linux base image for frontend.
 - Fix several frontend jsx template issues and warnings.
 - Updated Volto to 16.34.1
+- Create a `funding.json` manifest file and a `wellKnown` file. See https://github.com/plone/plone.org/issues/222. [stevepiercy]
 
 
 ## 1.0.20 (2025-06-25)
