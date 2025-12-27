@@ -68,10 +68,8 @@ const Body = (props) => {
         </>
       )}
 
-      {/* Contatcss */}
-      {(properties.contact_name ||
-        properties.event_url ||
-        properties.contact_phone) && (
+      {/* Contacts */}
+      {(properties.contact_name || properties.contact_phone) && (
         <div className="info-box-contacts">
           <h4>{intl.formatMessage(messages.contact)}</h4>
 
@@ -97,18 +95,23 @@ const Body = (props) => {
               {}
             </p>
           )}
-          {properties.event_url && (
-            <p>
-              <a
-                href={properties.event_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {intl.formatMessage(messages.website)}
-              </a>
-            </p>
-          )}
         </div>
+      )}
+
+      {/* Website */}
+      {properties.event_url && (
+        <>
+          <h4>{intl.formatMessage(messages.website)}</h4>
+          <p>
+            <a
+              href={properties.event_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {properties.event_url}
+            </a>
+          </p>
+        </>
       )}
 
       {/* Attendees */}
