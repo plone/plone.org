@@ -1,3 +1,11 @@
+## 1.0.22 (unreleased)
+
+### Added
+
+- Add Mastodon and Website fields to FoundationMember content type
+- Add Mastodon field to FoundationSponsor content type
+  [@Shamonti]
+
 ## 1.0.21 (unreleased)
 
 
