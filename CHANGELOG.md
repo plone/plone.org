@@ -1,4 +1,4 @@
-## 1.0.21 (unreleased)
+## 1.0.21 (2026-01-19)
 
 - Update frontend base image to 20-bookworm slim because Node 18 version is EOL and was removed. [frevdvd]
 - Fix event info block: Move Website URL to separate section with its own heading. [#175]
