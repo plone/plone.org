@@ -1,3 +1,9 @@
+## 1.0.22 (unreleased)
+
+
+- Nothing changed yet.
+
+
 ## 1.0.21 (2026-01-19)
 
 - Update frontend base image to 20-bookworm slim because Node 18 version is EOL and was removed. [frevdvd]
