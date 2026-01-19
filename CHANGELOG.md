@@ -1,6 +1,5 @@
 ## 1.0.21 (unreleased)
 
-
 - Fix event info block: Move Website URL to separate section with its own heading. [#175]
 - Update to Relstorage 4.2.1
 - Simplify and make mxdev config explicit
