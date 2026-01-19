@@ -1,4 +1,4 @@
-FROM node:18-bookwork-slim as base
+FROM node:20-bookworm-slim as base
 FROM base as builder
 
 RUN apt-get update \
