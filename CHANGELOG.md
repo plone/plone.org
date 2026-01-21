@@ -1,7 +1,6 @@
 ## 1.0.22 (unreleased)
 
-
-- Nothing changed yet.
+- Fix collection of dot-directories like .well-known in frontend for funding-manifest-urls (Fixes #222) [fredvd]
 
 
 ## 1.0.21 (2026-01-19)
