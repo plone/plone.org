@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 import { isEqual } from 'lodash';
 import { Input, Grid } from 'semantic-ui-react';
 import { UniversalLink, SidebarPortal } from '@plone/volto/components';
-import { TextEditorWidget } from '@package/components/Widgets';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { ShareButtons, PresetWrapper, Button } from '@package/components';
 import GalleryBody from './GalleryBody';
 import Sidebar from './Sidebar';
@@ -104,27 +104,18 @@ const Edit = (props) => {
           <Grid.Row columns={2}>
             <Grid.Column computer={6} tablet={12} mobile={12}>
               {/* Description */}
-
               {/* eslint-disable-next-line */}
               <div onClick={() => focusField('description')}>
-                <TextEditorWidget
-                  data={data}
-                  block={block}
-                  fieldName="description"
-                  onChangeBlock={(v) => {
-                    onChangeBlock(block, {
-                      ...data,
-                      description: v.description,
-                    });
-                  }}
-                  placeholder={intl.formatMessage(messages.subtitle)}
-                  prevFocus={'title'}
+                <DetachedTextBlockEditor
+                  data={{ value: data.description }}
+                  onChangeBlock={(block, { value }) =>
+                    onChange({ description: value }, 'description')
+                  }
                   selected={selected && focusOn === 'description'}
-                  setFocus={(f) => focusField(f)}
-                  showToolbar={true}
+                  readOnly={false}
+                  placeholder={intl.formatMessage(messages.subtitle)}
                 />
               </div>
-
               {/* Gallery */}
               <div className="block-text5-gallery">
                 <GalleryBody images={data?.images} />
@@ -136,34 +127,28 @@ const Edit = (props) => {
                   <Grid.Column>
                     {/* eslint-disable-next-line */}
                     <div onClick={() => focusField('text1')}>
-                      <TextEditorWidget
-                        data={data}
-                        fieldName="text1"
-                        block={block}
-                        onChangeBlock={(data) => onChange(data, 'text1')}
-                        placeholder={intl.formatMessage(messages.description)}
-                        prevFocus={'description'}
+                      <DetachedTextBlockEditor
+                        data={{ value: data.text1 }}
+                        onChangeBlock={(block, { value }) =>
+                          onChange({ text1: value }, 'text1')
+                        }
                         selected={selected && focusOn === 'text1'}
-                        setFocus={(f) => focusField(f)}
-                        showToolbar={true}
-                        key="text1"
+                        readOnly={false}
+                        placeholder={intl.formatMessage(messages.description)}
                       />
                     </div>
                   </Grid.Column>
                   <Grid.Column>
                     {/* eslint-disable-next-line */}
                     <div onClick={() => focusField('text2')}>
-                      <TextEditorWidget
-                        data={data}
-                        fieldName="text2"
-                        block={block}
-                        onChangeBlock={(data) => onChange(data, 'text2')}
-                        placeholder={intl.formatMessage(messages.description)}
-                        prevFocus={'text1'}
+                      <DetachedTextBlockEditor
+                        data={{ value: data.text2 }}
+                        onChangeBlock={(block, { value }) =>
+                          onChange({ text2: value }, 'text2')
+                        }
                         selected={selected && focusOn === 'text2'}
-                        setFocus={(f) => focusField(f)}
-                        showToolbar={true}
-                        key="text2"
+                        readOnly={false}
+                        placeholder={intl.formatMessage(messages.description)}
                       />
                     </div>
                   </Grid.Column>
@@ -176,18 +161,14 @@ const Edit = (props) => {
               <div className="block-text5-body">
                 {/* eslint-disable-next-line */}
                 <div onClick={() => focusField('content')}>
-                  <TextEditorWidget
-                    data={data}
-                    fieldName="content"
+                  <DetachedTextBlockEditor
+                    data={{ value: data.content }}
+                    onChangeBlock={(block, { value }) =>
+                      onChange({ content: value }, 'content')
+                    }
                     selected={selected && focusOn === 'content'}
-                    block={block}
-                    onChangeBlock={(data) => onChange(data, 'content')}
+                    readOnly={false}
                     placeholder={props.intl.formatMessage(messages.description)}
-                    prevFocus="text2"
-                    setFocus={(f) => focusField(f)}
-                    showToolbar={true}
-                    key="content"
-                    disableMoveToNearest={true}
                   />
                 </div>
                 {data.has_cta && (

@@ -1,7 +1,6 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Grid } from 'semantic-ui-react';
@@ -9,7 +8,7 @@ import { UniversalLink } from '@plone/volto/components';
 import { ShareButtons, PresetWrapper, Button } from '@package/components';
 import GalleryBody from './GalleryBody';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const messages = defineMessages({
   cta_title_default: {
@@ -34,13 +33,8 @@ const View = (props) => {
           <Grid.Row columns={2}>
             <Grid.Column computer={6} tablet={12} mobile={12}>
               <div className="description">
-                {redraft(
-                  data.description,
-                  config.settings.richtextViewSettings.ToHTMLRenderers,
-                  config.settings.richtextViewSettings.ToHTMLOptions,
-                )}
+                <TextBlockView data={{ value: data.description }} />
               </div>
-
               {/* Gallery o singola immagine */}
               <div className="block-text5-gallery">
                 <GalleryBody images={data?.images} />
@@ -50,18 +44,10 @@ const View = (props) => {
                   {/* blocchi sotto alla gallery */}
                   <Grid.Row columns={2}>
                     <Grid.Column>
-                      {redraft(
-                        data.text1,
-                        config.settings.richtextViewSettings.ToHTMLRenderers,
-                        config.settings.richtextViewSettings.ToHTMLOptions,
-                      )}
+                      <TextBlockView data={{ value: data.text1 }} />
                     </Grid.Column>
                     <Grid.Column>
-                      {redraft(
-                        data.text2,
-                        config.settings.richtextViewSettings.ToHTMLRenderers,
-                        config.settings.richtextViewSettings.ToHTMLOptions,
-                      )}
+                      <TextBlockView data={{ value: data.text2 }} />
                     </Grid.Column>
                   </Grid.Row>
                 </Grid>
@@ -71,11 +57,7 @@ const View = (props) => {
             <Grid.Column computer={6} tablet={12} mobile={12}>
               <div className="block-text5-body">
                 <div className="content">
-                  {redraft(
-                    data.content,
-                    config.settings.richtextViewSettings.ToHTMLRenderers,
-                    config.settings.richtextViewSettings.ToHTMLOptions,
-                  )}
+                  <TextBlockView data={{ value: data.content }} />
                 </div>
                 {data.has_cta && (
                   <div className="block-text5-button">

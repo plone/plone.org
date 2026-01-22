@@ -1,10 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import { Container } from 'semantic-ui-react';
-import redraft from 'redraft';
 import { ListingLinkMore } from '@package/components';
 import ViewNumberBlock from './Block/ViewBlock';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const View = ({ data }) => {
   return (
@@ -20,11 +19,7 @@ const View = ({ data }) => {
             {data.title && <div className="title">{data.title}</div>}
             {data.description && (
               <div className="description">
-                {redraft(
-                  data.description,
-                  config.settings.richtextViewSettings.ToHTMLRenderers,
-                  config.settings.richtextViewSettings.ToHTMLOptions,
-                )}
+                <TextBlockView data={{ value: data.description }} />
               </div>
             )}
             <div className="columns-wrapper">

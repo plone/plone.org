@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import redraft from 'redraft';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { flattenToAppURL } from '@plone/volto/helpers';
-
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const ViewBlock = ({ data }) => {
   const icon = data.iconImage; //data.icon
@@ -27,11 +25,7 @@ const ViewBlock = ({ data }) => {
       {data.title && <div className="column-title">{data.title}</div>}
 
       <div className="column-text">
-        {redraft(
-          data.text,
-          config.settings.richtextViewSettings.ToHTMLRenderers,
-          config.settings.richtextViewSettings.ToHTMLOptions,
-        )}
+        <TextBlockView data={{ value: data.text }} />
       </div>
     </div>
   ) : (

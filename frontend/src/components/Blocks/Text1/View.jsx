@@ -3,11 +3,10 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Grid } from 'semantic-ui-react';
-import redraft from 'redraft';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { Button, PresetWrapper, ShareButtons } from '@package/components';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const messages = defineMessages({
   cta_title_default: {
@@ -63,11 +62,7 @@ const View = (props) => {
                     <ShareButtons showLabel={false} />
                   </div>
                 )}
-                {redraft(
-                  data.content,
-                  config.settings.richtextViewSettings.ToHTMLRenderers,
-                  config.settings.richtextViewSettings.ToHTMLOptions,
-                )}
+                <TextBlockView data={{ value: data.content }} />
               </div>
               {data.have_cta && (
                 <div className="block-text1-mobile-btn">{ctaButton}</div>
