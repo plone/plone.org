@@ -1,5 +1,6 @@
 ## 1.0.22 (unreleased)
 
+- Fix collection of dot-directories like .well-known in frontend for funding-manifest-urls (Fixes #222) [fredvd]
 - Add new sponsorship level
 
 
