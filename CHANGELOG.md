@@ -1,6 +1,7 @@
 ## 1.0.22 (unreleased)
 
 - Fix collection of dot-directories like .well-known in frontend for funding-manifest-urls (Fixes #222) [fredvd]
+- Add new sponsorship level
 
 
 ## 1.0.21 (2026-01-19)
@@ -11,24 +12,21 @@
 - Simplify and make mxdev config explicit
 - Add collective.casestudy to mxdev, pin 1.0.0b1 for testing/production.
 - Add zodbpack utility container.
-- Add maintenance scripts. 
+- Add maintenance scripts.
 - Add docs to use local filestorage, add make install for backend.
 - Deployment fixes for frontend, use newer linux base image for frontend.
 - Fix several frontend jsx template issues and warnings.
 - Updated Volto to 16.34.1
 - Create a `funding.json` manifest file and a `wellKnown` file. See https://github.com/plone/plone.org/issues/222. [stevepiercy]
 
-
 ## 1.0.20 (2025-06-25)
 
 - Remove unused blocks: author, breadcrumbs, image_columns, linked_items, pagemetadata, text, text4. [davisagli]
 
-
 ## 1.0.19 (2025-04-20)
 
-- Also add DB_PORT in live stack file.  [fredvd]
+- Also add DB_PORT in live stack file. [fredvd]
 - Update stack config version. [fredvd]
-
 
 ## 1.0.18 (2025-04-19)
 
@@ -38,9 +36,7 @@
 
 - Update Database connection CI parameters testing. [fredvd]
 
-
 ## 1.0.17 (2024-12-10)
-
 
 - Add link to newsletter subscribe to footer. [Adityaadpandey]
 
@@ -58,11 +54,9 @@
 
 - Add recurrence index to catalog.xml [fredvd]
 
-
 ## 1.0.16 (2024-02-23)
 
 - Rereleased to get a tagged version deployed on docker swarm
-
 
 ## 1.0.15 (2024-02-23)
 
@@ -89,7 +83,6 @@
 - Update to Plone backend 6.0.9 [fredvd]
 
 - Update to Volto 16.25.0 [davisagli]
-
 
 ## 1.0.13 (2023-10-09)
 
