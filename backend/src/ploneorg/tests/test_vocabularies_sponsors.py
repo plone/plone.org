@@ -21,7 +21,9 @@ class TestSponsorTypesVocabulary(unittest.TestCase):
         self.portal = self.layer["portal"]
 
     def test_vocab(self):
-        vocab_util = getUtility(IVocabularyFactory, "ploneorg.vocabulary.sponsorship_types")
+        vocab_util = getUtility(
+            IVocabularyFactory, "ploneorg.vocabulary.sponsorship_types"
+        )
         topics = vocab_util(self.portal)
         self.assertTrue("standard" in [x for x in topics.by_token])
 
@@ -48,8 +50,8 @@ class TestSponsorTypesVocabularyEndpoint(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         data = response.json()
         first = data["items"][0]
-        self.assertEqual(first["token"], "premium")
-        self.assertEqual(first["title"], "Premium")
+        self.assertEqual(first["token"], "platinum")
+        self.assertEqual(first["title"], "Platinum")
 
     def test_get_vocabulary_as_editor(self):
         self.api_session.auth = self.users["editor"]
@@ -57,8 +59,8 @@ class TestSponsorTypesVocabularyEndpoint(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         data = response.json()
         first = data["items"][0]
-        self.assertEqual(first["token"], "premium")
-        self.assertEqual(first["title"], "Premium")
+        self.assertEqual(first["token"], "platinum")
+        self.assertEqual(first["title"], "Platinum")
 
     def test_get_vocabulary_as_member(self):
         self.api_session.auth = self.users["member"]
@@ -66,5 +68,5 @@ class TestSponsorTypesVocabularyEndpoint(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         data = response.json()
         first = data["items"][0]
-        self.assertEqual(first["token"], "premium")
-        self.assertEqual(first["title"], "Premium")
+        self.assertEqual(first["token"], "platinum")
+        self.assertEqual(first["title"], "Platinum")
