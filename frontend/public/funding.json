@@ -26,8 +26,24 @@
         "url": "https://github.com/plone/.github",
         "wellKnown": "https://github.com/plone/.github/.well-known/funding-manifest-urls"
       },
-      "licenses": ["spdx:GPL-2.0-only", "spdx:MIT", "spdx:ZPL-2.1", "spdx:CC-BY-4.0"],
-      "tags": ["api", "development", "documentation", "information-management", "programming", "publishing", "software-engineering", "user-experience", "web-design", "web-development"]
+      "licenses": [
+        "spdx:GPL-2.0-only",
+        "spdx:MIT",
+        "spdx:ZPL-2.1",
+        "spdx:CC-BY-4.0"
+      ],
+      "tags": [
+        "api",
+        "development",
+        "documentation",
+        "information-management",
+        "programming",
+        "publishing",
+        "software-engineering",
+        "user-experience",
+        "web-design",
+        "web-development"
+      ]
     }
   ],
   "funding": {
@@ -66,7 +82,12 @@
         "amount": 0,
         "currency": "USD",
         "frequency": "one-time",
-        "channels": ["wise-account", "wise-bank-us", "wise-bank-eu", "github-sponsors"]
+        "channels": [
+          "wise-account",
+          "wise-bank-us",
+          "wise-bank-eu",
+          "github-sponsors"
+        ]
       },
       {
         "guid": "annual-platinum-sponsor",
@@ -116,7 +137,12 @@
         "amount": 0,
         "currency": "USD",
         "frequency": "monthly",
-        "channels": ["wise-account", "wise-bank-us", "wise-bank-eu", "github-sponsors"]
+        "channels": [
+          "wise-account",
+          "wise-bank-us",
+          "wise-bank-eu",
+          "github-sponsors"
+        ]
       }
     ],
     "history": [
