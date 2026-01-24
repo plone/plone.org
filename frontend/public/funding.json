@@ -10,7 +10,7 @@
     "description": "The Foundation is a 501(c)(3) non-profit organization that exists to protect and promote Plone. We provide support for development and marketing, and are modelled after similar ventures, such as the Apache Software Foundation. We are the legal owner of the Plone code base, trademarks, and domain names. Our goal is to ensure Plone remains the premier open-source content management system to broaden its acceptance and visibility. The Foundation is governed by an elected Board of Directors and supported by Members, Sponsors, Plone Teams, and the global community.",
     "webpageUrl": {
       "url": "https://plone.org/foundation/about",
-      "wellKnown": ""
+      "wellKnown": "https://plone.org/.well-known/funding-manifest-urls"
     }
   },
   "projects": [
@@ -23,8 +23,8 @@
         "wellKnown": ""
       },
       "repositoryUrl": {
-        "url": "https://github.com/plone/.github",
-        "wellKnown": "https://github.com/plone/.github/blob/main/.well-known/funding-manifest-urls"
+        "url": "https://github.com/plone",
+        "wellKnown": "https://github.com/plone/plone.org/.well-known/funding-manifest-urls"
       },
       "licenses": [
         "spdx:GPL-2.0-only",
