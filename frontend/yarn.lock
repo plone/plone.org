@@ -4587,6 +4587,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/react-table@npm:8.21.2":
+  version: 8.21.2
+  resolution: "@tanstack/react-table@npm:8.21.2"
+  dependencies:
+    "@tanstack/table-core": 8.21.2
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 3cda97794c10777d48d01de29d087a33edd8af153b3096ac9798c7ebddd31bd34f2b7838ecf4bddaf469d661a777556bd8021e15a41f692eb2e3dd79dd0e5c3b
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.21.2":
+  version: 8.21.2
+  resolution: "@tanstack/table-core@npm:8.21.2"
+  checksum: 21573388b26cef9c6fcabe3785640c470ea072a6d6ec34543e7eaf54ee742bf5fb12f8a04b172d7e08bd828a35afd7133add5adb4729dd4f94eaf4745b1cab14
+  languageName: node
+  linkType: hard
+
 "@testing-library/cypress@npm:8.0.7":
   version: 8.0.7
   resolution: "@testing-library/cypress@npm:8.0.7"
@@ -11894,11 +11913,11 @@ __metadata:
     stylelint-config-prettier: 8.0.1
     stylelint-prettier: 1.1.2
     volto-dropdownmenu: 2.4.3
-    volto-form-block: ^3.0.0
+    volto-form-block: ^3.14.0
     volto-gdpr-privacy: 2.0.0
     volto-secondarymenu: 2.2.0
     volto-social-settings: 2.2.0
-    volto-subblocks: ^2.0.0
+    volto-subblocks: ^2.1.0
   languageName: unknown
   linkType: soft
 
@@ -24382,18 +24401,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "volto-form-block@npm:3.0.1"
+"volto-form-block@npm:^3.14.0":
+  version: 3.14.0
+  resolution: "volto-form-block@npm:3.14.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
+    "@tanstack/react-table": 8.21.2
     file-saver: ^2.0.5
     react-google-recaptcha-v3: ^1.8.0
-    volto-subblocks: ^2.0.0
+    volto-subblocks: ^2.1.0
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-    volto-subblocks: ^2.0.0
-  checksum: 6d70971826e847a6615a5344ec48e502447e07cde0332c3ff1dd9e2b80324cf66dbf4ccfefeac830bf975838b0d9ffbcc8c8993b5eedfa43552f2b8da28a4e2b
+    volto-subblocks: ^2.1.0
+  checksum: 7d1867bc013a0ad9d91beefc94586418e36bd13ff3a0aaafdb816aae4c8fdbd80c50b134e766047663a2b8b9129452d0ef083671ee6a76f98eee8516a0a39d16
   languageName: node
   linkType: hard
 
@@ -24428,15 +24448,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-subblocks@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "volto-subblocks@npm:2.0.0"
+"volto-subblocks@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "volto-subblocks@npm:2.1.0"
   dependencies:
     react-dnd: ^5.0.0
     react-dnd-html5-backend: ^5.0.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 7e4774cd63aad14d46f8371d725d800cc978dafb3672cb9ddb16e032b8fc849948d7e39301c3d55864a40d5143e101fd819165ba5254a016be31812f826c4f76
+  checksum: a1cc02ca26176b44398445084c9b90330e898ccb725247f131e71dcc8b1c9e70b3352b8dd4fcf322ea60df7970c02f001454151ab7a82b7a6f6ab96ed4ffc8d5
   languageName: node
   linkType: hard
 
