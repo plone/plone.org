@@ -32,7 +32,7 @@ RUN apt-get update \
 
 USER node
 COPY --from=builder /build/ /app/
-COPY --chown=node public/.well-known /app/build/public/.well-known/
+# COPY --chown=node public/.well-known /app/build/public/.well-known/
 
 WORKDIR /app
 EXPOSE 3000
