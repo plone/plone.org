@@ -2,6 +2,9 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { When, Recurrence } from '@package/components';
 import { List } from 'semantic-ui-react';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import calendarSVG from '@plone/volto/icons/calendar.svg';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 
 const messages = defineMessages({
   date: {
@@ -31,6 +34,10 @@ const messages = defineMessages({
   attendees: {
     id: 'attendees',
     defaultMessage: 'Attendees',
+  },
+  downloadEvent: {
+    id: 'Download Event',
+    defaultMessage: 'Download Event',
   },
 });
 
@@ -121,6 +128,23 @@ const Body = (props) => {
           <List items={properties.attendees} />
         </>
       )}
+
+      {/* ICS link */}
+      <div className="download-event">
+        <Icon name={calendarSVG} />
+        <a
+          className="ics-download"
+          target="_blank"
+          rel="noreferrer"
+          href={
+            properties && properties['@id']
+              ? `${expandToBackendURL(properties['@id'])}/ics_view `
+              : ''
+          }
+        >
+          {intl.formatMessage(messages.downloadEvent)}
+        </a>
+      </div>
     </>
   ) : (
     <></>
