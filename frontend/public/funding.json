@@ -24,7 +24,7 @@
       },
       "repositoryUrl": {
         "url": "https://github.com/plone/.github",
-        "wellKnown": "https://github.com/plone/.github/blob/main/.well-known/funding-manifest-urls"
+        "wellKnown": "https://raw.githubusercontent.com/plone/.github/refs/heads/main/.well-known/funding-manifest-urls"
       },
       "licenses": [
         "spdx:GPL-2.0-only",
