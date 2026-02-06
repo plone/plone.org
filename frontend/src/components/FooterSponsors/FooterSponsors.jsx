@@ -1,5 +1,3 @@
-import { Container } from 'semantic-ui-react';
-
 import { searchContent } from '@plone/volto/actions/search/search';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
@@ -28,7 +26,7 @@ const FooterSponsors = (props) => {
         subrequest_key,
       ),
     );
-  }, [dispatch]);
+  }, [dispatch, subrequest_key, type]);
 
   const plural = sponsors?.items.length > 1 ? 's' : '';
 
