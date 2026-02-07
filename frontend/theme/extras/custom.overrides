@@ -59,5 +59,6 @@
 @import 'site/components/widgets/image_widget.less';
 
 @import 'site/components/controlpanels/membership.less';
+@import 'site/components/footer_sponsors.less';
 
 @import 'site/print.less';
