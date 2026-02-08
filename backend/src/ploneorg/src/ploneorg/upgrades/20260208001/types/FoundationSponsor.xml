@@ -4,7 +4,9 @@
         name="FoundationSponsor"
         i18n:domain="plone"
 >
-  <property name="behaviors" purge="false">
+  <property name="behaviors"
+            purge="false"
+  >
     <element value="volto.blocks" />
   </property>
 
