@@ -11,6 +11,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { displayBanner } from 'volto-gdpr-privacy';
 
 import { useDispatch } from 'react-redux';
+import FooterSponsors from '../../../../../components/FooterSponsors/FooterSponsors';
 
 const messages = defineMessages({
   copyright: {
@@ -39,6 +40,10 @@ const Footer = ({ intl }) => {
 
   return (
     <div id="footer">
+      <Container>
+        <FooterSponsors type="platinum" />
+      </Container>
+
       <Container>
         <div id="footer-main">
           <Grid textAlign="left" columns={4}>
@@ -218,6 +223,7 @@ const Footer = ({ intl }) => {
           </Grid>
         </div>
       </Container>
+
       <div id="footer-small-wrapper">
         <Container>
           <div id="footer-small">
