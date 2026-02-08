@@ -31,6 +31,7 @@
     <element value="plone.publication" />
     <element value="plone.leadimage" />
     <element value="plone.categorization" />
+    <element value="volto.blocks" />
   </property>
   <property name="schema">ploneorg.content.foundationsponsor.IFoundationSponsor</property>
   <property name="model_source" />

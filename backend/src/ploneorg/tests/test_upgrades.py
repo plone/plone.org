@@ -1,4 +1,5 @@
 """Upgrades tests for this package."""
+
 from parameterized import parameterized
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -42,7 +43,7 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
             ("20230530001", "20230904001", 1),
             ("20230904001", "20230907001", 1),
             ("20230907001", "20230915001", 1),
-
+            ("20230915001", "20260208001", 1),
         ]
     )
     def test_available(self, src, dst, expected):

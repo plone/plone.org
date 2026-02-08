@@ -14,6 +14,10 @@ class HiddenProfiles(object):
             "ploneorg:uninstall",
         ]
 
+    def getNonInstallableProducts(self):
+        """Hide the upgrades package from site-creation and quickinstaller."""
+        return ["ploneorg.upgrades"]
+
 
 def populate_portal(context):
     """Post install script"""
