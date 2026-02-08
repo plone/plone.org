@@ -9,7 +9,7 @@ import {
 } from '@package/components';
 
 const SponsorCardListing = (props) => {
-  const { items, isEditMode, cols = 3 } = props;
+  const { items, isEditMode, cols = 3, linkToPage = false } = props;
 
   const randomized_items = items
     .map((value) => ({ value, sort: Math.random() }))
@@ -28,6 +28,7 @@ const SponsorCardListing = (props) => {
                   key={item['@id']}
                   {...item}
                   isEditMode={isEditMode}
+                  linkToPage={linkToPage}
                 ></SponsorCard>
               </Grid.Column>
             );
