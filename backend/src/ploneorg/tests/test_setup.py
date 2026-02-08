@@ -1,4 +1,5 @@
 """Setup tests for this package."""
+
 from kitconcept import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -34,7 +35,7 @@ class TestSetup(unittest.TestCase):
         """Test latest version of default profile."""
         self.assertEqual(
             self.setup.getLastVersionForProfile("ploneorg:default")[0],
-            "20230915001",
+            "20260208001",
         )
 
 
