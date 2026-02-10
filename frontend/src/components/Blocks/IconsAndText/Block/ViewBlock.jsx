@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import cx from 'classnames';
-import redraft from 'redraft';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { Button } from '@package/components';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const ViewBlock = ({ data, bg_color }) => {
   const icon = data.iconImage; //data.icon
@@ -41,11 +40,7 @@ const ViewBlock = ({ data, bg_color }) => {
         </div>
       )}
       <div className="column-text">
-        {redraft(
-          data.text,
-          config.settings.richtextViewSettings.ToHTMLRenderers,
-          config.settings.richtextViewSettings.ToHTMLOptions,
-        )}
+        <TextBlockView data={{ value: data.text }} />
       </div>
 
       {data.href_title && data.href?.length > 0 && (
