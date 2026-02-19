@@ -1,5 +1,6 @@
 ## 1.0.22 (unreleased)
 
+- Update docker-stack-deploy to v1.4.0 to solve ghcr.io login issues. [fredvd]
 - Add slate tables css. [acsr,fredvd]
 - Fix collection of dot-directories like .well-known in frontend for funding-manifest-urls (Fixes #222) [fredvd]
 - Add new sponsorship level
