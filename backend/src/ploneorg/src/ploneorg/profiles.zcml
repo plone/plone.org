@@ -4,6 +4,12 @@
     i18n_domain="ploneorg"
     >
 
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="ploneorg"
+      />
+
   <genericsetup:registerProfile
       name="default"
       title="Plone.org Site: Install"

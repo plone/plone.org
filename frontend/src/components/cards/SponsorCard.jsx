@@ -15,7 +15,11 @@ const SponsorCard = (props) => {
 
   return (
     <Card className={cardClass}>
-      <UniversalLink item={props}>{image}</UniversalLink>
+      {props.linkToPage ? (
+        <UniversalLink href={props['@id']}>{image}</UniversalLink>
+      ) : (
+        <UniversalLink item={props}>{image}</UniversalLink>
+      )}
     </Card>
   );
 };

@@ -7,6 +7,16 @@ const messages = defineMessages({
     id: 'Number of columns',
     defaultMessage: 'Number of columns',
   },
+  linkToPage: {
+    id: 'Link to page?',
+    defaultMessage: 'Link to page?',
+  },
+  linkToPageDescription: {
+    id:
+      'If selected, each card will always link to the page on the site instead of the remote url',
+    defaultMessage:
+      'If selected, each card will always link to the page on the site instead of the remote url',
+  },
 });
 
 const getSponsorCardVariationSchema = (
@@ -25,6 +35,18 @@ const getSponsorCardVariationSchema = (
     pos,
     'default',
   );
+
+  pos++;
+  addSchemaField(
+    schema,
+    'linkToPage',
+    intl.formatMessage(messages.linkToPage),
+    intl.formatMessage(messages.linkToPageDescription),
+    { type: 'boolean', default: false },
+    pos,
+    'default',
+  );
+
   pos++;
 
   pos = addPresetFields(schema, intl, pos, 'items', {

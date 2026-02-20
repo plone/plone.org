@@ -182,4 +182,34 @@
         import_steps="contentrules"
         />
   </genericsetup:upgradeSteps>
+
+  <genericsetup:registerProfile
+      name="20260208001"
+      title="Add volto.blocks behavior to FoundationSponsors"
+      description="Configuration for version 20260208001"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+      directory="20260208001"
+      />
+
+  <genericsetup:upgradeSteps
+      profile="ploneorg:default"
+      source="20230915001"
+      destination="20260208001"
+      >
+
+    <upgradeStep
+        title="Add volto.blocks behavior to FoundationSponsors"
+        description="Add new behavior"
+        handler=".v20260208001.upgrade"
+        />
+
+    <genericsetup:upgradeDepends
+        title="Add volto.blocks behavior to FoundationSponsors (GS profile)"
+        description="Add new behavior"
+        import_profile="ploneorg.upgrades:20260208001"
+        />
+
+  </genericsetup:upgradeSteps>
+
 </configure>
