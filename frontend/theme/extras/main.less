@@ -145,3 +145,32 @@ table.slate-table td p {
 table.slate-table th p {
   font-size: 0.9em;
 }
+
+// Set why-plone/faq long grid columns margin-bottom and lineheight styles
+
+body.section-why-plone.section-faq {
+  h2 {
+    margin: 0 !important;
+    line-height: 1.1em;
+    margin-bottom: 1.7em !important;
+  }
+  h3 {
+    line-height: 1.2em;
+    margin: 0 !important;
+    margin-top: 1.2em !important;
+    margin-bottom: 0.7em !important;
+  }
+
+  block.__grid h2:not(.headline), 
+  .block.__grid h3:not(.headline), 
+  [class$=Grid] .block h2:not(.headline), 
+  [class$=Grid] .block h3:not(.headline) {
+    margin: unset;
+    margin-top: 1em !important;
+    margin-bottom: 0.7em !important;
+  }
+
+  .ui.grid>.row>.stretched.column>*, .ui.grid>.stretched.column:not(.row)>*, .ui.grid>.stretched.row>.column>*, .ui.stretched.grid>.column>*, .ui.stretched.grid>.row>.column>* {
+    flex-grow: unset;
+  }
+}
