@@ -33,8 +33,6 @@ const FooterSponsors = (props) => {
     );
   }, [dispatch, subrequest_key, type]);
 
-  const plural = sponsors?.items.length > 1 ? 's' : '(s)';
-  const capitalizedType = String(type[0]).toUpperCase() + String(type).slice(1);
   const sponsorItems = sponsors?.loaded
     ? sponsors.items.length > 0 &&
       sponsors.items.map((item) => {
