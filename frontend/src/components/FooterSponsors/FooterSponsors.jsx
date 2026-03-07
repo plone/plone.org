@@ -6,7 +6,7 @@ import { Button } from '@package/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 
-import yourLogoHereSVG from './YourLogo.svg';
+import yourLogoHereSVG from './YourLogov2.svg';
 
 const FooterSponsors = (props) => {
   const { type = 'platinum' } = props;
@@ -41,7 +41,7 @@ const FooterSponsors = (props) => {
       })
     : [];
 
-  const listingSize = 5;
+  const listingSize = sponsorItems.length + 1;
 
   if (sponsorItems.length > 0) {
     const remainder = sponsorItems.length % listingSize;
