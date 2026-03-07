@@ -118,6 +118,9 @@
 /*--- --------------------------------Plone.org Variables-------------------------------- ---*/
 /*--- -------------------------------------------------------------------------------- ---*/
 
+@footerLightGrey: #f7f7f7;
+
+
 @footerBordersColor: @lightGrey;
 @footerColumnsTextColor: #222;
 @footerLastColumnTextColor: #737373;

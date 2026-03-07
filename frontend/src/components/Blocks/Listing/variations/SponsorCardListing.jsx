@@ -9,12 +9,20 @@ import {
 } from '@package/components';
 
 const SponsorCardListing = (props) => {
-  const { items, isEditMode, cols = 3, linkToPage = false } = props;
+  const {
+    items,
+    isEditMode,
+    cols = 3,
+    linkToPage = false,
+    randomize = true,
+  } = props;
 
-  const randomized_items = items
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+  const randomized_items = randomize
+    ? items
+        .map((value) => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value)
+    : items;
 
   return (
     <PresetWrapper {...props} className="simple-card-listing">

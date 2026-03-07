@@ -6,7 +6,11 @@ import { UniversalLink } from '@plone/volto/components';
 import { ListingImage } from '@package/components';
 
 const SponsorCard = (props) => {
-  let image = ListingImage({ item: props, className: 'item-image' });
+  let image = ListingImage({
+    item: props,
+    className: 'item-image',
+    size: props?.size,
+  });
 
   let cardClass = cx('item', {
     'sponsor-card': true,
