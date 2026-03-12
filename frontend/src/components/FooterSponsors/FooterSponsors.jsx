@@ -6,6 +6,8 @@ import { Button } from '@package/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 
+import yourLogoHereSVG from './YourLogov2.svg';
+
 const FooterSponsors = (props) => {
   const { type = 'platinum' } = props;
   const subrequest_key = `${type}_sponsors`;
@@ -31,13 +33,39 @@ const FooterSponsors = (props) => {
     );
   }, [dispatch, subrequest_key, type]);
 
-  const plural = sponsors?.items.length > 1 ? 's' : '';
-  const capitalizedType = String(type[0]).toUpperCase() + String(type).slice(1);
+  const sponsorItems = sponsors?.loaded
+    ? sponsors.items.length > 0 &&
+      sponsors.items.map((item) => {
+        item['size'] = 'thumb';
+        return item;
+      })
+    : [];
+
+  const listingSize = sponsorItems.length + 1;
+
+  if (sponsorItems.length > 0) {
+    const remainder = sponsorItems.length % listingSize;
+    if (remainder > 0) {
+      const placeholdersToAdd = listingSize - remainder;
+      for (let i = 0; i < placeholdersToAdd; i++) {
+        sponsorItems.push({
+          '@id': '/foundation/sponsorship',
+          title: 'Put your logo here',
+          size: 'thumb',
+          isPlaceholder: true,
+          image: {
+            scales: { thumb: { download: yourLogoHereSVG } },
+          },
+        });
+      }
+    }
+  }
+
   return sponsors?.loaded
     ? sponsors.items.length > 0 && (
         <div className={`footer-sponsors-listing ${subrequest_key}`}>
           <div className="footer-sponsors-listing-headline">
-            <h3>{`Our proud ${capitalizedType} Sponsor${plural}`}</h3>
+            <h3>Powering the Future of Open Sovereignty</h3>
             <Button
               as={UniversalLink}
               primary
@@ -45,10 +73,22 @@ const FooterSponsors = (props) => {
               href={flattenToAppURL('/foundation/sponsorship')}
               arrow={true}
             >
-              Become a Sponsor
+              Become a sponsor — every contribution shapes our future!
             </Button>
           </div>
-          <SponsorCardListing items={sponsors.items || []} />
+          <p>
+            Plone thrives because of organizations that believe in secure,
+            independent, and open technology. We are deeply grateful to our
+            Platinum Sponsors for their visionary support in sustaining the
+            world's most secure CMS. Join them in shaping the future of digital
+            freedom.
+          </p>
+
+          <SponsorCardListing
+            items={sponsorItems || []}
+            cols={listingSize}
+            randomize={false}
+          />
         </div>
       )
     : '';
