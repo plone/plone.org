@@ -80,7 +80,7 @@ const FooterSponsors = (props) => {
             Plone thrives because of organizations that believe in secure,
             independent, and open technology. We are deeply grateful to our
             Platinum Sponsors for their visionary support in sustaining the
-            world's most secure CMS. Join them in shaping the future of digital
+            world's most secure CMS. Join in shaping the future of digital
             freedom.
           </p>
 
