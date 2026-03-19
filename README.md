@@ -5,46 +5,59 @@
 [![Backend testing.plone.org CI and Deploy](https://github.com/plone/plone.org/actions/workflows/backend-testing.yaml/badge.svg)](https://github.com/plone/plone.org/actions/workflows/backend-testing.yaml)
 [![Frontend testing.plone.org CI and deploy](https://github.com/plone/plone.org/actions/workflows/frontend-testing.yml/badge.svg)](https://github.com/plone/plone.org/actions/workflows/frontend-testing.yml)
 
-The main destination for Plone
+The main destination for Plone.
 
-## Quick start
+## Prerequisites
 
-### Development Setup
+-   Python 3.11
+-   Node 16
+-   yarn
+-   Docker
+-   Postgres 14
 
-- Python 3.11
-- Node 16
-- yarn
-- Docker
-- Postgres 14
+See https://6.docs.plone.org/install/create-project-cookieplone.html#system-requirements for more details.
 
-### Create database
 
-```shell
-createdb ploneorg
-createuser ploneorg
-```
+## Development setup
 
-### Install
+Clone the repository, change your working directory to the root of the repository, prepare the configuration file, and install the project with both a backend and frontend.
+Note the username and password for the default administrator user in this file.
 
 ```shell
 git clone git@github.com:plone/plone.org.git
 cd plone.org
+cp ./backend/instance-local.yaml.example ./backend/instance-local.yaml
 make install
 ```
 
-### Start
+### Start the backend
 
-Start the Backend (http://localhost:8080/)
+In the current terminal session, and start the backend.
 
 ```shell
 make start-backend
 ```
 
-Start the Frontend (http://localhost:3000/)
+
+### Start the frontend
+
+Open a new terminal session, and start the frontend.
 
 ```shell
 make start-frontend
 ```
+
+
+### Complete setup
+
+Visit http://localhost:3000/fallback_login and enter the administrator credentials you set in the previous step.
+
+You'll see a scary error.
+Don't worry, this is expected.
+Visit the site root at http://localhost:3000/.
+
+To populate the site with content, see [Getting data for development](#getting-data-for-development).
+
 
 ## Structure
 
@@ -108,7 +121,7 @@ The Makefile will automatically detect and use the `instance-local.yaml` file wh
 
 ### Getting data for development
 
-For both storages, if you want to develop for plone.org and need a copy of the data, you will need to as another community member (preferably from the website-team or the AI-team) for a database dump.
+For both storages, if you want to develop for plone.org and need a copy of the data, you'll need to ask another community member (preferably from the website-team or the AI-team) for a database dump.
 
 ## Credits
 
