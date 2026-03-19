@@ -4,6 +4,7 @@
 - Add slate tables css. [acsr,fredvd]
 - Fix collection of dot-directories like .well-known in frontend for funding-manifest-urls (Fixes #222) [fredvd]
 - Add new sponsorship level
+- Update `README.md` with verified instructions to get started.
 
 
 ## 1.0.21 (2026-01-19)
