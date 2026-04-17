@@ -13,7 +13,6 @@ The main destination for Plone.
 -   Node 16
 -   yarn
 -   Docker
--   Postgres 14
 
 See https://6.docs.plone.org/install/create-project-cookieplone.html#system-requirements for more details.
 
