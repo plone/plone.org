@@ -1,4 +1,4 @@
-name: Deploy latest image tags to testing.plone.org 
+name: Deploy latest image tags to testing-stable.plone.org 
 
 on:
   workflow_dispatch:
@@ -10,13 +10,13 @@ jobs:
     concurrency: deploy_testing
     runs-on: ubuntu-latest
     environment: 
-      name: testing.plone.org
-      url: https://testing.plone.org
+      name: testing-stable.plone.org
+      url: https://testing-stable.plone.org
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy 'latest' image tags to testing.plone.org
+      - name: Deploy 'latest' image tags to testing-stable.plone.org
         uses: kitconcept/docker-stack-deploy@v1.4.0
         with:
           registry: "ghcr.io"
@@ -26,10 +26,10 @@ jobs:
           remote_port: ${{ vars.DEPLOY_PORT }}
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: "devops/stacks/testing.plone.org.yml"
-          stack_name: "testing-plone-org"
+          stack_file: "devops/stacks/testing-stable.plone.org.yml"
+          stack_name: "testing-stable-plone-org"
           env_file: |
-            STACK_NAME=testing-plone-org
+            STACK_NAME=testing-stable-plone-org
             DB_HOST=${{ vars.DB_HOST }}
             DB_NAME=${{ vars.DB_NAME }}
             DB_USER=${{ vars.DB_USER }}

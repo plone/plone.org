@@ -1,4 +1,4 @@
-name: Backend testing.plone.org CI and Deploy
+name: Backend testing-stable.plone.org CI and Deploy
 
 on:
   push:
@@ -145,12 +145,12 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: testing.plone.org
-      url: https://testing.plone.org
+      url: https://testing-stable.plone.org
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to testing.plone.org
+      - name: Deploy to testing-stabls.plone.org
         uses: kitconcept/docker-stack-deploy@v1.4.0
         with:
           registry: "ghcr.io"
@@ -160,8 +160,8 @@ jobs:
           remote_port: ${{ vars.DEPLOY_PORT }}
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: "devops/stacks/testing.plone.org.yml"
-          stack_name: "testing-plone-org"
+          stack_file: "devops/stacks/testing-stable.plone.org.yml"
+          stack_name: "testing-stable-plone-org"
           env_file: |
             STACK_NAME=testing-plone-org
             DB_HOST=${{ vars.DB_HOST }}

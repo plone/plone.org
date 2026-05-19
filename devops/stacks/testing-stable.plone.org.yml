@@ -26,7 +26,7 @@ services:
         # Services
         - traefik.http.services.testing_ploneorg-frontend.loadbalancer.server.port=3000
         # Routers
-        - traefik.http.routers.testing_ploneorg-frontend.rule=Host(`testing.plone.org`)
+        - traefik.http.routers.testing_ploneorg-frontend.rule=Host(`testing-stable.plone.org`)
         - traefik.http.routers.testing_ploneorg-frontend.entrypoints=https
         - traefik.http.routers.testing_ploneorg-frontend.tls=true
         - traefik.http.routers.testing_ploneorg-frontend.tls.certresolver=le
@@ -59,21 +59,21 @@ services:
         - traefik.http.middlewares.testing_ploneorg-backend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
         ### backend ++api++ VHM
         - "traefik.http.middlewares.testing_ploneorg-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+/){1,})($$|.*)"
-        - "traefik.http.middlewares.testing_ploneorg-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/testing.plone.org/Plone/++api++/VirtualHostRoot/$$3"
+        - "traefik.http.middlewares.testing_ploneorg-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/testing-stable.plone.org/Plone/++api++/VirtualHostRoot/$$3"
         - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-        - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing.plone.org/Plone/++api++/VirtualHostRoot/$$1"
+        - "traefik.http.middlewares.testing_ploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing-stable.plone.org/Plone/++api++/VirtualHostRoot/$$1"
         ### backend /ClassicUI VHM
         - "traefik.http.middlewares.testing_ploneorg-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
-        - "traefik.http.middlewares.testing_ploneorg-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/testing.plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
+        - "traefik.http.middlewares.testing_ploneorg-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/testing-stable.plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
         # Routers
-        ## testing.plone.org ++api++
-        - traefik.http.routers.testing_ploneorg-backend.rule=Host(`testing.plone.org`) && (PathPrefix(`/++api++`))
+        ## testing-stable.plone.org ++api++
+        - traefik.http.routers.testing_ploneorg-backend.rule=Host(`testing-stable.plone.org`) && (PathPrefix(`/++api++`))
         - traefik.http.routers.testing_ploneorg-backend.entrypoints=https
         - traefik.http.routers.testing_ploneorg-backend.tls=true
         - traefik.http.routers.testing_ploneorg-backend.service=testing_ploneorg-backend
         - traefik.http.routers.testing_ploneorg-backend.middlewares=gzip,testing_ploneorg-vhm-cleanup,testing_ploneorg-vhm
-        ### testing.plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
-        - traefik.http.routers.testing_ploneorg-classicui.rule=Host(`testing.plone.org`) && (PathPrefix(`/ClassicUI`))
+        ### testing-stable.plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
+        - traefik.http.routers.testing_ploneorg-classicui.rule=Host(`testing-stable.plone.org`) && (PathPrefix(`/ClassicUI`))
         - traefik.http.routers.testing_ploneorg-classicui.entrypoints=https
         - traefik.http.routers.testing_ploneorg-classicui.tls=true
         - traefik.http.routers.testing_ploneorg-classicui.service=testing_ploneorg-backend
