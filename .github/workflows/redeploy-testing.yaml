@@ -7,10 +7,11 @@ jobs:
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-    concurrency: deploy_testing
+    concurrency: deploy_ploneorg_testingstable
     runs-on: ubuntu-latest
-    environment: 
-      name: testing-stable.plone.org
+    environment:
+      # Only exception: keep this to testing.plone.org, otherwise I need to recreate the environment on githubs plone.org repo.
+      name: testing.plone.org
       url: https://testing-stable.plone.org
     steps:
       - name: Checkout

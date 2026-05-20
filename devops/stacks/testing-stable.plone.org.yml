@@ -10,7 +10,7 @@ services:
       - backend
     networks:
       - public
-      - testing_ploneorg
+      - testingstable_ploneorg
     deploy:
       replicas: 1
       placement:
@@ -104,14 +104,14 @@ services:
         target: /zodbpack_conf
 
     networks:
-      - testing_ploneorg
+      - testingstable_ploneorg
 
 
 networks:
   public:
     external: true
     driver: overlay
-  testing_ploneorg:
+  testingstable_ploneorg:
     driver: overlay
 
 configs:

@@ -133,7 +133,7 @@ jobs:
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-    concurrency: deploy_testing
+    concurrency: deploy_ploneorg_testingstable
     needs:
       - release
     runs-on: ubuntu-latest

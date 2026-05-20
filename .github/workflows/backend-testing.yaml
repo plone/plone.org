@@ -139,18 +139,19 @@ jobs:
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-    concurrency: deploy_testing
+    concurrency: deploy_ploneorg_testingstable
     needs:
       - release
     runs-on: ubuntu-latest
     environment:
+      # Only exception: keep this to testing.plone.org, otherwise I need to recreate the environment on githubs plone.org repo.
       name: testing.plone.org
       url: https://testing-stable.plone.org
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Deploy to testing-stabls.plone.org
+      - name: Deploy to testing-stable.plone.org
         uses: kitconcept/docker-stack-deploy@v1.4.0
         with:
           registry: "ghcr.io"
