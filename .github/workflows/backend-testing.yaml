@@ -1,4 +1,4 @@
-name: Backend testing.plone.org CI and Deploy
+name: Backend testing-stable.plone.org CI and Deploy
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -76,7 +76,7 @@ jobs:
         working-directory: ./backend
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Plone ${{ matrix.plone }} with Python ${{ matrix.python }}
         uses: plone/setup-plone@v2.0.0
@@ -102,11 +102,11 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ghcr.io/plone/ploneorg-backend
@@ -121,14 +121,14 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login to DockerHub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           platforms: linux/amd64
           context: backend
@@ -145,12 +145,12 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: testing.plone.org
-      url: https://testing.plone.org
+      url: https://testing-stable.plone.org
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Deploy to testing.plone.org
+      - name: Deploy to testing-stabls.plone.org
         uses: kitconcept/docker-stack-deploy@v1.4.0
         with:
           registry: "ghcr.io"
@@ -160,10 +160,10 @@ jobs:
           remote_port: ${{ vars.DEPLOY_PORT }}
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: "devops/stacks/testing.plone.org.yml"
-          stack_name: "testing-plone-org"
+          stack_file: "devops/stacks/testing-stable.plone.org.yml"
+          stack_name: "testing-stable-plone-org"
           env_file: |
-            STACK_NAME=testing-plone-org
+            STACK_NAME=testing-stable-plone-org
             DB_HOST=${{ vars.DB_HOST }}
             DB_NAME=${{ vars.DB_NAME }}
             DB_USER=${{ vars.DB_USER }}

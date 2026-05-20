@@ -1,0 +1,123 @@
+version: '3.9'
+
+services:
+
+  frontend:
+    image: ghcr.io/plone/ploneorg-frontend:latest
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://testing-stable-plone-org_backend:8080/Plone
+    depends_on:
+      - backend
+    networks:
+      - public
+      - testing_ploneorg
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Middlewares
+        - traefik.http.middlewares.testingstable_ploneorg-frontend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
+
+        # Services
+        - traefik.http.services.testingstable_ploneorg-frontend.loadbalancer.server.port=3000
+        # Routers
+        - traefik.http.routers.testingstable_ploneorg-frontend.rule=Host(`testing-stable.plone.org`)
+        - traefik.http.routers.testingstable_ploneorg-frontend.entrypoints=https
+        - traefik.http.routers.testingstable_ploneorg-frontend.tls=true
+        - traefik.http.routers.testingstable_ploneorg-frontend.tls.certresolver=le
+        - traefik.http.routers.testingstable_ploneorg-frontend.service=testing_ploneorg-frontend
+        - traefik.http.routers.testingstable_ploneorg-frontend.middlewares=gzip,testingstable_ploneorg-frontend-auth
+
+  backend:
+    image: ghcr.io/plone/ploneorg-backend:latest
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' port='${DB_PORT:-5432}' password='${DB_PASSWORD:-plone}'"
+    networks:
+      - public
+      - testingstable_ploneorg
+    deploy:
+      replicas: 3
+      placement:
+        constraints:
+          - node.labels.type == app
+        max_replicas_per_node: 1
+      update_config:
+        order: stop-first
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.testingstable_ploneorg-backend.loadbalancer.server.port=8080
+        # Middlewares
+        ### Authentication
+        - traefik.http.middlewares.testingstable_ploneorg-backend-auth.basicauth.users=ploneorg:$$2y$$05$$QuAxsLqKl7ltm6Qv4wOOw./2pK5VeVSBSllAJbdb4dKnFxWhFFLze
+        ### backend ++api++ VHM
+        - "traefik.http.middlewares.testingstable_ploneorg-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+/){1,})($$|.*)"
+        - "traefik.http.middlewares.testingstable_ploneorg-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/testing-stable.plone.org/Plone/++api++/VirtualHostRoot/$$3"
+        - "traefik.http.middlewares.testingstable_ploneorg-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.testingstable_ploneorg-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing-stable.plone.org/Plone/++api++/VirtualHostRoot/$$1"
+        ### backend /ClassicUI VHM
+        - "traefik.http.middlewares.testingstable_ploneorg-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
+        - "traefik.http.middlewares.testingstable_ploneorg-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/testing-stable.plone.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
+        # Routers
+        ## testing-stable.plone.org ++api++
+        - traefik.http.routers.testingstable_ploneorg-backend.rule=Host(`testing-stable.plone.org`) && (PathPrefix(`/++api++`))
+        - traefik.http.routers.testingstable_ploneorg-backend.entrypoints=https
+        - traefik.http.routers.testingstable_ploneorg-backend.tls=true
+        - traefik.http.routers.testingstable_ploneorg-backend.service=testing_ploneorg-backend
+        - traefik.http.routers.testingstable_ploneorg-backend.middlewares=gzip,testingstable_ploneorg-vhm-cleanup,testingstable_ploneorg-vhm
+        ### testing-stable.plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
+        - traefik.http.routers.testingstable_ploneorg-classicui.rule=Host(`testing-stable.plone.org`) && (PathPrefix(`/ClassicUI`))
+        - traefik.http.routers.testingstable_ploneorg-classicui.entrypoints=https
+        - traefik.http.routers.testingstable_ploneorg-classicui.tls=true
+        - traefik.http.routers.testingstable_ploneorg-classicui.service=testing_ploneorg-backend
+        - traefik.http.routers.testingstable_ploneorg-classicui.middlewares=gzip,testingstable_ploneorg-backend-auth,testingstable_ploneorg-vhm-classic
+    volumes:
+      - relstorage-cache:/data/relstorage-cache
+      - blob-cache:/data/blob-cache
+
+  pack:
+    image: ghcr.io/plone/ploneorg-backend:${STACK_PARAM:-latest}
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' port='${DB_PORT:-5432}' password='${DB_PASSWORD:-plone}'"
+    command: bin/zodbpack -d 3 /zodbpack_conf
+    healthcheck:
+      disable: true
+    deploy:
+      replicas: 0
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - "swarm.cronjob.enable=true"
+        - "swarm.cronjob.schedule=20 4 * * *"
+      restart_policy:
+        condition: none
+    configs:
+      - source: zodbpack_conf
+        target: /zodbpack_conf
+
+    networks:
+      - testing_ploneorg
+
+
+networks:
+  public:
+    external: true
+    driver: overlay
+  testing_ploneorg:
+    driver: overlay
+
+configs:
+  zodbpack_conf:
+    file: ../configs/zodbpack.conf
+
+volumes:
+  relstorage-cache: {}
+  blob-cache: {}
