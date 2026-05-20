@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.node-version }}
           cache: 'yarn'
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run Prettier
         run: npx prettier@2.0.5 --single-quote --check 'src/**/*.{js,jsx,ts,tsx,css,scss}' --config=package.json
@@ -52,10 +52,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.node-version }}
           cache: 'yarn'
@@ -72,10 +72,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.node-version }}
           cache: 'yarn'
@@ -95,11 +95,11 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v6
         with:
           images: |
             ghcr.io/plone/ploneorg-frontend
@@ -114,14 +114,14 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login to DockerHub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           platforms: linux/amd64
           context: frontend/
@@ -138,11 +138,12 @@ jobs:
       - release
     runs-on: ubuntu-latest
     environment: 
+      # Only exception: keep this to testing.plone.org, otherwise I need to recreate the environment on githubs plone.org repo.
       name: testing.plone.org
-      url: https://testing-stabls.plone.org
+      url: https://testing-stable.plone.org
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Deploy to testing-stable.plone.org
         uses: kitconcept/docker-stack-deploy@v1.4.0
@@ -155,7 +156,7 @@ jobs:
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
           stack_file: "devops/stacks/testing-stable.plone.org.yml"
-          stack_name: testing-plone-org
+          stack_name: testing-stable-plone-org
           env_file: |
             STACK_NAME=testing-stable-plone-org
             DB_HOST=${{ vars.DB_HOST }}
