@@ -30,7 +30,7 @@ services:
         - traefik.http.routers.testingstable_ploneorg-frontend.entrypoints=https
         - traefik.http.routers.testingstable_ploneorg-frontend.tls=true
         - traefik.http.routers.testingstable_ploneorg-frontend.tls.certresolver=le
-        - traefik.http.routers.testingstable_ploneorg-frontend.service=testing_ploneorg-frontend
+        - traefik.http.routers.testingstable_ploneorg-frontend.service=testingstable_ploneorg-frontend
         - traefik.http.routers.testingstable_ploneorg-frontend.middlewares=gzip,testingstable_ploneorg-frontend-auth
 
   backend:
@@ -70,7 +70,7 @@ services:
         - traefik.http.routers.testingstable_ploneorg-backend.rule=Host(`testing-stable.plone.org`) && (PathPrefix(`/++api++`))
         - traefik.http.routers.testingstable_ploneorg-backend.entrypoints=https
         - traefik.http.routers.testingstable_ploneorg-backend.tls=true
-        - traefik.http.routers.testingstable_ploneorg-backend.service=testing_ploneorg-backend
+        - traefik.http.routers.testingstable_ploneorg-backend.service=testingstable_ploneorg-backend
         - traefik.http.routers.testingstable_ploneorg-backend.middlewares=gzip,testingstable_ploneorg-vhm-cleanup,testingstable_ploneorg-vhm
         ### testing-stable.plone.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
         - traefik.http.routers.testingstable_ploneorg-classicui.rule=Host(`testing-stable.plone.org`) && (PathPrefix(`/ClassicUI`))
