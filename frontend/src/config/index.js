@@ -104,7 +104,7 @@ export default function applyConfig(config) {
 
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
-    gridAllowedBlocks: ['teaser', 'image', 'slate', 'html'],
+    gridAllowedBlocks: ['teaser', 'image', 'slate', 'html', 'listing'],
   };
 
   config.settings['volto-gdpr-privacy'].defaultPanelConfig = {
