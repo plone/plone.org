@@ -6,7 +6,7 @@ import { isEqual } from 'lodash';
 import { Input } from 'semantic-ui-react';
 import { SidebarPortal, UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { TextEditorWidget } from '@package/components/Widgets';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { Button, ShareButtons, PresetWrapper } from '@package/components';
 
 import Sidebar from './Sidebar';
@@ -109,17 +109,14 @@ const Edit = (props) => {
               e.stopPropagation();
             }}
           >
-            <TextEditorWidget
-              data={data}
-              fieldName="content"
+            <DetachedTextBlockEditor
+              data={{ value: data.content }}
+              onChangeBlock={(block, { value }) =>
+                onChange({ content: value }, 'content')
+              }
               selected={selected && focusOn === 'content'}
-              block={block}
-              onChangeBlock={(data) => onChange(data, 'content')}
+              readOnly={false}
               placeholder={intl.formatMessage(messages.textPlaceholder)}
-              prevFocus="title"
-              setFocus={(f) => focusField(f)}
-              showToolbar={true}
-              key="content"
             />
           </p>
         </div>

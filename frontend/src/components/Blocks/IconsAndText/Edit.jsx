@@ -6,7 +6,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { Input, Container } from 'semantic-ui-react';
 import { SidebarPortal } from '@plone/volto/components';
 import { ListingLinkMore } from '@package/components';
-import { TextEditorWidget } from '@package/components/Widgets';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import EditColumnBlock from './Block/EditBlock';
 import Sidebar from './Sidebar';
 
@@ -70,19 +70,17 @@ const Edit = (props) => {
             }
           />
         </div>
-        <TextEditorWidget
-          data={data}
-          fieldName="description"
-          onChangeBlock={(v) => {
+        <DetachedTextBlockEditor
+          data={{ value: data.description }}
+          onChangeBlock={(block, { value }) => {
             onChangeBlock(block, {
               ...data,
-              description: v.description,
+              description: value,
             });
           }}
-          placeholder={intl.formatMessage(messages.textPlaceholder)}
-          setFocus={(f) => focusField(f)}
           selected={focusOn === 'description'}
-          showToolbar={true}
+          readOnly={false}
+          placeholder={intl.formatMessage(messages.textPlaceholder)}
         />
       </div>
       <div className="columns-wrapper">

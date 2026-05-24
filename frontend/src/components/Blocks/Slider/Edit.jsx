@@ -10,7 +10,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { SidebarPortal } from '@plone/volto/components';
 import Sidebar from './Sidebar';
 import Body from './Body';
-import { TextEditorWidget } from '@package/components/Widgets';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { v4 as uuid } from 'uuid';
 
 const messages = defineMessages({
@@ -74,19 +74,17 @@ const Edit = (props) => {
               }
             />
           </div>
-          <TextEditorWidget
-            data={props.data}
-            fieldName="description"
-            onChangeBlock={(v) => {
+          <DetachedTextBlockEditor
+            data={{ value: props.data.description }}
+            onChangeBlock={(block, { value }) => {
               props.onChangeBlock(props.block, {
                 ...props.data,
-                description: v.description,
+                description: value,
               });
             }}
-            placeholder={intl.formatMessage(messages.textPlaceholder)}
-            setFocus={(f) => focusField(f)}
             selected={focusOn === 'description'}
-            showToolbar={true}
+            readOnly={false}
+            placeholder={intl.formatMessage(messages.textPlaceholder)}
           />
         </div>
       )}

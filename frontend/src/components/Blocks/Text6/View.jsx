@@ -1,12 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import redraft from 'redraft';
 import { defineMessages, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { PresetWrapper, ShareButtons, Button } from '@package/components';
-import config from '@plone/volto/registry';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const messages = defineMessages({
   cta_title_default: {
@@ -20,12 +19,6 @@ const View = (props) => {
   const { data } = props;
   let href = data.link_to?.[0]?.['@id'];
 
-  const checkHasContent = (content) => {
-    if (content) {
-      let blocks = content.blocks.filter((block) => block?.text !== '');
-      return blocks.length > 0 ? true : false;
-    }
-  };
   return (
     <PresetWrapper
       {...props.data}
@@ -54,13 +47,9 @@ const View = (props) => {
           </div>
         )}
 
-        {checkHasContent(data.content) && (
+        {data.content && (
           <div className="content">
-            {redraft(
-              data.content,
-              config.settings.richtextViewSettings.ToHTMLRenderers,
-              config.settings.richtextViewSettings.ToHTMLOptions,
-            )}
+            <TextBlockView data={{ value: data.content }} />
           </div>
         )}
         {data.have_cta && (
