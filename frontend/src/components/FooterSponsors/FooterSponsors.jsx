@@ -52,7 +52,7 @@ const FooterSponsors = (props) => {
         subrequest_key,
       ),
     );
-  }, [dispatch, subrequest_key, type]);
+  }, [dispatch, subrequest_key, type, sponsor_query]);
 
   const sponsorItems = sponsors?.loaded
     ? sponsors.items.length > 0 &&
