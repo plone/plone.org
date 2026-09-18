@@ -41,7 +41,11 @@ const Footer = ({ intl }) => {
   return (
     <div id="footer">
       <Container>
-        <FooterSponsors type="platinum" />
+        <FooterSponsors type="platinum" text="sponsor" />
+      </Container>
+
+      <Container>
+        <FooterSponsors type="community_platinum" text="contributor" />
       </Container>
 
       <Container>
