@@ -8,8 +8,29 @@ import { UniversalLink } from '@plone/volto/components';
 
 import yourLogoHereSVG from './YourLogov2.svg';
 
+const TEXTS = {
+  sponsor: {
+    title: 'Powering the Future of Open Sovereignty',
+    claim:
+      "Plone thrives because of organizations that believe in secure, independent, and open technology. We are deeply grateful to our Platinum Sponsors for their visionary support in sustaining the world's most secure CMS. Join in shaping the future of digital freedom.",
+    url: '/foundation/sponsorship',
+    urlClaim: 'Become a sponsor — every contribution shapes our future!',
+  },
+  contributor: {
+    title: 'Powering the Future of Open Sovereignty',
+    claim:
+      "Plone thrives because of organizations that believe in secure, independent, and open technology. We are deeply grateful to our Community Platinum Contributors for their visionary support in building the world's most secure CMS. Join in shaping the future of digital freedom.",
+    url: '/foundation/community-recognition',
+    urlClaim: 'Learn about who makes Plone shine with their contributions!',
+  },
+};
+
 const FooterSponsors = (props) => {
-  const { type = 'platinum' } = props;
+  const { type = 'platinum', text = 'sponsor' } = props;
+
+  const sponsor_query =
+    text === 'sponsor' ? { sponsorship_type: type } : { Subject: type };
+
   const subrequest_key = `${type}_sponsors`;
 
   const sponsors = useSelector(
@@ -24,14 +45,14 @@ const FooterSponsors = (props) => {
         {
           portal_type: 'FoundationSponsor',
           review_state: 'approved',
-          sponsorship_type: type,
           sort_on: 'sortable_title',
           sort_order: 'ascending',
+          ...sponsor_query,
         },
         subrequest_key,
       ),
     );
-  }, [dispatch, subrequest_key, type]);
+  }, [dispatch, subrequest_key, type, sponsor_query]);
 
   const sponsorItems = sponsors?.loaded
     ? sponsors.items.length > 0 &&
@@ -49,7 +70,7 @@ const FooterSponsors = (props) => {
       const placeholdersToAdd = listingSize - remainder;
       for (let i = 0; i < placeholdersToAdd; i++) {
         sponsorItems.push({
-          '@id': '/foundation/sponsorship',
+          '@id': TEXTS[text]['url'],
           title: 'Put your logo here',
           size: 'thumb',
           isPlaceholder: true,
@@ -65,24 +86,19 @@ const FooterSponsors = (props) => {
     ? sponsors.items.length > 0 && (
         <div className={`footer-sponsors-listing ${subrequest_key}`}>
           <div className="footer-sponsors-listing-headline">
-            <h3>Powering the Future of Open Sovereignty</h3>
+            <h3>{TEXTS[text]['title']}</h3>
+
             <Button
               as={UniversalLink}
               primary
               size="medium"
-              href={flattenToAppURL('/foundation/sponsorship')}
+              href={flattenToAppURL(TEXTS[text]['url'])}
               arrow={true}
             >
-              Become a sponsor — every contribution shapes our future!
+              {TEXTS[text]['urlClaim']}
             </Button>
           </div>
-          <p>
-            Plone thrives because of organizations that believe in secure,
-            independent, and open technology. We are deeply grateful to our
-            Platinum Sponsors for their visionary support in sustaining the
-            world's most secure CMS. Join in shaping the future of digital
-            freedom.
-          </p>
+          <p>{TEXTS[text]['claim']}</p>
 
           <SponsorCardListing
             items={sponsorItems || []}
