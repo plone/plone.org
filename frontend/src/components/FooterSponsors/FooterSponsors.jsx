@@ -52,7 +52,8 @@ const FooterSponsors = (props) => {
         subrequest_key,
       ),
     );
-  }, [dispatch, subrequest_key, type, sponsor_query]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, subrequest_key, type]);
 
   const sponsorItems = sponsors?.loaded
     ? sponsors.items.length > 0 &&
